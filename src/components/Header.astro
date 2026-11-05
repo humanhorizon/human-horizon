@@ -1,22 +1,58 @@
 ---
-import Menu from './Menu.astro';
-import Navigation from './Navigation.astro';
-import ThemeIcon from './ThemeIcon.astro';
+import Logo from './Logo.astro';
+import { nav, site } from '../data/site';
 ---
-
-<header>
-	<nav>
-		<div>
-			<ThemeIcon />
-			<Menu />
-		</div>
-		<Navigation />
-	</nav>
+<header class="hdr">
+  <div class="wrap hdr-in">
+    <Logo />
+    <nav class="desk" aria-label="Main">
+      <ul>
+        {nav.map((item) => (
+          <li class={item.children ? 'has-menu' : ''}>
+            <a href={item.href}>{item.label}</a>
+            {item.children && (
+              <ul class={`menu ${item.children.length > 6 ? 'cols' : ''}`}>
+                {item.children.map((c) => <li><a href={c.href}>{c.label}</a></li>)}
+              </ul>
+            )}
+          </li>
+        ))}
+      </ul>
+    </nav>
+    <a class="btn btn-ink hdr-cta" href={site.cta.href}>{site.cta.label}</a>
+    <details class="mob">
+      <summary aria-label="Open menu"><span></span><span></span></summary>
+      <nav aria-label="Main mobile">
+        {nav.map((item) => <a href={item.href}>{item.label}</a>)}
+        <a class="btn btn-ink" href={site.cta.href}>{site.cta.label}</a>
+      </nav>
+    </details>
+  </div>
 </header>
-
 <style>
-	div {
-		display: flex;
-		justify-content: space-between;
-	}
+  .hdr { position: relative; z-index: 10; }
+  .hdr-in { height: 96px; display: flex; align-items: center; justify-content: space-between; gap: var(--s3); }
+  .desk > ul { display: flex; gap: clamp(20px, 2.4vw, 36px); list-style: none; margin: 0; padding: 0; }
+  .desk a { font-size: 16px; font-weight: 500; text-decoration: none; }
+  .desk > ul > li > a { white-space: nowrap; }
+  .desk a:hover { color: var(--sunrise-text); }
+  .has-menu { position: relative; }
+  .has-menu > a::after { content: ''; display: inline-block; width: 6px; height: 6px; margin-left: 8px; border-right: 1.5px solid currentColor; border-bottom: 1.5px solid currentColor; transform: translateY(-3px) rotate(45deg); }
+  .menu { position: absolute; top: 100%; left: -20px; min-width: 260px; list-style: none; margin: 0; padding: 12px; background: #fff; border: 1px solid var(--line); border-radius: 20px; box-shadow: 0 16px 40px rgba(24,33,59,.08); opacity: 0; visibility: hidden; transform: translateY(8px); transition: .15s; }
+  .menu.cols { display: grid; grid-template-columns: repeat(2, minmax(240px, 1fr)); }
+  .menu a { display: block; padding: 10px 12px; border-radius: 12px; font-weight: 400; font-size: 15px; }
+  .menu a:hover { background: var(--morning); color: var(--ink); }
+  .has-menu:hover .menu, .has-menu:focus-within .menu { opacity: 1; visibility: visible; transform: none; }
+  .hdr-cta { min-height: 46px; }
+  .mob { display: none; }
+  @media (max-width: 1240px) {
+    .desk, .hdr-cta { display: none; }
+    .mob { display: block; }
+    .mob summary { list-style: none; cursor: pointer; width: 44px; height: 44px; display: grid; place-content: center; gap: 6px; }
+    .mob summary::-webkit-details-marker { display: none; }
+    .mob summary span { display: block; width: 22px; height: 2px; background: var(--ink); }
+    .mob nav { position: absolute; left: 0; right: 0; top: 96px; background: #fff; border-top: 1px solid var(--line); padding: var(--s3) var(--gutter) var(--s4); display: flex; flex-direction: column; gap: var(--s2); box-shadow: 0 16px 40px rgba(24,33,59,.08); }
+    .mob nav a:not(.btn) { font-size: 20px; text-decoration: none; padding: 6px 0; }
+    .mob nav .btn { margin-top: var(--s2); }
+  }
 </style>

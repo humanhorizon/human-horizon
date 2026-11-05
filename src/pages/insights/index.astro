@@ -1,0 +1,56 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import PageHero from '../../components/PageHero.astro';
+import CloseCta from '../../components/CloseCta.astro';
+import { close } from '../../data/home';
+import { insights } from '../../data/companyPages';
+
+const articles = (await getCollection('insights')).sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+const fmt = (d: Date) => d.toLocaleDateString('en-SG', { day: 'numeric', month: 'long', year: 'numeric' });
+---
+<Base title={insights.seoTitle} description={insights.description} noindex={articles.length === 0}>
+  <nav class="wrap crumbs" aria-label="Breadcrumb"><a href="/">Home</a> / <span aria-current="page">Insights</span></nav>
+
+  <PageHero kicker={insights.kicker} title={insights.title} lead={articles.length ? insights.leadLive : insights.lead} />
+
+  {articles.length > 0 && (
+    <section class="section">
+      <div class="wrap">
+        <ul class="arts">
+          {articles.map((a) => (
+            <li><a href={`/insights/${a.id}`}>
+              <span class="cap">{fmt(a.data.date)}</span>
+              <span class="d h3d">{a.data.title}</span>
+              <span class="muted">{a.data.description}</span>
+            </a></li>
+          ))}
+        </ul>
+      </div>
+    </section>
+  )}
+
+  <section class="section bg-morning">
+    <div class="wrap">
+      <h2 class="d h2 sec-h">{articles.length ? insights.topicsTitleLive : insights.topicsTitle}</h2>
+      <ul class="topics">
+        {insights.topics.filter((t) => !articles.some((a) => a.data.title === t)).map((t) => <li>{t}</li>)}
+      </ul>
+    </div>
+  </section>
+
+  <CloseCta title={close.title} sub={close.sub} />
+</Base>
+
+<style>
+  .crumbs { padding-top: var(--s3); font-size: 14px; color: var(--slate); }
+  .crumbs a { color: var(--slate); }
+  .sec-h { margin-bottom: var(--s5); }
+  .arts { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--s2); }
+  .arts a { display: grid; gap: 10px; padding: var(--s4); border-radius: 20px; border: 1px solid var(--line); text-decoration: none; color: inherit; transition: box-shadow .15s; }
+  .arts a:hover { box-shadow: inset 0 0 0 2px var(--sunrise); }
+  .arts .h3d { font-size: clamp(26px, 2.6vw, 34px); line-height: 1.15; }
+  .topics { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: var(--s2); }
+  .topics li { padding: var(--s4) var(--s3); background: #fff; border-radius: 20px; font: 300 24px/1.25 var(--display); }
+  @media (max-width: 760px) { .topics { grid-template-columns: 1fr; } }
+</style>

@@ -1,0 +1,26 @@
+---
+import HubView from '../../components/HubView.astro';
+import { teams } from '../../data/site';
+import { teamPages } from '../../data/segmentPages';
+
+const copy = {
+  seoTitle: 'AI for business teams in Singapore | Human Horizon',
+  description: 'People-first AI for sales, marketing, operations, finance, HR and customer service teams in Singapore. See what changes for each team.',
+  kicker: 'AI for every team in a Singapore business',
+  title: 'Free every team for the work only people can do.',
+  lead: 'Sales, marketing, operations, finance, HR and customer service each carry work that wears them down. Pick a team to see what changes when AI takes it on and your people get back to the work they do best.',
+  listTitle: 'Pick your team',
+  people: {
+    title: 'Each team shapes how AI works for it.',
+    body: 'The people in each team know their work best. They hear first what AI means for their roles, help choose what to change and keep the final say on what goes out.',
+  },
+  faqTitle: 'Questions team leaders ask',
+  faq: [
+    { q: 'Which teams do you work with?', a: 'Sales and business development, marketing, operations, finance and admin, HR and people, and customer service. Start with the team whose repeat work you feel yourself: the proposals written at night, the bills waiting for approval, the enquiries piling up. If you are unsure, we can work it out together on the call.' },
+    { q: 'Can we start with one team?', a: 'Yes. A First Win is built for a team of 5 to 10 people, so one team can change how it works first, and the rest of the business can follow when you are ready.' },
+    { q: 'Will AI replace people in our teams?', a: 'No. We build AI into the repetitive parts of each team’s work so your people spend more time on customers, judgement and the work they do best. Your team shapes how it is used, and a person checks what goes out.' },
+    { q: 'How do we start?', a: 'With a 30-minute conversation about the work that takes up your team’s week. Drop us an email at contact.humanhorizon@gmail.com.', links: [{ label: 'Email us', href: 'mailto:contact.humanhorizon@gmail.com' }] },
+  ],
+};
+---
+<HubView kind="teams" items={teams} pages={teamPages} copy={copy} />

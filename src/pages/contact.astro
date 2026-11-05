@@ -1,0 +1,67 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHero from '../components/PageHero.astro';
+import { site } from '../data/site';
+import { contact } from '../data/companyPages';
+
+const schema = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'ContactPage',
+    name: contact.seoTitle,
+    url: `${site.url}/contact`,
+    mainEntity: { '@type': 'ProfessionalService', name: site.name, url: site.url, email: site.email, areaServed: { '@type': 'Country', name: 'Singapore' } },
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: `${site.url}/` },
+      { '@type': 'ListItem', position: 2, name: 'Contact', item: `${site.url}/contact` },
+    ],
+  },
+];
+---
+<Base title={contact.seoTitle} description={contact.description} schema={schema}>
+  <nav class="wrap crumbs" aria-label="Breadcrumb"><a href="/">Home</a> / <span aria-current="page">Contact</span></nav>
+
+  <PageHero kicker={contact.kicker} title={contact.title} lead={contact.lead} />
+
+  <section class="section pt0">
+    <div class="wrap">
+      <div class="mail">
+        <div class="stack">
+          <h2 class="h3">{contact.emailTitle}</h2>
+          <a class="d addr" href={site.cta.href}>{site.email.split('@')[0]}<wbr />@{site.email.split('@')[1]}</a>
+          <p class="muted">{contact.emailNote}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-morning">
+    <div class="wrap">
+      <h2 class="d h2 sec-h">{contact.stepsTitle}</h2>
+      <ol class="steps">
+        {contact.steps.map((s, i) => <li><span class="n">{i + 1}</span><h3 class="h3">{s.title}</h3><p class="muted">{s.body}</p></li>)}
+      </ol>
+      <p class="loc muted">{contact.location}</p>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .crumbs { padding-top: var(--s3); font-size: 14px; color: var(--slate); }
+  .crumbs a { color: var(--slate); }
+  .pt0 { padding-top: 0; }
+  .mail { padding: clamp(24px, 4vw, 56px); border-radius: 20px; background: var(--first-light); display: flex; justify-content: space-between; align-items: flex-end; gap: var(--s4); flex-wrap: wrap; }
+  .mail .stack { gap: var(--s2); max-width: 760px; }
+  .addr { font-size: clamp(24px, 3.4vw, 44px); line-height: 1.1; text-decoration: none; overflow-wrap: normal; }
+  .addr:hover { color: var(--sunrise-text); }
+  .sec-h { margin-bottom: var(--s5); }
+  .steps { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--s2); }
+  .steps li { display: grid; gap: 12px; align-content: start; padding: var(--s4) var(--s3); background: #fff; border-radius: 20px; }
+  .n { width: 36px; height: 36px; border-radius: 50%; display: grid; place-items: center; background: var(--ink); color: #fff; font-weight: 600; font-size: 15px; }
+  .loc { margin-top: var(--s4); }
+  @media (max-width: 1000px) { .steps { grid-template-columns: 1fr; } }
+</style>

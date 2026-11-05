@@ -1,0 +1,60 @@
+---
+// Use cases as a slideshow of before-and-afters. Native horizontal scroll with snap, so swipe and
+// keyboard work without JavaScript; the arrows and dots are added on top.
+import BeforeAfter from './BeforeAfter.astro';
+import type { Workflow } from '../data/site';
+
+interface Props { items: (Workflow & { href?: string; source?: string })[]; label: string }
+const { items, label } = Astro.props;
+---
+<div class="slides" data-slides>
+  <div class="bar">
+    <ol class="names">
+      {items.map((w, i) => <li><button type="button" class="name" data-go={i} aria-current={i === 0 ? 'true' : undefined}>{w.name}</button></li>)}
+    </ol>
+    <div class="arrows">
+      <button type="button" class="arrow" data-step="-1" aria-label="Previous use case">←</button>
+      <button type="button" class="arrow" data-step="1" aria-label="Next use case">→</button>
+    </div>
+  </div>
+  <ul class="track" tabindex="0" aria-label={label}>
+    {items.map((w, i) => (
+      <li class="slide" aria-label={`${i + 1} of ${items.length}: ${w.name}`}><BeforeAfter workflow={w} />{w.href && <a class="lnk src" href={w.href}>More for {w.source}</a>}</li>
+    ))}
+  </ul>
+</div>
+
+<script>
+  document.querySelectorAll<HTMLElement>('[data-slides]').forEach((root) => {
+    const track = root.querySelector<HTMLElement>('.track')!;
+    const slides = [...root.querySelectorAll<HTMLElement>('.slide')];
+    const names = [...root.querySelectorAll<HTMLButtonElement>('.name')];
+    const current = () => Math.round(track.scrollLeft / track.clientWidth);
+    const go = (i: number) => {
+      const n = (i + slides.length) % slides.length;
+      track.scrollTo({ left: n * track.clientWidth, behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
+    };
+    const mark = () => names.forEach((b, i) => (i === current() ? b.setAttribute('aria-current', 'true') : b.removeAttribute('aria-current')));
+    names.forEach((b) => b.addEventListener('click', () => go(Number(b.dataset.go))));
+    root.querySelectorAll<HTMLButtonElement>('.arrow').forEach((b) => b.addEventListener('click', () => go(current() + Number(b.dataset.step))));
+    track.addEventListener('scroll', () => requestAnimationFrame(mark), { passive: true });
+  });
+</script>
+
+<style>
+  .bar { display: flex; justify-content: space-between; align-items: center; gap: var(--s3); margin-bottom: var(--s3); flex-wrap: wrap; }
+  .names { list-style: none; margin: 0; padding: 0; display: flex; gap: 8px; flex-wrap: wrap; }
+  .name { font: 500 15px var(--body); padding: 10px 16px; border-radius: 99px; border: 1.5px solid var(--line); background: #fff; color: var(--ink); cursor: pointer; transition: border-color .15s; }
+  .name:hover { border-color: var(--ink); }
+  .name[aria-current='true'] { background: var(--first-light); border-color: var(--sunrise); }
+  .arrows { display: flex; gap: 8px; }
+  .arrow { width: 48px; height: 48px; border-radius: 50%; border: 1.5px solid var(--ink); background: #fff; color: var(--ink); font-size: 20px; cursor: pointer; }
+  .arrow:hover { background: var(--ink); color: #fff; }
+  .track { list-style: none; margin: 0; padding: 0; display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; overscroll-behavior-x: contain; }
+  .track::-webkit-scrollbar { display: none; }
+  .slide { flex: 0 0 100%; scroll-snap-align: start; }
+  .src { display: inline-block; margin-top: var(--s2); }
+  @media (max-width: 760px) {
+    .name { white-space: nowrap; }
+  }
+</style>

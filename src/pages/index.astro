@@ -1,10 +1,228 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
-import Greeting from '../components/Greeting';
-const pageTitle = "Home Page";
----
+import Base from '../layouts/Base.astro';
+import Supergraphic from '../components/Supergraphic.astro';
+import Symbol from '../components/Symbol.astro';
+import BeforeAfter from '../components/BeforeAfter.astro';
+import CloseCta from '../components/CloseCta.astro';
+import Faq from '../components/Faq.astro';
+import PillarCards from '../components/PillarCards.astro';
+import Founders from '../components/Founders.astro';
+import PilotPanel from '../components/PilotPanel.astro';
+import { site, pillars, industries, teams } from '../data/site';
+import { industryPages, teamPages } from '../data/segmentPages';
+import { hero, pact, shift, whatWeDo, work, start, faq, close } from '../data/home';
 
-<BaseLayout pageTitle={pageTitle}>
-	<h2>My awesome blog subtitle</h2>
-	<Greeting client:load messages={["Hej", "Hallo", "Hola", "Habari"]} />
-</BaseLayout>
+const groups = [
+  { key: 'industry', label: 'By industry', hub: '/industries', items: industries, pages: industryPages },
+  { key: 'team', label: 'By team', hub: '/teams', items: teams, pages: teamPages },
+];
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faq.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
+};
+---
+<Base title="AI consultancy in Singapore, people first | Human Horizon" schema={[faqSchema]}>
+
+  <section class="hero">
+    <div class="wrap"><h1 class="d h1 hero-h clear"><span class="kicker">{hero.kicker}</span>{hero.title}</h1></div>
+    <Supergraphic />
+    <div class="wrap hero-low">
+      <p class="lead muted clear">{hero.sub}</p>
+      <div class="btn-row">
+        <a class="btn btn-ink" href={site.cta.href}>{site.cta.label}</a>
+        <a class="btn btn-ghost" href={hero.secondary.href}>{hero.secondary.label}</a>
+      </div>
+      <p class="cap">{hero.credibility}</p>
+    </div>
+  </section>
+
+  <section class="section bg-morning">
+    <div class="wrap">
+      <div class="two">
+        <h2 class="d h2">{shift.title}</h2>
+        <p class="lead muted">{shift.lead}</p>
+      </div>
+      <ol class="grid4 shift">
+        {shift.items.map((c) => (
+          <li><h3 class="h3">{c.title}</h3><p class="muted">{c.body}</p></li>
+        ))}
+      </ol>
+    </div>
+  </section>
+
+  <section class="pact-sec bg-ink" id="pact">
+    <div class="wrap">
+      <div class="two">
+        <div class="stack">
+          <p class="eyebrow">{pact.eyebrow}</p>
+          <h2 class="d h2">{pact.title}</h2>
+        </div>
+        <p class="lead muted pact-lead">{pact.lead}</p>
+      </div>
+      <ol class="pact">
+        {pact.steps.map((st) => (
+          <li>
+            <span class="letter d" aria-hidden="true">{st.letter}</span>
+            <h3 class="h3">{st.title}</h3>
+            <p class="muted">{st.body}</p>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </section>
+
+  <section class="section" id="your-work">
+    <div class="wrap">
+      <h2 class="d h2 narrow">{work.title}</h2>
+      <p class="lead muted sub">{work.sub}</p>
+
+      <div class="pick" data-pick>
+        <div class="tabs" role="tablist" aria-label="Show examples by">
+          {groups.map((g, i) => (
+            <button type="button" role="tab" class="tab" data-group={g.key} aria-selected={i === 0 ? 'true' : 'false'}>{g.label}</button>
+          ))}
+        </div>
+        {groups.map((g, gi) => (
+          <div class="chips" data-chips={g.key} hidden={gi !== 0}>
+            {g.items.map((s) => (
+              <button type="button" class="chip" data-target={`wf-${s.slug}`} aria-pressed={s.slug === work.featured ? 'true' : 'false'}>
+                <span aria-hidden="true">{work.icons[s.slug]}</span>{s.name}
+              </button>
+            ))}
+          </div>
+        ))}
+        {groups.map((g) => g.items.map((s) => (
+          <BeforeAfter segment={s} workflow={g.pages[s.slug]?.useCases[0]} hub={g.hub} id={`wf-${s.slug}`} group={g.key} hidden={s.slug !== work.featured} />
+        )))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-ink wwd">
+    <div class="wrap">
+      <div class="row-head">
+        <div class="stack wwd-head"><h2 class="d h2">{whatWeDo.title}</h2><p class="lead muted">{whatWeDo.lead}</p></div>
+        <a class="lnk" href="/what-we-do">All services</a>
+      </div>
+      <PillarCards />
+    </div>
+  </section>
+
+  <Founders />
+
+  <section class="section bg-morning" id="start">
+    <div class="wrap">
+      <div class="row-head"><h2 class="d h2">{start.title}</h2><a class="btn btn-ghost" href={start.link.href}>{start.link.label}</a></div>
+      <ul class="opts">
+        {start.options.map((o, i) => (
+          <li class:list={[{ lead: i === 0 }]}>
+            {i === 0 && <p class="tag">A good first step</p>}
+            <h3 class="d h3d">{o.name}</h3>
+            <p class="fit">{o.fit}</p>
+            <p class="change">{o.change}</p>
+            <ul class="incl">{o.includes.map((it) => <li>{it}</li>)}<li class="more">{start.more}</li></ul>
+          </li>
+        ))}
+      </ul>
+      <PilotPanel />
+    </div>
+  </section>
+
+  <Faq title="Common questions" items={faq} />
+
+  <CloseCta title={close.title} sub={close.sub} />
+</Base>
+
+<script>
+  const pick = document.querySelector('[data-pick]');
+  if (pick) {
+    const show = (chip) => {
+      const group = chip.closest('[data-chips]');
+      group.querySelectorAll('.chip').forEach((c) => c.setAttribute('aria-pressed', String(c === chip)));
+      pick.querySelectorAll('.ba').forEach((p) => { p.hidden = p.id !== chip.dataset.target; });
+    };
+    pick.querySelectorAll('.chip').forEach((chip) => chip.addEventListener('click', () => show(chip)));
+    pick.querySelectorAll('.tab').forEach((tab) => tab.addEventListener('click', () => {
+      pick.querySelectorAll('.tab').forEach((t) => t.setAttribute('aria-selected', String(t === tab)));
+      pick.querySelectorAll('[data-chips]').forEach((g) => { g.hidden = g.dataset.chips !== tab.dataset.group; });
+      const group = pick.querySelector(`[data-chips="${tab.dataset.group}"]`);
+      show(group.querySelector('.chip[aria-pressed="true"]') || group.querySelector('.chip'));
+    }));
+  }
+</script>
+
+<style>
+  /* Text beside the ring stops short of its footprint: about 0.58 of the ring size in from the right edge. */
+  .hero { --S: clamp(200px, 66vw, 990px); --mw: 900px; }
+  .clear { max-width: min(var(--mw), calc(100vw - var(--S) * 0.58 - var(--gutter) - 32px)); }
+  .hero-low .clear { --mw: 560px; }
+  .hero { position: relative; overflow: hidden; padding-top: clamp(48px, 9vw, 136px); padding-bottom: clamp(64px, 9vw, 120px); }
+  .hero-h { margin-bottom: 36px; position: relative; z-index: 1; text-wrap: balance; }
+  .kicker { display: block; margin-bottom: var(--s4); font: 600 17px/1.4 var(--body); letter-spacing: 0; color: var(--sunrise-text); }
+  .hero-low { padding-top: 40px; display: flex; flex-direction: column; gap: 32px; align-items: flex-start; }
+
+  .pt0 { padding-top: 0; }
+  .narrow { max-width: 820px; margin-bottom: var(--s3); }
+  .sub { max-width: 640px; margin-top: var(--s2); }
+  .grid4 { list-style: none; margin: var(--s5) 0 0; padding: 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--s4); }
+  .grid4 > li { display: grid; gap: 12px; align-content: start; padding-top: var(--s3); border-top: 2px solid var(--ink); }
+  .shift { grid-template-columns: repeat(3, 1fr); }
+  .num { display: block; font-size: 14px; font-weight: 600; color: var(--sunrise-text); letter-spacing: .04em; }
+
+  /* PACT: the four letters carry the section. */
+  .pact-sec { padding: var(--section) 0; }
+  .eyebrow { font-size: 15px; font-weight: 600; color: var(--sunrise); }
+  .pact-lead { max-width: 560px; }
+  .pact { list-style: none; margin: var(--s6) 0 0; padding: 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--s2); }
+  .pact li { display: grid; gap: 10px; align-content: start; padding: var(--s4) var(--s3) var(--s4); border-radius: 20px; background: var(--dusk); }
+  .letter { font-size: clamp(96px, 11vw, 168px); line-height: .85; color: var(--sunrise); margin-bottom: var(--s3); }
+  .pact .h3 { color: #fff; }
+
+  .wwd-head { max-width: 720px; gap: var(--s2); }
+  .wwd .lnk { color: #fff; }
+
+  /* Industry and team picker */
+  .pick { margin-top: var(--s5); }
+  .tabs { display: inline-flex; padding: 4px; border-radius: 99px; background: var(--morning); margin-bottom: var(--s3); }
+  .tab { font: 600 15px var(--body); padding: 10px 20px; border: 0; border-radius: 99px; background: none; color: var(--slate); cursor: pointer; }
+  .tab[aria-selected='true'] { background: var(--ink); color: #fff; }
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: var(--s4); }
+  .chips[hidden] { display: none; }
+  .chip { font: 500 15px var(--body); display: inline-flex; gap: 8px; align-items: center; padding: 10px 16px; border-radius: 99px; border: 1.5px solid var(--line); background: #fff; color: var(--ink); cursor: pointer; transition: border-color .15s; }
+  .chip:hover { border-color: var(--ink); }
+  .chip[aria-pressed='true'] { background: var(--first); border-color: var(--sunrise); }
+
+
+
+  /* Ways to start: four columns to compare side by side, no prices. */
+  .opts { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--s4); }
+  .opts > li { display: grid; gap: var(--s2); align-content: start; padding-top: var(--s3); border-top: 2px solid var(--ink); }
+  .opts > li.lead { padding: var(--s3); border-top-color: var(--sunrise); border-radius: 0 0 20px 20px; background: var(--first-light); }
+  .tag { font-size: 14px; font-weight: 600; color: var(--sunrise-text); }
+  .lead .fit { background: #fff; }
+  .fit { justify-self: start; font-size: 13px; font-weight: 600; line-height: 1.4; padding: 6px 14px; border-radius: 14px; background: var(--first-light); color: var(--sunrise-text); }
+  .change { font: 300 24px/1.25 var(--display); }
+  .incl { margin: 0; padding: var(--s2) 0 0 18px; border-top: 1px solid var(--line); display: grid; gap: 6px; font-size: 16px; }
+  .incl li::marker { color: var(--sunrise); }
+  .incl .more { list-style: none; margin-left: -18px; color: var(--slate); font-style: italic; }
+
+
+
+  @media (max-width: 1200px) {
+  }
+  @media (max-width: 1000px) {
+    .grid4, .pact { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 760px) {
+    /* Phones: text runs full width, so it clears the ring above and below the line instead. */
+    .clear, .hero-low .clear { max-width: 100%; }
+    .hero-h { margin-bottom: calc(var(--S) * 0.38 + 16px); }
+    .hero-low { padding-top: calc(var(--S) * 0.38 + 16px); }
+      .grid4, .opts { grid-template-columns: 1fr; }
+    .pact { grid-template-columns: 1fr 1fr; gap: 8px; }
+    .pact li { padding: var(--s3) var(--s2); }
+    .chips { flex-wrap: nowrap; overflow-x: auto; margin-inline: calc(var(--gutter) * -1); padding-inline: var(--gutter); scrollbar-width: none; }
+    .chip { flex: none; }
+  }
+</style>

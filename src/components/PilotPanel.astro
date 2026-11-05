@@ -1,0 +1,28 @@
+---
+// The founding pilot offer over an architecture photograph (public/pilot.jpg). Until that file exists,
+// a deep ink gradient holds the space. The page places it inside a section near the close.
+import { existsSync } from 'node:fs';
+import { site } from '../data/site';
+const photo = existsSync(new URL('../../public/pilot.jpg', import.meta.url)) ? 'url(/pilot.jpg)' : 'none';
+---
+<div class="pilot" style={`--photo: ${photo}`}>
+  <div class="copy">
+    <p class="eyebrow">Founding clients</p>
+    <h2 class="d h2">{site.pilot.title}</h2>
+    <p class="body">{site.pilot.text}</p>
+  </div>
+  <a class="btn btn-sun" href={site.cta.href}>{site.pilot.link}</a>
+</div>
+
+<style>
+  .pilot {
+    margin-top: var(--s5); padding: clamp(32px, 6vw, 88px) clamp(24px, 5vw, 72px); border-radius: 20px; color: #fff;
+    display: flex; justify-content: space-between; align-items: flex-end; gap: var(--s4); flex-wrap: wrap;
+    background: linear-gradient(100deg, rgba(24, 33, 59, .92) 0%, rgba(24, 33, 59, .72) 55%, rgba(24, 33, 59, .35) 100%), var(--photo) center / cover no-repeat, var(--dusk);
+    min-height: 380px;
+  }
+  .copy { display: grid; gap: var(--s2); max-width: 680px; }
+  .copy .h2 { font-size: clamp(30px, 3.4vw, 44px); line-height: 1.12; text-wrap: balance; }
+  .eyebrow { font-size: 15px; font-weight: 600; color: var(--sunrise); }
+  .body { font-size: 18px; line-height: 1.55; color: var(--on-ink); }
+</style>

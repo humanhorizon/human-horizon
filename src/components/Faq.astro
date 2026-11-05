@@ -1,0 +1,31 @@
+---
+// Question list in native <details>. The page adds the FAQPage schema from the same items.
+export type FaqItem = { q: string; a: string; links?: { label: string; href: string }[] };
+interface Props { title: string; items: FaqItem[]; tone?: 'white' | 'morning' }
+const { title, items, tone = 'white' } = Astro.props;
+---
+<section class:list={['section', { 'bg-morning': tone === 'morning' }]}>
+  <div class="wrap two">
+    <h2 class="d h2">{title}</h2>
+    <div class="faq">
+      {items.map((f) => (
+        <details>
+          <summary class="h3">{f.q}</summary>
+          <p class="muted">{f.a}</p>
+          {f.links && <p class="faq-links">{f.links.map((l) => <a class="lnk" href={l.href} rel="noopener">{l.label}</a>)}</p>}
+        </details>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .faq details { border-top: 1px solid var(--line); padding: var(--s3) 0; }
+  .faq details:last-child { border-bottom: 1px solid var(--line); }
+  .faq summary { cursor: pointer; list-style: none; display: flex; justify-content: space-between; gap: var(--s2); font-size: 21px; }
+  .faq summary::-webkit-details-marker { display: none; }
+  .faq summary::after { content: '+'; font-weight: 400; }
+  .faq details[open] summary::after { content: '–'; }
+  .faq details p { margin-top: 12px; max-width: 620px; }
+  .faq-links { display: flex; gap: var(--s3); }
+</style>

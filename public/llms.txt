@@ -1,0 +1,32 @@
+# Human Horizon
+
+> People-first AI implementation and hands-on training for Singapore businesses. We build AI into the work a team already does, train the people who do it, and show the hours saved, valued at the client's own rates, in an ROI Transformation Report.
+
+Human Horizon is based in Singapore and works with businesses across industries, from growing teams to established firms. It is led by Jaye Wang and Weiheng Lin, who have built teams at Gojek, Alibaba and Meta.
+
+## What we do
+
+- Implement: discovery and priorities, custom workflows, AI agents, AI governance.
+- Train: hands-on training on the team's own tasks, role-specific sessions, a leadership briefing, an AI toolkit.
+- Adopt: AI adoption tracking, playbooks, a handover pack, refreshers.
+- With every package: the ROI Transformation Report, showing hours saved valued at the client's own rates.
+
+Human Horizon does not run public AI courses. It trains teams inside their own company, on their own work, starting with the basics. It is not an accredited course provider and is not connected to AI Singapore (AISG) or the AI Apprenticeship Programme (AIAP). A comparison of public AI courses and team training: https://humanhorizon.io/ai-course-singapore
+
+## How people come first (the PACT)
+
+- Promise: clear words on what AI means for every role.
+- Ask and involve: the team shapes the workflows it will use.
+- Coach: learning on real tasks, with support along the way.
+- Track and reinforce: we measure what changes and adjust, so it holds.
+
+## Ways to start
+
+- First Win: for a team of 5 to 10 people. One custom workflow, hands-on training for the team and a Lite ROI Transformation Report.
+- Accelerator: for a small team or department of 5 to 50 people. Three custom workflows, hands-on training and an ROI Transformation Report.
+- Enterprise: for a whole company of 20 or more. Hands-on training for everyone, an AI toolkit, AI governance and an ROI Transformation Report for each department.
+
+## Contact
+
+- Website: https://humanhorizon.io
+- Email: contact.humanhorizon@gmail.com

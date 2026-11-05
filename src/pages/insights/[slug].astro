@@ -1,0 +1,82 @@
+---
+// One Insights article. The text comes from src/content/insights, written by the EA from the approved Notion row.
+import { getCollection, render } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import CloseCta from '../../components/CloseCta.astro';
+import { site } from '../../data/site';
+import { close } from '../../data/home';
+
+export async function getStaticPaths() {
+  return (await getCollection('insights')).map((a) => ({ params: { slug: a.id }, props: { article: a } }));
+}
+
+const { article } = Astro.props;
+const { Content } = await render(article);
+const d = article.data;
+const url = `${site.url}/insights/${article.id}`;
+const fmt = (x: Date) => x.toLocaleDateString('en-SG', { day: 'numeric', month: 'long', year: 'numeric' });
+const iso = (x: Date) => x.toISOString().slice(0, 10);
+const isPerson = d.author !== site.name;
+
+const schema = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: d.title,
+    description: d.description,
+    datePublished: iso(d.date),
+    dateModified: iso(d.updated ?? d.date),
+    author: isPerson ? { '@type': 'Person', name: d.author, worksFor: { '@type': 'Organization', name: site.name } } : { '@type': 'Organization', name: site.name, url: site.url },
+    publisher: { '@type': 'Organization', name: site.name, url: site.url, logo: { '@type': 'ImageObject', url: `${site.url}/logo/human-horizon-horizontal-full-colour.svg` } },
+    mainEntityOfPage: url,
+    image: `${site.url}/og.png`,
+    about: d.keyword,
+    inLanguage: 'en-SG',
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: `${site.url}/` },
+      { '@type': 'ListItem', position: 2, name: 'Insights', item: `${site.url}/insights` },
+      { '@type': 'ListItem', position: 3, name: d.title, item: url },
+    ],
+  },
+];
+---
+<Base title={d.seoTitle ?? `${d.title} | Human Horizon`} description={d.description} schema={schema} ogType="article">
+  <nav class="wrap crumbs" aria-label="Breadcrumb"><a href="/">Home</a> / <a href="/insights">Insights</a> / <span aria-current="page">{d.title}</span></nav>
+
+  <article class="wrap art">
+    <header class="art-head">
+      <h1 class="d h1 art-h">{d.title}</h1>
+      <p class="lead muted">{d.description}</p>
+      <p class="cap">By {d.author}. Published {fmt(d.date)}{d.updated && `, updated ${fmt(d.updated)}`}.</p>
+    </header>
+    <div class="prose"><Content /></div>
+    <aside class="art-cta">
+      <p class="d h3d">Want this for your own team?</p>
+      <p class="muted">{close.sub}</p>
+      <a class="btn btn-ink" href={site.cta.href}>{site.cta.label}</a>
+    </aside>
+  </article>
+
+  <CloseCta title={close.title} sub={close.sub} />
+</Base>
+
+<style>
+  .crumbs { padding-top: var(--s3); font-size: 14px; color: var(--slate); }
+  .crumbs a { color: var(--slate); }
+  .art { max-width: 760px; padding-top: var(--s5); padding-bottom: var(--section); }
+  .art-head { display: grid; gap: var(--s2); margin-bottom: var(--s5); padding-bottom: var(--s4); border-bottom: 1px solid var(--line); }
+  .art-h { font-size: clamp(38px, 5vw, 64px); line-height: 1.06; text-wrap: balance; }
+  .prose { font-size: 19px; line-height: 1.7; }
+  .prose :global(h2) { font: 300 clamp(28px, 3vw, 36px)/1.15 var(--display); margin: var(--s5) 0 var(--s2); }
+  .prose :global(h3) { font-size: 21px; font-weight: 600; margin: var(--s4) 0 var(--s1); }
+  .prose :global(p) { margin: 0 0 var(--s3); }
+  .prose :global(ul), .prose :global(ol) { margin: 0 0 var(--s3); padding-left: 24px; display: grid; gap: 10px; }
+  .prose :global(a) { color: var(--sunrise-text); text-underline-offset: 3px; }
+  .prose :global(blockquote) { margin: var(--s4) 0; padding: var(--s3) var(--s4); background: var(--first-light); border-radius: 20px; font: 300 24px/1.35 var(--display); }
+  .prose :global(blockquote p) { margin: 0; }
+  .art-cta { margin-top: var(--s5); padding: var(--s4); border-radius: 20px; background: var(--morning); display: grid; gap: var(--s2); justify-items: start; }
+</style>

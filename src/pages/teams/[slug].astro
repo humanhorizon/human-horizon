@@ -1,0 +1,12 @@
+---
+import SegmentPageView from '../../components/SegmentPageView.astro';
+import { teams } from '../../data/site';
+import { teamPages } from '../../data/segmentPages';
+
+export function getStaticPaths() {
+  return teams.filter((s) => teamPages[s.slug]).map((s) => ({ params: { slug: s.slug }, props: { seg: s, page: teamPages[s.slug] } }));
+}
+
+const { seg, page } = Astro.props;
+---
+<SegmentPageView kind="teams" seg={seg} page={page} />

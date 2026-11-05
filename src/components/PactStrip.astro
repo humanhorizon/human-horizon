@@ -1,0 +1,35 @@
+---
+// Compact PACT on ink for inner pages: a page-specific promise, then the four letters.
+import { pact } from '../data/home';
+
+interface Props { title: string; body: string }
+const { title, body } = Astro.props;
+---
+<section class="pstrip bg-ink">
+  <div class="wrap">
+    <div class="two">
+      <div class="stack">
+        <p class="eyebrow">{pact.eyebrow}</p>
+        <h2 class="d h2">{title}</h2>
+      </div>
+      <p class="lead muted">{body}</p>
+    </div>
+    <ol class="letters">
+      {pact.steps.map((st) => (
+        <li><span class="letter d" aria-hidden="true">{st.letter}</span><h3 class="h3">{st.title}</h3><p class="muted">{st.body}</p></li>
+      ))}
+    </ol>
+    <a class="lnk" href="/#pact">How the PACT works</a>
+  </div>
+</section>
+
+<style>
+  .pstrip { padding: var(--section) 0; }
+  .eyebrow { font-size: 15px; font-weight: 600; color: var(--sunrise); }
+  .letters { list-style: none; margin: var(--s5) 0 var(--s4); padding: 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--s2); }
+  .letters li { display: grid; gap: 8px; align-content: start; padding: var(--s3); border-radius: 20px; background: var(--dusk); }
+  .letter { font-size: clamp(56px, 6vw, 88px); line-height: .85; color: var(--sunrise); margin-bottom: var(--s2); }
+  .letters .h3 { color: #fff; }
+  .pstrip .lnk { color: #fff; }
+  @media (max-width: 1000px) { .letters { grid-template-columns: 1fr 1fr; } }
+</style>

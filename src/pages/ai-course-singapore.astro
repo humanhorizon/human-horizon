@@ -1,0 +1,153 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHero from '../components/PageHero.astro';
+import Faq from '../components/Faq.astro';
+import CloseCta from '../components/CloseCta.astro';
+import PilotPanel from '../components/PilotPanel.astro';
+import { site } from '../data/site';
+import { hero } from '../data/home';
+import { courseGuide as page } from '../data/courseGuide';
+
+const url = `${site.url}/ai-course-singapore`;
+const schema = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: page.kicker,
+    serviceType: 'AI training',
+    provider: { '@type': 'ProfessionalService', name: site.name, url: site.url },
+    areaServed: { '@type': 'Country', name: 'Singapore' },
+    audience: { '@type': 'BusinessAudience', name: 'Singapore businesses and their teams' },
+    description: page.description,
+    url,
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: `${site.url}/` },
+      { '@type': 'ListItem', position: 2, name: 'AI course in Singapore', item: url },
+    ],
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: page.faq.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
+  },
+];
+---
+<Base title={page.seoTitle} description={page.description} schema={schema}>
+  <nav class="wrap crumbs" aria-label="Breadcrumb"><a href="/">Home</a> / <span aria-current="page">AI course in Singapore</span></nav>
+
+  <PageHero kicker={page.kicker} title={page.title} lead={page.lead} secondary={{ label: 'See what to look for', href: '#checklist' }} note={hero.credibility} />
+
+  <section class="section">
+    <div class="wrap">
+      <h2 class="d h2 sec-h">{page.fitTitle}</h2>
+      <div class="fit">
+        {page.fit.map((f, i) => (
+          <div class:list={['fit-card', { lead: i === 1 }]}>
+            <h3 class="h3">{f.title}</h3>
+            <ul>{f.items.map((x) => <li>{x}</li>)}</ul>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-morning" id="checklist">
+    <div class="wrap">
+      <h2 class="d h2 sec-h">{page.checklistTitle}</h2>
+      <ol class="chk">
+        {page.checklist.map((c) => <li><h3 class="h3">{c.name}</h3><p class="muted">{c.body}</p></li>)}
+      </ol>
+      <div class="bridge">
+        <div>
+          <h3 class="d h3d">{page.bridge.title}</h3>
+          <p class="muted">{page.bridge.body}</p>
+        </div>
+        <a class="btn btn-ink" href={page.bridge.href}>{page.bridge.link}</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="compare">
+    <div class="wrap">
+      <h2 class="d h2 sec-h cmp-h">{page.compareTitle}</h2>
+      <p class="muted cmp-lead">{page.compareLead}</p>
+      <div class="cmp" role="table" aria-label={page.compareTitle}>
+        <div class="cmp-row cmp-head" role="row">
+          <span role="columnheader"><span class="sr">Compared on</span></span>
+          <span role="columnheader">A public AI course</span>
+          <span role="columnheader">Training built on your work</span>
+        </div>
+        {page.compare.map((c) => (
+          <div class="cmp-row" role="row">
+            <span class="h3 cmp-k" role="rowheader">{c.row}</span>
+            <span class="muted" role="cell"><b class="cmp-m">A public AI course: </b>{c.course}</span>
+            <span class="cmp-ours" role="cell"><b class="cmp-m">Training built on your work: </b>{c.ours}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-ink">
+    <div class="wrap">
+      <h2 class="d h2 sec-h">{page.skillsTitle}</h2>
+      <p class="muted skills-lead">{page.skillsLead}</p>
+      <ul class="dlv">
+        {page.skills.map((d) => <li><h3 class="d h3d">{d.name}</h3><p class="muted">{d.body}</p></li>)}
+      </ul>
+      <p class="more"><a class="lnk on-ink" href="/what-we-do/train">See what hands-on training includes</a></p>
+    </div>
+  </section>
+
+  <Faq title={page.faqTitle} items={page.faq} tone="morning" />
+
+  <section class="section">
+    <div class="wrap"><PilotPanel /></div>
+  </section>
+
+  <CloseCta title={page.close.title} sub={page.close.sub} />
+</Base>
+
+<style>
+  .crumbs { padding-top: var(--s3); font-size: 14px; color: var(--slate); }
+  .crumbs a { color: var(--slate); }
+  .sec-h { margin-bottom: var(--s5); max-width: 820px; }
+  .cmp-h { margin-bottom: var(--s2); }
+  .cmp-lead { margin-bottom: var(--s5); max-width: 640px; }
+  .sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+  .chk { list-style: none; margin: 0 0 var(--s5); padding: 0; display: grid; grid-template-columns: repeat(5, 1fr); gap: var(--s2); }
+  .chk li { display: grid; gap: 10px; align-content: start; padding: var(--s3); background: #fff; border-radius: 20px; }
+  .bridge { display: flex; justify-content: space-between; align-items: center; gap: var(--s4); flex-wrap: wrap; padding: var(--s4); border-radius: 20px; background: var(--first-light); }
+  .bridge > div { display: grid; gap: 10px; max-width: 640px; }
+  .cmp { display: grid; background: #fff; border: 1px solid var(--line); border-radius: 20px; padding: var(--s2) var(--s4); }
+  .cmp-row { display: grid; grid-template-columns: 1fr 1.3fr 1.3fr; gap: var(--s3); padding: var(--s3) 0; border-top: 1px solid var(--line); align-items: start; }
+  .cmp-head { border-top: 0; font-weight: 600; font-size: 15px; color: var(--slate); }
+  .cmp-head span:last-child { color: var(--sunrise-text); }
+  .cmp-k { font-size: 19px; }
+  .cmp-ours { font-weight: 500; }
+  .cmp-m { display: none; }
+  .fit { display: grid; grid-template-columns: 1fr 1fr; gap: var(--s3); }
+  .fit-card { display: grid; gap: var(--s2); align-content: start; padding: var(--s4); border-radius: 20px; border: 1px solid var(--line); }
+  .fit-card.lead { background: var(--first-light); border-color: transparent; }
+  .fit-card ul { margin: 0; padding-left: 20px; display: grid; gap: 10px; }
+  .skills-lead { margin: calc(var(--s4) * -1) 0 var(--s5); max-width: 640px; }
+  .dlv { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: var(--s4) var(--s5); }
+  .dlv li { display: grid; gap: 10px; align-content: start; padding: var(--s3) 0 0 28px; border-top: 1px solid rgba(255, 255, 255, .22); position: relative; }
+  .dlv li::before { content: ''; position: absolute; left: 0; top: calc(var(--s3) + .55em); width: 10px; height: 10px; border-radius: 50%; background: var(--sunrise); }
+  .more { margin-top: var(--s4); }
+  .on-ink { color: #fff; }
+  @media (max-width: 1000px) { .chk { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 760px) {
+    .chk { grid-template-columns: 1fr; }
+    .cmp { padding: var(--s1) var(--s3); }
+    .cmp-head { display: none; }
+    .cmp-row { grid-template-columns: 1fr; gap: 8px; }
+    .cmp-row:nth-child(2) { border-top: 0; }
+    .cmp-m { display: inline; font-weight: 600; }
+    .fit, .dlv { grid-template-columns: 1fr; }
+  }
+</style>

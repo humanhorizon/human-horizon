@@ -1,0 +1,28 @@
+---
+// Long-form legal page: privacy notice or terms of use.
+import Base from '../layouts/Base.astro';
+
+interface Props { doc: { seoTitle: string; description: string; title: string; updated: string; sections: { h: string; p: string[] }[] }; crumb: string }
+const { doc, crumb } = Astro.props;
+---
+<Base title={doc.seoTitle} description={doc.description}>
+  <nav class="wrap crumbs" aria-label="Breadcrumb"><a href="/">Home</a> / <span aria-current="page">{crumb}</span></nav>
+  <article class="wrap doc">
+    <h1 class="d h2">{doc.title}</h1>
+    <p class="cap">Last updated {doc.updated}</p>
+    {doc.sections.map((s) => (
+      <section>
+        <h2 class="h3">{s.h}</h2>
+        {s.p.map((t) => <p>{t}</p>)}
+      </section>
+    ))}
+  </article>
+</Base>
+
+<style>
+  .crumbs { padding-top: var(--s3); font-size: 14px; color: var(--slate); }
+  .crumbs a { color: var(--slate); }
+  .doc { max-width: 760px; padding-top: var(--s5); padding-bottom: var(--section); display: grid; gap: var(--s4); }
+  .doc section { display: grid; gap: 12px; }
+  .doc p { line-height: 1.65; }
+</style>

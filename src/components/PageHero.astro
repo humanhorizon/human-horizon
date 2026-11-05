@@ -1,0 +1,35 @@
+---
+// Inner-page hero: keyword kicker inside the H1, an emotional headline, then the horizon and the lead.
+import Supergraphic from './Supergraphic.astro';
+import { site } from '../data/site';
+
+interface Props { kicker: string; title: string; lead: string; secondary?: { label: string; href: string }; note?: string }
+const { kicker, title, lead, secondary, note } = Astro.props;
+---
+<section class="phero">
+  <div class="wrap"><h1 class="d h1 phero-h clear"><span class="kicker">{kicker}</span>{title}</h1></div>
+  <Supergraphic />
+  <div class="wrap phero-low">
+    <p class="lead muted clear">{lead}</p>
+    <div class="btn-row">
+      <a class="btn btn-ink" href={site.cta.href}>{site.cta.label}</a>
+      {secondary && <a class="btn btn-ghost" href={secondary.href}>{secondary.label}</a>}
+    </div>
+    {note && <p class="cap">{note}</p>}
+  </div>
+</section>
+
+<style>
+  /* Smaller ring than the homepage; text keeps clear of its footprint as there. */
+  .phero { --S: clamp(180px, 50vw, 760px); --mw: 860px; position: relative; overflow: hidden; padding: clamp(48px, 7vw, 104px) 0 clamp(56px, 7vw, 104px); }
+  .clear { max-width: min(var(--mw), calc(100vw - var(--S) * 0.58 - var(--gutter) - 32px)); }
+  .phero-low .clear { --mw: 600px; }
+  .phero-h { margin-bottom: 36px; position: relative; z-index: 1; text-wrap: balance; }
+  .kicker { display: block; margin-bottom: var(--s4); font: 600 17px/1.4 var(--body); letter-spacing: 0; color: var(--sunrise-text); }
+  .phero-low { padding-top: 40px; display: flex; flex-direction: column; gap: 32px; align-items: flex-start; }
+  @media (max-width: 760px) {
+    .clear, .phero-low .clear { max-width: 100%; }
+    .phero-h { margin-bottom: calc(var(--S) * 0.38 + 16px); }
+    .phero-low { padding-top: calc(var(--S) * 0.38 + 16px); }
+  }
+</style>

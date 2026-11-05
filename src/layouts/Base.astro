@@ -1,0 +1,62 @@
+---
+import '../styles/global.css';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import PilotBar from '../components/PilotBar.astro';
+import { site } from '../data/site';
+
+interface Props { title: string; description?: string; schema?: object[]; noindex?: boolean; ogType?: 'website' | 'article' }
+const { title, description = site.description, schema = [], noindex = false, ogType = 'website' } = Astro.props;
+const canonical = new URL(Astro.url.pathname, site.url).href;
+const org = {
+  '@context': 'https://schema.org',
+  '@type': 'ProfessionalService',
+  name: site.name,
+  url: site.url,
+  email: site.email,
+  description: site.description,
+  logo: `${site.url}/logo/human-horizon-horizontal-full-colour.svg`,
+  address: { '@type': 'PostalAddress', addressCountry: 'SG' },
+  areaServed: { '@type': 'Country', name: 'Singapore' },
+  knowsAbout: ['AI implementation', 'AI training', 'AI adoption', 'AI governance', 'Change management'],
+  founder: [
+    { '@type': 'Person', name: 'Jaye Wang', jobTitle: 'Co-founder' },
+    { '@type': 'Person', name: 'Weiheng Lin', jobTitle: 'Co-founder' },
+  ],
+};
+---
+<!doctype html>
+<html lang="en-SG">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    {noindex && <meta name="robots" content="noindex, follow" />}
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preload" href="/fonts/Newsreader-VF.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/Figtree-VF.woff2" as="font" type="font/woff2" crossorigin />
+    <meta property="og:type" content={ogType} />
+    <meta property="og:site_name" content={site.name} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:locale" content="en_SG" />
+    <meta property="og:image" content={`${site.url}/og.png`} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Human Horizon: nobody gets left behind in the age of AI." />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={`${site.url}/og.png`} />
+    <script type="application/ld+json" set:html={JSON.stringify([org, ...schema])} />
+  </head>
+  <body>
+    <PilotBar />
+    <Header />
+    <main><slot /></main>
+    <Footer />
+  </body>
+</html>

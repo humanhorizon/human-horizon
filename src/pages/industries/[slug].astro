@@ -1,0 +1,12 @@
+---
+import SegmentPageView from '../../components/SegmentPageView.astro';
+import { industries } from '../../data/site';
+import { industryPages } from '../../data/segmentPages';
+
+export function getStaticPaths() {
+  return industries.filter((s) => industryPages[s.slug]).map((s) => ({ params: { slug: s.slug }, props: { seg: s, page: industryPages[s.slug] } }));
+}
+
+const { seg, page } = Astro.props;
+---
+<SegmentPageView kind="industries" seg={seg} page={page} />

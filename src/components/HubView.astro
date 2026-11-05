@@ -1,0 +1,82 @@
+---
+// Hub listing every industry or team page, each with the outcome of its lead use case.
+import Base from '../layouts/Base.astro';
+import PageHero from './PageHero.astro';
+import CloseCta from './CloseCta.astro';
+import Faq, { type FaqItem } from './Faq.astro';
+import PactStrip from './PactStrip.astro';
+import { site, type Segment } from '../data/site';
+import type { SegmentPage } from '../data/segmentPages';
+import { work, close } from '../data/home';
+
+interface Props {
+  kind: 'industries' | 'teams';
+  items: Segment[];
+  pages: Record<string, SegmentPage>;
+  copy: { seoTitle: string; description: string; kicker: string; title: string; lead: string; listTitle: string; people: { title: string; body: string }; faqTitle: string; faq: FaqItem[] };
+}
+const { kind, items, pages, copy } = Astro.props;
+const outcome = (s: Segment) => (pages[s.slug]?.useCases[0] ?? s.workflow).outcome;
+
+const schema = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: copy.kicker,
+    itemListElement: items.map((s, i) => ({ '@type': 'ListItem', position: i + 1, name: s.name, url: `${site.url}/${kind}/${s.slug}` })),
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: `${site.url}/` },
+      { '@type': 'ListItem', position: 2, name: kind === 'industries' ? 'Industries' : 'Teams', item: `${site.url}/${kind}` },
+    ],
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: copy.faq.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
+  },
+];
+---
+<Base title={copy.seoTitle} description={copy.description} schema={schema}>
+  <nav class="wrap crumbs" aria-label="Breadcrumb"><a href="/">Home</a> / <span aria-current="page">{kind === 'industries' ? 'Industries' : 'Teams'}</span></nav>
+
+  <PageHero kicker={copy.kicker} title={copy.title} lead={copy.lead} />
+
+  <section class="section bg-morning">
+    <div class="wrap">
+      <h2 class="d h2 sec-h">{copy.listTitle}</h2>
+      <ul class="cards">
+        {items.map((s) => (
+          <li><a href={`/${kind}/${s.slug}`}>
+            <span class="name"><span aria-hidden="true">{work.icons[s.slug]}</span>{s.name}</span>
+            <span class="d out">{outcome(s)}.</span>
+            <span class="go">See what changes</span>
+          </a></li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <PactStrip title={copy.people.title} body={copy.people.body} />
+
+  <Faq title={copy.faqTitle} items={copy.faq} />
+
+  <CloseCta title={close.title} sub={close.sub} />
+</Base>
+
+<style>
+  .crumbs { padding-top: var(--s3); font-size: 14px; color: var(--slate); }
+  .crumbs a { color: var(--slate); }
+  .sec-h { margin-bottom: var(--s5); }
+  .cards { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--s2); }
+  .cards a { display: grid; grid-template-rows: auto 1fr auto; gap: var(--s2); height: 100%; padding: var(--s4) var(--s3); background: #fff; border-radius: 20px; text-decoration: none; transition: box-shadow .15s; }
+  .cards a:hover { box-shadow: inset 0 0 0 2px var(--sunrise); }
+  .name { display: flex; gap: 8px; font-size: 15px; font-weight: 600; }
+  .out { font-size: 26px; line-height: 1.2; }
+  .go { font-size: 15px; font-weight: 600; text-decoration: underline; text-underline-offset: 4px; }
+  @media (max-width: 1000px) { .cards { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 760px) { .cards { grid-template-columns: 1fr; } }
+</style>

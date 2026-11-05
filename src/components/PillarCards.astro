@@ -1,0 +1,40 @@
+---
+// The three pillars as white cards with their deliverables, then the ROI Transformation Report panel.
+// Sits on an ink section on the homepage and the What we do hub.
+import Symbol from './Symbol.astro';
+import { pillars } from '../data/site';
+import { whatWeDo } from '../data/home';
+---
+<div class="pcards">
+  {pillars.map((p) => (
+    <a class="pcard" href={`/what-we-do/${p.slug}`}>
+      <h3 class="d h3d">{p.name}</h3>
+      <p class="prow-out">{p.outcome}</p>
+      <ul class="dlv">{p.items.map((it) => <li><b>{it.name}</b><span>{it.line}</span></li>)}</ul>
+    </a>
+  ))}
+</div>
+<div class="report">
+  <Symbol size={56} />
+  <h3 class="d h3d">{whatWeDo.report.name}</h3>
+  <p>{whatWeDo.report.line}</p>
+</div>
+
+<style>
+  .pcards { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--s2); }
+  .pcard { display: grid; grid-template-rows: auto auto 1fr; gap: var(--s2); padding: var(--s4); background: #fff; border-radius: 20px; color: var(--ink); text-decoration: none; transition: box-shadow .15s; }
+  .pcard:hover { box-shadow: inset 0 0 0 2px var(--sunrise); }
+  .prow-out { font: 300 24px/1.3 var(--display); color: var(--slate); }
+  .dlv { list-style: none; margin: var(--s2) 0 0; padding: var(--s3) 0 0; border-top: 1px solid var(--line); display: grid; gap: var(--s3); align-content: start; }
+  .dlv li { display: grid; gap: 4px; padding-left: 20px; position: relative; }
+  .dlv li::before { content: ''; position: absolute; left: 0; top: .55em; width: 8px; height: 8px; border-radius: 50%; background: var(--sunrise); }
+  .dlv b { font-size: 16px; font-weight: 600; }
+  .dlv span { font-size: 15px; line-height: 1.5; color: var(--slate); }
+  .report { margin-top: var(--s2); border-radius: 20px; padding: var(--s4); display: grid; grid-template-columns: auto minmax(0, 340px) 1fr; gap: var(--s3); align-items: center; background: var(--first-light); color: var(--ink); }
+  .report p { font-size: 18px; max-width: 560px; }
+  @media (max-width: 1000px) {
+    .pcards { grid-template-columns: 1fr; }
+    .report { grid-template-columns: auto 1fr; }
+    .report p { grid-column: 1 / -1; }
+  }
+</style>

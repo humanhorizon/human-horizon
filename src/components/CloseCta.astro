@@ -1,0 +1,31 @@
+---
+// Closing call to action on ink, with the white horizon supergraphic.
+import Supergraphic from './Supergraphic.astro';
+import { site } from '../data/site';
+
+interface Props { title: string; sub: string }
+const { title, sub } = Astro.props;
+---
+<section class="close bg-ink">
+  <div class="wrap"><h2 class="d close-h clear">{title}</h2></div>
+  <Supergraphic tone="white" />
+  <div class="wrap close-low">
+    <a class="btn btn-sun" href={site.cta.href}>{site.cta.label}</a>
+    <p class="muted clear">{sub} Or write to <a href={`mailto:${site.email}`}>{site.email}</a>.</p>
+  </div>
+</section>
+
+<style>
+  /* Text beside the ring stops short of its footprint: about 0.58 of the ring size in from the right edge. */
+  .close { --S: clamp(180px, 46vw, 760px); --mw: 720px; position: relative; overflow: hidden; padding: clamp(80px, 10vw, 150px) 0 clamp(80px, 10vw, 140px); }
+  .clear { max-width: min(var(--mw), calc(100vw - var(--S) * 0.58 - var(--gutter) - 32px)); }
+  .close-low .clear { --mw: 520px; }
+  .close-h { font-size: clamp(44px, 5.4vw, 72px); margin-bottom: 36px; position: relative; z-index: 1; }
+  .close-low { padding-top: 40px; display: flex; gap: var(--s4); align-items: center; flex-wrap: wrap; position: relative; z-index: 1; }
+  .close-low a:not(.btn) { color: #fff; }
+  @media (max-width: 760px) {
+    .clear, .close-low .clear { max-width: 100%; }
+    .close-h { margin-bottom: calc(var(--S) * 0.38 + 16px); }
+    .close-low { padding-top: calc(var(--S) * 0.38 + 16px); }
+  }
+</style>

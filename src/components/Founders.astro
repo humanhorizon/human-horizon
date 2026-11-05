@@ -1,0 +1,41 @@
+---
+// The two founders with portraits. A portrait shows once its file is in public/founders.
+import { existsSync } from 'node:fs';
+import { people } from '../data/home';
+
+interface Props { title?: string; sub?: string; link?: boolean; tone?: 'white' | 'morning' }
+const { title = people.title, sub = people.sub, link = true, tone = 'white' } = Astro.props;
+const hasPhoto = (src: string) => existsSync(new URL(`../../public${src}`, import.meta.url));
+---
+<section class:list={['people', { 'bg-morning': tone === 'morning' }]} id="founders">
+  <div class="wrap">
+    <div class="two people-head">
+      <h2 class="d h2">{title}</h2>
+      <div class="stack"><p class="lead muted">{sub}</p>{link && <a class="lnk" href="/about">About us</a>}</div>
+    </div>
+    <div class="founders">
+      {people.founders.map((f) => (
+        <figure>
+          {hasPhoto(f.photo)
+            ? <img src={f.photo} alt={`${f.name}, co-founder of Human Horizon`} width="1200" height="1200" loading="lazy" />
+            : <div class="photo" aria-hidden="true"></div>}
+          <figcaption>
+            <h3 class="h3">{f.name}</h3>
+            <p class="muted">{f.bio}</p>
+            <p class="cap">{f.past}</p>
+          </figcaption>
+        </figure>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .people { padding: var(--section) 0; }
+  .people-head { margin-bottom: var(--s5); }
+  .founders { display: grid; grid-template-columns: 1fr 1fr; gap: var(--s4); max-width: 980px; }
+  .founders figure { margin: 0; display: grid; gap: var(--s3); align-content: start; }
+  .founders img, .photo { width: 100%; height: auto; aspect-ratio: 1; object-fit: cover; object-position: center; border-radius: 12px; background: var(--dusk); }
+  .founders figcaption { display: grid; gap: 8px; }
+  @media (max-width: 760px) { .founders { grid-template-columns: 1fr; } }
+</style>

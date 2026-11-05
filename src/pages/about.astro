@@ -1,58 +1,71 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
-const pageTitle = "About Me";
+import Base from '../layouts/Base.astro';
+import PageHero from '../components/PageHero.astro';
+import Founders from '../components/Founders.astro';
+import PactStrip from '../components/PactStrip.astro';
+import PilotPanel from '../components/PilotPanel.astro';
+import CloseCta from '../components/CloseCta.astro';
+import { site } from '../data/site';
+import { close, hero, people } from '../data/home';
+import { about } from '../data/companyPages';
 
-const identity = {
-  firstName: "Sarah",
-  country: "Canada",
-  occupation: "Technical Writer",
-  hobbies: ["photography", "birdwatching", "baseball"],
-};
-
-const skills = ["HTML", "CSS", "JavaScript", "React", "Astro", "Writing Docs"];
-
-const happy = true;
-const finished = true;
-const goal = 3;
-
-const skillColor = "crimson";
-const fontWeight = "bold";
-const textCase = "uppercase";
+const schema = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'AboutPage',
+    name: about.seoTitle,
+    url: `${site.url}/about`,
+    about: { '@type': 'ProfessionalService', name: site.name, url: site.url },
+  },
+  ...people.founders.map((f) => ({
+    '@context': 'https://schema.org',
+    '@type': 'Person',
+    name: f.name,
+    jobTitle: 'Co-founder',
+    worksFor: { '@type': 'ProfessionalService', name: site.name, url: site.url },
+    image: `${site.url}${f.photo}`,
+    description: f.bio,
+  })),
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: `${site.url}/` },
+      { '@type': 'ListItem', position: 2, name: 'About', item: `${site.url}/about` },
+    ],
+  },
+];
 ---
+<Base title={about.seoTitle} description={about.description} schema={schema}>
+  <nav class="wrap crumbs" aria-label="Breadcrumb"><a href="/">Home</a> / <span aria-current="page">About</span></nav>
 
-<BaseLayout pageTitle={pageTitle}>
-	<style is:global define:vars={{ skillColor, fontWeight, textCase }}>
-		h1 {
-			color: purple;
-			font-size: 4rem;
-		}
-		.skill {
-			color: var(--skillColor);
-			font-weight: var(--fontWeight);
-			text-transform: var(--textCase);
-		}
-	</style>
-	<h2>... and my new Astro site!</h2>
+  <PageHero kicker={about.kicker} title={about.title} lead={about.lead} secondary={{ label: 'Meet the founders', href: '#founders' }} note={hero.credibility} />
 
-	<p>I am working through Astro's introductory tutorial. This is the second page on my website, and it's the first one I built myself!</p>
+  <Founders title={about.founders.title} sub={about.founders.sub} link={false} tone="morning" />
 
-	<p>This site will update as I complete more of the tutorial, so keep checking back and see how my journey is going!</p>
+  <section class="section">
+    <div class="wrap">
+      <h2 class="d h2 sec-h">{about.beliefsTitle}</h2>
+      <ul class="beliefs">
+        {about.beliefs.map((b) => <li><h3 class="h3">{b.title}</h3><p class="muted">{b.body}</p></li>)}
+      </ul>
+    </div>
+  </section>
 
-	<p>Here are a few facts about me:</p>
-	<ul>
-		<li>My name is {identity.firstName}.</li>
-		<li>I live in {identity.country} and I work as a {identity.occupation}.</li>
-		{identity.hobbies.length >= 2 &&
-			<li>Two of my hobbies are: {identity.hobbies[0]} and {identity.hobbies[1]}</li>
-		}
-	</ul>
 
-	<p>My skills are:</p>
-	<ul>
-		{skills.map((skill) => <li class="skill">{skill}</li>)}
-	</ul>
+  <PactStrip title={about.people.title} body={about.people.body} />
 
-	{happy && <p>I am happy to be learning Astro!</p>}
-	{finished && <p>I finished this tutorial!</p>}
-	{goal === 3 ? <p>My goal is to finish in 3 days.</p> : <p>My goal is not 3 days.</p>}
-</BaseLayout>
+  <section class="pilot-sec"><div class="wrap"><PilotPanel /></div></section>
+
+  <CloseCta title={close.title} sub={close.sub} />
+</Base>
+
+<style>
+  .crumbs { padding-top: var(--s3); font-size: 14px; color: var(--slate); }
+  .crumbs a { color: var(--slate); }
+  .sec-h { margin-bottom: var(--s5); }
+  .beliefs { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--s2); }
+  .beliefs li { display: grid; gap: 12px; align-content: start; padding: var(--s4) var(--s3); background: var(--morning); border-radius: 20px; }
+  .pilot-sec { padding: 0 0 var(--section); }
+  @media (max-width: 1000px) { .beliefs { grid-template-columns: 1fr; } }
+</style>

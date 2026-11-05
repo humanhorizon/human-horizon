@@ -1,0 +1,16 @@
+---
+// The symbol scaled up into the horizon supergraphic. The horizon line runs full width
+// and the ring sits centred on it, cropped by the right edge (as on the homepage board).
+import Symbol from './Symbol.astro';
+interface Props { tone?: 'ink' | 'white' }
+const { tone = 'ink' } = Astro.props;
+---
+<div class={`horizon ${tone}`} aria-hidden="true">
+  <Symbol size={120} tone={tone} horizon={false} class="ring" />
+</div>
+<style>
+  /* --S (ring size) comes from the parent section, so the text beside it can keep clear. */
+  .horizon { position: relative; height: 2px; background: var(--ink); }
+  .horizon.white { background: rgba(255,255,255,.3); }
+  .horizon :global(.ring) { position: absolute; width: var(--S, 400px); height: var(--S, 400px); right: calc(var(--S, 400px) * -0.29); top: calc(var(--S, 400px) / -2); pointer-events: none; }
+</style>
