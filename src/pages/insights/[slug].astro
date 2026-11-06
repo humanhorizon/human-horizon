@@ -15,7 +15,8 @@ const { Content } = await render(article);
 const d = article.data;
 const url = `${site.url}/insights/${article.id}`;
 const fmt = (x: Date) => x.toLocaleDateString('en-SG', { day: 'numeric', month: 'long', year: 'numeric' });
-const iso = (x: Date) => x.toISOString().slice(0, 10);
+// Schema dates carry a Singapore timezone offset (date only in the frontmatter, so midnight SGT).
+const iso = (x: Date) => `${x.toISOString().slice(0, 10)}T00:00:00+08:00`;
 const isPerson = d.author !== site.name;
 
 const schema = [
