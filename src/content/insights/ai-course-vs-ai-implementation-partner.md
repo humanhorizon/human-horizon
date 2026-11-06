@@ -4,7 +4,9 @@ seoTitle: "AI course vs AI implementation partner: how to choose"
 description: "AI course vs AI implementation partner: which one fits? Five questions and a worked example to help you choose, plus one simple rule to decide."
 date: 2026-11-06
 keyword: AI course vs AI implementation partner
-topic: Implement
+type: guide
+category: AI implementation
+tags: [Workflows]
 audience: [Founders]
 notionPage: https://app.notion.com/p/40f45cd041568166a589c778be909629
 publishedVersion: "2026-11-06T07:33:29.415Z"

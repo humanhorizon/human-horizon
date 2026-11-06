@@ -1,0 +1,56 @@
+---
+// A listing of one content type (blog or guides). Kept out of search until it holds enough pieces.
+import Base from '../layouts/Base.astro';
+import InsightCard from './InsightCard.astro';
+import CloseCta from './CloseCta.astro';
+import { close } from '../data/home';
+import { site } from '../data/site';
+import { types, MIN_TYPE_ITEMS } from '../data/insightsTaxonomy';
+import { getArticles, articleCard } from '../lib/insights';
+
+interface Props { type: 'blog' | 'guide'; title: string; lead: string; seoTitle: string; description: string }
+const { type, title, lead, seoTitle, description } = Astro.props;
+const t = types[type];
+const cards = (await getArticles()).map(articleCard).filter((c) => c.type === type);
+const other = types[type === 'blog' ? 'guide' : 'blog'];
+
+const schema = [
+  { '@context': 'https://schema.org', '@type': 'CollectionPage', name: title, description, url: `${site.url}${t.href}`,
+    hasPart: cards.map((c) => ({ '@type': 'CreativeWork', name: c.title, url: `${site.url}${c.href}` })) },
+  { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: `${site.url}/` },
+    { '@type': 'ListItem', position: 2, name: 'Insights', item: `${site.url}/insights` },
+    { '@type': 'ListItem', position: 3, name: t.plural },
+  ] },
+];
+---
+<Base title={seoTitle} description={description} schema={schema} noindex={cards.length < MIN_TYPE_ITEMS}>
+  <nav class="wrap crumbs" aria-label="Breadcrumb"><a href="/">Home</a> / <a href="/insights">Insights</a> / <span aria-current="page">{t.plural}</span></nav>
+  <header class="wrap lh">
+    <h1 class="d lh-h">{title}</h1>
+    <div class="lh-side">
+      <p class="lead muted">{lead}</p>
+      <p class="cap">Also in Insights: <a class="lnk" href={other.href}>{other.plural}</a> and the <a class="lnk" href={types.glossary.href}>AI glossary</a>.</p>
+    </div>
+  </header>
+  <section class="section ls">
+    <div class="wrap">
+      <ul class="grid">{cards.map((c, i) => <li class:list={{ wide: i === 0 && cards.length > 2 }}><InsightCard item={c} layout={i === 0 && cards.length > 2 ? 'feature' : 'card'} headingLevel="h2" /></li>)}</ul>
+    </div>
+  </section>
+  <CloseCta title={close.title} sub={close.sub} />
+</Base>
+
+<style>
+  .crumbs { padding-top: var(--s3); font-size: 14px; color: var(--slate); }
+  .crumbs a { color: var(--slate); }
+  .lh { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: var(--s5); align-items: end; padding-top: clamp(40px, 6vw, 88px); padding-bottom: var(--s5); border-bottom: 2px solid var(--ink); }
+  .lh-h { font-size: clamp(56px, 9vw, 128px); line-height: .92; letter-spacing: -0.03em; }
+  .lh-side { display: grid; gap: var(--s2); }
+  .ls { padding-top: var(--s5); }
+  .grid { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--s3); }
+  .grid > li { display: grid; }
+  .grid > li.wide { grid-column: 1 / -1; }
+  @media (max-width: 1000px) { .grid { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 760px) { .lh, .grid { grid-template-columns: 1fr; } .lh { gap: var(--s3); } }
+</style>

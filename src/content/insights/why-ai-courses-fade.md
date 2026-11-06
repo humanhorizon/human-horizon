@@ -5,7 +5,9 @@ description: "Why AI courses for employees fade, and five practical ways to make
 date: 2026-11-05
 updated: 2026-11-06
 keyword: AI courses for employees
-topic: AI courses
+type: blog
+category: AI training
+tags: [Change management, Workflows]
 audience: [HR and L&D]
 notionPage: https://app.notion.com/p/40f45cd0415681eba9c5ee9d98b5cd23
 publishedVersion: "2026-11-06T06:08:59.798Z"

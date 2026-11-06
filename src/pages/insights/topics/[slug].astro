@@ -1,0 +1,49 @@
+---
+// A topic page, built only once its category holds MIN_CATEGORY_ITEMS pieces and has a written
+// intro in insightsTaxonomy.ts. Until then the hub's topic filter does this job without a URL.
+import Base from '../../../layouts/Base.astro';
+import InsightCard from '../../../components/InsightCard.astro';
+import CloseCta from '../../../components/CloseCta.astro';
+import { close } from '../../../data/home';
+import { site } from '../../../data/site';
+import { categories, categoryIntros, MIN_CATEGORY_ITEMS } from '../../../data/insightsTaxonomy';
+import { getArticles, getTerms, articleCard, termCard, type Card } from '../../../lib/insights';
+
+export async function getStaticPaths() {
+  const all = [...(await getArticles()).map(articleCard), ...(await getTerms()).map(termCard)];
+  return categories
+    .map((c) => ({ c, items: all.filter((x) => x.category === c.name) }))
+    .filter(({ c, items }) => items.length >= MIN_CATEGORY_ITEMS && categoryIntros[c.slug])
+    .map(({ c, items }) => ({ params: { slug: c.slug }, props: { name: c.name, intro: categoryIntros[c.slug]!, items } }));
+}
+
+const { name, intro, items } = Astro.props as { name: string; intro: string; items: Card[] };
+const url = `${site.url}/insights/topics/${Astro.params.slug}`;
+const schema = [
+  { '@context': 'https://schema.org', '@type': 'CollectionPage', name, description: intro, url,
+    hasPart: items.map((c) => ({ '@type': 'CreativeWork', name: c.title, url: `${site.url}${c.href}` })) },
+  { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: `${site.url}/` },
+    { '@type': 'ListItem', position: 2, name: 'Insights', item: `${site.url}/insights` },
+    { '@type': 'ListItem', position: 3, name },
+  ] },
+];
+---
+<Base title={`${name}: guides and articles | Human Horizon`} description={intro.slice(0, 155)} schema={schema}>
+  <nav class="wrap crumbs" aria-label="Breadcrumb"><a href="/">Home</a> / <a href="/insights">Insights</a> / <span aria-current="page">{name}</span></nav>
+  <header class="wrap th"><h1 class="d th-h">{name}</h1><p class="lead muted">{intro}</p></header>
+  <section class="section"><div class="wrap"><ul class="grid">{items.map((c) => <li><InsightCard item={c} headingLevel="h2" /></li>)}</ul></div></section>
+  <CloseCta title={close.title} sub={close.sub} />
+</Base>
+
+<style>
+  .crumbs { padding-top: var(--s3); font-size: 14px; color: var(--slate); }
+  .crumbs a { color: var(--slate); }
+  .th { display: grid; gap: var(--s3); padding-top: clamp(40px, 6vw, 88px); }
+  .th .lead { max-width: 720px; }
+  .th-h { font-size: clamp(48px, 8vw, 112px); line-height: .95; letter-spacing: -0.03em; }
+  .grid { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--s3); }
+  .grid > li { display: grid; }
+  @media (max-width: 1000px) { .grid { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 640px) { .grid { grid-template-columns: 1fr; } }
+</style>

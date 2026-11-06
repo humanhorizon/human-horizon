@@ -1,11 +1,39 @@
 import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
-import { readdirSync } from 'node:fs';
+import { readdirSync, readFileSync } from 'node:fs';
 
-// The Insights index stays out of the sitemap (and is noindex) until its first article is published.
-const hasArticles = readdirSync(new URL('./src/content/insights', import.meta.url)).some((f) => f.endsWith('.md'));
+// Read the Insights and glossary frontmatter so the sitemap leaves out pages that are noindex
+// (an empty hub, a type listing below its minimum, an empty glossary) and carries a real lastmod.
+const MIN_TYPE_ITEMS = 3; // keep in step with src/data/insightsTaxonomy.ts
+const read = (dir) => {
+  const base = new URL(`./src/content/${dir}/`, import.meta.url);
+  return readdirSync(base).filter((f) => f.endsWith('.md')).map((f) => {
+    const fm = readFileSync(new URL(f, base), 'utf8').split('---')[1] ?? '';
+    const get = (k) => fm.match(new RegExp(`^${k}:\\s*"?([^"\\n]+)"?`, 'm'))?.[1]?.trim();
+    return { slug: f.replace(/\.md$/, ''), type: get('type'), lastmod: get('updated') ?? get('date') };
+  });
+};
+const articles = read('insights');
+const terms = read('glossary');
+const hidden = new Set([
+  ...(articles.length ? [] : ['/insights']),
+  ...(articles.filter((a) => a.type === 'blog').length >= MIN_TYPE_ITEMS ? [] : ['/insights/blog']),
+  ...(articles.filter((a) => a.type === 'guide').length >= MIN_TYPE_ITEMS ? [] : ['/insights/guides']),
+  ...(terms.length ? [] : ['/insights/glossary']),
+]);
+const lastmod = new Map([
+  ...articles.map((a) => [`/insights/${a.slug}`, a.lastmod]),
+  ...terms.map((t) => [`/insights/glossary/${t.slug}`, t.lastmod]),
+]);
+const path = (url) => new URL(url).pathname.replace(/\/$/, '') || '/';
 
 export default defineConfig({
   site: 'https://humanhorizon.io',
-  integrations: [sitemap({ filter: (page) => hasArticles || !page.includes('/insights') })],
+  integrations: [sitemap({
+    filter: (page) => !hidden.has(path(page)),
+    serialize: (item) => {
+      const d = lastmod.get(path(item.url));
+      return d ? { ...item, lastmod: new Date(d).toISOString() } : item;
+    },
+  })],
 });

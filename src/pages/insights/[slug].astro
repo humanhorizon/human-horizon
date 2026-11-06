@@ -1,28 +1,39 @@
 ---
-// One Insights article. The text comes from src/content/insights, written by the EA from the approved Notion row.
-import { getCollection, render } from 'astro:content';
+// One Insights article (blog or guide). The text comes from src/content/insights, written by the EA
+// from the approved Notion row.
+import { render } from 'astro:content';
 import Base from '../../layouts/Base.astro';
 import CloseCta from '../../components/CloseCta.astro';
+import Cover from '../../components/Cover.astro';
+import InsightCard from '../../components/InsightCard.astro';
 import { site } from '../../data/site';
 import { close } from '../../data/home';
+import { types } from '../../data/insightsTaxonomy';
+import { getArticles, getTerms, articleCard, termCard, related, fmtDate, type Article } from '../../lib/insights';
+import '../../styles/prose.css';
 
 export async function getStaticPaths() {
-  return (await getCollection('insights')).map((a) => ({ params: { slug: a.id }, props: { article: a } }));
+  return (await getArticles()).map((a) => ({ params: { slug: a.id }, props: { article: a } }));
 }
 
-const { article } = Astro.props;
+const { article } = Astro.props as { article: Article };
 const { Content } = await render(article);
 const d = article.data;
+const t = types[d.type];
 const url = `${site.url}/insights/${article.id}`;
-const fmt = (x: Date) => x.toLocaleDateString('en-SG', { day: 'numeric', month: 'long', year: 'numeric' });
 // Schema dates carry a Singapore timezone offset (date only in the frontmatter, so midnight SGT).
 const iso = (x: Date) => `${x.toISOString().slice(0, 10)}T00:00:00+08:00`;
 const isPerson = d.author !== site.name;
 
+const articles = await getArticles();
+const self = articleCard(article, articles.findIndex((a) => a.id === article.id));
+const pool = [...articles.map(articleCard), ...(await getTerms()).map(termCard)];
+const more = related(self, pool);
+
 const schema = [
   {
     '@context': 'https://schema.org',
-    '@type': 'Article',
+    '@type': d.type === 'blog' ? 'BlogPosting' : 'Article',
     headline: d.title,
     description: d.description,
     datePublished: iso(d.date),
@@ -32,6 +43,8 @@ const schema = [
     mainEntityOfPage: url,
     image: `${site.url}/og.png`,
     about: d.keyword,
+    articleSection: d.category,
+    keywords: [d.keyword, ...d.tags].join(', '),
     inLanguage: 'en-SG',
   },
   {
@@ -40,27 +53,45 @@ const schema = [
     itemListElement: [
       { '@type': 'ListItem', position: 1, name: 'Home', item: `${site.url}/` },
       { '@type': 'ListItem', position: 2, name: 'Insights', item: `${site.url}/insights` },
-      { '@type': 'ListItem', position: 3, name: d.title, item: url },
+      { '@type': 'ListItem', position: 3, name: t.plural, item: `${site.url}${t.href}` },
+      { '@type': 'ListItem', position: 4, name: d.title },
     ],
   },
 ];
 ---
 <Base title={d.seoTitle ?? `${d.title} | Human Horizon`} description={d.description} schema={schema} ogType="article">
-  <nav class="wrap crumbs" aria-label="Breadcrumb"><a href="/">Home</a> / <a href="/insights">Insights</a> / <span aria-current="page">{d.title}</span></nav>
+  <nav class="wrap crumbs" aria-label="Breadcrumb"><a href="/">Home</a> / <a href="/insights">Insights</a> / <a href={t.href}>{t.plural}</a> / <span aria-current="page">{d.title}</span></nav>
 
-  <article class="wrap art">
-    <header class="art-head">
-      <h1 class="d h1 art-h">{d.title}</h1>
+  <header class="wrap art-head">
+    <div class="art-head-text">
+      <p class="art-meta"><a class="badge" href={t.href}>{t.label}</a><span>{d.category}</span></p>
+      <h1 class="d art-h">{d.title}</h1>
       <p class="lead muted">{d.description}</p>
-      <p class="cap">By {d.author}. Published {fmt(d.date)}{d.updated && `, updated ${fmt(d.updated)}`}.</p>
-    </header>
+      <p class="cap">By {d.author}. Published {fmtDate(d.date)}{d.updated && `, updated ${fmtDate(d.updated)}`}.</p>
+    </div>
+    <div class="art-cover"><Cover category={self.categorySlug} art={self.art} size="lg" /></div>
+  </header>
+
+  <div class="wrap"><article class="art">
     <div class="prose"><Content /></div>
     <aside class="art-cta">
       <p class="d h3d">Want this for your own team?</p>
       <p class="muted">{close.sub}</p>
       <a class="btn btn-ink" href={site.cta.href}>{site.cta.label}</a>
     </aside>
-  </article>
+  </article></div>
+
+  {more.length > 0 && (
+    <section class="section bg-morning more">
+      <div class="wrap">
+        <div class="more-head">
+          <h2 class="d h2">Keep reading</h2>
+          <a class="lnk" href="/insights">All insights</a>
+        </div>
+        <div class="grid">{more.map((m) => <InsightCard item={m} />)}</div>
+      </div>
+    </section>
+  )}
 
   <CloseCta title={close.title} sub={close.sub} />
 </Base>
@@ -68,19 +99,20 @@ const schema = [
 <style>
   .crumbs { padding-top: var(--s3); font-size: 14px; color: var(--slate); }
   .crumbs a { color: var(--slate); }
-  .art { max-width: 760px; padding-top: var(--s5); padding-bottom: var(--section); }
-  .art-head { display: grid; gap: var(--s2); margin-bottom: var(--s5); padding-bottom: var(--s4); border-bottom: 1px solid var(--line); }
+  .art-head { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); gap: var(--s5); align-items: stretch; padding-top: var(--s5); padding-bottom: var(--s5); }
+  .art-head-text { display: grid; gap: var(--s2); align-content: center; }
+  .art-meta { display: flex; gap: 12px; align-items: center; font-size: 14px; font-weight: 500; color: var(--slate); }
+  .badge { padding: 3px 12px; border-radius: 999px; background: var(--first-light); color: var(--ink); text-decoration: none; }
   .art-h { font-size: clamp(38px, 5vw, 64px); line-height: 1.06; text-wrap: balance; }
-  .prose { font-size: 19px; line-height: 1.7; }
-  .prose :global(h2) { font: 300 clamp(28px, 3vw, 36px)/1.15 var(--display); margin: var(--s5) 0 var(--s2); }
-  .prose :global(h3) { font-size: 21px; font-weight: 600; margin: var(--s4) 0 var(--s1); }
-  .prose :global(p) { margin: 0 0 var(--s3); }
-  .prose :global(ul), .prose :global(ol) { margin: 0 0 var(--s3); padding-left: 24px; display: grid; gap: 10px; }
-  .prose :global(a) { color: var(--sunrise-text); text-underline-offset: 3px; }
-  .prose :global(blockquote) { margin: var(--s4) 0; padding: var(--s3) var(--s4); background: var(--first-light); border-radius: 20px; font: 300 24px/1.35 var(--display); }
-  .prose :global(blockquote p) { margin: 0; }
-  .prose :global(table) { display: block; overflow-x: auto; width: 100%; margin: 0 0 var(--s4); border-collapse: collapse; font-size: 16px; line-height: 1.5; }
-  .prose :global(th), .prose :global(td) { padding: 12px 16px 12px 0; border-top: 1px solid var(--line); text-align: left; vertical-align: top; min-width: 120px; }
-  .prose :global(th) { font-weight: 600; color: var(--slate); border-top: 0; }
+  .art-cover { min-height: 280px; }
+  .art { max-width: 760px; padding-top: var(--s4); padding-bottom: var(--section); border-top: 1px solid var(--line); }
   .art-cta { margin-top: var(--s5); padding: var(--s4); border-radius: 20px; background: var(--morning); display: grid; gap: var(--s2); justify-items: start; }
+  .more-head { display: flex; justify-content: space-between; align-items: end; gap: var(--s3); margin-bottom: var(--s4); flex-wrap: wrap; }
+  .grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--s3); }
+  @media (max-width: 960px) { .grid { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 760px) {
+    .art-head { grid-template-columns: 1fr; gap: var(--s4); }
+    .art-cover { min-height: 180px; order: -1; }
+    .grid { grid-template-columns: 1fr; }
+  }
 </style>

@@ -1,56 +1,200 @@
 ---
-import { getCollection } from 'astro:content';
+// The Insights hub: a map of the section (blog, guides, glossary), the lead stories, every
+// article with topic and type filters, and the glossary. Filters are client-side only, so they
+// make no extra URLs for search engines; every article is also reachable from its type listing.
 import Base from '../../layouts/Base.astro';
-import PageHero from '../../components/PageHero.astro';
+import InsightCard from '../../components/InsightCard.astro';
 import CloseCta from '../../components/CloseCta.astro';
 import { close } from '../../data/home';
+import { site } from '../../data/site';
 import { insights } from '../../data/companyPages';
+import { categories, types } from '../../data/insightsTaxonomy';
+import { getArticles, getTerms, articleCard, termCard, letterOf } from '../../lib/insights';
 
-const articles = (await getCollection('insights')).sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
-const fmt = (d: Date) => d.toLocaleDateString('en-SG', { day: 'numeric', month: 'long', year: 'numeric' });
+const cards = (await getArticles()).map(articleCard);
+const terms = (await getTerms()).map(termCard);
+const [lead, ...rest] = cards;
+const side = rest.slice(0, 2);
+const count = { blog: cards.filter((c) => c.type === 'blog').length, guide: cards.filter((c) => c.type === 'guide').length, glossary: terms.length };
+const map = (['guide', 'blog', 'glossary'] as const).filter((k) => count[k] > 0);
+const topics = categories.filter((c) => cards.some((x) => x.category === c.name));
+const letters = [...new Set(terms.map((t) => letterOf(t.title)))];
+
+const schema = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    name: insights.title,
+    description: insights.description,
+    url: `${site.url}/insights`,
+    hasPart: [...cards, ...terms].map((c) => ({ '@type': 'CreativeWork', name: c.title, url: `${site.url}${c.href}` })),
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: `${site.url}/` },
+      { '@type': 'ListItem', position: 2, name: 'Insights' },
+    ],
+  },
+];
 ---
-<Base title={insights.seoTitle} description={insights.description} noindex={articles.length === 0}>
-  <nav class="wrap crumbs" aria-label="Breadcrumb"><a href="/">Home</a> / <span aria-current="page">Insights</span></nav>
-
-  <PageHero kicker={insights.kicker} title={insights.title} lead={articles.length ? insights.leadLive : insights.lead} />
-
-  {articles.length > 0 && (
-    <section class="section">
-      <div class="wrap">
-        <ul class="arts">
-          {articles.map((a) => (
-            <li><a href={`/insights/${a.id}`}>
-              <span class="cap">{fmt(a.data.date)}</span>
-              <span class="d h3d">{a.data.title}</span>
-              <span class="muted">{a.data.description}</span>
+<Base title={insights.seoTitle} description={insights.description} schema={schema} noindex={cards.length === 0}>
+  <section class="hub-hero">
+    <nav class="wrap crumbs" aria-label="Breadcrumb"><a href="/">Home</a> / <span aria-current="page">Insights</span></nav>
+    <div class="wrap hh">
+      <div class="hh-text">
+        <h1 class="d hh-h">{insights.title}</h1>
+        <p class="lead muted">{cards.length ? insights.lead : insights.leadEmpty}</p>
+      </div>
+      {map.length > 0 && (
+        <ul class="hh-map" aria-label="Sections">
+          {map.map((k) => (
+            <li><a href={types[k].href}>
+              <span class="d hh-map-t">{types[k].plural}</span>
+              <span class="muted hh-map-b">{types[k].blurb}</span>
+              <span class="hh-map-n">{count[k]} {k === 'glossary' ? (count[k] === 1 ? 'term' : 'terms') : count[k] === 1 ? 'piece' : 'pieces'}</span>
             </a></li>
+          ))}
+        </ul>
+      )}
+    </div>
+  </section>
+
+  {lead && (
+    <section class="section lead-sec" aria-labelledby="latest">
+      <div class="wrap">
+        <h2 id="latest" class="sr-only">Latest</h2>
+        <div class="leads">
+          <InsightCard item={lead} layout="feature" />
+          {side.length > 0 && <div class="side">{side.map((s) => <InsightCard item={s} layout="row" />)}</div>}
+        </div>
+      </div>
+    </section>
+  )}
+
+  {cards.length > 0 && (
+    <section class="section bg-morning" aria-labelledby="browse">
+      <div class="wrap">
+        <div class="browse-head">
+          <h2 id="browse" class="d h2">{insights.browseTitle}</h2>
+          <div class="filters" data-filters hidden>
+            <div class="chips" role="group" aria-label="Filter by topic">
+              <button type="button" class="chip" data-topic="" aria-pressed="true">All topics</button>
+              {topics.map((t) => <button type="button" class="chip" data-topic={t.slug} aria-pressed="false">{t.name}</button>)}
+            </div>
+            <div class="chips" role="group" aria-label="Filter by type">
+              <button type="button" class="chip" data-kind="" aria-pressed="true">Blog and guides</button>
+              {count.guide > 0 && <button type="button" class="chip" data-kind="guide" aria-pressed="false">Guides</button>}
+              {count.blog > 0 && <button type="button" class="chip" data-kind="blog" aria-pressed="false">Blog</button>}
+            </div>
+          </div>
+        </div>
+        <ul class="grid" data-grid>
+          {cards.map((c) => <li><InsightCard item={c} /></li>)}
+        </ul>
+        <p class="muted empty" data-empty hidden>Nothing here yet for that combination. Try another topic.</p>
+      </div>
+    </section>
+  )}
+
+  {terms.length > 0 && (
+    <section class="section gl" aria-labelledby="glossary">
+      <div class="wrap gl-in">
+        <div class="gl-head">
+          <h2 id="glossary" class="d h2">{insights.glossaryTitle}</h2>
+          <p class="muted">{insights.glossaryLead}</p>
+          <nav class="az" aria-label="Glossary by letter">
+            {letters.map((l) => <a href={`/insights/glossary#${l === '#' ? 'num' : l.toLowerCase()}`}>{l}</a>)}
+          </nav>
+          <a class="btn btn-ink" href="/insights/glossary">See all {terms.length} terms</a>
+        </div>
+        <ul class="gl-list">
+          {terms.slice(0, 6).map((t) => (
+            <li><a href={t.href}><span class="d gl-term">{t.title}</span><span class="gl-def">{t.description}</span></a></li>
           ))}
         </ul>
       </div>
     </section>
   )}
 
-  <section class="section bg-morning">
-    <div class="wrap">
-      <h2 class="d h2 sec-h">{articles.length ? insights.topicsTitleLive : insights.topicsTitle}</h2>
-      <ul class="topics">
-        {insights.topics.filter((t) => !articles.some((a) => a.data.title === t)).map((t) => <li>{t}</li>)}
-      </ul>
-    </div>
-  </section>
-
   <CloseCta title={close.title} sub={close.sub} />
 </Base>
+
+<script>
+  // Topic and type filters on the hub. Without JavaScript every article stays visible.
+  const box = document.querySelector<HTMLElement>('[data-filters]');
+  const grid = document.querySelector<HTMLElement>('[data-grid]');
+  const empty = document.querySelector<HTMLElement>('[data-empty]');
+  if (box && grid && empty) {
+    box.hidden = false;
+    const state = { topic: '', kind: '' };
+    const apply = () => {
+      let shown = 0;
+      grid.querySelectorAll<HTMLElement>(':scope > li').forEach((li) => {
+        const card = li.firstElementChild as HTMLElement;
+        const ok = (!state.topic || card.dataset.category === state.topic) && (!state.kind || card.dataset.type === state.kind);
+        li.hidden = !ok;
+        if (ok) shown++;
+      });
+      empty.hidden = shown > 0;
+    };
+    box.addEventListener('click', (e) => {
+      const btn = (e.target as HTMLElement).closest<HTMLButtonElement>('button.chip');
+      if (!btn) return;
+      const key = btn.dataset.topic !== undefined ? 'topic' : 'kind';
+      state[key] = (key === 'topic' ? btn.dataset.topic : btn.dataset.kind) ?? '';
+      btn.parentElement!.querySelectorAll('button').forEach((b) => b.setAttribute('aria-pressed', String(b === btn)));
+      apply();
+    });
+  }
+</script>
 
 <style>
   .crumbs { padding-top: var(--s3); font-size: 14px; color: var(--slate); }
   .crumbs a { color: var(--slate); }
-  .sec-h { margin-bottom: var(--s5); }
-  .arts { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--s2); }
-  .arts a { display: grid; gap: 10px; padding: var(--s4); border-radius: 20px; border: 1px solid var(--line); text-decoration: none; color: inherit; transition: box-shadow .15s; }
-  .arts a:hover { box-shadow: inset 0 0 0 2px var(--sunrise); }
-  .arts .h3d { font-size: clamp(26px, 2.6vw, 34px); line-height: 1.15; }
-  .topics { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: var(--s2); }
-  .topics li { padding: var(--s4) var(--s3); background: #fff; border-radius: 20px; font: 300 24px/1.25 var(--display); }
-  @media (max-width: 760px) { .topics { grid-template-columns: 1fr; } }
+  .hub-hero { border-bottom: 2px solid var(--ink); }
+  .hh { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr); gap: var(--s5); align-items: end; padding-top: clamp(40px, 6vw, 88px); padding-bottom: var(--s5); }
+  .hh-text { display: grid; gap: var(--s3); align-content: end; }
+  .hh-h { font-size: clamp(64px, 11vw, 168px); line-height: .9; letter-spacing: -0.03em; }
+  .hh-text .lead { max-width: 520px; }
+  .hh-map { list-style: none; margin: 0; padding: 0; display: grid; }
+  .hh-map a { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 4px var(--s3); padding: var(--s3) 0; border-top: 1px solid var(--line); text-decoration: none; color: inherit; }
+  .hh-map li:last-child a { border-bottom: 1px solid var(--line); }
+  .hh-map-t { font-size: clamp(30px, 3.2vw, 44px); line-height: 1.05; transition: color .15s; }
+  .hh-map-b { grid-column: 1; font-size: 16px; }
+  .hh-map-n { grid-column: 2; grid-row: 1 / span 2; align-self: center; font-size: 14px; font-weight: 600; padding: 6px 14px; border-radius: 999px; background: var(--first-light); }
+  .hh-map a:hover .hh-map-t { color: var(--sunrise-text); }
+
+  .lead-sec { padding-top: var(--s5); }
+  .leads { display: grid; grid-template-columns: minmax(0, 2fr) minmax(0, 1fr); gap: var(--s4); align-items: stretch; }
+  .side { display: grid; align-content: start; }
+
+  .browse-head { display: grid; gap: var(--s3); margin-bottom: var(--s4); }
+  .filters { display: grid; gap: 12px; }
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; }
+  .chip { font: 500 15px/1 var(--text); padding: 11px 18px; border-radius: 999px; border: 1px solid var(--line); background: var(--white); color: var(--ink); cursor: pointer; }
+  .chip:hover { border-color: var(--ink); }
+  .chip[aria-pressed='true'] { background: var(--ink); border-color: var(--ink); color: var(--white); }
+  .grid { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--s3); }
+  .grid > li { display: grid; }
+  .empty { padding: var(--s4) 0; }
+
+  .gl-in { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr); gap: var(--s5); }
+  .gl-head { display: grid; gap: var(--s3); align-content: start; justify-items: start; }
+  .az { display: flex; flex-wrap: wrap; gap: 6px; }
+  .az a { display: grid; place-items: center; width: 38px; height: 38px; border-radius: 10px; border: 1px solid var(--line); color: var(--ink); text-decoration: none; font-weight: 600; font-size: 15px; }
+  .az a:hover { background: var(--ink); border-color: var(--ink); color: var(--white); }
+  .gl-list { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 0 var(--s4); }
+  .gl-list a { display: grid; gap: 8px; padding: var(--s3) 0; border-top: 1px solid var(--line); text-decoration: none; color: var(--ink); }
+  .gl-term { font-size: 26px; line-height: 1.15; }
+  .gl-list a:hover .gl-term { color: var(--sunrise-text); }
+  .gl-def { color: var(--slate); font-size: 15px; line-height: 1.55; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+
+  @media (max-width: 1000px) { .grid { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 860px) {
+    .hh, .leads, .gl-in { grid-template-columns: 1fr; }
+    .hh { gap: var(--s4); }
+  }
+  @media (max-width: 640px) { .grid, .gl-list { grid-template-columns: 1fr; } }
 </style>

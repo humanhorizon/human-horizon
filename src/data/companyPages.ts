@@ -44,19 +44,14 @@ export const contact = {
 };
 
 export const insights = {
-  seoTitle: 'Insights | Human Horizon',
-  description: 'Practical writing for Singapore founders on AI adoption, training and the people side of change, from Human Horizon.',
-  kicker: 'Insights from Human Horizon',
-  title: 'Notes on bringing people and AI together.',
-  lead: 'Practical writing for Singapore founders on AI adoption, training and the people side of change. The first articles are on their way. If one of these questions is on your mind now, ask us on a call.',
-  topicsTitle: 'What we will write about',
-  topicsTitleLive: 'Coming next',
-  leadLive: 'Practical writing for Singapore founders, HR and operations leads on AI adoption, training and the people side of change.',
-  topics: [
-    'Choosing between an AI course and an implementation partner',
-    'Rolling out Microsoft Copilot, ChatGPT or Gemini to your team',
-    'Setting clear AI rules for client data in a small business',
-  ],
+  seoTitle: 'Insights: AI training, adoption and governance | Human Horizon',
+  description: 'Blog posts, guides and a plain-English AI glossary for Singapore founders, HR and operations teams bringing AI into everyday work.',
+  title: 'Insights',
+  lead: 'Practical writing for Singapore founders, HR and operations leads on AI adoption, training and the people side of change.',
+  leadEmpty: 'Practical writing for Singapore founders on AI adoption, training and the people side of change. The first articles are on their way. If a question is on your mind now, ask us on a call.',
+  browseTitle: 'Browse by topic',
+  glossaryTitle: 'AI glossary',
+  glossaryLead: 'The words that come up when a team starts using AI, explained in plain English with an example from work.',
 };
 
 export const privacy = {

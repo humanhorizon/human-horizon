@@ -4,7 +4,9 @@ seoTitle: "The AI skills Singapore employers want: 5 to build"
 description: "The AI skills Singapore employers want, read from IMDA, MOM and SSG data: five skills to build and a simple way to list your own. Start with your tasks."
 date: 2026-11-06
 keyword: AI skills Singapore employers want
-topic: AI courses
+type: blog
+category: AI training
+tags: [Skills]
 audience: [Employees]
 notionPage: https://app.notion.com/p/40f45cd041568184840fcfd66b8730f7
 publishedVersion: "2026-11-06T05:57:08.754Z"

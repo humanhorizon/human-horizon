@@ -1,0 +1,99 @@
+---
+// One glossary term. The definition sits on its own at the top so it can be quoted as is; the
+// body below it comes from src/content/glossary, written by the EA from the approved Notion row.
+import { render } from 'astro:content';
+import Base from '../../../layouts/Base.astro';
+import CloseCta from '../../../components/CloseCta.astro';
+import InsightCard from '../../../components/InsightCard.astro';
+import { site } from '../../../data/site';
+import { close } from '../../../data/home';
+import { getArticles, getTerms, articleCard, termCard, related, fmtDate, type Term } from '../../../lib/insights';
+import '../../../styles/prose.css';
+
+export async function getStaticPaths() {
+  return (await getTerms()).map((t) => ({ params: { slug: t.id }, props: { term: t } }));
+}
+
+const { term } = Astro.props as { term: Term };
+const { Content, headings } = await render(term);
+const d = term.data;
+const url = `${site.url}/insights/glossary/${term.id}`;
+const all = await getTerms();
+const relatedTerms = d.related.map((s) => all.find((t) => t.id === s)).filter((t): t is Term => !!t);
+const reading = related(termCard(term), (await getArticles()).map(articleCard), 2);
+const toc = headings.filter((h) => h.depth === 2);
+const iso = (x: Date) => `${x.toISOString().slice(0, 10)}T00:00:00+08:00`;
+
+const schema = [
+  { '@context': 'https://schema.org', '@type': 'DefinedTerm', name: d.term, description: d.short, url,
+    inDefinedTermSet: { '@type': 'DefinedTermSet', '@id': `${site.url}/insights/glossary#set`, name: 'Human Horizon AI glossary', url: `${site.url}/insights/glossary` } },
+  { '@context': 'https://schema.org', '@type': 'Article', headline: d.seoTitle ?? d.term, description: d.description, datePublished: iso(d.date), dateModified: iso(d.updated ?? d.date),
+    author: { '@type': 'Organization', name: site.name, url: site.url }, publisher: { '@type': 'Organization', name: site.name, url: site.url }, mainEntityOfPage: url, about: d.term, inLanguage: 'en-SG' },
+  { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: `${site.url}/` },
+    { '@type': 'ListItem', position: 2, name: 'Insights', item: `${site.url}/insights` },
+    { '@type': 'ListItem', position: 3, name: 'Glossary', item: `${site.url}/insights/glossary` },
+    { '@type': 'ListItem', position: 4, name: d.term },
+  ] },
+];
+---
+<Base title={d.seoTitle ?? `What is ${d.term}? | Human Horizon`} description={d.description} schema={schema} ogType="article">
+  <nav class="wrap crumbs" aria-label="Breadcrumb"><a href="/">Home</a> / <a href="/insights">Insights</a> / <a href="/insights/glossary">Glossary</a> / <span aria-current="page">{d.term}</span></nav>
+
+  <header class="wrap th">
+    <p class="th-meta"><a class="badge" href="/insights/glossary">Glossary</a><span>{d.category}</span></p>
+    <h1 class="d th-h">{d.term}</h1>
+    <p class="d th-def">{d.short}</p>
+    <p class="cap">Updated {fmtDate(d.updated ?? d.date)}.</p>
+  </header>
+
+  <div class="wrap tb">
+    <aside class="tb-side">
+      {toc.length > 1 && (
+        <nav aria-label="On this page" class="toc">
+          <p class="cap">On this page</p>
+          <ul>{toc.map((h) => <li><a href={`#${h.slug}`}>{h.text}</a></li>)}</ul>
+        </nav>
+      )}
+      {relatedTerms.length > 0 && (
+        <nav aria-label="Related terms" class="toc">
+          <p class="cap">Related terms</p>
+          <ul>{relatedTerms.map((t) => <li><a href={`/insights/glossary/${t.id}`}>{t.data.term}</a></li>)}</ul>
+        </nav>
+      )}
+    </aside>
+    <article class="prose tb-main"><Content /></article>
+  </div>
+
+  {reading.length > 0 && (
+    <section class="section bg-morning">
+      <div class="wrap">
+        <h2 class="d h2 more-h">Read more on this</h2>
+        <div class="grid">{reading.map((m) => <InsightCard item={m} />)}</div>
+      </div>
+    </section>
+  )}
+
+  <CloseCta title={close.title} sub={close.sub} />
+</Base>
+
+<style>
+  .crumbs { padding-top: var(--s3); font-size: 14px; color: var(--slate); }
+  .crumbs a { color: var(--slate); }
+  .th { display: grid; gap: var(--s3); padding-top: clamp(40px, 6vw, 88px); padding-bottom: var(--s5); }
+  .th-meta { display: flex; gap: 12px; align-items: center; font-size: 14px; font-weight: 500; color: var(--slate); }
+  .badge { padding: 3px 12px; border-radius: 999px; background: var(--first-light); color: var(--ink); text-decoration: none; }
+  .th-h { font-size: clamp(48px, 7vw, 96px); line-height: .98; letter-spacing: -0.025em; text-wrap: balance; }
+  .th-def { max-width: 900px; padding: var(--s4); border-radius: 24px; background: var(--first-light); font-size: clamp(24px, 2.4vw, 32px); line-height: 1.3; }
+  .tb { display: grid; grid-template-columns: 260px minmax(0, 760px); gap: var(--s5); padding-top: var(--s4); padding-bottom: var(--section); border-top: 1px solid var(--line); }
+  .tb-side { display: grid; gap: var(--s4); align-content: start; position: sticky; top: var(--s3); align-self: start; }
+  .toc ul { list-style: none; margin: 10px 0 0; padding: 0; display: grid; gap: 10px; }
+  .toc a { color: var(--ink); text-decoration: none; font-size: 15px; line-height: 1.4; }
+  .toc a:hover { color: var(--sunrise-text); text-decoration: underline; }
+  .tb-main :global(h2) { scroll-margin-top: var(--s3); }
+  .tb-main > :global(:first-child) { margin-top: 0; }
+  .more-h { margin-bottom: var(--s4); }
+  .grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--s3); }
+  @media (max-width: 960px) { .tb { grid-template-columns: 1fr; } .tb-side { position: static; } .grid { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 640px) { .grid { grid-template-columns: 1fr; } }
+</style>

@@ -4,7 +4,9 @@ seoTitle: "How to measure AI training ROI in Singapore: 4 checks"
 description: "How to measure AI training ROI: four checks that run from the first day to a number that moved, with a worked example and a short list to take to your boss."
 date: 2026-11-06
 keyword: how to measure AI training ROI
-topic: AI courses
+type: guide
+category: AI training
+tags: [ROI]
 audience: [HR and L&D]
 notionPage: https://app.notion.com/p/40f45cd0415681888c28d7236780d693
 publishedVersion: "2026-11-06T06:44:52.334Z"

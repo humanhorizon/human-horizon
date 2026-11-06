@@ -1,0 +1,44 @@
+---
+// Card artwork drawn from the brand supergraphic: a horizon line through a cropped ring.
+// The ground colour follows the category; where the ring sits follows the piece itself (`art`),
+// so cards in one category share a colour but never look identical.
+// Every ground is a brand container colour; First Light appears only inside the card.
+import Symbol from './Symbol.astro';
+
+interface Props { category: string; art?: number; size?: 'lg' | 'md' }
+const { category, art = 0, size = 'md' } = Astro.props;
+
+const grounds: Record<string, { ground: string; tone: 'ink' | 'white' }> = {
+  'ai-basics': { ground: 'var(--morning)', tone: 'ink' },
+  'ai-training': { ground: 'var(--first-light)', tone: 'ink' },
+  'ai-implementation': { ground: 'var(--ink)', tone: 'white' },
+  'ai-adoption': { ground: 'var(--dusk)', tone: 'white' },
+  'ai-governance': { ground: 'var(--ink)', tone: 'white' },
+  'ai-tools': { ground: 'var(--morning)', tone: 'ink' },
+};
+// Ring placements: horizontal anchor, horizon height (%) and ring width (% of the cover).
+const spots = [
+  { x: 'right: -18%', y: 50, w: 62 },
+  { x: 'left: 10%', y: 62, w: 54 },
+  { x: 'right: 8%', y: 38, w: 48 },
+  { x: 'left: -16%', y: 56, w: 70 },
+  { x: 'left: 34%', y: 70, w: 58 },
+  { x: 'right: 24%', y: 44, w: 40 },
+];
+const g = grounds[category] ?? grounds['ai-basics'];
+const s = spots[art % spots.length];
+---
+<div class:list={['cover', size]} style={`--ground: ${g.ground}; --line-y: ${s.y}%; --w: ${s.w}%`} data-tone={g.tone} aria-hidden="true">
+  <span class="line"></span>
+  <span class="ring" style={s.x}><Symbol size={120} tone={g.tone} horizon={false} /></span>
+</div>
+
+<style>
+  .cover { position: relative; overflow: hidden; background: var(--ground); aspect-ratio: 16 / 10; border-radius: 16px; }
+  .cover.lg { aspect-ratio: auto; height: 100%; min-height: 280px; }
+  .line { position: absolute; left: 0; right: 0; top: var(--line-y); height: 2px; background: var(--ink); }
+  [data-tone='white'] .line { background: rgba(255, 255, 255, .32); }
+  .ring { position: absolute; top: var(--line-y); width: var(--w); aspect-ratio: 1; transform: translateY(-50%); }
+  .lg .ring { width: calc(var(--w) * .8); }
+  .ring :global(svg) { width: 100%; height: 100%; }
+</style>
