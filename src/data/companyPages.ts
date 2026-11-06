@@ -6,10 +6,10 @@ import termsSections from './legal/terms.json';
 
 export const about = {
   seoTitle: 'About Human Horizon | People-first AI consultancy',
-  description: 'Human Horizon is a Singapore AI consultancy founded by Jaye Wang and Weiheng Lin. We bring AI into the work teams already do, with people first.',
+  description: 'Human Horizon is a Singapore AI consultancy founded by Jaye Wang and Wei Lin. We bring AI into the work teams already do, with people first.',
   kicker: 'About Human Horizon',
   title: 'AI should lift people, not leave them behind.',
-  lead: 'Human Horizon is a Singapore AI consultancy founded by Jaye Wang and Weiheng Lin. We work alongside your team on the work they already do, train them on it and help it stick, so your people come through the change more capable and still in charge.',
+  lead: 'Human Horizon is a Singapore AI consultancy founded by Jaye Wang and Wei Lin. We work alongside your team on the work they already do, train them on it and help it stick, so your people come through the change more capable and still in charge.',
   beliefsTitle: 'What we believe',
   beliefs: [
     { title: 'AI is a people change', body: 'Tools are the easy part. Whether AI sticks depends on whether people trust it, shape it and see it make their work better.' },

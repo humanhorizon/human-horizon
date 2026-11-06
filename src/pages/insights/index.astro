@@ -1,7 +1,7 @@
 ---
 // The Insights hub: a map of the section (blog, guides, glossary), the lead stories, every
-// article with topic and type filters, and the glossary. Filters are client-side only, so they
-// make no extra URLs for search engines; every article is also reachable from its type listing.
+// article with a topic filter, and the glossary. The filter is client-side only, so it
+// makes no extra URLs for search engines; every article is also reachable from its type listing.
 import Base from '../../layouts/Base.astro';
 import InsightCard from '../../components/InsightCard.astro';
 import CloseCta from '../../components/CloseCta.astro';
@@ -78,22 +78,17 @@ const schema = [
       <div class="wrap">
         <div class="browse-head">
           <h2 id="browse" class="d h2">{insights.browseTitle}</h2>
-          <div class="filters" data-filters hidden>
-            <div class="chips" role="group" aria-label="Filter by topic">
-              <button type="button" class="chip" data-topic="" aria-pressed="true">All topics</button>
+          {topics.length > 1 && (
+            <div class="chips" role="group" aria-label="Filter by topic" data-filters hidden>
+              <button type="button" class="chip" data-topic="" aria-pressed="true">All</button>
               {topics.map((t) => <button type="button" class="chip" data-topic={t.slug} aria-pressed="false">{t.name}</button>)}
             </div>
-            <div class="chips" role="group" aria-label="Filter by type">
-              <button type="button" class="chip" data-kind="" aria-pressed="true">Blog and guides</button>
-              {count.guide > 0 && <button type="button" class="chip" data-kind="guide" aria-pressed="false">Guides</button>}
-              {count.blog > 0 && <button type="button" class="chip" data-kind="blog" aria-pressed="false">Blog</button>}
-            </div>
-          </div>
+          )}
         </div>
         <ul class="grid" data-grid>
           {cards.map((c) => <li><InsightCard item={c} /></li>)}
         </ul>
-        <p class="muted empty" data-empty hidden>Nothing here yet for that combination. Try another topic.</p>
+        <p class="muted empty" data-empty hidden>Nothing here yet on that topic.</p>
       </div>
     </section>
   )}
@@ -122,30 +117,25 @@ const schema = [
 </Base>
 
 <script>
-  // Topic and type filters on the hub. Without JavaScript every article stays visible.
+  // Topic filter on the hub. Type has its own listings (linked from the section map), so it is
+  // not filtered here. Without JavaScript every article stays visible.
   const box = document.querySelector<HTMLElement>('[data-filters]');
   const grid = document.querySelector<HTMLElement>('[data-grid]');
   const empty = document.querySelector<HTMLElement>('[data-empty]');
   if (box && grid && empty) {
     box.hidden = false;
-    const state = { topic: '', kind: '' };
-    const apply = () => {
+    box.addEventListener('click', (e) => {
+      const btn = (e.target as HTMLElement).closest<HTMLButtonElement>('button.chip');
+      if (!btn) return;
+      const topic = btn.dataset.topic ?? '';
+      box.querySelectorAll('button').forEach((b) => b.setAttribute('aria-pressed', String(b === btn)));
       let shown = 0;
       grid.querySelectorAll<HTMLElement>(':scope > li').forEach((li) => {
-        const card = li.firstElementChild as HTMLElement;
-        const ok = (!state.topic || card.dataset.category === state.topic) && (!state.kind || card.dataset.type === state.kind);
+        const ok = !topic || (li.firstElementChild as HTMLElement).dataset.category === topic;
         li.hidden = !ok;
         if (ok) shown++;
       });
       empty.hidden = shown > 0;
-    };
-    box.addEventListener('click', (e) => {
-      const btn = (e.target as HTMLElement).closest<HTMLButtonElement>('button.chip');
-      if (!btn) return;
-      const key = btn.dataset.topic !== undefined ? 'topic' : 'kind';
-      state[key] = (key === 'topic' ? btn.dataset.topic : btn.dataset.kind) ?? '';
-      btn.parentElement!.querySelectorAll('button').forEach((b) => b.setAttribute('aria-pressed', String(b === btn)));
-      apply();
     });
   }
 </script>
@@ -171,7 +161,6 @@ const schema = [
   .side { display: grid; align-content: start; }
 
   .browse-head { display: grid; gap: var(--s3); margin-bottom: var(--s4); }
-  .filters { display: grid; gap: 12px; }
   .chips { display: flex; flex-wrap: wrap; gap: 8px; }
   .chip { font: 500 15px/1 var(--text); padding: 11px 18px; border-radius: 999px; border: 1px solid var(--line); background: var(--white); color: var(--ink); cursor: pointer; }
   .chip:hover { border-color: var(--ink); }

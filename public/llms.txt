@@ -2,7 +2,7 @@
 
 > People-first AI implementation and hands-on training for Singapore businesses. We build AI into the work a team already does, train the people who do it, and show the hours saved, valued at the client's own rates, in an ROI Transformation Report.
 
-Human Horizon is based in Singapore and works with businesses across industries, from growing teams to established firms. It is led by Jaye Wang and Weiheng Lin, who have built teams at Gojek, Alibaba and Meta.
+Human Horizon is based in Singapore and works with businesses across industries, from growing teams to established firms. It is led by Jaye Wang and Wei Lin, who have built teams at Gojek, Alibaba and Meta.
 
 ## What we do
 

@@ -53,7 +53,7 @@ export const people = {
   sub: 'Two founders with 18 years’ combined experience at the forefront of technology and AI implementation.',
   founders: [
     { name: 'Jaye Wang', photo: '/founders/jaye.jpg', bio: 'Built and led marketing teams across APAC, from first hire to head of the team.', past: 'Gojek, Alibaba, moomoo' },
-    { name: 'Weiheng Lin', photo: '/founders/weiheng.jpg', bio: 'Set up measurement for global teams across four regions, tied to clear returns.', past: 'Meta, foodpanda, Alibaba' },
+    { name: 'Wei Lin', photo: '/founders/weiheng.jpg', bio: 'Set up measurement for global teams across four regions, tied to clear returns.', past: 'Meta, foodpanda, Alibaba' },
   ],
 };
 
