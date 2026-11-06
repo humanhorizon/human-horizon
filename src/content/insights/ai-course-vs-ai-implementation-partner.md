@@ -7,7 +7,7 @@ keyword: AI course vs AI implementation partner
 topic: Implement
 audience: [Founders]
 notionPage: https://app.notion.com/p/40f45cd041568166a589c778be909629
-publishedVersion: "2026-11-06T06:44:52.804Z"
+publishedVersion: "2026-11-06T07:33:29.415Z"
 ---
 
 Choose an AI course if one or a few people want to build their own skills. Choose an AI implementation partner if a specific piece of work should run differently across a team, with someone accountable until it does. The deciding question is whether your problem is knowledge or the way the work gets done.
@@ -38,9 +38,9 @@ A good course is a sensible way to learn. Our guide to [choosing an AI course in
 
 - A repeated task, such as quotes, reports or client updates, takes a team real hours each week.
 - Several people do similar work, and you want them to do it the same way.
-- Highly customised workflows and processes built for the team, department or business.
+- You want workflows and processes customised for your team, department or business.
 - Nobody inside has the time to build and test the new way, to make AI adoption a culture.
-- ROI and value proof afterwards whether it saved time, in hours and dollars.
+- You want proof afterwards of whether it saved time, in hours and dollars.
 
 A partner does the building with you. They find the tasks worth changing, build the workflow with AI in the middle and a person checking the result, train the people who will use it, and check whether it held. The training is part of the work, not a separate event.
 
