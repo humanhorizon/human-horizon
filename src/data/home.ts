@@ -42,7 +42,7 @@ export const work = {
   featured: 'logistics-freight',
   icons: {
     'marketing-agencies': '📣', recruitment: '🤝', 'trading-distribution': '📦', 'logistics-freight': '🚢',
-    'accounting-corporate-secretarial': '🧾', 'interior-design': '🛋️', education: '🎓', 'cleaning-facilities': '🧹',
+    'accounting-corporate-secretarial': '🧾', 'interior-design': '🛋️', education: '🎓', healthcare: '🩺', 'cleaning-facilities': '🧹',
     'law-firms': '⚖️', 'property-agencies': '🏠', 'engineering-me': '🏗️', 'it-services': '💻',
     sales: '💼', marketing: '✍️', operations: '⚙️', 'finance-admin': '💰', 'hr-people': '👥', 'customer-service': '💬',
   } as Record<string, string>,
