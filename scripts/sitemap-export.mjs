@@ -35,9 +35,8 @@ for (const [kind, prefix] of [['insights', '/insights/'], ['glossary', '/insight
   }
 }
 
-const section = (path, fm) => {
+const section = (path) => {
   if (path === '/') return 'Home';
-  if (fm) return { blog: 'Blog', guide: 'Guide', glossary: 'Glossary' }[fm.type];
   const top = path.split('/')[1];
   return { 'what-we-do': 'What we do', industries: 'Industries', teams: 'Teams', insights: 'Insights', privacy: 'Legal', terms: 'Legal' }[top] ?? 'Company';
 };
@@ -61,7 +60,7 @@ const rows = walk(dist).map((file) => {
     url,
     metaTitle: pick(html, /<title>([^<]*)<\/title>/),
     metaDescription: pick(html, /<meta name="description" content="([^"]*)"/),
-    section: section(path, fm),
+    section: section(path),
     lastUpdated,
     notionPage: fm?.notion ?? null,
     changed: !prev || prev.hash !== hash,
