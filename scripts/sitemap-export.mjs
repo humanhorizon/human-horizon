@@ -46,7 +46,7 @@ const next = {};
 const rows = walk(dist).map((file) => {
   const html = readFileSync(file, 'utf8');
   const path = '/' + relative(dist, file).replace(/index\.html$/, '').replace(/\/$/, '');
-  const url = path === '/' ? `${site}/` : site + path;
+  const url = path === '/' ? `${site}/` : `${site}${path}/`; // matches the canonical, which ends in a slash
   const body = html.split(/<body[^>]*>/)[1] ?? html;
   const text = body.replace(/<script[\s\S]*?<\/script>|<style[\s\S]*?<\/style>/g, '').replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ');
   const hash = createHash('sha1').update(text).digest('hex').slice(0, 16);
