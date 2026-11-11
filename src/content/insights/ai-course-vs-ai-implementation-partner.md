@@ -8,7 +8,7 @@ type: guide
 category: AI implementation
 tags: [Workflows]
 audience: [Founders]
-notionPage: https://app.notion.com/p/40f45cd041568166a589c778be909629
+notionPage: https://app.notion.com/p/321d0a6f047e8282b35181e946f4c254
 publishedVersion: "2026-11-06T07:33:29.415Z"
 ---
 

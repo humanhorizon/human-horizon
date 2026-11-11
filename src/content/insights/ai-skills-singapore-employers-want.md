@@ -8,7 +8,7 @@ type: blog
 category: AI training
 tags: [Skills]
 audience: [Employees]
-notionPage: https://app.notion.com/p/40f45cd041568184840fcfd66b8730f7
+notionPage: https://app.notion.com/p/437d0a6f047e83eb873f01a144a7dba1
 publishedVersion: "2026-11-06T05:57:08.754Z"
 ---
 

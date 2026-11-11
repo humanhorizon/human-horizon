@@ -8,7 +8,7 @@ type: guide
 category: AI training
 tags: [ROI]
 audience: [HR and L&D]
-notionPage: https://app.notion.com/p/40f45cd0415681888c28d7236780d693
+notionPage: https://app.notion.com/p/49ad0a6f047e82baabc781f9212e32b8
 publishedVersion: "2026-11-06T06:44:52.334Z"
 ---
 

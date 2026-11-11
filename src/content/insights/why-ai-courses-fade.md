@@ -9,7 +9,7 @@ type: blog
 category: AI training
 tags: [Change management, Workflows]
 audience: [HR and L&D]
-notionPage: https://app.notion.com/p/40f45cd0415681eba9c5ee9d98b5cd23
+notionPage: https://app.notion.com/p/577d0a6f047e8307853c8192df319457
 publishedVersion: "2026-11-06T06:08:59.798Z"
 ---
 
