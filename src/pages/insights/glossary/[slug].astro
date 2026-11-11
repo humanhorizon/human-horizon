@@ -7,7 +7,7 @@ import CloseCta from '../../../components/CloseCta.astro';
 import InsightCard from '../../../components/InsightCard.astro';
 import { site } from '../../../data/site';
 import { close } from '../../../data/home';
-import { getArticles, getTerms, articleCard, termCard, related, fmtDate, type Term } from '../../../lib/insights';
+import { getArticles, getTerms, articleCard, termCard, related, type Term } from '../../../lib/insights';
 import '../../../styles/prose.css';
 
 export async function getStaticPaths() {
@@ -44,7 +44,6 @@ const schema = [
     <p class="th-meta"><a class="badge" href="/insights/glossary">Glossary</a><span>{d.category}</span></p>
     <h1 class="d th-h">{d.term}</h1>
     <p class="d th-def">{d.short}</p>
-    <p class="cap">Updated {fmtDate(d.updated ?? d.date)}.</p>
   </header>
 
   <div class="wrap tb">
