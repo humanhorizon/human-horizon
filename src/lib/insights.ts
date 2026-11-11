@@ -21,8 +21,15 @@ export interface Card {
 
 export const fmtDate = (d: Date) => d.toLocaleDateString('en-SG', { day: 'numeric', month: 'long', year: 'numeric' });
 
+// Today in Singapore as YYYY-MM-DD. Articles are paced one a day by their Publish date, so a piece
+// committed ahead of its date stays out of the build until a push on or after that date.
+const todaySgt = () => new Date().toLocaleDateString('en-CA', { timeZone: 'Asia/Singapore' });
+
 export async function getArticles() {
-  return (await getCollection('insights')).sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+  const today = todaySgt();
+  return (await getCollection('insights'))
+    .filter((a) => a.data.date.toISOString().slice(0, 10) <= today)
+    .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 }
 
 export async function getTerms() {

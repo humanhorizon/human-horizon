@@ -2,7 +2,7 @@
 title: "How to measure AI training ROI in Singapore: 4 checks"
 seoTitle: "How to measure AI training ROI in Singapore: 4 checks"
 description: "How to measure AI training ROI: four checks that run from the first day to a number that moved, with a worked example and a short list to take to your boss."
-date: 2026-11-06
+date: 2026-11-07
 keyword: how to measure AI training ROI
 type: guide
 category: AI training

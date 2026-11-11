@@ -2,7 +2,7 @@
 title: "AI course vs AI implementation partner: how to choose"
 seoTitle: "AI course vs AI implementation partner: how to choose"
 description: "AI course vs AI implementation partner: which one fits? Five questions and a worked example to help you choose, plus one simple rule to decide."
-date: 2026-11-06
+date: 2026-11-08
 keyword: AI course vs AI implementation partner
 type: guide
 category: AI implementation
