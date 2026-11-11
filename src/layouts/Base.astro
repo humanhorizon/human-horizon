@@ -28,6 +28,13 @@ const org = {
 <!doctype html>
 <html lang="en-SG">
   <head>
+    <!-- Google tag (GTM-P3DVPGNZ). Lives only here so every page gets exactly one; is:inline keeps Astro from bundling it. -->
+    <script is:inline async src="https://www.googletagmanager.com/gtm.js?id=GTM-P3DVPGNZ"></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+    </script>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>
