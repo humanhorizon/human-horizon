@@ -72,84 +72,116 @@
     "lastUpdated": "2026-11-12"
   },
   "/insights/ai-course-vs-ai-implementation-partner": {
-    "hash": "0e4be53c1f5366b2",
-    "lastUpdated": "2026-11-08"
+    "hash": "0e60c8cbfc6fd4b3",
+    "lastUpdated": "2026-11-12"
   },
   "/insights/ai-skills-singapore-employers-want": {
-    "hash": "2b70a2a1cfa3ef4b",
-    "lastUpdated": "2026-11-06"
+    "hash": "2abab50146c515a6",
+    "lastUpdated": "2026-11-12"
   },
   "/insights/blog": {
-    "hash": "ced90a725b07a62d",
+    "hash": "80f91f834a00322c",
     "lastUpdated": "2026-11-12"
   },
   "/insights/glossary/ai-adoption": {
-    "hash": "a6ee6e1e81f0f6d8",
+    "hash": "655a894dc926d3a8",
     "lastUpdated": "2026-11-11"
   },
   "/insights/glossary/ai-agent": {
-    "hash": "c787611c142463f0",
+    "hash": "309c338cb50df0fe",
     "lastUpdated": "2026-11-11"
   },
   "/insights/glossary/ai-assistant": {
-    "hash": "1a020b7701ea607d",
+    "hash": "39c7e831f25da127",
     "lastUpdated": "2026-11-11"
+  },
+  "/insights/glossary/ai-governance": {
+    "hash": "a689ad2b42813f3a",
+    "lastUpdated": "2026-11-12"
+  },
+  "/insights/glossary/ai-literacy": {
+    "hash": "5b2eda32e5b791a7",
+    "lastUpdated": "2026-11-12"
+  },
+  "/insights/glossary/artificial-intelligence-ai": {
+    "hash": "4c6d36aeaea1ab94",
+    "lastUpdated": "2026-11-12"
+  },
+  "/insights/glossary/automation": {
+    "hash": "0908bf7a19754e35",
+    "lastUpdated": "2026-11-12"
+  },
+  "/insights/glossary/business-process-automation": {
+    "hash": "db7dd608619c376c",
+    "lastUpdated": "2026-11-12"
   },
   "/insights/glossary/change-management": {
-    "hash": "98464ff374ef6859",
+    "hash": "4d356fe7be4d6fa9",
     "lastUpdated": "2026-11-11"
   },
+  "/insights/glossary/context-window": {
+    "hash": "8c37fe6c7e23ff2b",
+    "lastUpdated": "2026-11-12"
+  },
   "/insights/glossary/generative-ai": {
-    "hash": "7e2048c0076b35dc",
+    "hash": "5d7d68f51999627d",
     "lastUpdated": "2026-11-11"
   },
   "/insights/glossary/hallucination": {
-    "hash": "e5dbde74febbaf8a",
+    "hash": "314cfa7dfd1c825a",
     "lastUpdated": "2026-11-11"
   },
   "/insights/glossary/human-in-the-loop": {
-    "hash": "08f8049a1c45b792",
+    "hash": "8f4083a30c91af0e",
     "lastUpdated": "2026-11-11"
   },
   "/insights/glossary": {
-    "hash": "dc296ab9ffd3dbb5",
+    "hash": "36c2852cdbbcadb0",
     "lastUpdated": "2026-11-12"
   },
   "/insights/glossary/large-language-model-llm": {
-    "hash": "d67fee0dc8be901f",
+    "hash": "b11220d04e39216c",
     "lastUpdated": "2026-11-11"
   },
+  "/insights/glossary/prompt": {
+    "hash": "3f122b48dfa098a0",
+    "lastUpdated": "2026-11-12"
+  },
   "/insights/glossary/retrieval-augmented-generation-rag": {
-    "hash": "57ec8a599b3c5279",
+    "hash": "652a3a02103d40b4",
     "lastUpdated": "2026-11-11"
   },
   "/insights/glossary/shadow-ai": {
-    "hash": "c713e754af957403",
+    "hash": "d5c684d3b35d183c",
     "lastUpdated": "2026-11-11"
   },
   "/insights/glossary/upskilling": {
-    "hash": "df6cf7595eae4ca9",
+    "hash": "ceca907cdae537cc",
     "lastUpdated": "2026-11-11"
   },
   "/insights/glossary/workflow-automation": {
-    "hash": "1e88c533c8af3e73",
+    "hash": "949c9d006af3c4ca",
     "lastUpdated": "2026-11-11"
   },
   "/insights/guides": {
-    "hash": "b3ddf930e6583b56",
+    "hash": "463837eefea91274",
+    "lastUpdated": "2026-11-12"
+  },
+  "/insights/how-to-learn-ai-for-work": {
+    "hash": "cbce11c50d9cbde0",
     "lastUpdated": "2026-11-12"
   },
   "/insights/how-to-measure-ai-training-roi": {
-    "hash": "f1f55688c3d4ac18",
-    "lastUpdated": "2026-11-07"
+    "hash": "621eeeccdab530ef",
+    "lastUpdated": "2026-11-12"
   },
   "/insights": {
-    "hash": "35b439717cf814dd",
+    "hash": "e1d1a6d596ef5a1b",
     "lastUpdated": "2026-11-12"
   },
   "/insights/why-ai-courses-fade": {
-    "hash": "dbee5e677356aa94",
-    "lastUpdated": "2026-11-06"
+    "hash": "fd640e2e72cf08b0",
+    "lastUpdated": "2026-11-12"
   },
   "/privacy": {
     "hash": "cff1c2e1010c29f4",
