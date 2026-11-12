@@ -60,8 +60,8 @@ const schema = [
             <label class="fld"><span>Role</span>
               <select name="role" required><option value="" disabled selected>Choose one</option>{f.roles.map((x) => <option>{x}</option>)}</select>
             </label>
-            <label class="fld"><span>Topic</span>
-              <select name="topic" required data-topic>{f.topics.map((t, i) => <option value={t.label} data-key={t.value} selected={i === 0}>{t.label}</option>)}</select>
+            <label class="fld"><span>Department</span>
+              <select name="department" required><option value="" disabled selected>Choose one</option>{f.departments.map((x) => <option>{x}</option>)}</select>
             </label>
           </div>
           <label class="fld"><span>{f.messageLabel}</span>
@@ -83,20 +83,14 @@ const schema = [
       <ol class="steps">
         {contact.steps.map((s, i) => <li><span class="n">{i + 1}</span><h3 class="h3">{s.title}</h3><p class="muted">{s.body}</p></li>)}
       </ol>
-      <p class="loc muted">{contact.location}</p>
     </div>
   </section>
 </Base>
 
 <script>
-  // Prefill the topic from ?topic= (call, founding, other), and stop messages stuffed with links,
-  // a common spam pattern, before they are sent.
+  // Stop messages stuffed with links, a common spam pattern, before they are sent.
   const form = document.querySelector<HTMLFormElement>('[data-contact-form]');
   if (form) {
-    const key = new URLSearchParams(location.search).get('topic');
-    const sel = form.querySelector<HTMLSelectElement>('[data-topic]');
-    const match = key && sel ? [...sel.options].find((o) => o.dataset.key === key) : undefined;
-    if (match && sel) sel.value = match.value;
     const err = form.querySelector<HTMLElement>('[data-err]');
     form.addEventListener('submit', (e) => {
       const msg = (form.elements.namedItem('message') as HTMLTextAreaElement).value;
@@ -130,7 +124,6 @@ const schema = [
   .steps { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--s2); }
   .steps li { display: grid; gap: 12px; align-content: start; padding: var(--s4) var(--s3); background: #fff; border-radius: 20px; }
   .n { width: 36px; height: 36px; border-radius: 50%; display: grid; place-items: center; background: var(--ink); color: #fff; font-weight: 600; font-size: 15px; }
-  .loc { margin-top: var(--s4); }
   @media (max-width: 1000px) { .steps { grid-template-columns: 1fr; } .mail { grid-template-columns: 1fr; } }
   @media (max-width: 560px) { .row2 { grid-template-columns: 1fr; } }
 </style>

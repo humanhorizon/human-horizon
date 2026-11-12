@@ -59,7 +59,7 @@ export const people = {
 
 export const start = {
   title: 'Start with one workflow, or the whole firm.',
-  link: { label: 'Schedule a 30-minute chat', href: '/contact?topic=call#form' },
+  link: { label: 'Schedule a 30-minute chat', href: '/contact#form' },
   more: 'and more',
   options: [
     { name: 'First Win', fit: 'For a team of 5 to 10 people', change: 'One workflow running the new way in the team.', includes: ['One custom workflow', 'Hands-on training for the team', 'A Lite ROI Transformation Report on that workflow'] },

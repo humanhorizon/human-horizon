@@ -39,29 +39,25 @@ export const contact = {
   description: 'Talk to Human Horizon about AI for your business. Send a short message about the work that slows your team down and ask for a 30-minute call.',
   kicker: 'Contact Human Horizon',
   title: 'Tell us what slows your team down.',
-  lead: 'Every engagement starts with a 30-minute call. It is a conversation about your business, not a sales pitch. Send a short message below and a founder will reply to set up a call.',
+  lead: 'Every engagement starts with a 30-minute call. It is a conversation about your business, not a sales pitch. Send a short message below.',
   emailTitle: 'Email us',
   emailNote: 'Prefer email? Write to us directly.',
   form: {
     title: 'Send us a message',
     note: 'A few lines are enough: what your business does and which work you would most like to change.',
-    roles: ['Founder or director', 'HR, training or L&D', 'Operations or AI lead', 'Other'],
+    roles: ['Founder or owner', 'C-suite or director', 'Head of department', 'Manager', 'Team lead', 'Team member', 'Other'],
+    departments: ['General management', 'Sales and business development', 'Marketing', 'Operations', 'Finance and admin', 'HR and L&D', 'Customer service', 'IT, data and AI', 'Other'],
     sizes: ['1 to 10', '11 to 50', '51 to 200', 'More than 200'],
-    topics: [
-      { value: 'call', label: 'A 30-minute call' },
-      { value: 'founding', label: 'Becoming a founding client' },
-      { value: 'other', label: 'Something else' },
-    ],
     messageLabel: 'What slows your team down?',
     messageHint: 'A few lines on the work you would most like to change.',
-    consent: 'We use your details only to reply to you.',
+    consent: 'We use your details only for this enquiry.',
     submit: 'Send message',
     linkError: 'Please keep links to two or fewer, so the message reaches us.',
   },
   thanks: {
     seoTitle: 'Message sent | Human Horizon',
     title: 'Thanks, your message is with us.',
-    body: 'A founder will reply by email to set up a 30-minute call. If you would rather, write to us directly.',
+    body: 'We appreciate you telling us about your team. If you would rather, you can also write to us directly.',
   },
   stepsTitle: 'What happens next',
   steps: [
@@ -69,7 +65,6 @@ export const contact = {
     { title: 'A 30-minute conversation', body: 'We talk through the work that takes up your team’s time and where AI could help. You do not need to prepare anything or know which tools you want.' },
     { title: 'A proposal for your team', body: 'You see the full scope and the way to start before you commit to anything.' },
   ],
-  location: 'Human Horizon is based in Singapore.',
 };
 
 export const insights = {

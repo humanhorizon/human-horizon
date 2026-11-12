@@ -8,14 +8,14 @@ export const site = {
     'AI consultancy in Singapore for people-first implementation, training and adoption, so AI becomes part of the company culture and the results last.',
   // Footer boilerplate: the USP in two sentences (Implement, Train, Adopt, people first, results that last).
   boilerplate: 'People-first AI consultancy for businesses. We implement AI in each team’s work, train people and help them adopt it, so results stick and AI becomes company culture, not an individual pursuit.',
-  cta: { label: 'Ask for a 30-minute call', href: '/contact?topic=call#form' },
+  cta: { label: 'Ask for a 30-minute call', href: '/contact#form' },
   pilot: {
     title: 'Be one of our first three founding clients, with both founders on your team.',
     text: 'Work directly with both founders, help shape how we work, and start at a founding rate well below our usual fee. In return, we ask for honest feedback, a testimonial and before-and-after data we can share.',
     bar: 'Taking on three founding clients, each working directly with both founders.',
     short: 'Taking on three founding clients.',
     link: 'Register interest',
-    href: '/contact?topic=founding#form',
+    href: '/contact#form',
   },
 };
 
