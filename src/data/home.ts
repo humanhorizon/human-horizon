@@ -51,6 +51,10 @@ export const work = {
 export const people = {
   title: 'Founded by people who have built from zero.',
   sub: 'Two founders with 18 years’ combined experience at the forefront of technology and AI implementation.',
+  why: {
+    title: 'Why we are doing this',
+    body: 'Working at the frontier of AI, we have seen how quickly it is changing work, and we expect that change to reach every role. People who do not move with it risk falling behind, and that is not a future we want for any team. We started Human Horizon to make AI part of how the whole team works, not a pursuit for the keen few: we implement it in real workflows, train people on their own tasks and help everyone adopt it, so the change lasts.',
+  },
   founders: [
     { name: 'Jaye Wang', photo: '/founders/jaye.jpg', bio: 'Built and led marketing teams across APAC, from first hire to head of the team.', past: 'Gojek, Alibaba, moomoo' },
     { name: 'Wei Lin', photo: '/founders/weiheng.jpg', bio: 'Set up measurement for global teams across four regions, tied to clear returns.', past: 'Meta, foodpanda, Alibaba' },

@@ -11,7 +11,11 @@ const hasPhoto = (src: string) => existsSync(new URL(`../../public${src}`, impor
   <div class="wrap">
     <div class="two people-head">
       <h2 class="d h2">{title}</h2>
-      <div class="stack"><p class="lead muted">{sub}</p>{link && <a class="lnk" href="/about">About us</a>}</div>
+      <div class="stack">
+        <p class="lead muted">{sub}</p>
+        <div class="why"><h3 class="h3">{people.why.title}</h3><p>{people.why.body}</p></div>
+        {link && <a class="lnk" href="/about">About us</a>}
+      </div>
     </div>
     <div class="founders">
       {people.founders.map((f) => (
@@ -33,6 +37,8 @@ const hasPhoto = (src: string) => existsSync(new URL(`../../public${src}`, impor
 <style>
   .people { padding: var(--section) 0; }
   .people-head { margin-bottom: var(--s5); }
+  .why { display: grid; gap: 8px; padding: var(--s3); border-radius: 16px; background: var(--first-light); }
+  .why p { margin: 0; }
   .founders { display: grid; grid-template-columns: 1fr 1fr; gap: var(--s4); max-width: 980px; }
   .founders figure { margin: 0; display: grid; gap: var(--s3); align-content: start; }
   .founders img, .photo { width: 100%; height: auto; aspect-ratio: 1; object-fit: cover; object-position: center; border-radius: 12px; background: var(--dusk); }
