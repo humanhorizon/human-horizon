@@ -4,7 +4,7 @@ import type { FaqItem } from '../components/Faq.astro';
 
 const pricingFaq: FaqItem = { q: 'How is it priced?', a: 'Every proposal is shaped to your team’s size and the work you want to change, and you see the full scope before you commit.' };
 
-const startFaq: FaqItem = { q: 'How do we start?', a: 'With a 30-minute conversation about the work that takes up your team’s week. Drop us an email at contact.humanhorizon@gmail.com.', links: [{ label: 'Email us', href: 'mailto:contact.humanhorizon@gmail.com' }] };
+const startFaq: FaqItem = { q: 'How do we start?', a: 'With a 30-minute conversation about the work that slows your team down. Send us a short message through the contact form.', links: [{ label: 'Go to the contact form', href: '/contact#form' }] };
 
 export const whatWeDoHub = {
   seoTitle: 'AI implementation, training and adoption | Human Horizon',

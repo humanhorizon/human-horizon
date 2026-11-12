@@ -32,7 +32,7 @@ const page: SegmentPage = {
     { q: 'Will AI replace our helpdesk engineers?', a: 'No. We build AI into the repetitive parts of service work, such as sorting tickets, gathering details and writing reports, so your engineers spend more time on projects and the problems that need their skill. Your team keeps the judgement on every change and every reply.' },
     { q: 'What about client data and access to client systems?', a: 'We agree clear rules with you on which tools to use, what client data and system information can go into them and what a person checks before anything is sent or changed. Access to client environments stays with your engineers, and if a client asks how you use AI, you will have a clear answer.' },
     { q: 'Do you work with our ticketing and monitoring tools?', a: 'We start from the ticketing, monitoring and documentation tools your team already uses, and suggest new ones only where they fit the work. Your service commitments to clients stay with your team, as they are today.' },
-    { q: 'How do we start?', a: 'With a 30-minute conversation about the work that takes up your team’s week. Drop us an email at contact.humanhorizon@gmail.com.', links: [{ label: 'Email us', href: 'mailto:contact.humanhorizon@gmail.com' }] },
+    { q: 'How do we start?', a: 'With a 30-minute conversation about the work that slows your team down. Send us a short message through the contact form.', links: [{ label: 'Go to the contact form', href: '/contact#form' }] },
   ],
   close: {
     title: 'Fewer interruptions, more time to fix things properly.',

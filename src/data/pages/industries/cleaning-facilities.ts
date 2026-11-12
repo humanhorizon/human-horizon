@@ -32,7 +32,7 @@ const page: SegmentPage = {
     { q: 'Will AI replace our supervisors?', a: 'No. We build AI into the repetitive parts of the work, such as rosters, attendance records, scheduling and quotes, so your supervisors spend more time with their crews and clients. Your team keeps the judgement on every decision about people and sites.' },
     { q: 'What about staff and client site data?', a: 'We agree clear rules with you on which tools to use, what staff details, attendance records and client site information can go into them, and what a person checks before anything is sent or paid.' },
     { q: 'Our crews use chat apps, not software. Does that work?', a: 'Yes. We start from the way your crews and supervisors already work, including the chat apps, spreadsheets and systems you have, and suggest new tools only where they fit the work.' },
-    { q: 'How do we start?', a: 'With a 30-minute conversation about the work that takes up your team’s week. Drop us an email at contact.humanhorizon@gmail.com.', links: [{ label: 'Email us', href: 'mailto:contact.humanhorizon@gmail.com' }] },
+    { q: 'How do we start?', a: 'With a 30-minute conversation about the work that slows your team down. Send us a short message through the contact form.', links: [{ label: 'Go to the contact form', href: '/contact#form' }] },
   ],
   close: {
     title: 'Start the day with sites covered, not phones ringing.',

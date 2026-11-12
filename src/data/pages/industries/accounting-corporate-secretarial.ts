@@ -32,7 +32,7 @@ const page: SegmentPage = {
     { q: 'Will AI replace our accountants?', a: 'No. We build AI into the repetitive parts of firm work, such as data entry, reconciliations and first drafts, so your people spend more time on review, advice and client relationships. Your team keeps the judgement and the sign-off on everything.' },
     { q: 'What about our clients’ financial data?', a: 'We agree clear rules with you on which tools to use, what client financial information can go into them and what a person checks before anything is sent or filed. If a client asks how you use AI, you will have a clear answer.' },
     { q: 'Who stays responsible for the accounts and filings?', a: 'Your qualified staff do. They stay responsible for every set of accounts and every filing, and review the work as they do today. We start from the accounting software and tools your team already uses. We do not give regulatory advice, so questions on professional standards stay with your firm and its advisers.' },
-    { q: 'How do we start?', a: 'With a 30-minute conversation about the work that takes up your team’s week. Drop us an email at contact.humanhorizon@gmail.com.', links: [{ label: 'Email us', href: 'mailto:contact.humanhorizon@gmail.com' }] },
+    { q: 'How do we start?', a: 'With a 30-minute conversation about the work that slows your team down. Send us a short message through the contact form.', links: [{ label: 'Go to the contact form', href: '/contact#form' }] },
   ],
   close: {
     title: 'Less keying, more time to think.',

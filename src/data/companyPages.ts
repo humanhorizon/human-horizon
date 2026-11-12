@@ -62,7 +62,7 @@ export const contact = {
   stepsTitle: 'What happens next',
   steps: [
     { title: 'You send a message', body: 'Tell us a little about your business and the work that slows your team down.' },
-    { title: 'A 30-minute conversation', body: 'We talk through the work that takes up your team’s time and where AI could help. You do not need to prepare anything or know which tools you want.' },
+    { title: 'A 30-minute conversation', body: 'We talk through the work that slows your team down and where AI could help. You do not need to prepare anything or know which tools you want.' },
     { title: 'A proposal for your team', body: 'You see the full scope and the way to start before you commit to anything.' },
   ],
 };

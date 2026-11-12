@@ -32,7 +32,7 @@ const page: SegmentPage = {
     { q: 'Will AI replace our finance and admin staff?', a: 'No. We build AI into the repetitive parts of the work, such as keying, matching and first drafts of reports, so your people spend more time checking, following up and advising. Your finance team reviews and approves everything that goes into the books.' },
     { q: 'What about our financial data?', a: 'We agree clear rules with you on which tools to use, what financial and supplier data can go into them, who can see what and what a person checks before anything is posted or paid. Your data stays under your control.' },
     { q: 'Does AI make the accounting calls?', a: 'No. AI prepares and organises the work, and your finance team reviews and approves it, with your accountants advising as they do today. We start from the accounting software and systems you already use, and suggest new tools only where they fit the work.' },
-    { q: 'How do we start?', a: 'With a 30-minute conversation about the work that takes up your team’s week. Drop us an email at contact.humanhorizon@gmail.com.', links: [{ label: 'Email us', href: 'mailto:contact.humanhorizon@gmail.com' }] },
+    { q: 'How do we start?', a: 'With a 30-minute conversation about the work that slows your team down. Send us a short message through the contact form.', links: [{ label: 'Go to the contact form', href: '/contact#form' }] },
   ],
   close: {
     title: 'Month-end without the late nights.',

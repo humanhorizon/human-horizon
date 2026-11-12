@@ -32,7 +32,7 @@ const page: SegmentPage = {
     { q: 'Will AI replace our QS and engineers?', a: 'No. We build AI into the paperwork around the job, such as claims, records and reports, so your QS, engineers and supervisors spend more time on site and on the decisions that need their experience. Your team keeps the judgement and the sign-off on everything that goes out.' },
     { q: 'What about drawings, contracts and client information?', a: 'We agree clear rules with you on which tools to use, what drawings, contract documents and client information can go into them and what a person checks before anything is submitted. If a main contractor or client asks how you use AI, you will have a clear answer.' },
     { q: 'Does AI change who is responsible for technical work?', a: 'No. Professional and safety responsibilities stay with the people on your team who hold them today. AI helps prepare the paperwork, and the qualified person reviews and signs off, as they do now.' },
-    { q: 'How do we start?', a: 'With a 30-minute conversation about the work that takes up your team’s week. Drop us an email at contact.humanhorizon@gmail.com.', links: [{ label: 'Email us', href: 'mailto:contact.humanhorizon@gmail.com' }] },
+    { q: 'How do we start?', a: 'With a 30-minute conversation about the work that slows your team down. Send us a short message through the contact form.', links: [{ label: 'Go to the contact form', href: '/contact#form' }] },
   ],
   close: {
     title: 'Back on site, with the paperwork in hand.',

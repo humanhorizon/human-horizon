@@ -32,7 +32,7 @@ const page: SegmentPage = {
     { q: 'Will AI replace our operations and pricing staff?', a: 'No. We build AI into the repetitive parts of forwarding, such as rate lookups, document preparation and status updates, so your people spend more time on customers, carriers and problem shipments. Your team keeps the judgement on every quote and filing.' },
     { q: 'What about our rates and customer data?', a: 'We agree clear rules with you on which tools to use, what rates, customer and shipment information can go into them and what a person checks before anything is sent or filed. Your rates and margins stay under your control.' },
     { q: 'Do you work with our freight system and customs filing?', a: 'We start from the freight software, spreadsheets and AI tools your team already uses, and suggest new ones only where they fit the work. Customs filings stay with your team, who check and submit them as they do today.' },
-    { q: 'How do we start?', a: 'With a 30-minute conversation about the work that takes up your team’s week. Drop us an email at contact.humanhorizon@gmail.com.', links: [{ label: 'Email us', href: 'mailto:contact.humanhorizon@gmail.com' }] },
+    { q: 'How do we start?', a: 'With a 30-minute conversation about the work that slows your team down. Send us a short message through the contact form.', links: [{ label: 'Go to the contact form', href: '/contact#form' }] },
   ],
   close: {
     title: 'Less paperwork between your team and the cargo.',

@@ -32,7 +32,7 @@ const page: SegmentPage = {
     { q: 'Will AI replace our marketers?', a: 'No. We build AI into the repetitive parts of marketing, such as first drafts, reformatting and reporting, so your people spend more time on ideas, stories and customers. Your team keeps the judgement on everything that goes out under your brand.' },
     { q: 'What about customer data and unreleased plans?', a: 'We agree clear rules with you on which tools to use, what customer details and unreleased plans can go into them, and what a person checks before anything is published. If a customer asks how you use AI, you will have a clear answer.' },
     { q: 'Will our content sound like everyone else’s?', a: 'Not while your team stays in charge of it. Drafts are built from your own work, your examples and your way of saying things, and your marketers edit and approve every piece. We start from the platforms and tools your team already uses.' },
-    { q: 'How do we start?', a: 'With a 30-minute conversation about the work that takes up your team’s week. Drop us an email at contact.humanhorizon@gmail.com.', links: [{ label: 'Email us', href: 'mailto:contact.humanhorizon@gmail.com' }] },
+    { q: 'How do we start?', a: 'With a 30-minute conversation about the work that slows your team down. Send us a short message through the contact form.', links: [{ label: 'Go to the contact form', href: '/contact#form' }] },
   ],
   close: {
     title: 'Your story, told as often as it deserves.',

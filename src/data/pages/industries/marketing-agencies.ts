@@ -32,7 +32,7 @@ const page: SegmentPage = {
     { q: 'Will AI replace our creatives?', a: 'No. We build AI into the repetitive parts of agency work, such as reporting, recaps and first drafts, so your people spend more time on ideas, strategy and client relationships. Your team keeps the judgement on everything that goes out.' },
     { q: 'What about client confidentiality?', a: 'We agree clear rules with you on which tools to use, what client data can go into them and what a person checks before anything is sent. If a client asks how you use AI, you will have a clear answer.' },
     { q: 'Do you work with the tools we already use?', a: 'Yes. We start from the platforms and AI tools your team already has, and suggest new ones only where they fit the work.' },
-    { q: 'How do we start?', a: 'With a 30-minute conversation about the work that takes up your team’s week. Drop us an email at contact.humanhorizon@gmail.com.', links: [{ label: 'Email us', href: 'mailto:contact.humanhorizon@gmail.com' }] },
+    { q: 'How do we start?', a: 'With a 30-minute conversation about the work that slows your team down. Send us a short message through the contact form.', links: [{ label: 'Go to the contact form', href: '/contact#form' }] },
   ],
   close: {
     title: 'Back to the work you got into this for.',

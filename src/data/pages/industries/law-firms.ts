@@ -32,7 +32,7 @@ const page: SegmentPage = {
     { q: 'Will AI replace our lawyers?', a: 'No. AI does not give legal advice or replace a lawyer’s professional judgement. We build it into the repetitive parts of practice, such as file summaries, routine drafts and client updates, so your lawyers spend more time on advice and clients. A lawyer reviews and signs off everything that goes out.' },
     { q: 'What about client confidentiality and privilege?', a: 'We agree clear rules with you on which tools to use, what client and matter information can go into them, and what a lawyer checks before anything is sent. Your firm decides what is appropriate for each matter, and if a client asks how you use AI, you will have a clear answer.' },
     { q: 'How does this fit our professional duties?', a: 'Your lawyers remain responsible for the work, as they are today. We design the work so that a lawyer reviews and signs off every output, and we follow your firm’s own policies. We do not give legal or regulatory advice, so your firm decides what fits its obligations.' },
-    { q: 'How do we start?', a: 'With a 30-minute conversation about the work that takes up your team’s week. Drop us an email at contact.humanhorizon@gmail.com.', links: [{ label: 'Email us', href: 'mailto:contact.humanhorizon@gmail.com' }] },
+    { q: 'How do we start?', a: 'With a 30-minute conversation about the work that slows your team down. Send us a short message through the contact form.', links: [{ label: 'Go to the contact form', href: '/contact#form' }] },
   ],
   close: {
     title: 'Back to the legal work you trained for.',

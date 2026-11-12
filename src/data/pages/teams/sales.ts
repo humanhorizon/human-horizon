@@ -32,7 +32,7 @@ const page: SegmentPage = {
     { q: 'Will AI replace our salespeople?', a: 'No. Buyers buy from people they trust. We build AI into the paperwork around selling, such as proposals, recaps and meeting prep, so your salespeople spend more time with buyers. Your team keeps the relationships and the judgement on every pitch and price.' },
     { q: 'What about our client and pricing data?', a: 'We agree clear rules with you on which tools to use, what client details, pricing and contract terms can go into them, and what a person checks before anything is sent. Your pricing stays under your control.' },
     { q: 'Do you work with our CRM?', a: 'Yes. We start from the CRM, email and tools your team already uses, and suggest new ones only where they fit the work. If you track deals in spreadsheets or chats, we start there.' },
-    { q: 'How do we start?', a: 'With a 30-minute conversation about the work that takes up your team’s week. Drop us an email at contact.humanhorizon@gmail.com.', links: [{ label: 'Email us', href: 'mailto:contact.humanhorizon@gmail.com' }] },
+    { q: 'How do we start?', a: 'With a 30-minute conversation about the work that slows your team down. Send us a short message through the contact form.', links: [{ label: 'Go to the contact form', href: '/contact#form' }] },
   ],
   close: {
     title: 'Warm leads followed up while they are still warm.',

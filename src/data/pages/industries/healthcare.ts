@@ -32,7 +32,7 @@ const page: SegmentPage = {
     { q: 'Will AI make clinical decisions?', a: 'No. Diagnosis, treatment and medical advice stay with your doctors. We build AI into the admin around care, such as patient messages, letters and claims, and a person in your clinic checks what goes out.' },
     { q: 'What about patient data?', a: 'We agree clear rules with you on which tools to use, what patient information can go into them and what a person checks before anything is sent. Medical records are handled with particular care, and if a patient asks how you use AI, you will have a clear answer.' },
     { q: 'Do you work with our clinic system?', a: 'Yes. We start from the clinic management system, messaging apps and spreadsheets your team already uses, and suggest new tools only where they fit the work.' },
-    { q: 'How do we start?', a: 'With a 30-minute conversation about the work that takes up your team’s week. Drop us an email at contact.humanhorizon@gmail.com.', links: [{ label: 'Email us', href: 'mailto:contact.humanhorizon@gmail.com' }] },
+    { q: 'How do we start?', a: 'With a 30-minute conversation about the work that slows your team down. Send us a short message through the contact form.', links: [{ label: 'Go to the contact form', href: '/contact#form' }] },
   ],
   close: {
     title: 'More of the day for the patient in the room.',

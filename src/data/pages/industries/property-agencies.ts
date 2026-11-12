@@ -32,7 +32,7 @@ const page: SegmentPage = {
     { q: 'Will AI replace our agents?', a: 'No. Buyers, sellers and landlords trust people. We build AI into the repetitive parts of agency work, such as enquiry replies, listing write-ups and owner updates, so your agents spend more time at viewings and in negotiations. AI does not give property, legal or financial advice. That stays with your agents, who keep the judgement on everything that goes out.' },
     { q: 'What about our clients’ personal data?', a: 'We agree clear rules with you on which tools to use, what buyer, seller and tenant details can go into them and what a person checks before anything is sent. Your agents always know what is allowed, and your agency decides how its client data is used.' },
     { q: 'Do you work with the portals and apps we already use?', a: 'Yes. We start from the listing portals, messaging apps and systems your agents already use, and suggest new tools only where they fit the work. Your agents stay responsible for what goes into each listing and message, in line with your agency’s own rules.' },
-    { q: 'How do we start?', a: 'With a 30-minute conversation about the work that takes up your team’s week. Drop us an email at contact.humanhorizon@gmail.com.', links: [{ label: 'Email us', href: 'mailto:contact.humanhorizon@gmail.com' }] },
+    { q: 'How do we start?', a: 'With a 30-minute conversation about the work that slows your team down. Send us a short message through the contact form.', links: [{ label: 'Go to the contact form', href: '/contact#form' }] },
   ],
   close: {
     title: 'Time back for the clients your agents worked to win.',

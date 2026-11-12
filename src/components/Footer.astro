@@ -15,7 +15,7 @@ const year = new Date().getFullYear();
     <div><p class="t">Teams</p>{teams.map((s) => <a href={`/teams/${s.slug}`}>{s.name}</a>)}</div>
     <div><p class="t">Company</p><a href="/about">About</a><a href="/insights">Insights</a><a href="/contact">Contact</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a></div>
   </div>
-  <div class="wrap legal cap">© {year} Human Horizon. Singapore.</div>
+  <div class="wrap legal cap">© {year} Human Horizon.</div>
 </footer>
 <style>
   .ftr { padding: var(--s5) 0 var(--s4); border-top: 1px solid var(--line); }

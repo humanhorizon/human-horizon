@@ -32,7 +32,7 @@ const page: SegmentPage = {
     { q: 'Will AI replace our teachers or admin staff?', a: 'No. We build AI into the repetitive parts of running a centre, such as parent messages, enrolment and timetables, so your people spend more time with students and families. Your team keeps the judgement on everything that goes out.' },
     { q: 'What about student and parent data?', a: 'We agree clear rules with you on which tools to use, what student and parent information can go into them and what a person checks before anything is sent. Children’s details are handled with particular care, and if a parent asks how you use AI, you will have a clear answer.' },
     { q: 'Do you work with the systems we already use?', a: 'Yes. We start from the messaging apps, student management systems and spreadsheets your team already has, and suggest new tools only where they fit the work.' },
-    { q: 'How do we start?', a: 'With a 30-minute conversation about the work that takes up your team’s week. Drop us an email at contact.humanhorizon@gmail.com.', links: [{ label: 'Email us', href: 'mailto:contact.humanhorizon@gmail.com' }] },
+    { q: 'How do we start?', a: 'With a 30-minute conversation about the work that slows your team down. Send us a short message through the contact form.', links: [{ label: 'Go to the contact form', href: '/contact#form' }] },
   ],
   close: {
     title: 'Back to the teaching you started this for.',

@@ -75,7 +75,7 @@ export const faq = [
   { q: 'I have been asked to look into AI for our company. Can we talk first?', a: 'Yes. If you are in HR, training or operations and doing the groundwork for your boss, we are happy to talk with you first. We will help you find a sensible place to start and the case to put to them.' },
   { q: 'How do you measure the result?', a: 'Your ROI Transformation Report shows the hours your team saves, valued at your own rates.' },
   { q: 'Is this covered by course funding?', a: 'Human Horizon is not an accredited course provider, so course funding does not apply. From YA 2027, the Enterprise Innovation Scheme also covers AI adoption, such as subscriptions or licences for AI systems and qualifying AI business services. Please ask your accountant whether you may be able to get a tax deduction. We do not promise any tax outcome.', links: [{ label: 'Enterprise Innovation Scheme (IRAS)', href: 'https://www.iras.gov.sg/schemes/disbursement-schemes/enterprise-innovation-scheme-(eis)' }] },
-  { q: 'How do we start?', a: 'With a 30-minute conversation about the work that takes up your team’s week. Drop us an email at contact.humanhorizon@gmail.com.', links: [{ label: 'Email us', href: 'mailto:contact.humanhorizon@gmail.com' }] },
+  { q: 'How do we start?', a: 'With a 30-minute conversation about the work that slows your team down. Send us a short message through the contact form.', links: [{ label: 'Go to the contact form', href: '/contact#form' }] },
 ];
 
 export const close = {

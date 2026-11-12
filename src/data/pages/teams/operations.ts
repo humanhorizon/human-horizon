@@ -32,7 +32,7 @@ const page: SegmentPage = {
     { q: 'Will AI replace our operations staff?', a: 'No. Operations runs on people who know the work, the customers and the exceptions. We build AI into the chasing, retyping and reporting, so your team spends more time solving problems. Your people keep the decisions.' },
     { q: 'What about customer and staff data?', a: 'We agree clear rules with you on which tools to use, what customer, job and staff details can go into them, and what a person checks before anything is sent. Your team will know what is safe to share and what is not.' },
     { q: 'Do you work with the systems and chats we already use?', a: 'Yes. We start from the systems, spreadsheets and group chats your team already runs on, and suggest new ones only where they fit the work. Your team does not have to change how it works overnight.' },
-    { q: 'How do we start?', a: 'With a 30-minute conversation about the work that takes up your team’s week. Drop us an email at contact.humanhorizon@gmail.com.', links: [{ label: 'Email us', href: 'mailto:contact.humanhorizon@gmail.com' }] },
+    { q: 'How do we start?', a: 'With a 30-minute conversation about the work that slows your team down. Send us a short message through the contact form.', links: [{ label: 'Go to the contact form', href: '/contact#form' }] },
   ],
   close: {
     title: 'Fewer fires, more time to plan ahead.',

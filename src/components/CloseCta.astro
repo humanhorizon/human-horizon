@@ -14,7 +14,7 @@ const { title, sub, cta = site.cta, secondary } = Astro.props;
       <a class="btn btn-sun" href={cta.href}>{cta.label}</a>
       {secondary && <a class="btn btn-ghost" href={secondary.href}>{secondary.label}</a>}
     </div>
-    <p class="muted clear">{sub} Or write to <a href={`mailto:${site.email}`}>{site.email}</a>.</p>
+    <p class="muted clear">{sub}</p>
   </div>
 </section>
 
