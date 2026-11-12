@@ -3,13 +3,14 @@ title: The AI skills Singapore employers want
 seoTitle: "The AI skills Singapore employers want: 5 to build"
 description: "The AI skills Singapore employers want, read from IMDA, MOM and SSG data: five skills to build and a simple way to list your own. Start with your tasks."
 date: 2026-11-06
+updated: 2026-11-12
 keyword: AI skills Singapore employers want
 type: blog
 category: AI training
 tags: [Skills]
 audience: [Employees]
 notionPage: https://app.notion.com/p/437d0a6f047e83eb873f01a144a7dba1
-publishedVersion: "2026-11-06T05:57:08.754Z"
+publishedVersion: "2026-11-11T15:43:05.271Z"
 ---
 
 The AI skills Singapore employers want come down to five: applying AI to a specific task in your own field, checking what it produces, handling data responsibly, reworking how a task is done, and the core skills of problem-solving and communication. There is no official list; these five are our reading of the published data.
@@ -60,4 +61,6 @@ Start with your tasks, not a skills catalogue. List the five tasks you repeat mo
 
 Pick one task and write down what good looks like when AI is applied to that task in your own field. If a course has not changed how you work, [why AI courses fade](/insights/why-ai-courses-fade) explains why and what helps. If you are still comparing courses, our guide to [choosing an AI course in Singapore](/ai-course-singapore) sets them out side by side.
 
-Our [hands-on AI training](/what-we-do/train) is built on a team's own tasks, so these skills are practised on real work. If your team or company would like to talk through what the team needs, share this page with your manager and ask for a 30-minute call.
+## What to do next
+
+A skills list only helps if you can tell whether it is growing, and [how to measure whether AI training worked](/insights/how-to-measure-ai-training-roi) shows how a team checks that. You are not the one who buys training, but Human Horizon runs hands-on training on your team's real tasks. If your manager wants to talk it through, they can [ask for a 30-minute call](/contact).

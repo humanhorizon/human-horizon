@@ -11,7 +11,7 @@ audience: ["Founders", "HR and L&D", "AI and ops"]
 related: ["ai-agent", "human-in-the-loop", "ai-pilot", "ai-adoption"]
 sources: []
 notionPage: https://app.notion.com/p/7e8d0a6f047e8247abcf81847b9d61f8
-publishedVersion: "2026-11-11T06:10:48.236Z"
+publishedVersion: "2026-11-11T15:43:08.317Z"
 ---
 
 ## How it works
@@ -36,6 +36,6 @@ A corporate secretarial firm onboards new clients by email. Documents arrive in 
 
 Workflow automation follows a set path that someone designed. An AI agent decides some of its own steps as it goes. Many good workflows combine both: a fixed path, with AI handling specific steps and a person checking at the key points.
 
-## Where to go next
+## Where this fits
 
-The best place to start is the recurring work that slows your team down. See how [AI implementation](/what-we-do/implement) builds custom workflows with a person checking the output.
+Start by mapping one recurring task as it really runs, then decide where a person checks. Human Horizon's First Win is one custom workflow, built around a task your team already does, with your team involved from day one. To talk it through, [ask for a 30-minute call](/contact).

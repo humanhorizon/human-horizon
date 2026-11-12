@@ -11,7 +11,7 @@ audience: ["Founders", "HR and L&D", "AI and ops", "Employees"]
 related: ["generative-ai", "ai-agent", "prompt", "shadow-ai"]
 sources: ["https://www.microsoft.com/en-us/microsoft-365-copilot/in-apps-for-work", "https://workspace.google.com/solutions/ai/"]
 notionPage: https://app.notion.com/p/4f5d0a6f047e826d89c88138eefe9949
-publishedVersion: "2026-11-11T06:10:47.839Z"
+publishedVersion: "2026-11-11T15:43:07.256Z"
 ---
 
 ## What it looks like at work
@@ -38,6 +38,6 @@ An account manager at a 15-person marketing agency finishes a client call with a
 
 An assistant responds to you, one request at a time. An agent works through several steps towards a goal by itself. Most teams start with an assistant and add agents for specific, well-understood workflows.
 
-## Where to go next
+## Where this fits
 
-Most teams get more from an assistant once they learn it on their own work. Read about what makes a good [AI course in Singapore](/ai-course-singapore) for a team like yours.
+Assistants work best learned on your team's own tasks; see what makes a good [AI course in Singapore](/ai-course-singapore). First Win is one custom workflow around a task your team already does, built with your team from day one. To talk it through, [ask for a 30-minute call](/contact).

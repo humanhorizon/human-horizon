@@ -11,7 +11,7 @@ audience: ["Founders", "HR and L&D", "AI and ops"]
 related: ["large-language-model-llm", "prompt", "hallucination", "ai-assistant"]
 sources: ["https://aiverifyfoundation.sg/resources/mgf-gen-ai/"]
 notionPage: https://app.notion.com/p/30cd0a6f047e827c89d1018ae7e7e08c
-publishedVersion: "2026-11-11T06:10:50.777Z"
+publishedVersion: "2026-11-11T15:43:06.797Z"
 ---
 
 ## How it works
@@ -32,6 +32,6 @@ A ten-person interior design firm in Singapore sends a written proposal after ev
 
 Traditional AI usually gives you a label, a score or a forecast from structured data. Generative AI gives you a new piece of content. Both are useful. Generative AI is the one most office teams will touch directly, because it works through plain language.
 
-## Where to go next
+## Where this fits
 
-If your team is already experimenting, the next step is using it well on real work. See how [hands-on AI training](/what-we-do/train) is built around your team's own tasks.
+If your team already uses generative AI, the next step is applying it to one real task. Human Horizon's First Win is one custom workflow around a task your team already does, with your team involved from day one. To talk it through, [ask for a 30-minute call](/contact).

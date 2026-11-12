@@ -3,14 +3,14 @@ title: Why AI courses for employees fade, and how to make it stick
 seoTitle: Why AI courses for employees fade, and how to make it stick
 description: "Why AI courses for employees fade, and five practical ways to make AI training stick. Written for any team being asked to roll out AI training."
 date: 2026-11-05
-updated: 2026-11-06
+updated: 2026-11-12
 keyword: AI courses for employees
 type: blog
 category: AI training
 tags: [Change management, Workflows]
 audience: [HR and L&D]
 notionPage: https://app.notion.com/p/577d0a6f047e8307853c8192df319457
-publishedVersion: "2026-11-06T06:08:59.798Z"
+publishedVersion: "2026-11-11T15:43:05.736Z"
 ---
 
 AI courses for employees can go well in the room and still fade afterwards. People leave interested, a little more confident, with a few good prompts. The learning fades at their desk, because the work they go back to is exactly the same. AI training sticks when the work changes with it: when people learn on their own tasks, when the new way is built into how the job gets done, and when someone keeps an eye on whether it holds.
@@ -73,4 +73,6 @@ The answers will tell you whether the training is likely to stick. Our page on [
 
 Choose one repetitive task that takes your team real time each week. Train on it, rebuild it and check whether it held. One workflow that sticks can teach your team more than a course full of examples.
 
-If you would like a hand, see how our [hands-on AI training](/what-we-do/train) works, or ask for a 30-minute discovery call.
+## What to do next
+
+Once you have the three questions for a provider, the next step is seeing how the answers look on your own team's work. Human Horizon runs hands-on training built on your people's real tasks, with AI adoption tracking and the ROI Transformation Report to show whether it held. To talk through which tasks to start with, [ask for a 30-minute call](/contact).

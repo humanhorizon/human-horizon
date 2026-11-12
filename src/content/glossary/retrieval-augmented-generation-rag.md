@@ -11,7 +11,7 @@ audience: ["Founders", "AI and ops"]
 related: ["large-language-model-llm", "hallucination", "context-window", "workflow-automation"]
 sources: []
 notionPage: https://app.notion.com/p/fead0a6f047e837588688182f0024c00
-publishedVersion: "2026-11-11T06:10:48.088Z"
+publishedVersion: "2026-11-11T15:46:15.092Z"
 ---
 
 ## How it works
@@ -33,6 +33,6 @@ The sales team at an industrial supplies distributor gets daily questions about 
 
 Training or fine-tuning changes the model itself. RAG leaves the model as it is and looks up your documents each time it answers. For most small businesses RAG is easier to keep current: update the document and the answers follow.
 
-## Where to go next
+## Where this fits
 
-RAG is often the backbone of a useful internal assistant. See how [AI implementation](/what-we-do/implement) builds workflows on your own documents, with a person checking the output.
+RAG is often the backbone of a useful internal assistant. To see the model behind it, read [Large language model (LLM)](/insights/glossary/large-language-model-llm). First Win is one custom workflow, built around a task your team already does, with your team involved from day one. To talk it through, [ask for a 30-minute call](/contact).

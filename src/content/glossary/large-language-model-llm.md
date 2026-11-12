@@ -11,7 +11,7 @@ audience: ["Founders", "HR and L&D", "AI and ops"]
 related: ["generative-ai", "prompt", "hallucination", "context-window"]
 sources: []
 notionPage: https://app.notion.com/p/ae6d0a6f047e8247b5cc0197fd989560
-publishedVersion: "2026-11-11T06:10:48.180Z"
+publishedVersion: "2026-11-11T15:43:09.350Z"
 ---
 
 ## How it works
@@ -30,6 +30,6 @@ A freight forwarder in Singapore receives booking requests by email, each in a d
 
 Generative AI is the wider family of tools that create text, images, audio or video. An LLM is the kind of generative AI that works mainly with language. Most AI assistants used in offices today are built on LLMs.
 
-## Where to go next
+## Where this fits
 
-Knowing the engine helps, but results come from using it well on daily work. See how [hands-on AI training](/what-we-do/train) starts with the basics and moves straight onto your team's real tasks.
+An LLM helps most when it is pointed at a task your team already does. First Win is one custom workflow built around that task, with your team involved from day one. To talk it through, [ask for a 30-minute call](/contact).

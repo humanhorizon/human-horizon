@@ -27,8 +27,39 @@ const lastmod = new Map([
 ]);
 const path = (url) => new URL(url).pathname.replace(/\/$/, '') || '/';
 
+// Articles are paced one a day by date (src/lib/insights.ts), so a piece dated after today is not built yet.
+// Links to it from other pages render as plain text until its date, instead of pointing at a missing page.
+const todaySgt = new Date().toLocaleDateString('en-CA', { timeZone: 'Asia/Singapore' });
+const unpublished = new Set(articles.filter((a) => (a.lastmod && readDate(a.slug) > todaySgt)).map((a) => `/insights/${a.slug}`));
+function readDate(slug) {
+  const fm = readFileSync(new URL(`./src/content/insights/${slug}.md`, import.meta.url), 'utf8').split('---')[1] ?? '';
+  return (fm.match(/^date:\s*"?([0-9-]+)/m)?.[1] ?? '');
+}
+// An /insights/<slug> link to a piece with no file yet (held back or not approved) is treated the same way.
+const listings = new Set(['blog', 'guides', 'glossary', 'topics']);
+const known = new Set(articles.map((a) => a.slug));
+const isMissingArticle = (href) => {
+  const m = href.match(/^\/insights\/([^/]+)$/);
+  return !!m && !listings.has(m[1]) && !known.has(m[1]);
+};
+function unlinkUnpublished() {
+  const walk = (node) => {
+    if (!node.children) return;
+    node.children = node.children.flatMap((child) => {
+      if (child.type === 'element' && child.tagName === 'a') {
+        const href = String(child.properties?.href ?? '').replace(/[#?].*$/, '').replace(/\/$/, '');
+        if (unpublished.has(href) || isMissingArticle(href)) return child.children ?? [];
+      }
+      walk(child);
+      return [child];
+    });
+  };
+  return walk;
+}
+
 export default defineConfig({
   site: 'https://humanhorizon.io',
+  markdown: { rehypePlugins: [unlinkUnpublished] },
   integrations: [sitemap({
     filter: (page) => !hidden.has(path(page)),
     serialize: (item) => {

@@ -3,13 +3,14 @@ title: "How to measure AI training ROI in Singapore: 4 checks"
 seoTitle: "How to measure AI training ROI in Singapore: 4 checks"
 description: "How to measure AI training ROI: four checks that run from the first day to a number that moved, with a worked example and a short list to take to your boss."
 date: 2026-11-07
+updated: 2026-11-12
 keyword: how to measure AI training ROI
 type: guide
 category: AI training
 tags: [ROI]
 audience: [HR and L&D]
 notionPage: https://app.notion.com/p/49ad0a6f047e82baabc781f9212e32b8
-publishedVersion: "2026-11-06T06:44:52.334Z"
+publishedVersion: "2026-11-11T15:43:13.354Z"
 ---
 
 How to measure the ROI of AI training comes down to one question: did the work change afterwards? Four checks answer it, in order: was it relevant, can people do the task without help, are they still using it weeks later, and did a number move. Set that number against what the training cost, and that is the return.
@@ -73,4 +74,6 @@ Better still, ask any provider before you buy: what will you measure, and when? 
 
 Choose one task before your next course and time it. Then check at 30 days and at one quarter. If you are still choosing a course, our guide to [choosing an AI course in Singapore](/ai-course-singapore) sets out what to look for.
 
-In our terms, [hands-on AI training](/what-we-do/train) puts people to work on their own tasks, and [Adopt](/what-we-do/adopt) tracks whether the new way is still in use afterwards. If you would like to talk it through for your team or company, schedule a 30-minute call with us.
+## What to do next
+
+Once you have timed one task and set your 30-day and one-quarter checks, the next step is making sure the training uses that same task. Our hands-on training is built on your people's real tasks, with AI adoption tracking to show whether the new way is still in use and the ROI Transformation Report to set the number against the cost. To talk it through for your team, [ask for a 30-minute call](/contact).

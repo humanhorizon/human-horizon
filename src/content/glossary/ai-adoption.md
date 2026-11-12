@@ -11,7 +11,7 @@ audience: ["Founders", "HR and L&D", "AI and ops"]
 related: ["change-management", "ai-pilot", "upskilling", "ai-training-roi"]
 sources: []
 notionPage: https://app.notion.com/p/f6cd0a6f047e822882c081d1cae47abb
-publishedVersion: "2026-11-11T06:10:48.022Z"
+publishedVersion: "2026-11-11T15:43:11.050Z"
 ---
 
 ## What it looks like at work
@@ -34,6 +34,6 @@ An events company bought AI licences for every staff member. Most licences sat u
 
 Implementation is building and setting up: the tools, the workflows, the access. Adoption is people choosing to use them as part of their normal day. A company can implement well and still fail to adopt. Both are needed.
 
-## Where to go next
+## Where this fits
 
-Keeping the new way in use is its own piece of work. See how [AI adoption support](/what-we-do/adopt) helps the change stick in your team's culture.
+Adoption follows the work, so it starts with the tasks your people do every day. Our hands-on training uses your team's own tasks, with the ROI Transformation Report to show the result. To talk it through, [ask for a 30-minute call](/contact).

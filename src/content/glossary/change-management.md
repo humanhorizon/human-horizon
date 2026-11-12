@@ -11,7 +11,7 @@ audience: ["Founders", "HR and L&D", "AI and ops"]
 related: ["ai-adoption", "upskilling", "ai-literacy", "ai-pilot"]
 sources: []
 notionPage: https://app.notion.com/p/e9cd0a6f047e835abef90159870a8e72
-publishedVersion: "2026-11-11T06:10:48.207Z"
+publishedVersion: "2026-11-11T15:43:10.515Z"
 ---
 
 ## How it works
@@ -30,6 +30,6 @@ With AI, the technology is often the easy part. The harder part is people. Most 
 
 The finance team at a distribution company was worried AI would replace them. The finance manager explained that the goal was to cut month-end overtime, not jobs. She asked the team which tasks they disliked most. They chose invoice matching. Together they redesigned it so AI suggests matches and staff check every exception before anything is posted. The team helped write the checking rules, and they now run the process themselves.
 
-## Where to go next
+## Where this fits
 
-Change that lasts takes more than one training day. See how [AI adoption support](/what-we-do/adopt) helps the new way become part of your team's culture.
+Change sticks when people see the new way working on their own tasks. That is the idea behind our hands-on training on your team's own tasks, with the ROI Transformation Report to show the result. To talk it through, [ask for a 30-minute call](/contact).

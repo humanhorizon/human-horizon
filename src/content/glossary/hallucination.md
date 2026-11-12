@@ -11,7 +11,7 @@ audience: ["Founders", "HR and L&D", "AI and ops", "Employees"]
 related: ["large-language-model-llm", "human-in-the-loop", "retrieval-augmented-generation-rag", "ai-literacy"]
 sources: []
 notionPage: https://app.notion.com/p/031d0a6f047e82818da8010def2845cf
-publishedVersion: "2026-11-11T06:10:47.833Z"
+publishedVersion: "2026-11-11T15:43:06.220Z"
 ---
 
 ## How it works
@@ -33,6 +33,6 @@ The dependable safeguard is a person who checks the output against the source be
 
 A sales coordinator at a trading company asks AI to draft a reply to a customer asking about returns. The draft mentions a "standard 14-day return window". The company has no such policy. Because the workflow requires the coordinator to check any terms against the company's terms of sale before sending, she spots it, corrects the reply and sends it. The team then adds the terms of sale to the tool's source material, so future drafts start from the real policy.
 
-## Where to go next
+## Where this fits
 
-Every workflow worth building has a person checking the output before it goes out. See how [AI implementation](/what-we-do/implement) builds that check into the work from the start.
+A person checking the output is the dependable safeguard against a hallucination. Human Horizon's First Win is one custom workflow, built around a task your team already does, with your team involved from day one. To see where a check would sit in yours, [ask for a 30-minute call](/contact).

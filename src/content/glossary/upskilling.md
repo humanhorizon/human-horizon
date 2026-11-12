@@ -11,7 +11,7 @@ audience: ["Founders", "HR and L&D"]
 related: ["ai-literacy", "ai-training-roi", "ai-adoption", "change-management"]
 sources: []
 notionPage: https://app.notion.com/p/faad0a6f047e824b95e8818aa12a2b6e
-publishedVersion: "2026-11-11T06:10:47.901Z"
+publishedVersion: "2026-11-11T15:43:11.500Z"
 ---
 
 ## What it looks like at work
@@ -33,6 +33,6 @@ The accounts team at a small accounting firm spends hours explaining unmatched i
 
 Upskilling helps someone do their current job better as it changes. Reskilling prepares someone for a different job. With AI, most teams need upskilling first, because the work stays the same but how it gets done changes.
 
-## Where to go next
+## Where this fits
 
-Upskilling only pays off if it lasts. Read [why AI courses fade, and how to make them stick](/insights/why-ai-courses-fade).
+Upskilling only pays off if it lasts, so read [why AI courses fade, and how to make them stick](/insights/why-ai-courses-fade). Our hands-on training uses your team's own tasks, with the ROI Transformation Report to show the result. To talk it through, [ask for a 30-minute call](/contact).

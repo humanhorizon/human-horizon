@@ -3,13 +3,14 @@ title: "AI course vs AI implementation partner: how to choose"
 seoTitle: "AI course vs AI implementation partner: how to choose"
 description: "AI course vs AI implementation partner: which one fits? Five questions and a worked example to help you choose, plus one simple rule to decide."
 date: 2026-11-08
+updated: 2026-11-12
 keyword: AI course vs AI implementation partner
 type: guide
 category: AI implementation
 tags: [Workflows]
 audience: [Founders]
 notionPage: https://app.notion.com/p/321d0a6f047e8282b35181e946f4c254
-publishedVersion: "2026-11-06T07:33:29.415Z"
+publishedVersion: "2026-11-11T15:43:12.604Z"
 ---
 
 Choose an AI course if one or a few people want to build their own skills. Choose an AI implementation partner if a specific piece of work should run differently across a team, with someone accountable until it does. The deciding question is whether your problem is knowledge or the way the work gets done.
@@ -78,4 +79,6 @@ If you are in HR, training or operations and your management wants a recommendat
 
 Write down one task your team repeats, how long it takes and who does it. If a course would solve it, take the course. If the work and the way of working itself has to change, talk to a partner.
 
-We offer both ends of this choice: [hands-on AI training](/what-we-do/train) for teams, and [Implement](/what-we-do/implement), where we build custom workflows around how your business already runs. If you would like to think it through with someone, ask for a 30-minute call. If a course is the better fit, we will say so.
+## What to do next
+
+Once you have written down the task your team repeats, you can see whether it needs a course or a changed way of working. First Win is one custom workflow, built around a task your team already does, with your team involved from day one. The call covers your task and which route suits it. To start, [ask for a 30-minute call](/contact).

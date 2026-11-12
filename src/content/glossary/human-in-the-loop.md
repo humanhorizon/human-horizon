@@ -11,7 +11,7 @@ audience: ["Founders", "HR and L&D", "AI and ops"]
 related: ["workflow-automation", "ai-agent", "hallucination", "ai-governance"]
 sources: ["https://www.pdpc.gov.sg/-/media/Files/PDPC/PDF-Files/Resource-for-Organisation/AI/Primer-for-2nd-edition-of-AI-Gov-Framework.pdf", "https://www.imda.gov.sg/-/media/imda/files/news-and-events/media-room/media-releases/2026/01/factsheet-model-ai-governance-framework-for-agentic-ai.pdf"]
 notionPage: https://app.notion.com/p/d23d0a6f047e829ba7d101aef9c816bb
-publishedVersion: "2026-11-11T06:10:48.127Z"
+publishedVersion: "2026-11-11T15:43:09.918Z"
 ---
 
 ## How it works
@@ -34,6 +34,6 @@ A recruitment agency uses AI to compare incoming CVs with a client's job require
 
 Singapore's [primer on the Model AI Governance Framework](https://www.pdpc.gov.sg/-/media/Files/PDPC/PDF-Files/Resource-for-Organisation/AI/Primer-for-2nd-edition-of-AI-Gov-Framework.pdf), from IMDA and PDPC, sets out three levels. In human-in-the-loop, the person makes the final decision with input from AI. In human-over-the-loop, the person supervises and can take over when the AI meets something unexpected. In human-out-of-the-loop, the AI decides without a person, which the primer links to low-harm uses such as product recommendations. The higher the possible harm, the more human involvement it suggests.
 
-## Where to go next
+## Where this fits
 
-Every workflow worth building keeps a person checking at the points that matter. See how [AI implementation](/what-we-do/implement) designs those checkpoints into the work.
+Deciding where a person checks the output is the first design choice in any workflow. First Win is one custom workflow built around a task your team already does, with your team involved from day one. To talk it through, [ask for a 30-minute call](/contact).

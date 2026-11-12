@@ -11,7 +11,7 @@ audience: ["Founders", "HR and L&D", "AI and ops"]
 related: ["ai-acceptable-use-policy", "ai-governance", "personal-data-under-the-pdpa", "ai-assistant"]
 sources: ["https://www.pdpc.gov.sg/-/media/files/pdpc/pdf-files/advisory-guidelines/important-terms-in-pdpa---ch-3-9-%28270717%29.pdf", "https://www.pdpc.gov.sg/-/media/files/pdpc/pdf-files/advisory-guidelines/advisory-guidelines-on-the-use-of-personal-data-in-ai-recommendation-and-decision-systems.pdf"]
 notionPage: https://app.notion.com/p/732d0a6f047e82089a7d01cc2a58d81f
-publishedVersion: "2026-11-11T06:10:47.966Z"
+publishedVersion: "2026-11-11T15:43:07.724Z"
 ---
 
 ## What it looks like at work
@@ -42,6 +42,6 @@ At a corporate services firm, several staff use a free website to transcribe and
 
 Shadow IT is any technology used without approval, such as a personal file-sharing account. Shadow AI is the AI version. It carries an extra risk, because staff often paste whole documents into it.
 
-## Where to go next
+## Where this fits
 
-The cure is approved tools and clear rules your team can follow. See how [AI implementation](/what-we-do/implement) covers tool set-up and AI governance.
+Banning shadow AI only pushes it out of sight, so the fix is approved tools and simple rules. Human Horizon offers AI governance and an AI toolkit: clear, written rules your team can follow. To talk it through, [ask for a 30-minute call](/contact).

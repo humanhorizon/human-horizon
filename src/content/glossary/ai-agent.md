@@ -11,7 +11,7 @@ audience: ["Founders", "AI and ops"]
 related: ["ai-assistant", "workflow-automation", "human-in-the-loop", "ai-governance"]
 sources: ["https://www.imda.gov.sg/-/media/imda/files/news-and-events/media-room/media-releases/2026/01/factsheet-model-ai-governance-framework-for-agentic-ai.pdf"]
 notionPage: https://app.notion.com/p/820d0a6f047e820a8585012704f9355c
-publishedVersion: "2026-11-11T06:10:47.894Z"
+publishedVersion: "2026-11-11T15:43:08.787Z"
 ---
 
 ## How it works
@@ -30,6 +30,6 @@ A property management company receives maintenance requests from tenants by emai
 
 An AI assistant answers you one request at a time, and you decide what happens next. An AI agent works through several steps by itself towards a goal. Many tools now offer a bit of both, so the useful question is how many steps the tool takes before a person looks.
 
-## Where to go next
+## Where this fits
 
-Agents work best on a well-understood process with a person approving the result. See how [AI implementation](/what-we-do/implement) builds agents around your team's recurring work.
+An agent works best on one well-understood process with a person approving the result. Human Horizon's First Win is one custom workflow, built around a task your team already does, with your team involved from day one. To talk it through, [ask for a 30-minute call](/contact).
