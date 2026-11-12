@@ -12,9 +12,9 @@ export const site = {
   pilot: {
     title: 'Be one of our first three founding clients, with both founders on your team.',
     text: 'Work directly with both founders, help shape how we work, and start at a founding rate well below our usual fee. In return, we ask for honest feedback, a testimonial and before-and-after data we can share.',
-    bar: 'We are taking on three founding clients, in exchange for honest feedback to improve.',
-    short: 'Now taking on three founding clients.',
-    link: 'Drop your interest here',
+    bar: 'Taking on three founding clients, each working directly with both founders.',
+    short: 'Taking on three founding clients.',
+    link: 'Register interest',
     href: 'mailto:contact.humanhorizon@gmail.com?subject=Founding%20client%20interest',
   },
 };
