@@ -7,7 +7,7 @@ const year = new Date().getFullYear();
   <div class="wrap grid">
     <div>
       <Logo />
-      <p class="muted blurb">People-first AI adoption for Singapore businesses. We build AI into the work your team already does and train them on it, so the change sticks.</p>
+      <p class="muted blurb">{site.boilerplate}</p>
       <p class="muted blurb"><a href={`mailto:${site.email}`}>{site.email}</a></p>
     </div>
     <div><p class="t">What we do</p>{pillars.map((p) => <a href={`/what-we-do/${p.slug}`}>{p.name}</a>)}<a href="/ai-course-singapore">AI course or training</a></div>
