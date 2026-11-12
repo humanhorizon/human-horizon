@@ -3,14 +3,17 @@
 import Supergraphic from './Supergraphic.astro';
 import { site } from '../data/site';
 
-interface Props { title: string; sub: string }
-const { title, sub } = Astro.props;
+interface Props { title: string; sub: string; cta?: { label: string; href: string }; secondary?: { label: string; href: string } }
+const { title, sub, cta = site.cta, secondary } = Astro.props;
 ---
 <section class="close bg-ink">
   <div class="wrap"><h2 class="d close-h clear">{title}</h2></div>
   <Supergraphic tone="white" />
   <div class="wrap close-low">
-    <a class="btn btn-sun" href={site.cta.href}>{site.cta.label}</a>
+    <div class="btn-row">
+      <a class="btn btn-sun" href={cta.href}>{cta.label}</a>
+      {secondary && <a class="btn btn-ghost" href={secondary.href}>{secondary.label}</a>}
+    </div>
     <p class="muted clear">{sub} Or write to <a href={`mailto:${site.email}`}>{site.email}</a>.</p>
   </div>
 </section>

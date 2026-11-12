@@ -57,7 +57,8 @@ export const courseGuide = {
     { q: 'Are there free AI courses in Singapore?', a: 'Yes, many free introductory courses are available online. They are a good first step for individuals. Our training is for companies that want AI built into their team’s work.' },
   ],
   close: {
-    title: 'Training your team will keep using.',
-    sub: 'It starts with a 30-minute conversation about the work that slows your team down.',
+    title: 'Share this page with your manager, and we can take it forward together.',
+    sub: 'Whoever signs off on training can then ask for a 30-minute call. We start with the work that slows your team down.',
+    secondary: { label: 'Ask for a 30-minute call', href: 'mailto:contact.humanhorizon@gmail.com?subject=A%2030-minute%20call%20with%20Human%20Horizon' },
   },
 };

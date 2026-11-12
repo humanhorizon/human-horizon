@@ -109,7 +109,7 @@ const schema = [
     <div class="wrap"><PilotPanel /></div>
   </section>
 
-  <CloseCta title={page.close.title} sub={page.close.sub} />
+  <CloseCta title={page.close.title} sub={page.close.sub} cta={{ label: page.bridge.link, href: page.bridge.href }} secondary={page.close.secondary} />
 </Base>
 
 <style>
