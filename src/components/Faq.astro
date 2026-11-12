@@ -22,7 +22,7 @@ const { title, items, tone = 'white' } = Astro.props;
 <style>
   .faq details { border-top: 1px solid var(--line); padding: var(--s3) 0; }
   .faq details:last-child { border-bottom: 1px solid var(--line); }
-  .faq summary { cursor: pointer; list-style: none; display: flex; justify-content: space-between; gap: var(--s2); font-size: 21px; }
+  .faq summary { cursor: pointer; list-style: none; display: flex; justify-content: space-between; gap: var(--s2); font-size: 19px; }
   .faq summary::-webkit-details-marker { display: none; }
   .faq summary::after { content: '+'; font-weight: 400; }
   .faq details[open] summary::after { content: '–'; }
