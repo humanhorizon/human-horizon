@@ -2,19 +2,19 @@
 
 export const hero = {
   kicker: 'AI consultancy for Singapore businesses',
-  title: 'Nobody gets left behind in the age of AI.',
-  sub: 'Sending your team on an AI course rarely sticks. We start with your people, build AI into the work they already do, and show you the hours it gives back.',
+  title: 'Make AI part of the company culture, with teams open to it and results that stick.',
+  sub: 'AI rarely lasts when it is left to a few enthusiasts. We implement it in each team’s real work, train people on the tasks they already know and help everyone adopt it, so the results keep building.',
   secondary: { label: 'See how we work', href: '#pact' },
   credibility: 'Founded by people-first leaders who have built at Gojek, Alibaba and Meta.',
 };
 
 export const pact = {
   eyebrow: 'People first. We call it the PACT.',
-  title: 'Your team feels empowered, not afraid.',
-  lead: 'You may know the pattern. Licences get bought, a few enthusiasts dive in and everyone else waits to see whether this is about replacing them. So every engagement runs on four commitments.',
+  title: 'Teams that feel empowered, not afraid.',
+  lead: 'AI adoption is a people change before it is a technology change. Teams take on new ways of working when they know what the change means for their role, help shape it and get support while they learn. Without that, tools go unused. So every engagement runs on four commitments.',
   steps: [
     { letter: 'P', title: 'Promise', body: 'Clear words on what AI means for every role, so nobody is left guessing.' },
-    { letter: 'A', title: 'Ask and involve', body: 'Your team shapes the workflows it will use.' },
+    { letter: 'A', title: 'Ask and involve', body: 'The team shapes the workflows it will use.' },
     { letter: 'C', title: 'Coach', body: 'Learning on real tasks, with support along the way.' },
     { letter: 'T', title: 'Track and reinforce', body: 'We measure what changes and adjust, so it holds.' },
   ],
@@ -22,23 +22,23 @@ export const pact = {
 
 export const shift = {
   title: 'The AI revolution is coming, whether we like it or not.',
-  lead: 'For a founder or leader, the question is not whether your company and teams adopt AI. It is whether they come through it stronger. Done well, here is what changes for you.',
+  lead: 'The question for leaders is not whether the business uses AI. It is whether the whole team adopts it, or only a few individuals. When AI becomes part of the culture, the value builds over time.',
   items: [
-    { title: 'Your best people on your best work', body: 'Hours spent copying, chasing and retyping go back into clients and growth.' },
-    { title: 'Growth without hiring ahead of revenue', body: 'Take on more work with the team you already have.' },
-    { title: 'A return you can see in numbers', body: 'Hours saved, valued at your own rates, in your ROI Transformation Report.' },
+    { title: 'Every team on board, not just the early adopters', body: 'Every role works with AI, so the gains spread across the business instead of sitting with one or two people.' },
+    { title: 'Habits that hold after the training', body: 'New ways of working are built into daily tasks, so the results keep growing rather than fading.' },
+    { title: 'A return the business can measure', body: 'Time saved on each workflow is counted and valued, so leaders see the gain in numbers.' },
   ],
 };
 
 export const whatWeDo = {
   title: 'Made to measure.',
-  lead: 'No two firms run the same way, so there is no template. We start from how your work runs today, then build custom workflows around it, train your people and help them adopt it for good.',
-  report: { name: 'ROI Transformation Report', line: 'The hours your team saves, valued at your own rates.' },
+  lead: 'No two firms work the same way, so there is no template. Every engagement starts from how the work runs today: we implement custom workflows around it, train the people who use the workflows and help the team keep using them.',
+  report: { name: 'ROI Transformation Report', line: 'The hours the team saves, valued at the firm’s own rates.' },
 };
 
 export const work = {
-  title: 'Built around the work your team already does',
-  sub: 'Pick your industry or your team to see what changes.',
+  title: 'Built around the work teams already do.',
+  sub: 'Pick an industry or a team to see what changes.',
   featured: 'logistics-freight',
   icons: {
     'marketing-agencies': '📣', recruitment: '🤝', 'trading-distribution': '📦', 'logistics-freight': '🚢',
@@ -62,9 +62,9 @@ export const start = {
   link: { label: 'Schedule a 30-minute chat', href: 'mailto:contact.humanhorizon@gmail.com?subject=A%2030-minute%20chat%20with%20Human%20Horizon' },
   more: 'and more',
   options: [
-    { name: 'First Win', fit: 'For a team of 5 to 10 people', change: 'One workflow running the new way in your team.', includes: ['One custom workflow', 'Hands-on training for the team', 'A Lite ROI Transformation Report on that workflow'] },
+    { name: 'First Win', fit: 'For a team of 5 to 10 people', change: 'One workflow running the new way in the team.', includes: ['One custom workflow', 'Hands-on training for the team', 'A Lite ROI Transformation Report on that workflow'] },
     { name: 'Accelerator', fit: 'For a small team or department of 5 to 50 people', change: 'A small team or department working the new way, with the numbers to show it.', includes: ['Three custom workflows', 'Hands-on training for the team or department', 'An ROI Transformation Report for the team or department'] },
-    { name: 'Enterprise', fit: 'For a whole company of 20 or more', change: 'Your whole team using AI with confidence, under clear rules.', includes: ['Hands-on training for everyone, with role-specific sessions', 'An AI toolkit and AI governance for the company', 'An ROI Transformation Report for each department'] },
+    { name: 'Enterprise', fit: 'For a whole company of 20 or more', change: 'The whole company using AI with confidence, under clear rules.', includes: ['Hands-on training for everyone, with role-specific sessions', 'An AI toolkit and AI governance for the company', 'An ROI Transformation Report for each department'] },
   ],
 };
 
@@ -79,6 +79,6 @@ export const faq = [
 ];
 
 export const close = {
-  title: 'AI is coming either way. Let it be your culture.',
-  sub: 'A 30-minute conversation about the work that slows your team down.',
+  title: 'Nobody gets left behind in the age of AI.',
+  sub: 'A 30-minute conversation about the work that slows your team down, and where AI could help first.',
 };

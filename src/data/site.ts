@@ -5,7 +5,7 @@ export const site = {
   url: 'https://humanhorizon.io',
   email: 'contact.humanhorizon@gmail.com',
   description:
-    'People-first AI implementation and hands-on training for Singapore businesses. We build AI into your team’s real work, so the change sticks.',
+    'AI consultancy in Singapore for people-first implementation, training and adoption, so AI becomes part of the company culture and the results last.',
   cta: { label: 'Ask for a 30-minute call', href: 'mailto:contact.humanhorizon@gmail.com?subject=A%2030-minute%20call%20with%20Human%20Horizon' },
   pilot: {
     title: 'Be one of our first three founding clients, with both founders on your team.',
