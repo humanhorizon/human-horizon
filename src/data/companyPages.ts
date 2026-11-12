@@ -10,6 +10,14 @@ export const about = {
   kicker: 'About Human Horizon',
   title: 'AI should lift people, not leave them behind.',
   lead: 'Human Horizon is a Singapore AI consultancy founded by Jaye Wang and Wei Lin. We work alongside your team on the work they already do, train them on it and help it stick, so your people come through the change more capable and still in charge.',
+  story: {
+    title: 'Why we started Human Horizon.',
+    paras: [
+      'Between us, we have spent 18 years building teams and measuring results at companies such as Gojek, Alibaba and Meta. Working at the frontier of technology, we have watched AI move from experiment to everyday work, and the pace keeps rising. We expect it to reach every role.',
+      'We have also seen how that change usually lands. New tools arrive, a few early adopters run with them and everyone else waits, unsure what it means for their job. The gap widens, and the people on the wrong side of it lose ground. We do not think that is acceptable, for the people or for the businesses that rely on them.',
+      'So we started Human Horizon to make AI part of how the whole team works, not a pursuit for the keen few. Every engagement follows three steps, Implement, Train and Adopt, with people first at each one, so the change lasts.',
+    ],
+  },
   beliefsTitle: 'What we believe',
   beliefs: [
     { title: 'AI is a people change', body: 'Tools are the easy part. Whether AI sticks depends on whether people trust it, shape it and see it make their work better.' },
@@ -18,7 +26,7 @@ export const about = {
   ],
   founders: {
     title: 'The people behind Human Horizon.',
-    sub: 'Two founders with 18 years’ combined experience at the forefront of technology and AI implementation.',
+    sub: 'One has built and led teams, the other has measured what they deliver. AI that lasts needs both.',
   },
   people: {
     title: 'We hold ourselves to the PACT.',

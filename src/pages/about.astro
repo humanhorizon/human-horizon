@@ -41,6 +41,13 @@ const schema = [
 
   <PageHero kicker={about.kicker} title={about.title} lead={about.lead} secondary={{ label: 'Meet the founders', href: '#founders' }} note={hero.credibility} />
 
+  <section class="section story" id="why">
+    <div class="wrap two">
+      <h2 class="d h2">{about.story.title}</h2>
+      <div class="stack">{about.story.paras.map((p) => <p class="lead">{p}</p>)}</div>
+    </div>
+  </section>
+
   <Founders title={about.founders.title} sub={about.founders.sub} link={false} tone="morning" />
 
   <section class="section">
@@ -64,6 +71,8 @@ const schema = [
   .crumbs { padding-top: var(--s3); font-size: 14px; color: var(--slate); }
   .crumbs a { color: var(--slate); }
   .sec-h { margin-bottom: var(--s5); }
+  .story .stack { gap: var(--s3); max-width: 640px; }
+  .story .two, .story.two, .story > .two { align-items: start; }
   .beliefs { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--s2); }
   .beliefs li { display: grid; gap: 12px; align-content: start; padding: var(--s4) var(--s3); background: var(--morning); border-radius: 20px; }
   .pilot-sec { padding: 0 0 var(--section); }
