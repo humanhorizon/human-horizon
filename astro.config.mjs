@@ -20,6 +20,7 @@ const hidden = new Set([
   ...(articles.filter((a) => a.type === 'blog').length >= MIN_TYPE_ITEMS ? [] : ['/insights/blog']),
   ...(articles.filter((a) => a.type === 'guide').length >= MIN_TYPE_ITEMS ? [] : ['/insights/guides']),
   ...(terms.length ? [] : ['/insights/glossary']),
+  '/contact/thanks',
 ]);
 const lastmod = new Map([
   ...articles.map((a) => [`/insights/${a.slug}`, a.lastmod]),

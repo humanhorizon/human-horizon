@@ -1,0 +1,20 @@
+---
+// Where the contact form lands after a successful send (Netlify Forms posts here). Not indexed.
+import Base from '../../layouts/Base.astro';
+import { site } from '../../data/site';
+import { contact } from '../../data/companyPages';
+const t = contact.thanks;
+---
+<Base title={t.seoTitle} noindex>
+  <section class="section">
+    <div class="wrap thanks">
+      <h1 class="d h2">{t.title}</h1>
+      <p class="lead muted">{t.body.replace(/write to us directly\.$/, '')}<a href={`mailto:${site.email}`}>write to us directly</a>.</p>
+      <a class="lnk" href="/">Back to the homepage</a>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .thanks { display: grid; gap: var(--s3); max-width: 760px; padding-top: var(--s5); padding-bottom: var(--s5); }
+</style>

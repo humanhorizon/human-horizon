@@ -36,15 +36,36 @@ export const about = {
 
 export const contact = {
   seoTitle: 'Contact Human Horizon | AI consultancy in Singapore',
-  description: 'Talk to Human Horizon about AI for your Singapore business. Email us about the work that takes up your team’s week and ask for a 30-minute call.',
+  description: 'Talk to Human Horizon about AI for your business. Send a short message about the work that slows your team down and ask for a 30-minute call.',
   kicker: 'Contact Human Horizon',
   title: 'Tell us what slows your team down.',
-  lead: 'Every engagement starts with a 30-minute conversation. It is a conversation about your business, not a sales pitch. Email us and we will reply to set up a call.',
+  lead: 'Every engagement starts with a 30-minute call. It is a conversation about your business, not a sales pitch. Send a short message below and a founder will reply to set up a call.',
   emailTitle: 'Email us',
-  emailNote: 'A few lines are enough: what your business does, how big the team is and which work you would most like to change.',
+  emailNote: 'Prefer email? Write to us directly.',
+  form: {
+    title: 'Send us a message',
+    note: 'A few lines are enough: what your business does and which work you would most like to change.',
+    roles: ['Founder or director', 'HR, training or L&D', 'Operations or AI lead', 'Other'],
+    sizes: ['1 to 10', '11 to 50', '51 to 200', 'More than 200'],
+    topics: [
+      { value: 'call', label: 'A 30-minute call' },
+      { value: 'founding', label: 'Becoming a founding client' },
+      { value: 'other', label: 'Something else' },
+    ],
+    messageLabel: 'What slows your team down?',
+    messageHint: 'A few lines on the work you would most like to change.',
+    consent: 'We use your details only to reply to you.',
+    submit: 'Send message',
+    linkError: 'Please keep links to two or fewer, so the message reaches us.',
+  },
+  thanks: {
+    seoTitle: 'Message sent | Human Horizon',
+    title: 'Thanks, your message is with us.',
+    body: 'A founder will reply by email to set up a 30-minute call. If you would rather, write to us directly.',
+  },
   stepsTitle: 'What happens next',
   steps: [
-    { title: 'You email us', body: 'Tell us a little about your business and the work that slows your team down.' },
+    { title: 'You send a message', body: 'Tell us a little about your business and the work that slows your team down.' },
     { title: 'A 30-minute conversation', body: 'We talk through the work that takes up your team’s time and where AI could help. You do not need to prepare anything or know which tools you want.' },
     { title: 'A proposal for your team', body: 'You see the full scope and the way to start before you commit to anything.' },
   ],
@@ -66,7 +87,7 @@ export const privacy = {
   seoTitle: 'Privacy notice | Human Horizon',
   description: 'How Human Horizon collects and uses personal data, in line with Singapore’s Personal Data Protection Act.',
   title: 'Privacy notice',
-  updated: '5 November 2026',
+  updated: '12 November 2026',
   sections: privacySections,
 };
 

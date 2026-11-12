@@ -59,6 +59,6 @@ export const courseGuide = {
   close: {
     title: 'Share this page with your manager, and we can take it forward together.',
     sub: 'Whoever signs off on training can then ask for a 30-minute call. We start with the work that slows your team down.',
-    secondary: { label: 'Ask for a 30-minute call', href: 'mailto:contact.humanhorizon@gmail.com?subject=A%2030-minute%20call%20with%20Human%20Horizon' },
+    secondary: { label: 'Ask for a 30-minute call', href: '/contact?topic=call#form' },
   },
 };
