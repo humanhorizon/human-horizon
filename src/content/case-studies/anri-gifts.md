@@ -1,6 +1,7 @@
 ---
 client: Anri Gifts
 website: https://anrigifts.com
+logo: /case-studies/anri-gifts-logo.png
 about: A Singapore business selling customised corporate gifts and wedding favours.
 title: From supplier to live product in 8 minutes, not 5 days.
 seoTitle: "AI case study: Anri Gifts, Singapore gifting | Human Horizon"

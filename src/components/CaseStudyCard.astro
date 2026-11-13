@@ -7,7 +7,7 @@ const d = cs.data;
 const top = d.results[0];
 ---
 <a class="csc" href={`/case-studies/${cs.id}`}>
-  <p class="csc-client">{d.client}{!d.publish && <span class="csc-draft">Draft</span>}</p>
+  <p class="csc-client">{d.logo ? <img class="csc-logo" src={d.logo} alt={d.client} /> : d.client}{!d.publish && <span class="csc-draft">Draft</span>}</p>
   <p class="d csc-h">{d.title}</p>
   <p class="csc-stat"><strong>{top.value}</strong> {top.label}</p>
   <p class="muted csc-sum">{d.summary}</p>
@@ -17,6 +17,7 @@ const top = d.results[0];
   .csc { display: grid; gap: 14px; align-content: start; padding: clamp(24px, 3vw, 40px); border-radius: 20px; background: var(--morning); color: var(--ink); text-decoration: none; border: 1.5px solid transparent; transition: border-color .15s; }
   .csc:hover { border-color: var(--ink); }
   .csc-client { font-weight: 600; font-size: 15px; color: var(--sunrise-text); display: flex; gap: 10px; align-items: center; }
+  .csc-logo { height: 32px; width: auto; }
   .csc-draft { font-size: 12px; padding: 2px 8px; border-radius: 99px; background: var(--ink); color: #fff; }
   .csc-h { font-size: clamp(26px, 2.2vw, 32px); line-height: 1.12; text-wrap: balance; }
   .csc-stat { font-size: 16px; }
