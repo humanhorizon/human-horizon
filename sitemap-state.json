@@ -1,258 +1,262 @@
 {
   "/about": {
-    "hash": "0b329e0dc37e0de1",
-    "lastUpdated": "2026-11-12"
+    "hash": "a8c9f3624708fc0e",
+    "lastUpdated": "2026-11-13"
   },
   "/ai-course-singapore": {
-    "hash": "b5cf8f161fa3e498",
-    "lastUpdated": "2026-11-12"
+    "hash": "9cfa388f504262f2",
+    "lastUpdated": "2026-11-13"
   },
   "/contact": {
-    "hash": "c49a55dd71721ba8",
-    "lastUpdated": "2026-11-12"
+    "hash": "ebd971fedcd9fcde",
+    "lastUpdated": "2026-11-13"
   },
   "/contact/thanks": {
-    "hash": "88ed0b2752064ad8",
-    "lastUpdated": "2026-11-12"
+    "hash": "079ab3a6df79e791",
+    "lastUpdated": "2026-11-13"
   },
   "/": {
-    "hash": "489bab13ce5254d5",
-    "lastUpdated": "2026-11-12"
+    "hash": "389d58b2cece7d81",
+    "lastUpdated": "2026-11-13"
   },
   "/industries/accounting-corporate-secretarial": {
-    "hash": "399cca48b72523a1",
-    "lastUpdated": "2026-11-12"
+    "hash": "2a4888f324a14a0c",
+    "lastUpdated": "2026-11-13"
   },
   "/industries/cleaning-facilities": {
-    "hash": "775a2a6215cf6d43",
-    "lastUpdated": "2026-11-12"
+    "hash": "12136e4d71dd3db4",
+    "lastUpdated": "2026-11-13"
   },
   "/industries/education": {
-    "hash": "98b776cbcbe40b98",
-    "lastUpdated": "2026-11-12"
+    "hash": "bfc57d4f4eb2ad70",
+    "lastUpdated": "2026-11-13"
   },
   "/industries/engineering-me": {
-    "hash": "807657e3f969ed2f",
-    "lastUpdated": "2026-11-12"
+    "hash": "8738f8b68a136977",
+    "lastUpdated": "2026-11-13"
   },
   "/industries/healthcare": {
-    "hash": "6746a978a073fa27",
-    "lastUpdated": "2026-11-12"
+    "hash": "9638e3fc422ead80",
+    "lastUpdated": "2026-11-13"
   },
   "/industries": {
-    "hash": "2f0ef913ed6a85d6",
-    "lastUpdated": "2026-11-12"
+    "hash": "e4acaa07ab5a26a2",
+    "lastUpdated": "2026-11-13"
   },
   "/industries/interior-design": {
-    "hash": "83bda05d6358feb4",
-    "lastUpdated": "2026-11-12"
+    "hash": "f7eff97199630270",
+    "lastUpdated": "2026-11-13"
   },
   "/industries/it-services": {
-    "hash": "eea342041d383225",
-    "lastUpdated": "2026-11-12"
+    "hash": "9773fa89c3c13095",
+    "lastUpdated": "2026-11-13"
   },
   "/industries/law-firms": {
-    "hash": "8a6a0e706993768f",
-    "lastUpdated": "2026-11-12"
+    "hash": "9515e7962c32b6d7",
+    "lastUpdated": "2026-11-13"
   },
   "/industries/logistics-freight": {
-    "hash": "0a7f64ae50fd066c",
-    "lastUpdated": "2026-11-12"
+    "hash": "0add5192a7057b44",
+    "lastUpdated": "2026-11-13"
   },
   "/industries/marketing-agencies": {
-    "hash": "d6a5933f3fe6feac",
-    "lastUpdated": "2026-11-12"
+    "hash": "3bfa89882abd2079",
+    "lastUpdated": "2026-11-13"
   },
   "/industries/property-agencies": {
-    "hash": "2612e8d206484e63",
-    "lastUpdated": "2026-11-12"
+    "hash": "fc2895792306c861",
+    "lastUpdated": "2026-11-13"
   },
   "/industries/recruitment": {
-    "hash": "ce672d93d214ac10",
-    "lastUpdated": "2026-11-12"
+    "hash": "692c347b02b753ad",
+    "lastUpdated": "2026-11-13"
   },
   "/industries/trading-distribution": {
-    "hash": "78e5ef1709767e04",
-    "lastUpdated": "2026-11-12"
+    "hash": "1226ac84ef30d410",
+    "lastUpdated": "2026-11-13"
   },
   "/insights/ai-course-vs-ai-implementation-partner": {
-    "hash": "d5b0c82ec1abfa7e",
+    "hash": "0a429bb35312499b",
     "lastUpdated": "2026-11-12"
   },
   "/insights/ai-skills-singapore-employers-want": {
-    "hash": "1f70fc61c90df056",
+    "hash": "a805e09ae30e1e5b",
     "lastUpdated": "2026-11-12"
   },
   "/insights/blog": {
-    "hash": "8c18228724fa4104",
-    "lastUpdated": "2026-11-12"
+    "hash": "089206a84d783ad2",
+    "lastUpdated": "2026-11-13"
   },
   "/insights/glossary/ai-acceptable-use-policy": {
-    "hash": "07fec9f14c4f2b35",
+    "hash": "d25a41564f35e7c7",
     "lastUpdated": "2026-11-12"
   },
   "/insights/glossary/ai-adoption": {
-    "hash": "762980f4e900fd01",
+    "hash": "ecedbf9b54a11f60",
     "lastUpdated": "2026-11-11"
   },
   "/insights/glossary/ai-agent": {
-    "hash": "c29a81f3443269cc",
+    "hash": "ab5ca1d9251116f2",
     "lastUpdated": "2026-11-11"
   },
   "/insights/glossary/ai-assistant": {
-    "hash": "5af0fcf2cfafb8cf",
+    "hash": "a49bf58006a20c18",
     "lastUpdated": "2026-11-11"
   },
   "/insights/glossary/ai-governance": {
-    "hash": "17935dd467d13893",
+    "hash": "b5b19ac11a5123a2",
     "lastUpdated": "2026-11-12"
   },
   "/insights/glossary/ai-literacy": {
-    "hash": "98aaa8647dabd6ef",
+    "hash": "1634221144553fa4",
     "lastUpdated": "2026-11-12"
   },
   "/insights/glossary/ai-pilot": {
-    "hash": "060be0c98ae28161",
+    "hash": "faee91088c5831a4",
     "lastUpdated": "2026-11-12"
   },
   "/insights/glossary/ai-training-roi": {
-    "hash": "1ebfc312e2016c34",
+    "hash": "13877a203cbcec05",
     "lastUpdated": "2026-11-12"
   },
   "/insights/glossary/artificial-intelligence-ai": {
-    "hash": "5d57b7cfae4db6ba",
+    "hash": "d7d866712f603079",
     "lastUpdated": "2026-11-12"
   },
   "/insights/glossary/automation": {
-    "hash": "c0e033a821ee9d7c",
+    "hash": "da58aca1dfb71b27",
     "lastUpdated": "2026-11-12"
   },
   "/insights/glossary/business-process-automation": {
-    "hash": "ccd33385d2636060",
+    "hash": "7359acc1eb298c0a",
     "lastUpdated": "2026-11-12"
   },
   "/insights/glossary/change-management": {
-    "hash": "7499e6381b20bc82",
+    "hash": "43c4b4986b9de469",
     "lastUpdated": "2026-11-11"
   },
   "/insights/glossary/context-window": {
-    "hash": "e7aa77874efcd719",
+    "hash": "e2065c5fbe667897",
     "lastUpdated": "2026-11-12"
   },
   "/insights/glossary/generative-ai": {
-    "hash": "cba57f110086bccb",
+    "hash": "624278f84263cd3f",
     "lastUpdated": "2026-11-11"
   },
   "/insights/glossary/hallucination": {
-    "hash": "f20c31621f945669",
+    "hash": "3dc810ba25343481",
     "lastUpdated": "2026-11-11"
   },
   "/insights/glossary/human-in-the-loop": {
-    "hash": "436c02fbded22ef2",
+    "hash": "5f191553c1813cfa",
     "lastUpdated": "2026-11-11"
   },
   "/insights/glossary": {
-    "hash": "88108fa367cee397",
-    "lastUpdated": "2026-11-12"
+    "hash": "ad9a6511f2e73bc0",
+    "lastUpdated": "2026-11-13"
   },
   "/insights/glossary/large-language-model-llm": {
-    "hash": "a22f49a557354af7",
+    "hash": "d5fe9862eb8ce773",
     "lastUpdated": "2026-11-11"
   },
   "/insights/glossary/personal-data-under-the-pdpa": {
-    "hash": "906736f19e0112ce",
+    "hash": "8e1054bb1e75f7ad",
     "lastUpdated": "2026-11-12"
   },
   "/insights/glossary/prompt": {
-    "hash": "65336aa4a7fbef90",
+    "hash": "972ee7d701285e7f",
     "lastUpdated": "2026-11-12"
   },
   "/insights/glossary/retrieval-augmented-generation-rag": {
-    "hash": "1934a814ac346db0",
+    "hash": "2a1bd76d7bcb0ef1",
     "lastUpdated": "2026-11-11"
   },
   "/insights/glossary/shadow-ai": {
-    "hash": "a4bc76bb42dd840b",
+    "hash": "1dd0e84c04600298",
     "lastUpdated": "2026-11-11"
   },
   "/insights/glossary/upskilling": {
-    "hash": "3e3b71dc5e7cadfa",
+    "hash": "72925f18baf031a3",
     "lastUpdated": "2026-11-11"
   },
   "/insights/glossary/workflow-automation": {
-    "hash": "b0d419b89a35f922",
+    "hash": "28c21c4d5a288fb2",
     "lastUpdated": "2026-11-11"
   },
   "/insights/guides": {
-    "hash": "68d3651d46616d74",
-    "lastUpdated": "2026-11-12"
+    "hash": "18cfe3d82fb2f8a7",
+    "lastUpdated": "2026-11-13"
+  },
+  "/insights/how-does-ai-work": {
+    "hash": "dd774269a883ecf6",
+    "lastUpdated": "2026-11-13"
   },
   "/insights/how-to-learn-ai-for-work": {
-    "hash": "bfe763c4dafef58b",
+    "hash": "5465452d2de66809",
     "lastUpdated": "2026-11-12"
   },
   "/insights/how-to-measure-ai-training-roi": {
-    "hash": "8017caf7f247aae3",
+    "hash": "e910bf5ca12b3e3d",
     "lastUpdated": "2026-11-12"
   },
   "/insights": {
-    "hash": "f7d536f01d1f2f64",
-    "lastUpdated": "2026-11-12"
+    "hash": "93e6325661a8ecf7",
+    "lastUpdated": "2026-11-13"
   },
   "/insights/why-ai-courses-fade": {
-    "hash": "a8201577ecb29b08",
+    "hash": "b2571d126c794524",
     "lastUpdated": "2026-11-12"
   },
   "/privacy": {
-    "hash": "8bd918a3d7ed73fc",
-    "lastUpdated": "2026-11-12"
+    "hash": "1f14d574ecadcb5d",
+    "lastUpdated": "2026-11-13"
   },
   "/teams/customer-service": {
-    "hash": "08e116d17505d9e2",
-    "lastUpdated": "2026-11-12"
+    "hash": "925d83253263b0b1",
+    "lastUpdated": "2026-11-13"
   },
   "/teams/finance-admin": {
-    "hash": "404e45adaf0ddfc3",
-    "lastUpdated": "2026-11-12"
+    "hash": "ac12e8c0f1f17124",
+    "lastUpdated": "2026-11-13"
   },
   "/teams/hr-people": {
-    "hash": "701ce4e80356cfd8",
-    "lastUpdated": "2026-11-12"
+    "hash": "a4794a1b3577e881",
+    "lastUpdated": "2026-11-13"
   },
   "/teams": {
-    "hash": "e272fe389b5aeb8e",
-    "lastUpdated": "2026-11-12"
+    "hash": "1b6beaedd89b435b",
+    "lastUpdated": "2026-11-13"
   },
   "/teams/marketing": {
-    "hash": "8508897f6bae9f5a",
-    "lastUpdated": "2026-11-12"
+    "hash": "50d17227869bdb74",
+    "lastUpdated": "2026-11-13"
   },
   "/teams/operations": {
-    "hash": "3c03c192bb86f8df",
-    "lastUpdated": "2026-11-12"
+    "hash": "11bf9eddf06b6e95",
+    "lastUpdated": "2026-11-13"
   },
   "/teams/sales": {
-    "hash": "97f5635e1b49ffe6",
-    "lastUpdated": "2026-11-12"
+    "hash": "761401c1b5092f80",
+    "lastUpdated": "2026-11-13"
   },
   "/terms": {
-    "hash": "6f3926c7db3d1ce6",
-    "lastUpdated": "2026-11-12"
+    "hash": "efe3c1e5e1d75e90",
+    "lastUpdated": "2026-11-13"
   },
   "/what-we-do/adopt": {
-    "hash": "a39b7fd08d3ef6c3",
-    "lastUpdated": "2026-11-12"
+    "hash": "a07634e16c71d5d1",
+    "lastUpdated": "2026-11-13"
   },
   "/what-we-do/implement": {
-    "hash": "7cf8debe19c6802b",
-    "lastUpdated": "2026-11-12"
+    "hash": "e31fa59abc9f3912",
+    "lastUpdated": "2026-11-13"
   },
   "/what-we-do": {
-    "hash": "2a5c0eb3835af889",
-    "lastUpdated": "2026-11-12"
+    "hash": "4ae5d8d567cfc25c",
+    "lastUpdated": "2026-11-13"
   },
   "/what-we-do/train": {
-    "hash": "4f8cc57f28ee2582",
-    "lastUpdated": "2026-11-12"
+    "hash": "432e8c4951604681",
+    "lastUpdated": "2026-11-13"
   }
 }
