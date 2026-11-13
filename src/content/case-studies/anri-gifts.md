@@ -4,9 +4,9 @@ website: https://anrigifts.com
 logo: /case-studies/anri-gifts-logo.png
 logoStacked: /case-studies/anri-gifts-logo-stacked.png
 about: A Singapore business selling customised corporate gifts and wedding favours.
-title: Two staff use AI from sourcing to sales and still make every call.
+title: New products live in 8 minutes, and half the sales day back, with the same two people.
 seoTitle: "AI case study: Anri Gifts, Singapore gifting | Human Horizon"
-description: "AI case study: two staff at Singapore gifting business Anri Gifts get a product live in 8 minutes and quote in 5 minutes a day, reviewing every output."
+description: "AI case study: two staff at Singapore gifting business Anri Gifts get a product live in 8 minutes and spend 5 minutes a day on quotations, reviewing every output."
 summary: Each member of staff now reviews what AI prepares across sourcing, catalogue work, product images and quotations, and spends the time gained on suppliers and new clients.
 subtitle: "AI across sourcing, product images and quotations, with staff checking each result."
 tools: [Claude]
