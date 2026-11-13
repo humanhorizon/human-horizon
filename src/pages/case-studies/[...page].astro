@@ -18,6 +18,8 @@ const items = await getCaseStudies();
 // Only offer filters that match at least one case study.
 const usedIndustries = industries.filter((s) => items.some((c) => c.data.industry === s.slug));
 const usedTeams = teams.filter((t) => items.some((c) => c.data.teams.includes(t.slug)));
+// Filters appear once there are enough case studies to be worth filtering.
+const showFilters = items.length >= 5;
 const url = `${site.url}/case-studies`;
 const schema = [
   {
@@ -41,10 +43,10 @@ const schema = [
 <Base title={copy.seoTitle} description={copy.description} schema={schema}>
   <nav class="wrap crumbs" aria-label="Breadcrumb"><a href="/">Home</a> / <span aria-current="page">Case studies</span></nav>
   <PageHero kicker={copy.kicker} title={copy.title} lead={copy.lead} />
-  <section class="section cs-list" aria-labelledby="cs-find">
+  <section class="section cs-list" aria-label="Case studies">
     <div class="wrap">
-      <h2 class="h3" id="cs-find">{copy.filterTitle}</h2>
-      <div class="filters" data-filters>
+      {showFilters && <h2 class="h3" id="cs-find">{copy.filterTitle}</h2>}
+      {showFilters && <div class="filters" data-filters>
         <label class="f"><span class="f-lab">Industry</span>
           <select data-kind="industry">
             <option value="">All industries</option>
@@ -57,7 +59,7 @@ const schema = [
             {teams.map((t) => <option value={t.slug}>{t.name}{usedTeams.includes(t) ? '' : ' (none yet)'}</option>)}
           </select>
         </label>
-      </div>
+      </div>}
       <p class="sr-only" aria-live="polite" data-count></p>
       <div class="grid" data-grid>{items.map((cs) => <CaseStudyCard cs={cs} />)}</div>
       <div class="empty" data-empty hidden>
