@@ -63,15 +63,20 @@ const caseStudies = defineCollection({
       outcome: z.string(),
       before: z.string(),
       after: z.string(),
+      // Which staff own this work, e.g. Procurement staff, and where their time goes now.
+      staff: z.string(),
       people: z.string(),
       // Time the work took before and after, shown as two bars to scale.
       time: z.object({ before: z.string(), after: z.string(), beforeMinutes: z.number(), afterMinutes: z.number() }),
     })).min(1),
-    // The team as it works now: the people first, then the AI assistants alongside them.
+    // The team then and now: who did the work before, then the staff (first) and AI assistants after.
     team: z.object({
-      people: z.string(),
+      then: z.array(z.object({ role: z.string(), did: z.string() })),
+      now: z.array(z.object({ role: z.string(), does: z.string() })),
       assistants: z.array(z.object({ name: z.string(), does: z.string() })).default([]),
     }).optional(),
+    // Human Horizon services this work used, linked from the client panel.
+    services: z.array(z.enum(['implement', 'train', 'adopt'])).default([]),
     date: z.coerce.date(),
     updated: z.coerce.date().optional(),
     publish: z.boolean().default(false),

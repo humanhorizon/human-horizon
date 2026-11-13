@@ -26,6 +26,7 @@ const iso = (x: Date) => `${x.toISOString().slice(0, 10)}T00:00:00+08:00`;
 // The after bar is drawn to scale, with a floor so a few minutes against days is still visible.
 const share = (w: { time: { beforeMinutes: number; afterMinutes: number } }) => Math.max((w.time.afterMinutes / w.time.beforeMinutes) * 100, 0.6);
 const contents = headings.filter((h) => h.depth === 2);
+const serviceNames = { implement: 'AI implementation', train: 'AI training', adopt: 'AI adoption' } as const;
 
 const schema = [
   {
@@ -69,6 +70,7 @@ const schema = [
       <dl class="client-facts">
         {industry && <div><dt>Industry</dt><dd><a href={`/industries/${industry.slug}`}>{industry.name}</a></dd></div>}
         {caseTeams.length > 0 && <div><dt>Teams</dt><dd>{caseTeams.map((t, i) => <>{i > 0 && ', '}<a href={`/teams/${t.slug}`}>{t.name}</a></>)}</dd></div>}
+        {d.services.length > 0 && <div><dt>What we did</dt><dd>{d.services.map((sv, i) => <>{i > 0 && ', '}<a href={`/what-we-do/${sv}`}>{serviceNames[sv]}</a></>)}</dd></div>}
         {d.tools.length > 0 && <div><dt>AI tools</dt><dd>{d.tools.join(', ')}</dd></div>}
         {d.website && <div><dt>Website</dt><dd><a href={d.website} rel="noopener">{d.website.replace(/^https?:\/\//, '')}</a></dd></div>}
       </dl>
@@ -99,7 +101,7 @@ const schema = [
                 <div><p class="wf-tag">Before</p><p>{w.before}</p></div>
                 <div><p class="wf-tag">Now</p><p>{w.after}</p></div>
               </div>
-              <p class="wf-people"><strong>Where people spend their time now:</strong> {w.people}</p>
+              <p class="wf-people"><strong>Where {lower(w.staff)} spend their time now:</strong> {w.people}</p>
             </article>
           );
         })}
@@ -110,18 +112,23 @@ const schema = [
   {d.team && (
     <section class="section bg-morning" aria-labelledby="team-h">
       <div class="wrap">
-        <h2 class="d h2 sec-h" id="team-h">The team now</h2>
+        <h2 class="d h2 sec-h" id="team-h">The team, then and now</h2>
         <div class="team">
-          <div class="team-people">
-            <p class="d team-people-h">The people</p>
-            <p>{d.team.people}</p>
+          <div class="team-col">
+            <h3 class="team-col-h">Then</h3>
+            <ul class="team-then">
+              {d.team.then.map((m) => <li><p class="team-role">{m.role}</p><p class="muted">{m.did}</p></li>)}
+            </ul>
           </div>
-          {d.team.assistants.map((a) => (
-            <div class="team-ai">
-              <p class="team-ai-h">{a.name}</p>
-              <p class="muted">{a.does}</p>
-            </div>
-          ))}
+          <div class="team-col">
+            <h3 class="team-col-h">Now</h3>
+            <ul class="team-staff">
+              {d.team.now.map((m) => <li><p class="team-role">{m.role}</p><p>{m.does}</p></li>)}
+            </ul>
+            <ul class="team-ai">
+              {d.team.assistants.map((a) => <li><p class="team-role">{a.name}</p><p class="muted">{a.does}</p></li>)}
+            </ul>
+          </div>
         </div>
       </div>
     </section>
@@ -182,12 +189,19 @@ const schema = [
   .wf-tag { font-weight: 600; }
   .wf-people { background: var(--first-light); border-radius: 12px; padding: var(--s2) var(--s3); font-size: 16px; line-height: 1.55; }
 
-  /* Team: people first and larger, the assistants beside them. */
-  .team { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--s2); }
-  .team-people { grid-column: span 2; grid-row: span 2; background: var(--ink); color: #fff; border-radius: 20px; padding: clamp(24px, 3vw, 40px); display: grid; gap: var(--s2); align-content: end; font-size: 17px; line-height: 1.55; }
-  .team-people-h { font-size: clamp(32px, 3vw, 44px); color: var(--sunrise); }
-  .team-ai { background: #fff; border-radius: 20px; padding: var(--s3); display: grid; gap: 8px; align-content: start; font-size: 15px; line-height: 1.5; }
-  .team-ai-h { font-weight: 600; font-size: 17px; }
+  /* Team: then on the left, now on the right with staff first and the AI assistants beside them. */
+  .team { display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 8fr); gap: clamp(24px, 4vw, 56px); align-items: start; }
+  .team-col { display: grid; gap: var(--s2); }
+  .team-col-h { font: 300 clamp(26px, 2.2vw, 32px)/1.1 var(--display); margin: 0 0 4px; }
+  .team ul { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--s2); }
+  .team li { border-radius: 20px; padding: var(--s3); display: grid; gap: 6px; align-content: start; font-size: 15px; line-height: 1.5; }
+  .team-role { font-weight: 600; font-size: 17px; }
+  .team-then li { border: 1.5px dashed var(--line); background: transparent; }
+  .team-staff { grid-template-columns: 1fr 1fr; }
+  .team-staff li { background: var(--ink); color: #fff; }
+  .team-staff .team-role { color: var(--sunrise); }
+  .team-ai { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .team-ai li { background: #fff; }
 
   /* Story: contents on the left, reading column on the right. */
   .story { display: grid; grid-template-columns: minmax(200px, 3fr) minmax(0, 7fr); gap: clamp(32px, 6vw, 96px); align-items: start; }
@@ -202,7 +216,7 @@ const schema = [
 
   @media (max-width: 960px) {
     .hero { grid-template-columns: 1fr; align-items: start; }
-    .team { grid-template-columns: 1fr 1fr; }
+    .team { grid-template-columns: 1fr; }
     .story { grid-template-columns: 1fr; }
     .toc { position: static; }
   }
@@ -210,7 +224,6 @@ const schema = [
     .bars { grid-template-columns: 52px minmax(0, 1fr); }
     .bar-val { grid-column: 2; margin-top: -6px; }
     .wf-text { grid-template-columns: 1fr; gap: var(--s3); }
-    .team { grid-template-columns: 1fr; }
-    .team-people { grid-column: auto; grid-row: auto; }
+    .team-staff, .team-ai { grid-template-columns: 1fr; }
   }
 </style>
