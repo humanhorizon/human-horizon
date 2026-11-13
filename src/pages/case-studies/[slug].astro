@@ -31,7 +31,7 @@ const pct = (w: CaseWorkflow) => {
   const tenths = Math.min(Math.round((1 - ratio) * 1000), 999);
   return `${(tenths * 0.1).toFixed(1)}%`;
 };
-// Procurement staff gives "1 procurement staff member"; The designer gives "1 designer".
+// "Procurement staff" with 1 person reads "1 procurement staff member".
 const people = (w: CaseWorkflow) => {
   const base = lower(w.staff.startsWith('The ') ? w.staff.slice(4) : w.staff);
   const noun = base.endsWith('staff') ? `${base} ${w.humans === 1 ? 'member' : 'members'}` : w.humans === 1 ? base : `${base}s`;
@@ -39,6 +39,8 @@ const people = (w: CaseWorkflow) => {
 };
 const agents = (w: CaseWorkflow) => `${w.agents} AI ${w.agents === 1 ? 'agent' : 'agents'}`;
 const contents = headings.filter((h) => h.depth === 2);
+const totalAgents = d.workflows.reduce((n, w) => n + w.agents, 0);
+const totalStaff = d.team ? d.team.now.length : 0;
 const serviceNames = { implement: 'AI implementation', train: 'AI training', adopt: 'AI adoption' } as const;
 
 const schema = [
@@ -76,6 +78,10 @@ const schema = [
     <div class="hero-text">
       <h1 class="d h1 hero-h"><span class="kicker">AI case study: {d.client}</span><span class="sr-only">: </span>{d.title}</h1>
       <p class="lead muted">{d.summary}</p>
+      <ul class="results" aria-label="Results">
+        {d.workflows.map((w) => <li><p class="d r-n">{pct(w)}</p><p class="r-l">{w.result}</p></li>)}
+        {totalStaff > 0 && <li><p class="d r-n">{totalAgents}</p><p class="r-l">AI agents supporting {totalStaff} staff</p></li>}
+      </ul>
     </div>
     <aside class="client" aria-label="About the client">
       {d.logo ? <img class="client-logo" src={d.logo} alt={d.client} /> : <p class="d client-name">{d.client}</p>}
@@ -90,42 +96,43 @@ const schema = [
     </aside>
   </header>
 
-  <section class="section time" aria-labelledby="time-h">
+  <section class="section flows" aria-labelledby="flows-h" id="workflows">
     <div class="wrap">
-      <h2 class="d h2 sec-h" id="time-h">How long each task took, before and now</h2>
-      <div class="wfs">
-        {d.workflows.map((w) => {
+      <h2 class="d h2 sec-h" id="flows-h">How each workflow changed</h2>
+      <div class="wfl">
+        {d.workflows.map((w, i) => {
           const t = teamOf(w.team);
           return (
-            <article class="wf">
-              <h3 class="d wf-name">{w.name}</h3>
-              <dl class="wf-sum">
-                <div><dt>Before</dt><dd>{w.summary.before}</dd></div>
-                <div><dt>Now</dt><dd>{w.summary.now}</dd></div>
-              </dl>
-              <div class="impact">
-                <div class="bars">
-                  <p class="bar-lab">Before</p>
-                  <div class="bar-track" aria-hidden="true"><span class="bar bar-before" style="width: 100%"></span></div>
-                  <p class="bar-val">{w.time.before}</p>
-                  <p class="bar-lab">Now</p>
-                  <div class="bar-track" aria-hidden="true"><span class="bar bar-after" style={`width: ${share(w)}%`}></span></div>
-                  <p class="bar-val bar-val-now">{w.time.after}</p>
-                  <p class="bar-note">{w.time.unit === 'a day' ? 'Each working day.' : `Per product, in 8-hour working days.`}</p>
+            <details class="wf" open={i === 0} data-wf>
+              <summary>
+                <span class="wf-head">
+                  <span class="d wf-name">{w.name}</span>
+                  <span class="wf-line" data-when="before">{w.summary.before}</span>
+                  <span class="wf-line" data-when="now">{w.summary.now}</span>
+                </span>
+                <span class="wf-pct"><span class="d">{pct(w)}</span> less time</span>
+                <span class="wf-chev" aria-hidden="true"></span>
+              </summary>
+              <div class="wf-body">
+                <div class="seg" role="group" aria-label={`Show ${lower(w.name)} before or now`}>
+                  <button type="button" data-show="before" aria-pressed="false">Before</button>
+                  <button type="button" data-show="now" aria-pressed="true">Now</button>
                 </div>
-                <div class="pct">
-                  <p class="d pct-n">{pct(w)}</p>
-                  <p class="pct-l">less time {w.time.unit}</p>
-                  <p class="pct-who">{agents(w)} supporting {people(w)}</p>
+                <p class="wf-detail" data-when="before">{w.before}</p>
+                <p class="wf-detail" data-when="now">{w.after}</p>
+                <div class="bars" aria-label={`${w.time.before} before, ${w.time.after} now, ${w.time.unit}`}>
+                  <span class="bar-lab" data-bar="before">Before</span>
+                  <span class="bar-track" aria-hidden="true"><span class="bar bar-before" style="width: 100%"></span></span>
+                  <span class="bar-val" data-bar="before">{w.time.before}</span>
+                  <span class="bar-lab" data-bar="now">Now</span>
+                  <span class="bar-track" aria-hidden="true"><span class="bar bar-after" style={`width: ${share(w)}%`}></span></span>
+                  <span class="bar-val" data-bar="now">{w.time.after}</span>
                 </div>
+                <p class="wf-meta">{agents(w)} supporting {people(w)}. {w.time.unit === 'a day' ? 'Time per working day.' : 'Time per product, in 8-hour working days.'}</p>
+                <p class="wf-people" data-when="now"><strong>Where the time goes now:</strong> {w.people}</p>
+                {t && <a class="lnk wf-team" href={`/teams/${t.slug}`}>More AI for {lower(t.name)}</a>}
               </div>
-              <div class="wf-text">
-                <div><p class="wf-tag">Before</p><p>{w.before}</p></div>
-                <div><p class="wf-tag">Now</p><p>{w.after}</p></div>
-              </div>
-              <p class="wf-people"><strong>Where the time goes now:</strong> {w.people}</p>
-              {t && <a class="lnk wf-team" href={`/teams/${t.slug}`}>More AI for {lower(t.name)}</a>}
-            </article>
+            </details>
           );
         })}
       </div>
@@ -172,6 +179,20 @@ const schema = [
   <CloseCta title={close.title} sub={close.sub} />
 </Base>
 
+<script>
+  // Each workflow shows Now by default; the Before/Now switch changes the one-liner, the detail and the
+  // highlighted bar together. Without JavaScript both states stay visible.
+  for (const wf of document.querySelectorAll<HTMLElement>('[data-wf]')) {
+    wf.dataset.state = 'now';
+    wf.querySelector('.seg')?.addEventListener('click', (e) => {
+      const b = (e.target as HTMLElement).closest<HTMLButtonElement>('button[data-show]');
+      if (!b) return;
+      wf.dataset.state = b.dataset.show!;
+      wf.querySelectorAll('.seg button').forEach((x) => x.setAttribute('aria-pressed', String(x === b)));
+    });
+  }
+</script>
+
 <style>
   .draft-bar { background: var(--first-light); text-align: center; padding: 10px var(--gutter); font-size: 14px; font-weight: 600; }
   .crumbs { padding-top: var(--s3); font-size: 14px; color: var(--slate); }
@@ -191,36 +212,46 @@ const schema = [
   .client-facts dt { color: var(--slate); font-weight: 500; }
   .client-facts dd { margin: 0; }
 
-  /* Time: the one bold element. Bars are to scale in working minutes; the % sits large on the right. */
-  .time { padding-top: 0; }
+  /* Header results: quiet figures in ink, so the headline stays the first thing read. */
+  .results { list-style: none; margin: var(--s1) 0 0; padding: var(--s3) 0 0; border-top: 1px solid var(--line); display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--s3); }
+  .r-n { font-size: clamp(30px, 2.6vw, 38px); line-height: 1; }
+  .r-l { margin-top: 8px; font-size: 14px; line-height: 1.45; color: var(--slate); }
+
+  /* Workflows: one row each; open a row to switch between before and now. */
+  .flows { padding-top: 0; }
   .sec-h { margin-bottom: var(--s4); max-width: 820px; }
-  .wfs { display: grid; gap: var(--s5); }
-  .wf { border: 1.5px solid var(--line); border-radius: 24px; padding: clamp(24px, 4vw, 48px); display: grid; gap: var(--s3); }
-  .wf-name { font-size: clamp(28px, 2.8vw, 40px); line-height: 1.08; text-wrap: balance; }
-  .wf-sum { margin: 0; display: grid; gap: 6px; font-size: 17px; line-height: 1.5; }
-  .wf-sum > div { display: grid; grid-template-columns: 64px 1fr; gap: var(--s2); }
-  .wf-sum dt { font-weight: 600; color: var(--slate); }
-  .wf-sum dd { margin: 0; }
-  .wf-sum > div:last-child dd { font-weight: 600; }
-  .impact { background: var(--ink); color: #fff; border-radius: 20px; padding: clamp(24px, 3.5vw, 44px); display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: clamp(24px, 4vw, 64px); align-items: center; margin-top: var(--s1); }
-  .bars { display: grid; grid-template-columns: 56px minmax(0, 1fr) 150px; gap: 16px var(--s3); align-items: center; }
-  .bar-lab { font-size: 15px; font-weight: 600; color: var(--on-ink); }
-  .bar-track { height: 36px; border-radius: 99px; background: rgba(255, 255, 255, .08); overflow: hidden; }
-  .bar { display: block; height: 100%; border-radius: 99px; min-width: 10px; }
-  .bar-before { background: var(--on-ink); }
-  .bar-after { background: var(--sunrise); box-shadow: 0 0 0 6px rgba(255, 122, 61, .25); }
-  .bar-val { font: 300 clamp(22px, 2vw, 30px)/1 var(--display); white-space: nowrap; color: var(--on-ink); }
-  .bar-val-now { color: var(--sunrise); }
-  .bar-note { grid-column: 2 / -1; font-size: 13px; color: var(--on-ink); margin-top: -4px; }
-  .pct { display: grid; gap: 6px; justify-items: end; text-align: right; min-width: 220px; }
-  .pct-n { font-size: clamp(64px, 8vw, 112px); line-height: .9; color: var(--sunrise); letter-spacing: -0.03em; }
-  .pct-l { font-size: 17px; font-weight: 600; }
-  .pct-who { font-size: 15px; color: var(--on-ink); max-width: 240px; }
-  .wf-text { display: grid; grid-template-columns: 1fr 1fr; gap: var(--s4); font-size: 16px; line-height: 1.6; margin-top: var(--s1); }
-  .wf-text > div { display: grid; gap: 6px; align-content: start; }
-  .wf-tag { font-weight: 600; }
+  .wfl { border-top: 1.5px solid var(--line); }
+  .wf { border-bottom: 1.5px solid var(--line); }
+  .wf > summary { list-style: none; cursor: pointer; display: grid; grid-template-columns: minmax(0, 1fr) auto 28px; gap: var(--s3); align-items: center; padding: var(--s3) 0; }
+  .wf > summary::-webkit-details-marker { display: none; }
+  .wf > summary:hover .wf-name { color: var(--sunrise-text); }
+  .wf-head { display: grid; gap: 6px; }
+  .wf-name { font-size: clamp(24px, 2.2vw, 32px); line-height: 1.1; transition: color .15s; }
+  .wf-line { font-size: 16px; color: var(--slate); }
+  .wf-pct { font-size: 14px; color: var(--slate); white-space: nowrap; text-align: right; }
+  .wf-pct .d { font-size: clamp(24px, 2.2vw, 30px); color: var(--ink); margin-right: 4px; }
+  .wf-chev { width: 12px; height: 12px; border-right: 2px solid var(--ink); border-bottom: 2px solid var(--ink); transform: rotate(45deg) translate(-3px, -3px); justify-self: center; transition: transform .2s; }
+  .wf[open] .wf-chev { transform: rotate(225deg) translate(-3px, -3px); }
+  .wf-body { display: grid; gap: var(--s3); padding: 0 0 var(--s4); max-width: 860px; }
+  .seg { display: inline-flex; justify-self: start; padding: 4px; border-radius: 99px; background: var(--morning); }
+  .seg button { font: 600 14px var(--body); border: 0; background: none; color: var(--slate); padding: 8px 18px; border-radius: 99px; cursor: pointer; }
+  .seg button[aria-pressed='true'] { background: var(--ink); color: #fff; }
+  .wf-detail { font-size: 17px; line-height: 1.6; }
+  .bars { display: grid; grid-template-columns: 56px minmax(0, 1fr) 110px; gap: 10px var(--s2); align-items: center; }
+  .bar-lab { font-size: 14px; font-weight: 600; color: var(--slate); }
+  .bar-track { height: 10px; border-radius: 99px; background: var(--morning); overflow: hidden; }
+  .bar { display: block; height: 100%; border-radius: 99px; min-width: 6px; transition: opacity .2s; }
+  .bar-before { background: var(--slate); opacity: .45; }
+  .bar-after { background: var(--sunrise); }
+  .bar-val { font-size: 15px; font-weight: 500; white-space: nowrap; }
+  .wf-meta { font-size: 14px; color: var(--slate); }
   .wf-people { background: var(--first-light); border-radius: 12px; padding: var(--s2) var(--s3); font-size: 16px; line-height: 1.55; }
-  .wf-team { justify-self: start; font-size: 16px; }
+  .wf-team { justify-self: start; font-size: 15px; }
+  /* Before/Now state, set by the script. Without it, every line shows. */
+  .wf[data-state='now'] [data-when='before'], .wf[data-state='before'] [data-when='now'] { display: none; }
+  .wf[data-state='before'] .bar-before { opacity: 1; background: var(--ink); }
+  .wf[data-state='before'] .bar-after { opacity: .45; }
+  .wf[data-state='before'] [data-bar='now'], .wf[data-state='now'] [data-bar='before'] { color: var(--slate); font-weight: 400; }
 
   /* Team: then on the left, now on the right with staff first and the AI assistants beside them. */
   .team { display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 8fr); gap: clamp(24px, 4vw, 56px); align-items: start; }
@@ -248,19 +279,16 @@ const schema = [
   .story-text :global(h2) { scroll-margin-top: var(--s4); }
 
   @media (max-width: 960px) {
+    .results { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     .hero { grid-template-columns: 1fr; align-items: start; }
     .team { grid-template-columns: 1fr; }
-    .impact { grid-template-columns: 1fr; }
-    .pct { justify-items: start; text-align: left; min-width: 0; }
     .story { grid-template-columns: 1fr; }
     .toc { position: static; }
   }
   @media (max-width: 640px) {
-    .bars { grid-template-columns: 52px minmax(0, 1fr); }
-    .bar-val { grid-column: 2; margin-top: -6px; }
-    .bar-note { grid-column: 1 / -1; }
-    .wf-name { white-space: normal; }
-    .wf-text { grid-template-columns: 1fr; gap: var(--s3); }
+    .bars { grid-template-columns: 52px minmax(0, 1fr) auto; }
+    .wf > summary { grid-template-columns: minmax(0, 1fr) 20px; }
+    .wf-pct { grid-column: 1; grid-row: 2; text-align: left; }
     .team-staff, .team-ai { grid-template-columns: 1fr; }
   }
 </style>

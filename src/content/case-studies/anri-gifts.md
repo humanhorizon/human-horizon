@@ -7,7 +7,7 @@ about: A Singapore business selling customised corporate gifts and wedding favou
 title: From supplier to live product in 8 minutes, not 5 days.
 seoTitle: "AI case study: Anri Gifts, Singapore gifting | Human Horizon"
 description: "AI case study: Singapore corporate gifting business Anri Gifts now gets a product from sourcing to live in 8 minutes, and spends 5 minutes a day on quotations."
-summary: Each member of staff now reviews what AI prepares across sourcing, catalogue work, product images and quotations, and spends the time gained on suppliers, the brand and new clients.
+summary: Each member of staff now reviews what AI prepares across sourcing, catalogue work, product images and quotations, and spends the time gained on suppliers and new clients.
 subtitle: "AI across sourcing, product images and quotations, with staff reviewing every output."
 tools: [Claude]
 services: [implement, train, adopt]
@@ -16,6 +16,7 @@ teams: [operations, marketing, sales]
 workflows:
   - team: operations
     name: Product sourcing and catalogue management
+    result: less time to source and list a product
     summary:
       before: "Manual sourcing, supplier comparison and catalogue updates."
       now: "Automated sourcing and catalogue management, reviewed by procurement."
@@ -28,18 +29,20 @@ workflows:
     agents: 2
   - team: marketing
     name: Product images and pages
+    result: less time preparing product images
     summary:
       before: "Product and pack images redone by hand, one product at a time."
-      now: "AI-prepared images and product pages, approved by the designer."
-    before: "The designer redid the product and pack images for each new product before it could appear on the website or in collateral."
-    after: "An AI design assistant prepares the product and pack images for the catalogue and product pages. The designer reviews and approves them."
-    staff: The designer
-    people: "Reviewing and approving images, and shaping how the brand looks."
+      now: "AI-prepared images and product pages, approved by procurement."
+    before: "Product and pack images were redone by hand for each new product before it could appear on the website or in collateral."
+    after: "An AI design assistant prepares the product and pack images for the catalogue and product pages. Procurement staff review and approve them."
+    staff: Procurement staff
+    people: "Approving images in minutes, so new products reach the sales team sooner."
     time: { before: "2 days", after: "10 minutes", beforeMinutes: 960, afterMinutes: 10, unit: "per product" }
     humans: 1
     agents: 1
   - team: sales
     name: Quotations and customer replies
+    result: less time on quotations each day
     summary:
       before: "Every quotation and reply put together by hand."
       now: "AI-drafted quotations and replies, checked and sent by sales."
@@ -52,12 +55,10 @@ workflows:
     agents: 1
 team:
   then:
-    - { role: "Procurement staff", did: "Searched for products, compared suppliers and updated the catalogue database and collateral by hand." }
-    - { role: "Designer", did: "Redid the product and pack images for each new product." }
+    - { role: "Procurement staff", did: "Searched for products, compared suppliers, waited on reworked pack images and updated the catalogue database and collateral by hand." }
     - { role: "Sales staff", did: "Looked up customer details, products and prices in a custom CRM that worked poorly with other tools, and drafted every email and WhatsApp reply by hand." }
   now:
-    - { role: "Procurement staff", does: "Reviews what the AI assistants prepare before it reaches the sales team, and builds relationships with suppliers." }
-    - { role: "Designer", does: "Reviews and approves the images the AI design assistant prepares, and shapes how the brand looks." }
+    - { role: "Procurement staff", does: "Reviews the products and images the AI assistants prepare before they reach the sales team, and works closely with suppliers." }
     - { role: "Sales staff", does: "Reviews the quotations and replies the AI sales assistant drafts, sends them and builds relationships with new clients." }
   assistants:
     - { name: "AI sourcing assistant", does: "Finds products and compares suppliers, weekly and on demand." }
@@ -72,7 +73,7 @@ notionPage: https://app.notion.com/p/417d0a6f047e8162b6a5f248fc9e8ebf
 
 ## Where did the time go before AI?
 
-Anri Gifts runs on a small team, with one person each in procurement, design and sales. In a business that size, every hour spent on repeat work is an hour taken from growing the business.
+Anri Gifts runs on a small team, with one person each in procurement and sales. In a business that size, every hour spent on repeat work is an hour taken from growing the business.
 
 Before AI, most of those hours went into getting products ready to sell. Each new product passed through several pairs of hands: sourcing and supplier comparison, image work, then updates to the catalogue and the collateral that listed it. A single product could take a full working week to reach the website. That slowed how quickly the range could respond to what competitors offered and what clients asked for.
 
@@ -82,7 +83,7 @@ None of this work was unskilled. It simply left the team with little time for th
 
 ## What did Human Horizon implement?
 
-Human Horizon co-founder Jaye Wang led the [AI implementation](/what-we-do/implement) with the founder and team on a pro bono basis. The aim was not to add another tool. It was to rebuild the work itself around the people who do it.
+Human Horizon co-founder Jaye Wang led the [AI implementation](/what-we-do/implement) with the founder and team. The aim was not to add another tool. It was to rebuild the work itself around the people who do it.
 
 Together they mapped where the time went in each of the three workflows, then built each [AI workflow](/insights/glossary/workflow-automation) around Claude and the tools the business already used. [AI agents](/insights/glossary/ai-agent) now run sourcing, catalogue work and image preparation automatically, and an AI sales assistant prepares quotations and replies. Custom CRM and database software, built with the team, connects the workflows so information no longer has to be copied from one place to another.
 
@@ -92,20 +93,20 @@ Every workflow was designed with a person at the point of decision. Nothing reac
 
 Jaye trained the founder and team to work with Claude and existing tools, and they built each workflow together. The [AI training](/what-we-do/train) ran alongside the build, so each person learned AI on the work they own rather than on generic examples.
 
-That meant procurement learned to direct and check the sourcing agents, the designer learned to brief and approve AI-prepared images, and sales learned to review AI drafts with the same care as their own. By the end, each of them understood how their workflow ran, where to check it and how to adjust it when the business changes.
+That meant procurement learned to direct and check the sourcing, product and design agents, and sales learned to review AI drafts with the same care as their own. By the end, each of them understood how their workflow ran, where to check it and how to adjust it when the business changes.
 
 ## How did the PACT keep people first?
 
 Every Human Horizon engagement runs on the [PACT](/#pact), four commitments that make AI a people change, not just a technology change. At Anri Gifts, each one shaped the work.
 
 - **Promise.** From the start, every role knew what AI would mean for it: the AI assistants would take on the groundwork, and staff would keep the judgement, the decisions and the relationships.
-- **Ask and involve.** The people who do the work built the workflows. Procurement, design and sales each shaped how their AI assistants work, which is why the workflows fit the way the business actually runs.
+- **Ask and involve.** The people who do the work built the workflows. Procurement and sales each shaped how their AI assistants work, which is why the workflows fit the way the business actually runs.
 - **Coach.** Support continued while each person built confidence in directing and checking AI output, so nobody was left to work it out alone.
 - **Track and reinforce.** Each workflow was measured before and after, and adjusted where it needed it, so the new way of working holds.
 
 ## What did the team adopt?
 
-[AI adoption](/what-we-do/adopt) at Anri Gifts means every member of staff now works with AI as part of their role. Four [AI assistants](/insights/glossary/ai-assistant) support three people across procurement, design and sales, and each person has moved from doing the groundwork to reviewing it and acting on it.
+[AI adoption](/what-we-do/adopt) at Anri Gifts means every member of staff now works with AI as part of their role. Four [AI assistants](/insights/glossary/ai-assistant) support two people across procurement and sales, and each person has moved from doing the groundwork to reviewing it and acting on it.
 
 The change goes beyond time saved. Each role now starts from prepared work and centres on the judgement only that person can bring.
 
@@ -123,4 +124,4 @@ With the time measured workflow by workflow, management can see where the return
 
 The results stuck because the change was built around people, not just tools. Each person owns the workflow they shaped, knows what changed in their role and why, and has gained time for the work they value most.
 
-AI is now part of how Anri Gifts runs, across sourcing, design and sales, not a tool one person tries now and then. Staff remain the [human in the loop](/insights/glossary/human-in-the-loop) on every call that matters: what reaches the sales team, what each client receives and which suppliers to work with. That shared way of working is what makes AI part of the culture rather than an individual pursuit.
+AI is now part of how Anri Gifts runs, across sourcing, catalogue, images and sales, not a tool one person tries now and then. Staff remain the [human in the loop](/insights/glossary/human-in-the-loop) on every call that matters: what reaches the sales team, what each client receives and which suppliers to work with. That shared way of working is what makes AI part of the culture rather than an individual pursuit.

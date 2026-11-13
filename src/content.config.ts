@@ -64,6 +64,8 @@ const caseStudies = defineCollection({
     workflows: z.array(z.object({
       team: z.string(),
       name: z.string(),
+      // Result label for the header, after the %: e.g. "less time sourcing a product".
+      result: z.string(),
       // One line each, under the workflow name.
       summary: z.object({ before: z.string(), now: z.string() }),
       before: z.string(),
