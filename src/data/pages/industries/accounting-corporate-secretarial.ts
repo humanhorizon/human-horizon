@@ -15,7 +15,7 @@ const page: SegmentPage = {
   ],
   start: {
     title: 'A good first step for an accounting firm',
-    body: 'Start with a First Win on one of these, such as monthly client bookkeeping, for a team of 5 to 10 people. Your team tries it on its own work, so you can judge the change before going further.',
+    body: 'Start with a First Win on one of the workflows on this page, such as monthly client bookkeeping, for a team of 5 to 10 people. Your team tries it on its own work, so you can judge the change before going further.',
   },
   people: {
     title: 'Your professional judgement stays yours.',

@@ -3,12 +3,15 @@
 // a deep ink gradient holds the space. The page places it inside a section near the close.
 import { existsSync } from 'node:fs';
 import { site } from '../data/site';
+interface Props { level?: 'h2' | 'h3' }
+const { level = 'h2' } = Astro.props;
+const H = level;
 const photo = existsSync(new URL('../../public/pilot.jpg', import.meta.url)) ? 'url(/pilot.jpg)' : 'none';
 ---
 <div class="pilot" style={`--photo: ${photo}`}>
   <div class="copy">
     <p class="eyebrow">Founding clients</p>
-    <h2 class="d h2">{site.pilot.title}</h2>
+    <H class="d h2">{site.pilot.title}</H>
     <p class="body">{site.pilot.text}</p>
   </div>
   <a class="btn btn-sun" href={site.pilot.href}>{site.pilot.link}</a>

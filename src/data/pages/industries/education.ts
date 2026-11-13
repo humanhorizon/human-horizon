@@ -15,7 +15,7 @@ const page: SegmentPage = {
   ],
   start: {
     title: 'A good first step for an education provider',
-    body: 'Start with a First Win on one of these, such as your parent updates and class changes, for a team of 5 to 10 people. Your team tries it on its own work, so you can judge the change before going further.',
+    body: 'Start with a First Win on one of the workflows on this page, such as your parent updates and class changes, for a team of 5 to 10 people. Your team tries it on its own work, so you can judge the change before going further.',
   },
   people: {
     title: 'The care in your centre stays human.',
