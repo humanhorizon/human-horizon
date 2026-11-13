@@ -56,6 +56,7 @@ export const contact = {
   },
   thanks: {
     seoTitle: 'Message sent | Human Horizon',
+    description: 'Your message has reached Human Horizon. Thank you for telling us about your team.',
     title: 'Thanks, your message is with us.',
     body: 'We appreciate you telling us about your team. If you would rather, you can also write to us directly.',
   },

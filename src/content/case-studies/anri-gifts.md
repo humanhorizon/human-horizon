@@ -66,7 +66,7 @@ team:
     - { name: "AI design assistant", does: "Prepares product and pack images for the catalogue and product pages.", reportsTo: "Procurement staff" }
     - { name: "AI sales assistant", does: "Reads each customer request, drafts email and WhatsApp replies and builds quotations.", reportsTo: "Sales staff" }
 date: 2026-11-13
-publish: false
+publish: true
 featured: true
 notionPage: https://app.notion.com/p/417d0a6f047e8162b6a5f248fc9e8ebf
 ---
