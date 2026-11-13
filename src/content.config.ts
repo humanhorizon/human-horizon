@@ -82,7 +82,8 @@ const caseStudies = defineCollection({
     team: z.object({
       then: z.array(z.object({ role: z.string(), did: z.string() })),
       now: z.array(z.object({ role: z.string(), does: z.string() })),
-      assistants: z.array(z.object({ name: z.string(), does: z.string() })).default([]),
+      // Each assistant reports into one staff role from `now`.
+      assistants: z.array(z.object({ name: z.string(), does: z.string(), reportsTo: z.string() })).default([]),
     }).optional(),
     date: z.coerce.date(),
     updated: z.coerce.date().optional(),

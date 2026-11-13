@@ -61,10 +61,10 @@ team:
     - { role: "Procurement staff", does: "Reviews the products and images the AI assistants prepare before they reach the sales team, and works closely with suppliers." }
     - { role: "Sales staff", does: "Reviews the quotations and replies the AI sales assistant drafts, sends them and builds relationships with new clients." }
   assistants:
-    - { name: "AI sourcing assistant", does: "Finds products and compares suppliers, weekly and on demand." }
-    - { name: "AI product assistant", does: "Imports products into the catalogue and keeps the database and supplier records current." }
-    - { name: "AI design assistant", does: "Prepares product and pack images for the catalogue and product pages." }
-    - { name: "AI sales assistant", does: "Reads each customer request, drafts email and WhatsApp replies and builds quotations." }
+    - { name: "AI sourcing assistant", does: "Finds products and compares suppliers, weekly and on demand.", reportsTo: "Procurement staff" }
+    - { name: "AI product assistant", does: "Imports products into the catalogue and keeps the database and supplier records current.", reportsTo: "Procurement staff" }
+    - { name: "AI design assistant", does: "Prepares product and pack images for the catalogue and product pages.", reportsTo: "Procurement staff" }
+    - { name: "AI sales assistant", does: "Reads each customer request, drafts email and WhatsApp replies and builds quotations.", reportsTo: "Sales staff" }
 date: 2026-11-13
 publish: false
 featured: true
@@ -93,7 +93,7 @@ Every workflow was designed with a person at the point of decision. Nothing reac
 
 Jaye trained the founder and team to work with Claude and existing tools, and they built each workflow together. The [AI training](/what-we-do/train) ran alongside the build, so each person learned AI on the work they own rather than on generic examples.
 
-That meant procurement learned to direct and check the sourcing, product and design agents, and sales learned to review AI drafts with the same care as their own. By the end, each of them understood how their workflow ran, where to check it and how to adjust it when the business changes.
+That meant procurement learned to direct and check the sourcing, product and design assistants, and sales learned to review AI drafts with the same care as their own. By the end, each of them understood how their workflow ran, where to check it and how to adjust it when the business changes.
 
 ## How did the PACT keep people first?
 

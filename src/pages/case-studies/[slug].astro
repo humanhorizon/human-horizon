@@ -31,16 +31,8 @@ const pct = (w: CaseWorkflow) => {
   const tenths = Math.min(Math.round((1 - ratio) * 1000), 999);
   return `${(tenths * 0.1).toFixed(1)}%`;
 };
-// "Procurement staff" with 1 person reads "1 procurement staff member".
-const people = (w: CaseWorkflow) => {
-  const base = lower(w.staff.startsWith('The ') ? w.staff.slice(4) : w.staff);
-  const noun = base.endsWith('staff') ? `${base} ${w.humans === 1 ? 'member' : 'members'}` : w.humans === 1 ? base : `${base}s`;
-  return `${w.humans} ${noun}`;
-};
-const agents = (w: CaseWorkflow) => `${w.agents} AI ${w.agents === 1 ? 'agent' : 'agents'}`;
 const contents = headings.filter((h) => h.depth === 2);
-const totalAgents = d.workflows.reduce((n, w) => n + w.agents, 0);
-const totalStaff = d.team ? d.team.now.length : 0;
+const totalAgents = d.team?.assistants.length || d.workflows.reduce((n, w) => n + w.agents, 0);
 const serviceNames = { implement: 'AI implementation', train: 'AI training', adopt: 'AI adoption' } as const;
 
 const schema = [
@@ -80,7 +72,8 @@ const schema = [
       <p class="lead muted">{d.summary}</p>
       <ul class="results" aria-label="Results">
         {d.workflows.map((w) => <li><p class="d r-n">{pct(w)}</p><p class="r-l">{w.result}</p></li>)}
-        {totalStaff > 0 && <li><p class="d r-n">{totalAgents}</p><p class="r-l">AI agents supporting {totalStaff} staff</p></li>}
+        <li><p class="d r-n">{d.workflows.length}</p><p class="r-l">AI workflows implemented</p></li>
+        <li><p class="d r-n">{totalAgents}</p><p class="r-l">AI agents designed</p></li>
       </ul>
     </div>
     <aside class="client" aria-label="About the client">
@@ -103,22 +96,21 @@ const schema = [
         {d.workflows.map((w, i) => {
           const t = teamOf(w.team);
           return (
-            <details class="wf" open={i === 0} data-wf>
+            <details class="wf" open={i === 0} data-toggle="before">
               <summary>
                 <span class="wf-head">
                   <span class="d wf-name">{w.name}</span>
-                  <span class="wf-line" data-when="before">{w.summary.before}</span>
-                  <span class="wf-line" data-when="now">{w.summary.now}</span>
+                  <span class="wf-line">{w.summary.now}</span>
                 </span>
                 <span class="wf-pct"><span class="d">{pct(w)}</span> less time</span>
                 <span class="wf-chev" aria-hidden="true"></span>
               </summary>
               <div class="wf-body">
                 <div class="seg" role="group" aria-label={`Show ${lower(w.name)} before or now`}>
-                  <button type="button" data-show="before" aria-pressed="false">Before</button>
-                  <button type="button" data-show="now" aria-pressed="true">Now</button>
+                  <button type="button" data-show="before" aria-pressed="true">Before</button>
+                  <button type="button" data-show="now" aria-pressed="false">Now</button>
                 </div>
-                <p class="wf-detail" data-when="before">{w.before}</p>
+                <p class="wf-detail" data-when="before"><strong>{w.summary.before}</strong> {w.before}</p>
                 <p class="wf-detail" data-when="now">{w.after}</p>
                 <div class="bars" aria-label={`${w.time.before} before, ${w.time.after} now, ${w.time.unit}`}>
                   <span class="bar-lab" data-bar="before">Before</span>
@@ -128,7 +120,6 @@ const schema = [
                   <span class="bar-track" aria-hidden="true"><span class="bar bar-after" style={`width: ${share(w)}%`}></span></span>
                   <span class="bar-val" data-bar="now">{w.time.after}</span>
                 </div>
-                <p class="wf-meta">{agents(w)} supporting {people(w)}. {w.time.unit === 'a day' ? 'Time per working day.' : 'Time per product, in 8-hour working days.'}</p>
                 <p class="wf-people" data-when="now"><strong>Where the time goes now:</strong> {w.people}</p>
                 {t && <a class="lnk wf-team" href={`/teams/${t.slug}`}>More AI for {lower(t.name)}</a>}
               </div>
@@ -141,24 +132,33 @@ const schema = [
 
   {d.team && (
     <section class="section bg-morning" aria-labelledby="team-h">
-      <div class="wrap">
-        <h2 class="d h2 sec-h" id="team-h">The team, then and now</h2>
-        <div class="team">
-          <div class="team-col">
-            <h3 class="team-col-h">Then</h3>
-            <ul class="team-then">
-              {d.team.then.map((m) => <li><p class="team-role">{m.role}</p><p class="muted">{m.did}</p></li>)}
-            </ul>
+      <div class="wrap" data-toggle="now">
+        <div class="team-head">
+          <h2 class="d h2" id="team-h">How the team changed</h2>
+          <div class="seg seg-white" role="group" aria-label="Show the team before or now">
+            <button type="button" data-show="before" aria-pressed="false">Before</button>
+            <button type="button" data-show="now" aria-pressed="true">Now</button>
           </div>
-          <div class="team-col">
-            <h3 class="team-col-h">Now</h3>
-            <ul class="team-staff">
-              {d.team.now.map((m) => <li><p class="team-role">{m.role}</p><p>{m.does}</p></li>)}
-            </ul>
-            <ul class="team-ai">
-              {d.team.assistants.map((a) => <li><p class="team-role">{a.name}</p><p class="muted">{a.does}</p></li>)}
-            </ul>
-          </div>
+        </div>
+        <div class="org">
+          {d.team.now.map((m) => {
+            const then = d.team!.then.find((t) => t.role === m.role);
+            const reports = d.team!.assistants.filter((a) => a.reportsTo === m.role);
+            return (
+              <div class="org-col">
+                <div class="org-staff">
+                  <p class="org-role">{m.role}</p>
+                  {then && <p class="org-text" data-when="before">{then.did}</p>}
+                  <p class="org-text" data-when="now">{m.does}</p>
+                </div>
+                {reports.length > 0 && (
+                  <ul class="org-ai" data-when="now" aria-label={`AI assistants reporting to ${lower(m.role)}`}>
+                    {reports.map((a) => <li><p class="org-ai-name">{a.name}</p><p class="muted">{a.does}</p></li>)}
+                  </ul>
+                )}
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>
@@ -180,15 +180,16 @@ const schema = [
 </Base>
 
 <script>
-  // Each workflow shows Now by default; the Before/Now switch changes the one-liner, the detail and the
-  // highlighted bar together. Without JavaScript both states stay visible.
-  for (const wf of document.querySelectorAll<HTMLElement>('[data-wf]')) {
-    wf.dataset.state = 'now';
-    wf.querySelector('.seg')?.addEventListener('click', (e) => {
+  // Before/Now switches. Each [data-toggle] block starts in the state it names (workflows open on Before,
+  // the team on Now); the switch changes the text and the highlighted bar together. Without JavaScript
+  // both states stay visible.
+  for (const box of document.querySelectorAll<HTMLElement>('[data-toggle]')) {
+    box.dataset.state = box.dataset.toggle;
+    box.querySelector('.seg')?.addEventListener('click', (e) => {
       const b = (e.target as HTMLElement).closest<HTMLButtonElement>('button[data-show]');
       if (!b) return;
-      wf.dataset.state = b.dataset.show!;
-      wf.querySelectorAll('.seg button').forEach((x) => x.setAttribute('aria-pressed', String(x === b)));
+      box.dataset.state = b.dataset.show!;
+      box.querySelectorAll('.seg button').forEach((x) => x.setAttribute('aria-pressed', String(x === b)));
     });
   }
 </script>
@@ -213,7 +214,7 @@ const schema = [
   .client-facts dd { margin: 0; }
 
   /* Header results: quiet figures in ink, so the headline stays the first thing read. */
-  .results { list-style: none; margin: var(--s1) 0 0; padding: var(--s3) 0 0; border-top: 1px solid var(--line); display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--s3); }
+  .results { list-style: none; margin: var(--s1) 0 0; padding: var(--s3) 0 0; border-top: 1px solid var(--line); display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: var(--s3); }
   .r-n { font-size: clamp(30px, 2.6vw, 38px); line-height: 1; }
   .r-l { margin-top: 8px; font-size: 14px; line-height: 1.45; color: var(--slate); }
 
@@ -244,28 +245,29 @@ const schema = [
   .bar-before { background: var(--slate); opacity: .45; }
   .bar-after { background: var(--sunrise); }
   .bar-val { font-size: 15px; font-weight: 500; white-space: nowrap; }
-  .wf-meta { font-size: 14px; color: var(--slate); }
   .wf-people { background: var(--first-light); border-radius: 12px; padding: var(--s2) var(--s3); font-size: 16px; line-height: 1.55; }
   .wf-team { justify-self: start; font-size: 15px; }
   /* Before/Now state, set by the script. Without it, every line shows. */
-  .wf[data-state='now'] [data-when='before'], .wf[data-state='before'] [data-when='now'] { display: none; }
+  [data-state='now'] [data-when='before'], [data-state='before'] [data-when='now'] { display: none; }
   .wf[data-state='before'] .bar-before { opacity: 1; background: var(--ink); }
   .wf[data-state='before'] .bar-after { opacity: .45; }
   .wf[data-state='before'] [data-bar='now'], .wf[data-state='now'] [data-bar='before'] { color: var(--slate); font-weight: 400; }
 
-  /* Team: then on the left, now on the right with staff first and the AI assistants beside them. */
-  .team { display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 8fr); gap: clamp(24px, 4vw, 56px); align-items: start; }
-  .team-col { display: grid; gap: var(--s2); }
-  .team-col-h { font: 300 clamp(26px, 2.2vw, 32px)/1.1 var(--display); margin: 0 0 4px; }
-  .team ul { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--s2); }
-  .team li { border-radius: 20px; padding: var(--s3); display: grid; gap: 6px; align-content: start; font-size: 15px; line-height: 1.5; }
-  .team-role { font-weight: 600; font-size: 17px; }
-  .team-then li { border: 1.5px dashed var(--line); background: transparent; }
-  .team-staff { grid-template-columns: 1fr 1fr; }
-  .team-staff li { background: var(--ink); color: #fff; }
-  .team-staff .team-role { color: var(--sunrise); }
-  .team-ai { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .team-ai li { background: #fff; }
+  /* Team: an org chart. Staff on top; their AI agents report in beneath, joined by a line. */
+  .team-head { display: flex; justify-content: space-between; align-items: flex-end; gap: var(--s3); flex-wrap: wrap; margin-bottom: var(--s4); }
+  .seg-white { background: #fff; }
+  .org { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr)); gap: clamp(24px, 4vw, 56px); align-items: start; }
+  .org-col { display: grid; }
+  .org-staff { background: var(--ink); color: #fff; border-radius: 20px; padding: var(--s3); display: grid; gap: 8px; font-size: 15px; line-height: 1.5; position: relative; transition: background .2s, color .2s; }
+  .org-role { font-weight: 600; font-size: 18px; color: var(--sunrise); }
+  [data-state='before'] .org-staff { background: #fff; color: var(--ink); box-shadow: inset 0 0 0 1.5px var(--line); }
+  [data-state='before'] .org-role { color: var(--ink); }
+  .org-ai { list-style: none; margin: 0; padding: var(--s2) 0 0 var(--s4); display: grid; gap: 12px; position: relative; }
+  /* The reporting line: down from the staff card, then across to each agent. */
+  .org-ai::before { content: ''; position: absolute; left: 22px; top: 0; bottom: 34px; width: 2px; background: var(--line); }
+  .org-ai li { position: relative; background: #fff; border-radius: 16px; padding: 14px var(--s3); display: grid; gap: 4px; font-size: 14px; line-height: 1.5; }
+  .org-ai li::before { content: ''; position: absolute; left: calc(-1 * var(--s4) + 22px); top: 30px; width: calc(var(--s4) - 22px); height: 2px; background: var(--line); }
+  .org-ai-name { font-weight: 600; font-size: 15px; }
 
   /* Story: contents on the left, reading column on the right. */
   .story { display: grid; grid-template-columns: minmax(200px, 3fr) minmax(0, 7fr); gap: clamp(32px, 6vw, 96px); align-items: start; }
