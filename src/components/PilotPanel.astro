@@ -1,20 +1,38 @@
 ---
-// The founding pilot offer over an architecture photograph (public/pilot.jpg). Until that file exists,
-// a deep ink gradient holds the space. The page places it inside a section near the close.
+// A call-to-action panel over an architecture photograph (public/pilot.jpg). By default it carries the
+// founding clients offer; industry and team pages pass their own first step and the usual call CTA.
+// Until the photo exists, a deep ink gradient holds the space.
 import { existsSync } from 'node:fs';
 import { site } from '../data/site';
-interface Props { level?: 'h2' | 'h3' }
-const { level = 'h2' } = Astro.props;
+interface Props {
+  level?: 'h2' | 'h3';
+  eyebrow?: string;
+  title?: string;
+  text?: string;
+  cta?: { label: string; href: string };
+  secondary?: { label: string; href: string };
+}
+const {
+  level = 'h2',
+  eyebrow = 'Founding clients',
+  title = site.pilot.title,
+  text = site.pilot.text,
+  cta = { label: site.pilot.link, href: site.pilot.href },
+  secondary,
+} = Astro.props;
 const H = level;
 const photo = existsSync(new URL('../../public/pilot.jpg', import.meta.url)) ? 'url(/pilot.jpg)' : 'none';
 ---
 <div class="pilot" style={`--photo: ${photo}`}>
   <div class="copy">
-    <p class="eyebrow">Founding clients</p>
-    <H class="d h2">{site.pilot.title}</H>
-    <p class="body">{site.pilot.text}</p>
+    {eyebrow && <p class="eyebrow">{eyebrow}</p>}
+    <H class="d h2">{title}</H>
+    <p class="body">{text}</p>
   </div>
-  <a class="btn btn-sun" href={site.pilot.href}>{site.pilot.link}</a>
+  <div class="acts">
+    <a class="btn btn-sun" href={cta.href}>{cta.label}</a>
+    {secondary && <a class="lnk sec" href={secondary.href}>{secondary.label}</a>}
+  </div>
 </div>
 
 <style>
@@ -28,4 +46,6 @@ const photo = existsSync(new URL('../../public/pilot.jpg', import.meta.url)) ? '
   .copy .h2 { font-size: clamp(28px, 2.7vw, 35px); line-height: 1.12; text-wrap: balance; }
   .eyebrow { font-size: 15px; font-weight: 600; color: var(--sunrise); }
   .body { font-size: 18px; line-height: 1.55; color: var(--on-ink); }
+  .acts { display: grid; gap: var(--s2); justify-items: start; }
+  .sec { color: #fff; font-size: 15px; }
 </style>
