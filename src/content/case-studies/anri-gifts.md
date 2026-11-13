@@ -4,11 +4,11 @@ website: https://anrigifts.com
 logo: /case-studies/anri-gifts-logo.png
 logoStacked: /case-studies/anri-gifts-logo-stacked.png
 about: A Singapore business selling customised corporate gifts and wedding favours.
-title: From supplier to live product in 8 minutes, not 5 days.
+title: Two staff use AI from sourcing to sales and still make every call.
 seoTitle: "AI case study: Anri Gifts, Singapore gifting | Human Horizon"
-description: "AI case study: Singapore corporate gifting business Anri Gifts now gets a product from sourcing to live in 8 minutes, and spends 5 minutes a day on quotations."
+description: "AI case study: two staff at Singapore gifting business Anri Gifts get a product live in 8 minutes and quote in 5 minutes a day, reviewing every output."
 summary: Each member of staff now reviews what AI prepares across sourcing, catalogue work, product images and quotations, and spends the time gained on suppliers and new clients.
-subtitle: "AI across sourcing, product images and quotations, with staff reviewing every output."
+subtitle: "AI across sourcing, product images and quotations, with staff checking each result."
 tools: [Claude]
 services: [implement, train, adopt]
 industry: trading-distribution
@@ -24,7 +24,7 @@ workflows:
     after: "Sourcing runs automatically every week and on demand, checking competitor catalogues to prioritise and fill catalogue gaps based on competitor availability. Catalogue sourcing, importing, database updates and supplier management are now automated, ready for a person to review before sharing with the sales team."
     staff: Procurement staff
     people: "Reviewing each product before it is shared with the sales team, and building relationships with suppliers."
-    time: { before: "5 days", after: "8 minutes", beforeMinutes: 2400, afterMinutes: 8, unit: "per product" }
+    time: { before: "5 working days", after: "8 minutes", beforeMinutes: 2400, afterMinutes: 8, unit: "per product" }
     humans: 1
     agents: 2
   - team: marketing
@@ -37,7 +37,7 @@ workflows:
     after: "An AI design assistant prepares the product and pack images for the catalogue and product pages. Procurement staff review and approve them."
     staff: Procurement staff
     people: "Approving images in minutes, so new products reach the sales team sooner."
-    time: { before: "2 days", after: "10 minutes", beforeMinutes: 960, afterMinutes: 10, unit: "per product" }
+    time: { before: "2 working days", after: "10 minutes", beforeMinutes: 960, afterMinutes: 10, unit: "per product" }
     humans: 1
     agents: 1
   - team: sales
