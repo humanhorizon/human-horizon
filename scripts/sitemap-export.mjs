@@ -56,7 +56,7 @@ const rows = walk(dist).map((file) => {
   next[path] = { hash, lastUpdated };
   return {
     // The page's H1 as search engines read it; a kicker inside the H1 is joined to the headline with a colon.
-    h1: pick(html, /<h1[^>]*>([\s\S]*?)<\/h1>/).replace(/<\/span>\s*/g, ': ').replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim(),
+    h1: pick(html, /<h1[^>]*>([\s\S]*?)<\/h1>/).replace(/<\/span>\s*/g, ': ').replace(/<[^>]+>/g, '').replace(/(\s*:\s*)+/g, ': ').replace(/\s+/g, ' ').trim(),
     url,
     metaTitle: pick(html, /<title>([^<]*)<\/title>/),
     metaDescription: pick(html, /<meta name="description" content="([^"]*)"/),
