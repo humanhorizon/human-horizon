@@ -1,10 +1,11 @@
 ---
-// Case studies hub. Built only once at least one case study is published (drafts show in dev).
+// Case studies hub, with filters by industry and team so a visitor finds the work closest to their own.
+// Built only once at least one case study is published (drafts show in dev).
 import Base from '../../layouts/Base.astro';
 import PageHero from '../../components/PageHero.astro';
 import CaseStudyCard from '../../components/CaseStudyCard.astro';
 import CloseCta from '../../components/CloseCta.astro';
-import { site } from '../../data/site';
+import { site, industries, teams } from '../../data/site';
 import { close } from '../../data/home';
 import { caseStudiesHub as copy } from '../../data/companyPages';
 import { getCaseStudies } from '../../lib/caseStudies';
@@ -14,6 +15,9 @@ export async function getStaticPaths() {
 }
 
 const items = await getCaseStudies();
+// Only offer filters that match at least one case study.
+const usedIndustries = industries.filter((s) => items.some((c) => c.data.industry === s.slug));
+const usedTeams = teams.filter((t) => items.some((c) => c.data.teams.includes(t.slug)));
 const url = `${site.url}/case-studies`;
 const schema = [
   {
@@ -37,13 +41,67 @@ const schema = [
 <Base title={copy.seoTitle} description={copy.description} schema={schema}>
   <nav class="wrap crumbs" aria-label="Breadcrumb"><a href="/">Home</a> / <span aria-current="page">Case studies</span></nav>
   <PageHero kicker={copy.kicker} title={copy.title} lead={copy.lead} />
-  <section class="section">
-    <div class="wrap grid">{items.map((cs) => <CaseStudyCard cs={cs} />)}</div>
+  <section class="section cs-list" aria-labelledby="cs-find">
+    <div class="wrap">
+      <h2 class="h3" id="cs-find">{copy.filterTitle}</h2>
+      <div class="filters" data-filters>
+        <label class="f"><span class="f-lab">Industry</span>
+          <select data-kind="industry">
+            <option value="">All industries</option>
+            {industries.map((s) => <option value={s.slug}>{s.name}{usedIndustries.includes(s) ? '' : ' (none yet)'}</option>)}
+          </select>
+        </label>
+        <label class="f"><span class="f-lab">Team</span>
+          <select data-kind="team">
+            <option value="">All teams</option>
+            {teams.map((t) => <option value={t.slug}>{t.name}{usedTeams.includes(t) ? '' : ' (none yet)'}</option>)}
+          </select>
+        </label>
+      </div>
+      <p class="sr-only" aria-live="polite" data-count></p>
+      <div class="grid" data-grid>{items.map((cs) => <CaseStudyCard cs={cs} />)}</div>
+      <div class="empty" data-empty hidden>
+        <p class="d empty-h">{copy.empty.title}</p>
+        <p class="muted">{copy.empty.body}</p>
+        <a class="btn btn-ink" href={site.cta.href}>{site.cta.label}</a>
+      </div>
+    </div>
   </section>
   <CloseCta title={close.title} sub={close.sub} />
 </Base>
+
+<script>
+  // Filter by industry and team together; an empty choice means any.
+  const root = document.querySelector<HTMLElement>('[data-filters]');
+  const cards = [...document.querySelectorAll<HTMLElement>('[data-grid] .csc')];
+  const empty = document.querySelector<HTMLElement>('[data-empty]');
+  const count = document.querySelector<HTMLElement>('[data-count]');
+  const pick = (k: string) => root?.querySelector<HTMLSelectElement>(`select[data-kind="${k}"]`)?.value ?? '';
+  root?.addEventListener('change', () => {
+    const ind = pick('industry');
+    const team = pick('team');
+    let shown = 0;
+    for (const c of cards) {
+      const ok = (!ind || c.dataset.industry === ind) && (!team || (c.dataset.teams ?? '').split(' ').includes(team));
+      c.hidden = !ok;
+      if (ok) shown++;
+    }
+    if (empty) empty.hidden = shown > 0;
+    if (count) count.textContent = `${shown} case ${shown === 1 ? 'study' : 'studies'} shown`;
+  });
+</script>
+
 <style>
   .crumbs { padding-top: var(--s3); font-size: 14px; color: var(--slate); }
   .crumbs a { color: var(--slate); }
-  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 420px), 1fr)); gap: var(--s3); }
+  .cs-list { padding-top: 0; }
+  .filters { display: flex; flex-wrap: wrap; gap: var(--s2); margin: var(--s2) 0 var(--s4); }
+  .f { display: grid; gap: 6px; min-width: min(100%, 320px); }
+  .f-lab { font-size: 14px; font-weight: 600; color: var(--slate); }
+  .f select { font: 500 16px var(--body); color: var(--ink); padding: 12px 44px 12px 16px; border-radius: 99px; border: 1.5px solid var(--line); background: #fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%2318213B' stroke-width='1.6'/%3E%3C/svg%3E") no-repeat right 18px center; appearance: none; cursor: pointer; }
+  .f select:hover { border-color: var(--ink); }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 520px), 1fr)); gap: var(--s3); }
+  .empty { display: grid; gap: var(--s2); justify-items: start; padding: clamp(24px, 4vw, 48px); border-radius: 20px; background: var(--morning); }
+  .empty[hidden] { display: none; }
+  .empty-h { font-size: clamp(26px, 2.2vw, 32px); }
 </style>

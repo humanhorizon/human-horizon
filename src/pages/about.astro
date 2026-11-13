@@ -7,7 +7,10 @@ import PilotPanel from '../components/PilotPanel.astro';
 import CloseCta from '../components/CloseCta.astro';
 import { site } from '../data/site';
 import { close, hero, people } from '../data/home';
-import { about } from '../data/companyPages';
+import { about, caseStudiesHub } from '../data/companyPages';
+import CaseStudyCard from '../components/CaseStudyCard.astro';
+import { getFeatured } from '../lib/caseStudies';
+const featured = await getFeatured();
 
 const schema = [
   {
@@ -59,6 +62,17 @@ const schema = [
     </div>
   </section>
 
+  {featured.length > 0 && (
+    <section class="section bg-morning" aria-labelledby="featured-h">
+      <div class="wrap">
+        <div class="row-head">
+          <h2 class="d h2" id="featured-h">{caseStudiesHub.featuredTitle}</h2>
+          <a class="lnk" href="/case-studies">All case studies</a>
+        </div>
+        <div class="feat">{featured.map((cs) => <CaseStudyCard cs={cs} />)}</div>
+      </div>
+    </section>
+  )}
 
   <PactStrip title={about.people.title} body={about.people.body} />
 
@@ -75,6 +89,8 @@ const schema = [
   .story .two, .story.two, .story > .two { align-items: start; }
   .beliefs { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--s2); }
   .beliefs li { display: grid; gap: 12px; align-content: start; padding: var(--s4) var(--s3); background: var(--morning); border-radius: 20px; }
+  .feat { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 520px), 1fr)); gap: var(--s3); }
+  .feat :global(.csc) { background: #fff; }
   .pilot-sec { padding: 0 0 var(--section); }
   @media (max-width: 1000px) { .beliefs { grid-template-columns: 1fr; } }
 </style>

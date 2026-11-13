@@ -1,26 +1,37 @@
 ---
-// One case study as a card: client, headline result, summary. Used on the hub and on industry and team pages.
+// One case study as a card: a tall logo tile on the left; industry, headline and one line on the right.
 import type { CaseStudy } from '../lib/caseStudies';
-interface Props { cs: CaseStudy }
-const { cs } = Astro.props;
+import { industries } from '../data/site';
+interface Props { cs: CaseStudy; heading?: 'h2' | 'h3' }
+const { cs, heading = 'h3' } = Astro.props;
 const d = cs.data;
-const top = d.results[0];
+const industry = industries.find((s) => s.slug === d.industry);
+const H = heading;
 ---
-<a class="csc" href={`/case-studies/${cs.id}`}>
-  <p class="csc-client">{d.logo ? <img class="csc-logo" src={d.logo} alt={d.client} /> : d.client}{!d.publish && <span class="csc-draft">Draft</span>}</p>
-  <p class="d csc-h">{d.title}</p>
-  <p class="csc-stat"><strong>{top.value}</strong> {top.label}</p>
-  <p class="muted csc-sum">{d.summary}</p>
-  <span class="lnk">Read the case study</span>
+<a class="csc" href={`/case-studies/${cs.id}`} data-industry={d.industry} data-teams={d.teams.join(' ')}>
+  <span class="csc-logo">
+    {d.logoStacked || d.logo ? <img src={d.logoStacked ?? d.logo} alt={d.client} loading="lazy" /> : <span class="d csc-name">{d.client}</span>}
+  </span>
+  <span class="csc-body">
+    <span class="csc-meta">
+      {industry && <span class="csc-ind">{industry.name}</span>}
+      {!d.publish && <span class="csc-draft">Draft</span>}
+    </span>
+    <H class="d csc-h">{d.title}</H>
+    <span class="csc-sub">{d.subtitle}</span>
+  </span>
 </a>
 <style>
-  .csc { display: grid; gap: 14px; align-content: start; padding: clamp(24px, 3vw, 40px); border-radius: 20px; background: var(--morning); color: var(--ink); text-decoration: none; border: 1.5px solid transparent; transition: border-color .15s; }
+  .csc { display: grid; grid-template-columns: clamp(104px, 11vw, 148px) minmax(0, 1fr); gap: clamp(20px, 2.4vw, 32px); align-items: stretch; padding: clamp(16px, 2vw, 24px); border-radius: 24px; background: var(--morning); color: var(--ink); text-decoration: none; border: 1.5px solid transparent; transition: border-color .15s; }
   .csc:hover { border-color: var(--ink); }
-  .csc-client { font-weight: 600; font-size: 15px; color: var(--sunrise-text); display: flex; gap: 10px; align-items: center; }
-  .csc-logo { height: 32px; width: auto; }
-  .csc-draft { font-size: 12px; padding: 2px 8px; border-radius: 99px; background: var(--ink); color: #fff; }
-  .csc-h { font-size: clamp(26px, 2.2vw, 32px); line-height: 1.12; text-wrap: balance; }
-  .csc-stat { font-size: 16px; }
-  .csc-stat strong { font-weight: 700; }
-  .csc-sum { font-size: 16px; line-height: 1.55; }
+  .csc[hidden] { display: none; }
+  .csc-logo { background: #fff; border: 1.5px solid var(--line); border-radius: 18px; aspect-ratio: 3 / 4; display: grid; place-items: center; padding: 14px; align-self: start; }
+  .csc-logo img { width: 100%; height: 100%; object-fit: contain; }
+  .csc-name { font-size: 20px; text-align: center; }
+  .csc-body { display: grid; gap: 12px; align-content: center; padding: 4px 4px 4px 0; }
+  .csc-meta { display: flex; gap: 8px; flex-wrap: wrap; }
+  .csc-ind { font-size: 13px; font-weight: 600; padding: 4px 12px; border-radius: 99px; background: var(--first-light); color: var(--ink); }
+  .csc-draft { font-size: 12px; font-weight: 600; padding: 4px 10px; border-radius: 99px; background: var(--ink); color: #fff; }
+  .csc-h { font-size: clamp(24px, 2vw, 30px); line-height: 1.12; text-wrap: balance; margin: 0; }
+  .csc-sub { font-size: 16px; line-height: 1.5; color: var(--slate); }
 </style>

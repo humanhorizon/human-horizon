@@ -97,7 +97,13 @@ export const terms = {
 export const caseStudiesHub = {
   seoTitle: 'AI case studies: real work before and after | Human Horizon',
   description: 'AI case studies from Human Horizon: the workflows before and after, how each team was trained, and the results that stuck once AI became part of daily work.',
-  kicker: 'AI case studies',
+  kicker: 'AI implementation and training case studies',
   title: 'What changes when a whole team works with AI.',
   lead: 'Each case study shows the work before and after, how the team learned it and what has stuck since. People review every output and make the calls that matter.',
+  filterTitle: 'Filter by industry and team',
+  empty: {
+    title: 'No case study for this yet.',
+    body: 'We can still show what would change for this kind of team. A 30-minute conversation is enough to find out.',
+  },
+  featuredTitle: 'Teams we have worked with',
 };
