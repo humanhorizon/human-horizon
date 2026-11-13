@@ -1,13 +1,12 @@
 ---
-// One case study: results, the workflows before and after, then the story told as Implement, Train, Adopt.
+// One case study. The page is built around one idea: how long the work used to take. Each workflow
+// shows its before and after time as two bars to scale, then the team as it works now (people first,
+// then the AI assistants), then the story told as Implement, Train, Adopt.
 import { render } from 'astro:content';
 import Base from '../../layouts/Base.astro';
-import PageHero from '../../components/PageHero.astro';
-import BeforeAfter from '../../components/BeforeAfter.astro';
 import CloseCta from '../../components/CloseCta.astro';
 import { site, industries, teams } from '../../data/site';
 import { close } from '../../data/home';
-import { fmtDate } from '../../lib/insights';
 import { getCaseStudies, type CaseStudy } from '../../lib/caseStudies';
 import '../../styles/prose.css';
 
@@ -16,13 +15,17 @@ export async function getStaticPaths() {
 }
 
 const { cs } = Astro.props as { cs: CaseStudy };
-const { Content } = await render(cs);
+const { Content, headings } = await render(cs);
 const d = cs.data;
 const url = `${site.url}/case-studies/${cs.id}`;
 const industry = industries.find((s) => s.slug === d.industry);
 const teamOf = (slug: string) => teams.find((t) => t.slug === slug);
+const caseTeams = d.teams.map(teamOf).filter((t) => t !== undefined);
 const lower = (s: string) => s[0].toLowerCase() + s.slice(1);
 const iso = (x: Date) => `${x.toISOString().slice(0, 10)}T00:00:00+08:00`;
+// The after bar is drawn to scale, with a floor so a few minutes against days is still visible.
+const share = (w: { time: { beforeMinutes: number; afterMinutes: number } }) => Math.max((w.time.afterMinutes / w.time.beforeMinutes) * 100, 0.6);
+const contents = headings.filter((h) => h.depth === 2);
 
 const schema = [
   {
@@ -55,44 +58,86 @@ const schema = [
   {!d.publish && <p class="draft-bar">Draft: shown on the dev server only. It goes live once the client approves and YJ ticks Approve to publish.</p>}
   <nav class="wrap crumbs" aria-label="Breadcrumb"><a href="/">Home</a> / <a href="/case-studies">Case studies</a> / <span aria-current="page">{d.client}</span></nav>
 
-  <PageHero kicker={`Case study: ${d.client}`} title={d.title} lead={d.summary} secondary={{ label: 'See the workflows', href: '#workflows' }} />
-
-  <section class="section results-sec">
-    <div class="wrap">
-      <ul class="results" aria-label="Results">
-        {d.results.map((r) => <li><p class="d r-val">{r.value}</p><p class="r-lab">{r.label}</p></li>)}
-      </ul>
-      <dl class="facts">
-        <div><dt>Client</dt><dd>{d.website ? <a href={d.website} rel="noopener">{d.client}</a> : d.client}. {d.about}</dd></div>
-        <div><dt>Engagement</dt><dd>{d.engagement}</dd></div>
-        {d.tools.length > 0 && <div><dt>AI tools</dt><dd>{d.tools.join(', ')}</dd></div>}
-        {industry && <div><dt>Industry</dt><dd><a href={`/industries/${industry.slug}`}>{industry.name}</a></dd></div>}
-        {d.teams.length > 0 && <div><dt>Teams</dt><dd>{d.teams.map(teamOf).filter(Boolean).map((t, i) => <>{i > 0 && ', '}<a href={`/teams/${t!.slug}`}>{t!.name}</a></>)}</dd></div>}
-      </dl>
+  <header class="wrap hero">
+    <div class="hero-text">
+      <h1 class="d h1 hero-h"><span class="kicker">AI case study: {d.client}</span><span class="sr-only">: </span>{d.title}</h1>
+      <p class="lead muted">{d.summary}</p>
     </div>
-  </section>
+    <aside class="client" aria-label="About the client">
+      {d.logo ? <img class="client-logo" src={d.logo} alt={d.client} /> : <p class="d client-name">{d.client}</p>}
+      <p class="client-about">{d.about}</p>
+      <dl class="client-facts">
+        {industry && <div><dt>Industry</dt><dd><a href={`/industries/${industry.slug}`}>{industry.name}</a></dd></div>}
+        {caseTeams.length > 0 && <div><dt>Teams</dt><dd>{caseTeams.map((t, i) => <>{i > 0 && ', '}<a href={`/teams/${t.slug}`}>{t.name}</a></>)}</dd></div>}
+        {d.tools.length > 0 && <div><dt>AI tools</dt><dd>{d.tools.join(', ')}</dd></div>}
+        {d.website && <div><dt>Website</dt><dd><a href={d.website} rel="noopener">{d.website.replace(/^https?:\/\//, '')}</a></dd></div>}
+      </dl>
+    </aside>
+  </header>
 
-  <section class="section" id="workflows">
+  <section class="section time" aria-labelledby="time-h">
     <div class="wrap">
-      <h2 class="d h2 sec-h">What changed, workflow by workflow</h2>
+      <h2 class="d h2 sec-h" id="time-h">How long each task took, before and now</h2>
       <div class="wfs">
         {d.workflows.map((w) => {
           const t = teamOf(w.team);
           return (
-            <div class="wf">
-              <h3 class="h3">{w.name}</h3>
-              <BeforeAfter workflow={{ name: w.name, outcome: w.outcome, before: w.before, after: w.after }} />
+            <article class="wf">
+              <div class="wf-head">
+                <h3 class="d wf-name">{w.name}</h3>
+                {t && <a class="lnk wf-team" href={`/teams/${t.slug}`}>AI for {lower(t.name)}</a>}
+              </div>
+              <div class="bars">
+                <p class="bar-lab">Before</p>
+                <div class="bar-track" aria-hidden="true"><span class="bar bar-before" style="width: 100%"></span></div>
+                <p class="bar-val">{w.time.before}</p>
+                <p class="bar-lab">Now</p>
+                <div class="bar-track" aria-hidden="true"><span class="bar bar-after" style={`width: ${share(w)}%`}></span></div>
+                <p class="bar-val bar-val-now">{w.time.after}</p>
+              </div>
+              <div class="wf-text">
+                <div><p class="wf-tag">Before</p><p>{w.before}</p></div>
+                <div><p class="wf-tag">Now</p><p>{w.after}</p></div>
+              </div>
               <p class="wf-people"><strong>Where people spend their time now:</strong> {w.people}</p>
-              {t && <a class="lnk" href={`/teams/${t.slug}`}>More on AI for {lower(t.name)}</a>}
-            </div>
+            </article>
           );
         })}
       </div>
     </div>
   </section>
 
-  <div class="wrap"><article class="prose cs-prose"><Content /></article></div>
-  <p class="wrap cap cs-date">Published {fmtDate(d.date)}{d.updated && `, updated ${fmtDate(d.updated)}`}. Shared with the approval of {d.client}.</p>
+  {d.team && (
+    <section class="section bg-morning" aria-labelledby="team-h">
+      <div class="wrap">
+        <h2 class="d h2 sec-h" id="team-h">The team now</h2>
+        <div class="team">
+          <div class="team-people">
+            <p class="d team-people-h">The people</p>
+            <p>{d.team.people}</p>
+          </div>
+          {d.team.assistants.map((a) => (
+            <div class="team-ai">
+              <p class="team-ai-h">{a.name}</p>
+              <p class="muted">{a.does}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <section class="section">
+    <div class="wrap story">
+      {contents.length > 0 && (
+        <nav class="toc" aria-label="On this page">
+          <p class="toc-h">The story</p>
+          <ol>{contents.map((h) => <li><a href={`#${h.slug}`}>{h.text}</a></li>)}</ol>
+        </nav>
+      )}
+      <article class="prose story-text"><Content /></article>
+    </div>
+  </section>
 
   <CloseCta title={close.title} sub={close.sub} />
 </Base>
@@ -101,18 +146,71 @@ const schema = [
   .draft-bar { background: var(--first-light); text-align: center; padding: 10px var(--gutter); font-size: 14px; font-weight: 600; }
   .crumbs { padding-top: var(--s3); font-size: 14px; color: var(--slate); }
   .crumbs a { color: var(--slate); }
-  .results-sec { padding-top: 0; }
-  .results { list-style: none; margin: 0; padding: clamp(24px, 4vw, 48px); display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: var(--s4); background: var(--ink); color: #fff; border-radius: 20px; }
-  .r-val { font-size: clamp(40px, 4vw, 56px); line-height: 1; color: var(--sunrise); }
-  .r-lab { margin-top: 12px; color: var(--on-ink); font-size: 16px; line-height: 1.5; }
-  .facts { margin: var(--s4) 0 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: var(--s3); }
-  .facts > div:first-child { grid-column: 1 / -1; }
-  .facts dt { font-weight: 600; font-size: 14px; color: var(--slate); margin-bottom: 4px; }
-  .facts dd { margin: 0; font-size: 16px; line-height: 1.55; }
+
+  /* Hero: the claim on the left, the client on the right. */
+  .hero { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: clamp(32px, 6vw, 96px); align-items: end; padding-top: clamp(40px, 6vw, 88px); padding-bottom: clamp(48px, 6vw, 88px); }
+  .hero-text { display: grid; gap: var(--s4); }
+  .hero-h { text-wrap: balance; }
+  .kicker { display: block; margin-bottom: var(--s3); font: 600 17px/1.4 var(--body); letter-spacing: 0; color: var(--sunrise-text); }
+  .client { background: var(--morning); border-radius: 20px; padding: clamp(24px, 3vw, 40px); display: grid; gap: var(--s2); }
+  .client-name { font-size: clamp(30px, 2.8vw, 40px); line-height: 1.05; }
+  .client-logo { max-height: 48px; width: auto; }
+  .client-about { font-size: 16px; line-height: 1.55; }
+  .client-facts { margin: var(--s1) 0 0; display: grid; gap: 12px; border-top: 1px solid var(--line); padding-top: var(--s2); }
+  .client-facts > div { display: grid; grid-template-columns: 96px 1fr; gap: var(--s2); font-size: 15px; line-height: 1.5; }
+  .client-facts dt { color: var(--slate); font-weight: 500; }
+  .client-facts dd { margin: 0; }
+
+  /* Time: the one bold element. Bars are to scale against the before time. */
+  .time { padding-top: 0; }
   .sec-h { margin-bottom: var(--s4); max-width: 820px; }
-  .wfs { display: grid; gap: var(--s5); }
-  .wf { display: grid; gap: var(--s2); }
-  .wf-people { font-size: 16px; }
-  .cs-prose { max-width: 720px; padding-bottom: var(--s4); }
-  .cs-date { padding-bottom: var(--section); }
+  .wfs { display: grid; gap: var(--s4); }
+  .wf { border: 1.5px solid var(--line); border-radius: 20px; padding: clamp(24px, 4vw, 48px); display: grid; gap: var(--s4); }
+  .wf-head { display: flex; justify-content: space-between; align-items: baseline; gap: var(--s2); flex-wrap: wrap; }
+  .wf-name { font-size: clamp(26px, 2.4vw, 34px); line-height: 1.1; }
+  .wf-team { font-size: 15px; }
+  .bars { display: grid; grid-template-columns: 64px minmax(0, 1fr) 210px; gap: 14px var(--s3); align-items: center; }
+  .bar-lab { font-size: 15px; font-weight: 600; color: var(--slate); }
+  .bar-track { height: 28px; border-radius: 99px; background: var(--morning); overflow: hidden; }
+  .bar { display: block; height: 100%; border-radius: 99px; min-width: 8px; }
+  .bar-before { background: var(--ink); }
+  .bar-after { background: var(--sunrise); }
+  .bar-val { font: 300 clamp(24px, 2.2vw, 32px)/1 var(--display); white-space: nowrap; }
+  .bar-val-now { color: var(--sunrise-text); }
+  .wf-text { display: grid; grid-template-columns: 1fr 1fr; gap: var(--s4); font-size: 16px; line-height: 1.6; }
+  .wf-text > div { display: grid; gap: 6px; align-content: start; }
+  .wf-tag { font-weight: 600; }
+  .wf-people { background: var(--first-light); border-radius: 12px; padding: var(--s2) var(--s3); font-size: 16px; line-height: 1.55; }
+
+  /* Team: people first and larger, the assistants beside them. */
+  .team { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--s2); }
+  .team-people { grid-column: span 2; grid-row: span 2; background: var(--ink); color: #fff; border-radius: 20px; padding: clamp(24px, 3vw, 40px); display: grid; gap: var(--s2); align-content: end; font-size: 17px; line-height: 1.55; }
+  .team-people-h { font-size: clamp(32px, 3vw, 44px); color: var(--sunrise); }
+  .team-ai { background: #fff; border-radius: 20px; padding: var(--s3); display: grid; gap: 8px; align-content: start; font-size: 15px; line-height: 1.5; }
+  .team-ai-h { font-weight: 600; font-size: 17px; }
+
+  /* Story: contents on the left, reading column on the right. */
+  .story { display: grid; grid-template-columns: minmax(200px, 3fr) minmax(0, 7fr); gap: clamp(32px, 6vw, 96px); align-items: start; }
+  .toc { position: sticky; top: var(--s4); }
+  .toc-h { font-weight: 600; margin-bottom: var(--s2); }
+  .toc ol { list-style: none; margin: 0; padding: 0; display: grid; gap: 4px; border-left: 2px solid var(--line); }
+  .toc a { display: block; padding: 6px 0 6px var(--s2); margin-left: -2px; border-left: 2px solid transparent; color: var(--slate); text-decoration: none; font-size: 15px; line-height: 1.4; }
+  .toc a:hover { color: var(--ink); border-left-color: var(--sunrise); }
+  .story-text { max-width: 700px; }
+  .story-text :global(h2:first-child) { margin-top: 0; }
+  .story-text :global(h2) { scroll-margin-top: var(--s4); }
+
+  @media (max-width: 960px) {
+    .hero { grid-template-columns: 1fr; align-items: start; }
+    .team { grid-template-columns: 1fr 1fr; }
+    .story { grid-template-columns: 1fr; }
+    .toc { position: static; }
+  }
+  @media (max-width: 640px) {
+    .bars { grid-template-columns: 52px minmax(0, 1fr); }
+    .bar-val { grid-column: 2; margin-top: -6px; }
+    .wf-text { grid-template-columns: 1fr; gap: var(--s3); }
+    .team { grid-template-columns: 1fr; }
+    .team-people { grid-column: auto; grid-row: auto; }
+  }
 </style>

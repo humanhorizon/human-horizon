@@ -53,7 +53,6 @@ const caseStudies = defineCollection({
     seoTitle: z.string(),
     description: z.string(),
     summary: z.string(),
-    engagement: z.string(),
     tools: z.array(z.string()).default([]),
     industry: z.string(),
     teams: z.array(z.string()).default([]),
@@ -65,7 +64,14 @@ const caseStudies = defineCollection({
       before: z.string(),
       after: z.string(),
       people: z.string(),
+      // Time the work took before and after, shown as two bars to scale.
+      time: z.object({ before: z.string(), after: z.string(), beforeMinutes: z.number(), afterMinutes: z.number() }),
     })).min(1),
+    // The team as it works now: the people first, then the AI assistants alongside them.
+    team: z.object({
+      people: z.string(),
+      assistants: z.array(z.object({ name: z.string(), does: z.string() })).default([]),
+    }).optional(),
     date: z.coerce.date(),
     updated: z.coerce.date().optional(),
     publish: z.boolean().default(false),

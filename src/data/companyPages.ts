@@ -95,7 +95,7 @@ export const terms = {
 };
 
 export const caseStudiesHub = {
-  seoTitle: 'AI case studies | Human Horizon',
+  seoTitle: 'AI case studies: real work before and after | Human Horizon',
   description: 'AI case studies from Human Horizon: the workflows before and after, how each team was trained, and the results that stuck once AI became part of daily work.',
   kicker: 'AI case studies',
   title: 'What changes when a whole team works with AI.',
