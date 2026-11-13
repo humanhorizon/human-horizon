@@ -1,0 +1,22 @@
+---
+// "In practice" block on an industry or team page: the case studies tagged with that page. Renders nothing when none.
+import CaseStudyCard from './CaseStudyCard.astro';
+import { caseStudiesFor } from '../lib/caseStudies';
+interface Props { kind: 'industries' | 'teams'; slug: string; title?: string }
+const { kind, slug, title = 'In practice' } = Astro.props;
+const items = await caseStudiesFor(kind, slug);
+---
+{items.length > 0 && (
+  <section class="section" aria-labelledby={`cs-${slug}`}>
+    <div class="wrap">
+      <div class="row-head">
+        <h2 class="d h2" id={`cs-${slug}`}>{title}</h2>
+        <a class="lnk" href="/case-studies">All case studies</a>
+      </div>
+      <div class="cs-grid">{items.map((cs) => <CaseStudyCard cs={cs} />)}</div>
+    </div>
+  </section>
+)}
+<style>
+  .cs-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 420px), 1fr)); gap: var(--s3); }
+</style>

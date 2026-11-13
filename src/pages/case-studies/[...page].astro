@@ -1,0 +1,49 @@
+---
+// Case studies hub. Built only once at least one case study is published (drafts show in dev).
+import Base from '../../layouts/Base.astro';
+import PageHero from '../../components/PageHero.astro';
+import CaseStudyCard from '../../components/CaseStudyCard.astro';
+import CloseCta from '../../components/CloseCta.astro';
+import { site } from '../../data/site';
+import { close } from '../../data/home';
+import { caseStudiesHub as copy } from '../../data/companyPages';
+import { getCaseStudies } from '../../lib/caseStudies';
+
+export async function getStaticPaths() {
+  return (await getCaseStudies()).length ? [{ params: { page: undefined } }] : [];
+}
+
+const items = await getCaseStudies();
+const url = `${site.url}/case-studies`;
+const schema = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    name: copy.kicker,
+    description: copy.description,
+    url,
+    mainEntity: { '@type': 'ItemList', itemListElement: items.map((c, i) => ({ '@type': 'ListItem', position: i + 1, url: `${url}/${c.id}`, name: `${c.data.client}: ${c.data.title}` })) },
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: `${site.url}/` },
+      { '@type': 'ListItem', position: 2, name: 'Case studies', item: url },
+    ],
+  },
+];
+---
+<Base title={copy.seoTitle} description={copy.description} schema={schema}>
+  <nav class="wrap crumbs" aria-label="Breadcrumb"><a href="/">Home</a> / <span aria-current="page">Case studies</span></nav>
+  <PageHero kicker={copy.kicker} title={copy.title} lead={copy.lead} />
+  <section class="section">
+    <div class="wrap grid">{items.map((cs) => <CaseStudyCard cs={cs} />)}</div>
+  </section>
+  <CloseCta title={close.title} sub={close.sub} />
+</Base>
+<style>
+  .crumbs { padding-top: var(--s3); font-size: 14px; color: var(--slate); }
+  .crumbs a { color: var(--slate); }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 420px), 1fr)); gap: var(--s3); }
+</style>

@@ -1,6 +1,11 @@
 ---
 import Logo from './Logo.astro';
-import { nav, site } from '../data/site';
+import { nav as baseNav, site } from '../data/site';
+import { getCaseStudies } from '../lib/caseStudies';
+// Case studies join the menu, after Teams, once at least one is published.
+const nav = (await getCaseStudies()).length
+  ? baseNav.flatMap((i) => (i.href === '/teams' ? [i, { label: 'Case studies', href: '/case-studies' }] : [i]))
+  : baseNav;
 ---
 <header class="hdr">
   <div class="wrap hdr-in">

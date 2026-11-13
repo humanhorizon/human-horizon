@@ -40,4 +40,37 @@ const glossary = defineCollection({
   }),
 });
 
-export const collections = { insights, glossary };
+// Case studies. Built only when publish is true, which the EA sets once the Notion row has both
+// Client approved and Approve to publish ticked. Drafts show in dev only.
+const caseStudies = defineCollection({
+  loader: glob({ pattern: '*.md', base: './src/content/case-studies' }),
+  schema: z.object({
+    client: z.string(),
+    website: z.string().url().optional(),
+    logo: z.string().optional(),
+    about: z.string(),
+    title: z.string(),
+    seoTitle: z.string(),
+    description: z.string(),
+    summary: z.string(),
+    engagement: z.string(),
+    tools: z.array(z.string()).default([]),
+    industry: z.string(),
+    teams: z.array(z.string()).default([]),
+    results: z.array(z.object({ value: z.string(), label: z.string() })).min(1).max(3),
+    workflows: z.array(z.object({
+      team: z.string(),
+      name: z.string(),
+      outcome: z.string(),
+      before: z.string(),
+      after: z.string(),
+      people: z.string(),
+    })).min(1),
+    date: z.coerce.date(),
+    updated: z.coerce.date().optional(),
+    publish: z.boolean().default(false),
+    notionPage: z.string().url(),
+  }),
+});
+
+export const collections = { insights, glossary, caseStudies };

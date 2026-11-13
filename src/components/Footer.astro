@@ -1,6 +1,8 @@
 ---
 import Logo from './Logo.astro';
 import { pillars, industries, teams, site } from '../data/site';
+import { getCaseStudies } from '../lib/caseStudies';
+const hasCases = (await getCaseStudies()).length > 0;
 const year = new Date().getFullYear();
 ---
 <footer class="ftr">
@@ -13,7 +15,7 @@ const year = new Date().getFullYear();
     <div><p class="t">What we do</p>{pillars.map((p) => <a href={`/what-we-do/${p.slug}`}>{p.name}</a>)}<a href="/ai-course-singapore">AI course or training</a></div>
     <div><p class="t">Industries</p>{industries.slice(0, 6).map((s) => <a href={`/industries/${s.slug}`}>{s.name}</a>)}<a href="/industries">All industries</a></div>
     <div><p class="t">Teams</p>{teams.map((s) => <a href={`/teams/${s.slug}`}>{s.name}</a>)}</div>
-    <div><p class="t">Company</p><a href="/about">About</a><a href="/insights">Insights</a><a href="/contact">Contact</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a></div>
+    <div><p class="t">Company</p><a href="/about">About</a>{hasCases && <a href="/case-studies">Case studies</a>}<a href="/insights">Insights</a><a href="/contact">Contact</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a></div>
   </div>
   <div class="wrap legal cap">© {year} Human Horizon.</div>
 </footer>

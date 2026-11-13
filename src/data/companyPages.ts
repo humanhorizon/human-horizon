@@ -93,3 +93,11 @@ export const terms = {
   updated: '5 November 2026',
   sections: termsSections,
 };
+
+export const caseStudiesHub = {
+  seoTitle: 'AI case studies | Human Horizon',
+  description: 'AI case studies from Human Horizon: the workflows before and after, how each team was trained, and the results that stuck once AI became part of daily work.',
+  kicker: 'AI case studies',
+  title: 'What changes when a whole team works with AI.',
+  lead: 'Each case study shows the work before and after, how the team learned it and what has stuck since. People review every output and make the calls that matter.',
+};

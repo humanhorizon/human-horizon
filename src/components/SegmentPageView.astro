@@ -8,6 +8,7 @@ import PactStrip from './PactStrip.astro';
 import Faq from './Faq.astro';
 import CloseCta from './CloseCta.astro';
 import PilotPanel from './PilotPanel.astro';
+import CaseStudyStrip from './CaseStudyStrip.astro';
 import { site, industries, teams, type Segment } from '../data/site';
 import type { SegmentPage } from '../data/segmentPages';
 import { work } from '../data/home';
@@ -65,6 +66,8 @@ const schema = [
       </div>
     </div>
   </section>
+
+  <CaseStudyStrip kind={kind} slug={seg.slug} />
 
   <PactStrip title={page.people.title} body={page.people.body} />
 
