@@ -5,7 +5,7 @@ export const site = {
   url: 'https://humanhorizon.io',
   email: 'contact.humanhorizon@gmail.com',
   description:
-    'AI consultancy in Singapore for people-first implementation, training and adoption, so AI becomes part of the company culture and the results last.',
+    'AI consultancy in Singapore that implements AI, trains teams and supports adoption, people first, so AI becomes part of the company culture and results stick.',
   // Footer boilerplate: the USP in two sentences (Implement, Train, Adopt, people first, results that last).
   boilerplate: 'People-first AI consultancy for businesses. We implement AI in each team’s work, train people and help them adopt it, so results stick and AI becomes company culture, not an individual pursuit.',
   cta: { label: 'Ask for a 30-minute call', href: '/contact#form' },
