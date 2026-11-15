@@ -36,16 +36,18 @@ export const about = {
 
 export const contact = {
   seoTitle: 'Contact Human Horizon | AI consultancy in Singapore',
-  description: 'Take AI beyond the prompt with Human Horizon. Book a 30-minute discovery call or send us one workflow you would like to improve.',
+  description: 'Take AI beyond the prompt with Human Horizon. Book a 30-minute discovery call or share a workflow you would like AI to take on.',
   kicker: 'Contact Human Horizon',
   title: 'Tell us what slows your team down.',
-  lead: 'Two ways to start: book a 30-minute discovery call, or send us one workflow you would like to improve. Either way, we help your team take AI beyond the prompt. No sales pitch.',
+  lead: 'Two ways to start: book a 30-minute discovery call, or share a workflow you would like AI to take on. Either way, we help your team take AI beyond the prompt. No sales pitch.',
   emailTitle: 'Email us',
   emailNote: 'Prefer email? Write to us directly.',
   form: {
     title: 'Choose how to start',
-    note: 'Pick a time for a 30-minute discovery call in our calendar, or tell us about one workflow you would like to improve.',
-    calTitle: 'Book a 30-minute discovery call',
+    note: 'Ask for a 30-minute discovery call, or share one workflow you would like AI to take on. A few lines are enough.',
+    availLabel: 'Times that suit you for a call',
+    availHint: 'For example, Tuesday or Thursday afternoon',
+    optional: '(optional)',
     roles: ['Founder or owner', 'C-suite or director', 'Head of department', 'Manager', 'Team lead', 'Team member', 'Other'],
     departments: ['General management', 'Sales and business development', 'Marketing', 'Operations', 'Finance and admin', 'HR and L&D', 'Customer service', 'IT, data and AI', 'Other'],
     sizes: ['1 to 10', '11 to 50', '51 to 200', 'More than 200'],
@@ -55,7 +57,7 @@ export const contact = {
     // Each way to start sets its own question and hint; ?start= on the link picks one.
     starts: [
       { value: 'call', label: 'Book a 30-minute discovery call', message: 'What slows your team down?', hint: 'A few lines on the work you would most like to change. We will reply to find a time.' },
-      { value: 'workflow', label: 'Send us one workflow you’d like to improve', message: 'Which workflow would you like to improve?', hint: 'The task, who does it and what slows it down. We will reply with first thoughts and a time to talk it through.' },
+      { value: 'workflow', label: 'Share a workflow you’d like AI to take on', message: 'Which workflow would you like AI to take on?', hint: 'The task, who does it and what slows it down. We will reply with first thoughts and a time to talk it through.' },
     ],
     consent: 'We use your details only for this enquiry.',
     submit: 'Send message',
