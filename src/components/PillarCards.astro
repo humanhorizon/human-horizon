@@ -7,10 +7,15 @@ import { whatWeDo } from '../data/home';
 // compact: outcome only, no deliverable list (homepage).
 const { compact = false } = Astro.props as { compact?: boolean };
 ---
+<div class="disc">
+  <p class="step">Starts with</p>
+  <h3 class="d h3d">{whatWeDo.discovery.name}</h3>
+  <p class="prow-out">{whatWeDo.discovery.line}</p>
+</div>
 <div class="pcards">
   {pillars.map((p) => (
     <a class="pcard" href={`/what-we-do/${p.slug}`}>
-      <h3 class="d h3d">{p.name}</h3>
+      <h3 class="d h3d">{p.title}</h3>
       <p class="prow-out">{p.outcome}</p>
       {!compact && <ul class="dlv">{p.items.map((it) => <li><b>{it.name}</b><span>{it.line}</span></li>)}</ul>}
     </a>
@@ -23,6 +28,9 @@ const { compact = false } = Astro.props as { compact?: boolean };
 </div>
 
 <style>
+  .disc { margin-bottom: var(--s2); padding: var(--s4); border-radius: 20px; background: #fff; color: var(--ink); display: grid; grid-template-columns: minmax(0, 340px) 1fr; column-gap: var(--s4); row-gap: 8px; align-items: center; }
+  .disc .step { grid-column: 1 / -1; font-size: 14px; font-weight: 600; color: var(--sunrise-text); }
+  .disc .prow-out { max-width: 640px; }
   .pcards { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--s2); }
   .pcard { display: grid; grid-template-rows: auto auto 1fr; gap: var(--s2); padding: var(--s4); background: #fff; border-radius: 20px; color: var(--ink); text-decoration: none; transition: box-shadow .15s; }
   .pcard:hover { box-shadow: inset 0 0 0 2px var(--sunrise); }
@@ -36,6 +44,7 @@ const { compact = false } = Astro.props as { compact?: boolean };
   .report p { font-size: 18px; max-width: 560px; }
   @media (max-width: 1000px) {
     .pcards { grid-template-columns: 1fr; }
+    .disc { grid-template-columns: 1fr; }
     .report { grid-template-columns: auto 1fr; }
     .report p { grid-column: 1 / -1; }
   }

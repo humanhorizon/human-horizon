@@ -1,7 +1,7 @@
 // Homepage copy. Goes through the hh-growth-editor EDIT pass before it is shown to YJ.
 
 export const hero = {
-  kicker: 'AI consultancy for Singapore businesses',
+  kicker: 'People-first AI consultancy based in Singapore',
   title: 'Make AI part of the company culture, with teams open to it and results that stick.',
   sub: 'AI rarely lasts when it is left to a few enthusiasts. We implement it in each team’s real work, train people on the tasks they already know and help everyone adopt it.',
   secondary: { label: 'See how we work', href: '#pact' },
@@ -26,13 +26,14 @@ export const shift = {
   items: [
     { title: 'Every team works with AI, not just the early adopters.' },
     { title: 'New habits hold long after the training ends.' },
-    { title: 'The return shows up in hours saved and valued.' },
+    { title: 'The return is counted in hours saved, team by team.' },
   ],
 };
 
 export const whatWeDo = {
   title: 'Made to measure.',
   lead: 'No two firms work the same way, so there is no template. Every engagement starts from how the work runs today.',
+  discovery: { name: 'Discovery and Customisation Mapping', line: 'A review of how each team works today, which workflows to customise first and what success should look like.' },
   report: { name: 'ROI Transformation Report', line: 'The hours the team saves, valued at the firm’s own rates.' },
 };
 
@@ -68,10 +69,15 @@ export const start = {
 };
 
 export const faq = [
+  { q: 'What does an AI consultancy do?', a: 'An AI consultancy helps a business decide where AI fits, then puts it to work. We start with Discovery and Customisation Mapping, implement custom AI workflows and agents, train staff hands-on through the PACT and support adoption until the new ways of working become routine.', links: [{ label: 'What we do', href: '/what-we-do' }] },
   { q: 'Is this an AI course?', a: 'No. We build custom workflows into your team’s real work, train your people on them and measure the change. Training runs on your own tasks, in a few focused sessions, with no homework.', links: [{ label: 'Compare an AI course with our training', href: '/ai-course-singapore' }] },
+  { q: 'We already pay for ChatGPT or Copilot. Why is nobody using it?', a: 'Licences alone rarely change how work gets done. People need workflows built around their real tasks, training on those tasks and support while the habit forms. We work with the AI tools the business has approved and build the habits around them.' },
+  { q: 'Will AI replace our staff?', a: 'That is a decision for the business, not for AI. The first PACT commitment is clear words on what AI means for every role, so nobody is left guessing, and staff help shape the workflows they will use.' },
+  { q: 'Do we need technical staff or an IT team?', a: 'No. We design and set up the workflows, and train the people who use them in plain language. Where there is an IT team or system admin, we involve them on access, data and AI governance.' },
   { q: 'What happens to our client data?', a: 'We agree clear AI governance rules with you: what can go into AI tools, which accounts to use, and what a person checks before anything leaves the business.' },
   { q: 'Who do you work with?', a: 'Singapore businesses with recurring work to get through, in any industry. Founders come to us when staff use AI tools with no rules on client data, a workshop changed nothing back at the desk, or licences were bought but barely used.' },
   { q: 'I have been asked to look into AI for our company. Can we talk first?', a: 'Yes. If you are in HR, training or operations and doing the groundwork for your boss, we are happy to talk with you first. We will help you find a sensible place to start and the case to put to them.' },
+  { q: 'How do you measure AI training ROI?', a: 'The ROI Transformation Report shows the hours the team saves on each workflow, valued at the firm’s own rates.', links: [{ label: 'How to measure AI training ROI', href: '/insights/how-to-measure-ai-training-roi' }] },
   { q: 'Is this covered by course funding?', a: 'Human Horizon is not an accredited course provider, so course funding does not apply. From YA 2027, the Enterprise Innovation Scheme also covers AI adoption, such as subscriptions or licences for AI systems and qualifying AI business services. Please ask your accountant whether you may be able to get a tax deduction. We do not promise any tax outcome.', links: [{ label: 'Enterprise Innovation Scheme (IRAS)', href: 'https://www.iras.gov.sg/schemes/disbursement-schemes/enterprise-innovation-scheme-(eis)' }] },
 ];
 
