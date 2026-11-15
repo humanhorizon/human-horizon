@@ -2,8 +2,8 @@
 
 export const hero = {
   kicker: 'People-first AI consultancy based in Singapore',
-  title: 'Make AI part of the company culture, with teams open to it and results that stick.',
-  sub: 'AI rarely lasts when it is left to a few enthusiasts. We implement it in each team’s real work, train people on the tasks they already know and help everyone adopt it.',
+  title: 'Make AI part of the company culture for results that stick.',
+  sub: 'AI rarely lasts when it is left to a few enthusiasts. We implement it in each team’s real work, train people on the tasks they already know and help everyone adopt it, so the business buys back time for the work that matters.',
   credibility: 'Founded by people-first leaders who have built at Gojek, Alibaba and Meta.',
 };
 
@@ -21,11 +21,13 @@ export const pact = {
 
 export const shift = {
   title: 'The AI revolution is coming, whether we like it or not.',
-  lead: 'The question is not whether the business uses AI, but whether the whole team adopts it or only a few individuals. When AI becomes part of the culture:',
+  lead: 'The question is not whether the business uses AI, but whether the whole team adopts it or only a few individuals. When AI becomes part of the culture, everyone gets what they need from it:',
+  // One line per buyer motive (YJ, 15 Nov 2026): owners buy time, beginners direction, experts an edge, overwhelmed people simplicity.
   items: [
-    { title: 'Every team works with AI, not just the early adopters.' },
-    { title: 'New habits hold long after the training ends.' },
-    { title: 'The return is counted in hours saved, team by team.' },
+    { title: 'Founders get time back for the work only they can do.' },
+    { title: 'Beginners get clear direction and guidance on where to start.' },
+    { title: 'Experienced users turn their skill into a lasting edge.' },
+    { title: 'Stretched teams get one simple way of working, not another tool.' },
   ],
 };
 
