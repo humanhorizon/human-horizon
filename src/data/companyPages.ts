@@ -43,16 +43,15 @@ export const contact = {
   emailTitle: 'Email us',
   emailNote: 'Prefer email? Write to us directly.',
   form: {
-    title: 'Send us a message',
-    note: 'A few lines are enough: what your business does and which work you would most like to change.',
+    title: 'Choose how to start',
+    note: 'Pick a time for a 15-minute discovery call in our calendar, or tell us about one workflow you would like to improve.',
+    calTitle: 'Book a 15-minute discovery call',
     roles: ['Founder or owner', 'C-suite or director', 'Head of department', 'Manager', 'Team lead', 'Team member', 'Other'],
     departments: ['General management', 'Sales and business development', 'Marketing', 'Operations', 'Finance and admin', 'HR and L&D', 'Customer service', 'IT, data and AI', 'Other'],
     sizes: ['1 to 10', '11 to 50', '51 to 200', 'More than 200'],
     messageLabel: 'What slows your team down?',
     messageHint: 'A few lines on the work you would most like to change.',
     startLabel: 'How would you like to start?',
-    bookNote: 'Prefer to pick a time now?',
-    bookLink: 'Choose a slot in our calendar',
     // Each way to start sets its own question and hint; ?start= on the link picks one.
     starts: [
       { value: 'call', label: 'Book a 15-minute discovery call', message: 'What slows your team down?', hint: 'A few lines on the work you would most like to change. We will reply to find a time.' },

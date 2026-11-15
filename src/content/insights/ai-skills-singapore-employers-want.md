@@ -63,4 +63,4 @@ Pick one task and write down what good looks like when AI is applied to that tas
 
 ## What to do next
 
-A skills list only helps if you can tell whether it is growing, and [how to measure whether AI training worked](/insights/how-to-measure-ai-training-roi) shows how a team checks that. You are not the one who buys training, but Human Horizon runs hands-on training on your team's real tasks. If your manager wants to talk it through, they can [book a 15-minute discovery call](https://calendar.google.com/calendar/appointments/schedules/AcZssZ1ZUPqKPNd98vcH7-1UO1zDhDv8N7qDfmYCGfMJWVED29B_5TkBH5G1aKIzgDUf3e1a2Dg6GkiC).
+A skills list only helps if you can tell whether it is growing, and [how to measure whether AI training worked](/insights/how-to-measure-ai-training-roi) shows how a team checks that. You are not the one who buys training, but Human Horizon runs hands-on training on your team's real tasks. If your manager wants to talk it through, they can [book a 15-minute discovery call](/contact?start=call#form).

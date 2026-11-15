@@ -47,12 +47,19 @@ const schema = [
           <p class="trap" aria-hidden="true"><label>Leave this empty <input name="website" tabindex="-1" autocomplete="off" /></label></p>
 
           <fieldset class="starts" data-starts>
-            <legend>{f.startLabel}</legend>
-            {f.starts.map((o, i) => (
-              <label class="opt"><input type="radio" name="start" value={o.label} data-start={o.value} data-msg={o.message} data-hint={o.hint} checked={i === 0} /><span>{o.label}</span></label>
+            <legend class="sr-only">{f.startLabel}</legend>
+            {f.starts.map((o) => (
+              <label class="opt"><input type="radio" name="start" value={o.label} data-start={o.value} data-msg={o.message} data-hint={o.hint} /><span>{o.label}</span></label>
             ))}
-            <p class="book" data-book>{f.bookNote} <a href={bookingUrl}>{f.bookLink}</a></p>
           </fieldset>
+
+          <!-- Discovery call: the Google Calendar booking page, loaded only once this option is picked. -->
+          <div class="cal" data-panel="call" hidden>
+            <iframe data-src={`${bookingUrl}?gv=true`} title={f.calTitle} loading="lazy"></iframe>
+          </div>
+
+          <!-- One workflow: the message form. Disabled while hidden so its required fields do not block anything. -->
+          <fieldset class="panel" data-panel="workflow" hidden disabled>
           <div class="row2">
             <label class="fld"><span>Name</span><input name="name" required autocomplete="name" maxlength="120" /></label>
             <label class="fld"><span>Work email</span><input type="email" name="email" required autocomplete="email" maxlength="160" /></label>
@@ -79,6 +86,7 @@ const schema = [
             <button class="btn btn-ink" type="submit">{f.submit}</button>
             <p class="cap">{f.consent} See our <a href="/privacy">privacy notice</a>.</p>
           </div>
+          </fieldset>
         </form>
       </div>
     </div>
@@ -102,10 +110,20 @@ const schema = [
     const radios = [...form.querySelectorAll<HTMLInputElement>('[data-start]')];
     const label = form.querySelector<HTMLElement>('[data-msg-label]');
     const area = form.querySelector<HTMLTextAreaElement>('textarea[name="message"]');
-    const book = form.querySelector<HTMLElement>('[data-book]');
-    const apply = (r: HTMLInputElement) => { if (label) label.textContent = r.dataset.msg ?? ''; if (area) area.placeholder = r.dataset.hint ?? ''; if (book) book.hidden = r.dataset.start !== 'call'; };
+    const cal = form.querySelector<HTMLElement>('[data-panel="call"]');
+    const frame = cal?.querySelector<HTMLIFrameElement>('iframe');
+    const panel = form.querySelector<HTMLFieldSetElement>('[data-panel="workflow"]');
+    const apply = (r: HTMLInputElement) => {
+      const isCall = r.dataset.start === 'call';
+      if (cal) cal.hidden = !isCall;
+      if (isCall && frame && !frame.src) frame.src = frame.dataset.src ?? '';
+      if (panel) { panel.hidden = isCall; panel.disabled = isCall; }
+      if (label) label.textContent = r.dataset.msg ?? '';
+      if (area) area.placeholder = r.dataset.hint ?? '';
+    };
+    // Nothing is picked unless the link asked for one (?start=call from the discovery buttons).
     const want = new URLSearchParams(location.search).get('start');
-    const pick = radios.find((r) => r.dataset.start === want) ?? radios[0];
+    const pick = radios.find((r) => r.dataset.start === want);
     if (pick) { pick.checked = true; apply(pick); }
     radios.forEach((r) => r.addEventListener('change', () => apply(r)));
     const err = form.querySelector<HTMLElement>('[data-err]');
@@ -134,12 +152,11 @@ const schema = [
   .fld textarea { resize: vertical; min-height: 120px; }
   .fld input:focus, .fld select:focus, .fld textarea:focus { outline: none; border-color: var(--ink); box-shadow: 0 0 0 3px var(--first-light); }
   .starts { border: 0; margin: 0 0 var(--s1); padding: 0; display: grid; gap: 8px; }
-  .starts legend { font-size: 14px; font-weight: 600; margin-bottom: 8px; padding: 0; }
   .opt { display: flex; align-items: center; gap: 10px; padding: 12px 14px; border: 1.5px solid var(--line); border-radius: 12px; font-size: 16px; cursor: pointer; }
   .opt:has(input:checked) { border-color: var(--ink); background: var(--morning); }
-  .book { font-size: 15px; margin: 4px 0 0; }
-  .book[hidden] { display: none; }
-  .book a { font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
+  .panel { border: 0; margin: 0; padding: 0; min-width: 0; display: grid; gap: var(--s2); }
+  .panel[hidden], .cal[hidden] { display: none; }
+  .cal iframe { display: block; width: 100%; height: 680px; border: 0; border-radius: 12px; background: #fff; }
   .opt input { accent-color: var(--ink); width: 18px; height: 18px; margin: 0; }
   .trap { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
   .err { color: #B3261E; font-size: 14px; }

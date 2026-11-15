@@ -43,4 +43,4 @@ A 30-person engineering consultancy writes a one-page AI rulebook. It lists two 
 
 ## Where this fits
 
-Clear rules on client data, approved tools and sign-off are what turn this definition into daily practice. Human Horizon helps with AI governance and an AI toolkit: clear, written rules your team can follow. To talk it through, [book a 15-minute discovery call](https://calendar.google.com/calendar/appointments/schedules/AcZssZ1ZUPqKPNd98vcH7-1UO1zDhDv8N7qDfmYCGfMJWVED29B_5TkBH5G1aKIzgDUf3e1a2Dg6GkiC).
+Clear rules on client data, approved tools and sign-off are what turn this definition into daily practice. Human Horizon helps with AI governance and an AI toolkit: clear, written rules your team can follow. To talk it through, [book a 15-minute discovery call](/contact?start=call#form).
