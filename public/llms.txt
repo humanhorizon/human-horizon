@@ -22,9 +22,9 @@ Human Horizon does not run public AI courses. It trains teams inside their own c
 
 ## Ways to start
 
-- First Win: for a team of 5 to 10 people. One custom AI workflow with up to 3 AI agents, hands-on training for the team and a Lite ROI Transformation Report.
-- Accelerator: for a small team or department of 5 to 50 people. Three custom AI workflows, each with up to 3 AI agents, hands-on training and an ROI Transformation Report.
-- Enterprise: for a whole company of 20 or more. Hands-on training for everyone, an AI toolkit, AI governance and an ROI Transformation Report for each department.
+- First Win: for a team of 5 to 10 people. One custom AI workflow, hands-on training for the team and a Lite ROI Transformation Report.
+- Accelerator: for a small team or department of 5 to 50 people. Three custom AI workflows, hands-on training and an ROI Transformation Report.
+- Enterprise: for a whole company of 20 or more. Custom AI workflows scoped to the company’s needs, hands-on training for everyone, an AI toolkit, AI governance and an ROI Transformation Report for each department.
 
 ## Contact
 
