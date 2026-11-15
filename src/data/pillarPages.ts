@@ -4,7 +4,7 @@ import type { FaqItem } from '../components/Faq.astro';
 
 const pricingFaq: FaqItem = { q: 'How is it priced?', a: 'Every proposal is shaped to your team’s size and the work you want to change, and you see the full scope before you commit.' };
 
-const startFaq: FaqItem = { q: 'How do we start?', a: 'With a 15-minute conversation about the work that slows your team down. Send us a short message through the contact form.', links: [{ label: 'Go to the contact form', href: '/contact#form' }] };
+const startFaq: FaqItem = { q: 'How do we start?', a: 'With a 30-minute conversation about the work that slows your team down. Send us a short message through the contact form.', links: [{ label: 'Go to the contact form', href: '/contact#form' }] };
 
 export const whatWeDoHub = {
   seoTitle: 'AI implementation, training and adoption | Human Horizon',
@@ -88,7 +88,7 @@ export const pillarPages: Record<string, PillarPage> = {
     ],
     close: {
       title: 'Make the AI you pay for do real work.',
-      sub: 'Licences are the easy part. It starts with a 15-minute conversation about the work that slows your team down.',
+      sub: 'Licences are the easy part. It starts with a 30-minute conversation about the work that slows your team down.',
     },
   },
   train: {
@@ -132,7 +132,7 @@ export const pillarPages: Record<string, PillarPage> = {
     ],
     close: {
       title: 'Learning that becomes the way they work.',
-      sub: 'Training on their tasks, not someone else’s. It starts with a 15-minute conversation about the work that slows your team down.',
+      sub: 'Training on their tasks, not someone else’s. It starts with a 30-minute conversation about the work that slows your team down.',
     },
   },
   adopt: {
@@ -176,7 +176,7 @@ export const pillarPages: Record<string, PillarPage> = {
     ],
     close: {
       title: 'Make AI how your team works, for good.',
-      sub: 'Not a project that fades. It starts with a 15-minute conversation about the work that slows your team down.',
+      sub: 'Not a project that fades. It starts with a 30-minute conversation about the work that slows your team down.',
     },
   },
 };

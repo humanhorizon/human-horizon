@@ -65,4 +65,4 @@ In our view, self-practice suits individual habits. It does less for team workfl
 
 ## What to do next
 
-When week four is done, you will know which tasks AI helps with and which it does not. To check your results against what employers ask for, read our [guide to the AI skills Singapore employers want](/insights/ai-skills-singapore-employers-want). If you want your whole team to learn this way, we run hands-on training built on their real tasks, and you can [book a 15-minute discovery call](/contact?start=call#form).
+When week four is done, you will know which tasks AI helps with and which it does not. To check your results against what employers ask for, read our [guide to the AI skills Singapore employers want](/insights/ai-skills-singapore-employers-want). If you want your whole team to learn this way, we run hands-on training built on their real tasks, and you can [book a 30-minute discovery call](/contact?start=call#form).

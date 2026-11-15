@@ -41,4 +41,4 @@ The context window is the working space for one conversation. Some tools also of
 
 ## Where this fits
 
-Most context window problems come down to what you paste in and when, so practise on documents you really use. Human Horizon builds custom workflows and AI agents around the tools you already use, with a person checking the result. To talk it through, [book a 15-minute discovery call](/contact?start=call#form).
+Most context window problems come down to what you paste in and when, so practise on documents you really use. Human Horizon builds custom workflows and AI agents around the tools you already use, with a person checking the result. To talk it through, [book a 30-minute discovery call](/contact?start=call#form).

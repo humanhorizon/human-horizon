@@ -36,16 +36,16 @@ export const about = {
 
 export const contact = {
   seoTitle: 'Contact Human Horizon | AI consultancy in Singapore',
-  description: 'Find your first AI win with Human Horizon. Book a 15-minute discovery call or send us one workflow you would like to improve.',
+  description: 'Find your first AI win with Human Horizon. Book a 30-minute discovery call or send us one workflow you would like to improve.',
   kicker: 'Contact Human Horizon',
   title: 'Tell us what slows your team down.',
-  lead: 'Two ways to start: book a 15-minute discovery call, or send us one workflow you would like to improve. Either way, we help you find your first AI win. No sales pitch.',
+  lead: 'Two ways to start: book a 30-minute discovery call, or send us one workflow you would like to improve. Either way, we help you find your first AI win. No sales pitch.',
   emailTitle: 'Email us',
   emailNote: 'Prefer email? Write to us directly.',
   form: {
     title: 'Choose how to start',
-    note: 'Pick a time for a 15-minute discovery call in our calendar, or tell us about one workflow you would like to improve.',
-    calTitle: 'Book a 15-minute discovery call',
+    note: 'Pick a time for a 30-minute discovery call in our calendar, or tell us about one workflow you would like to improve.',
+    calTitle: 'Book a 30-minute discovery call',
     roles: ['Founder or owner', 'C-suite or director', 'Head of department', 'Manager', 'Team lead', 'Team member', 'Other'],
     departments: ['General management', 'Sales and business development', 'Marketing', 'Operations', 'Finance and admin', 'HR and L&D', 'Customer service', 'IT, data and AI', 'Other'],
     sizes: ['1 to 10', '11 to 50', '51 to 200', 'More than 200'],
@@ -54,7 +54,7 @@ export const contact = {
     startLabel: 'How would you like to start?',
     // Each way to start sets its own question and hint; ?start= on the link picks one.
     starts: [
-      { value: 'call', label: 'Book a 15-minute discovery call', message: 'What slows your team down?', hint: 'A few lines on the work you would most like to change. We will reply to find a time.' },
+      { value: 'call', label: 'Book a 30-minute discovery call', message: 'What slows your team down?', hint: 'A few lines on the work you would most like to change. We will reply to find a time.' },
       { value: 'workflow', label: 'Send us one workflow you’d like to improve', message: 'Which workflow would you like to improve?', hint: 'The task, who does it and what slows it down. We will reply with first thoughts and a time to talk it through.' },
     ],
     consent: 'We use your details only for this enquiry.',
@@ -70,7 +70,7 @@ export const contact = {
   stepsTitle: 'What happens next',
   steps: [
     { title: 'You send a message', body: 'Tell us a little about your business and the work that slows your team down.' },
-    { title: 'A 15-minute discovery call', body: 'We look at that work together, and at where AI could help first. You do not need to prepare anything or know which tools you want.' },
+    { title: 'A 30-minute discovery call', body: 'We look at that work together, and at where AI could help first. You do not need to prepare anything or know which tools you want.' },
     { title: 'A proposal for your team', body: 'You see the full scope and the way to start before you commit to anything.' },
   ],
 };
@@ -111,7 +111,7 @@ export const caseStudiesHub = {
   filterTitle: 'Filter by industry and team',
   empty: {
     title: 'No case study for this yet.',
-    body: 'We can still show what would change for this kind of team. A 15-minute conversation is enough to find out.',
+    body: 'We can still show what would change for this kind of team. A 30-minute conversation is enough to find out.',
   },
   featuredTitle: 'Teams we have worked with',
 };

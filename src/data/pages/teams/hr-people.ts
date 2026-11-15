@@ -32,11 +32,11 @@ const page: SegmentPage = {
     { q: 'Will AI make hiring or pay decisions?', a: 'No. People decide on hiring, pay, performance and anyone leaving. AI prepares the paperwork, gathers the figures and drafts first answers, and your HR team and managers make every decision and approve what goes out.' },
     { q: 'What about employee data?', a: 'We agree clear rules with you on which tools to use, what employee data can go into them, who can see it and what a person checks before anything is sent. Personal and sensitive matters stay with your HR team, and the rules are set with your PDPA obligations in mind.' },
     { q: 'Do you work with our HR and payroll systems?', a: 'Yes. We start from the HR, payroll and AI tools your team already uses, and suggest new ones only where they fit the work. Your team stays responsible for meeting its employment obligations.' },
-    { q: 'How do we start?', a: 'With a 15-minute conversation about the work that slows your team down. Send us a short message through the contact form.', links: [{ label: 'Go to the contact form', href: '/contact#form' }] },
+    { q: 'How do we start?', a: 'With a 30-minute conversation about the work that slows your team down. Send us a short message through the contact form.', links: [{ label: 'Go to the contact form', href: '/contact#form' }] },
   ],
   close: {
     title: 'Back to the human side of HR.',
-    sub: 'Less cross-checking spreadsheets and answering the same questions, more time for your people. It starts with a 15-minute conversation about the work that slows your team down.',
+    sub: 'Less cross-checking spreadsheets and answering the same questions, more time for your people. It starts with a 30-minute conversation about the work that slows your team down.',
   },
 };
 

@@ -32,11 +32,11 @@ const page: SegmentPage = {
     { q: 'Will AI replace our consultants?', a: 'No. We build AI into the repetitive parts of recruitment, such as screening, profile formatting and updates, so your consultants spend more time with candidates and clients. Your people keep the judgement on who to put forward and every relationship that comes with it.' },
     { q: 'What about candidate data?', a: 'We agree clear rules with you on which tools to use, what candidate and client information can go into them and what a person checks before anything is sent. Personal data stays under your control and your own PDPA policies, and you will have a clear answer if a candidate or client asks how you use AI.' },
     { q: 'Do you work with our database and job boards?', a: 'Yes. We start from the recruitment systems, job boards and AI tools your team already uses, and suggest new ones only where they fit the work.' },
-    { q: 'How do we start?', a: 'With a 15-minute conversation about the work that slows your team down. Send us a short message through the contact form.', links: [{ label: 'Go to the contact form', href: '/contact#form' }] },
+    { q: 'How do we start?', a: 'With a 30-minute conversation about the work that slows your team down. Send us a short message through the contact form.', links: [{ label: 'Go to the contact form', href: '/contact#form' }] },
   ],
   close: {
     title: 'Back to the calls that make the placement.',
-    sub: 'Less reading, reformatting and chasing, more time with the people you place. It starts with a 15-minute conversation about the work that slows your firm down.',
+    sub: 'Less reading, reformatting and chasing, more time with the people you place. It starts with a 30-minute conversation about the work that slows your firm down.',
   },
 };
 

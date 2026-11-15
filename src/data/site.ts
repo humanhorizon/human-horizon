@@ -1,13 +1,13 @@
 // Site-wide structure. Workflow copy is illustrative, outcome only: never the method.
 
 // Two buttons only. "Find your first AI win" is the generic one: it is what both ways to start lead to,
-// and it closes every page. "Book a 15-minute discovery" leads where a visitor is close to deciding
+// and it closes every page. "Book a 30-minute discovery" leads where a visitor is close to deciding
 // (header, service pages, case studies, About). Learning and exploring pages lead with the win.
-// Google Calendar appointment page for the 15-minute discovery call. It is embedded only in the contact form,
+// Google Calendar appointment page for the 30-minute discovery call. It is embedded only in the contact form,
 // once a visitor picks the discovery call; every button on the site goes to the contact page.
 export const bookingUrl = 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ1ZUPqKPNd98vcH7-1UO1zDhDv8N7qDfmYCGfMJWVED29B_5TkBH5G1aKIzgDUf3e1a2Dg6GkiC';
 export const ctas = {
-  call: { label: 'Book a 15-minute discovery', href: '/contact?start=call#form' },
+  call: { label: 'Book a 30-minute discovery', href: '/contact?start=call#form' },
   win: { label: 'Find your first AI win', href: '/contact#form' },
 };
 export type Stage = 'learn' | 'explore' | 'decide';
