@@ -40,4 +40,4 @@ An assistant responds to you, one request at a time. An agent works through seve
 
 ## Where this fits
 
-Assistants work best learned on your team's own tasks; see what makes a good [AI course in Singapore](/ai-course-singapore). First Win is one custom workflow around a task your team already does, built with your team from day one. To talk it through, [book a 15-minute discovery call](/contact?start=call#form).
+Assistants work best learned on your team's own tasks; see what makes a good [AI course in Singapore](/ai-course-singapore). First Win is one custom workflow around a task your team already does, built with your team from day one. To talk it through, [book a 15-minute discovery call](https://calendar.google.com/calendar/appointments/schedules/AcZssZ1ZUPqKPNd98vcH7-1UO1zDhDv8N7qDfmYCGfMJWVED29B_5TkBH5G1aKIzgDUf3e1a2Dg6GkiC).

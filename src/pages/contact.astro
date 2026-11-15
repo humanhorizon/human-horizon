@@ -1,7 +1,7 @@
 ---
 import Base from '../layouts/Base.astro';
 import PageHero from '../components/PageHero.astro';
-import { site } from '../data/site';
+import { site, bookingUrl } from '../data/site';
 import { contact } from '../data/companyPages';
 const f = contact.form;
 
@@ -51,6 +51,7 @@ const schema = [
             {f.starts.map((o, i) => (
               <label class="opt"><input type="radio" name="start" value={o.label} data-start={o.value} data-msg={o.message} data-hint={o.hint} checked={i === 0} /><span>{o.label}</span></label>
             ))}
+            <p class="book" data-book>{f.bookNote} <a href={bookingUrl}>{f.bookLink}</a></p>
           </fieldset>
           <div class="row2">
             <label class="fld"><span>Name</span><input name="name" required autocomplete="name" maxlength="120" /></label>
@@ -101,7 +102,8 @@ const schema = [
     const radios = [...form.querySelectorAll<HTMLInputElement>('[data-start]')];
     const label = form.querySelector<HTMLElement>('[data-msg-label]');
     const area = form.querySelector<HTMLTextAreaElement>('textarea[name="message"]');
-    const apply = (r: HTMLInputElement) => { if (label) label.textContent = r.dataset.msg ?? ''; if (area) area.placeholder = r.dataset.hint ?? ''; };
+    const book = form.querySelector<HTMLElement>('[data-book]');
+    const apply = (r: HTMLInputElement) => { if (label) label.textContent = r.dataset.msg ?? ''; if (area) area.placeholder = r.dataset.hint ?? ''; if (book) book.hidden = r.dataset.start !== 'call'; };
     const want = new URLSearchParams(location.search).get('start');
     const pick = radios.find((r) => r.dataset.start === want) ?? radios[0];
     if (pick) { pick.checked = true; apply(pick); }
@@ -135,6 +137,9 @@ const schema = [
   .starts legend { font-size: 14px; font-weight: 600; margin-bottom: 8px; padding: 0; }
   .opt { display: flex; align-items: center; gap: 10px; padding: 12px 14px; border: 1.5px solid var(--line); border-radius: 12px; font-size: 16px; cursor: pointer; }
   .opt:has(input:checked) { border-color: var(--ink); background: var(--morning); }
+  .book { font-size: 15px; margin: 4px 0 0; }
+  .book[hidden] { display: none; }
+  .book a { font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
   .opt input { accent-color: var(--ink); width: 18px; height: 18px; margin: 0; }
   .trap { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
   .err { color: #B3261E; font-size: 14px; }

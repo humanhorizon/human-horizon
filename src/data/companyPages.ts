@@ -51,6 +51,8 @@ export const contact = {
     messageLabel: 'What slows your team down?',
     messageHint: 'A few lines on the work you would most like to change.',
     startLabel: 'How would you like to start?',
+    bookNote: 'Prefer to pick a time now?',
+    bookLink: 'Choose a slot in our calendar',
     // Each way to start sets its own question and hint; ?start= on the link picks one.
     starts: [
       { value: 'call', label: 'Book a 15-minute discovery call', message: 'What slows your team down?', hint: 'A few lines on the work you would most like to change. We will reply to find a time.' },
@@ -89,7 +91,7 @@ export const privacy = {
   seoTitle: 'Privacy notice | Human Horizon',
   description: 'How Human Horizon collects and uses personal data, in line with Singapore’s Personal Data Protection Act.',
   title: 'Privacy notice',
-  updated: '12 November 2026',
+  updated: '15 November 2026',
   sections: privacySections,
 };
 
@@ -97,7 +99,7 @@ export const terms = {
   seoTitle: 'Terms of use | Human Horizon',
   description: 'The terms that apply when you use the Human Horizon website, under the laws of Singapore.',
   title: 'Terms of use',
-  updated: '5 November 2026',
+  updated: '15 November 2026',
   sections: termsSections,
 };
 

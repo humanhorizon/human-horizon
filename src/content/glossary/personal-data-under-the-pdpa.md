@@ -46,6 +46,6 @@ An HR manager at a retail company wants AI to find themes in exit interview note
 
 ## Where this fits
 
-Knowing what counts as personal data is the first step to deciding what goes into which tool. Human Horizon helps with AI governance and an AI toolkit: clear, written rules your team can follow. To talk it through, [book a 15-minute discovery call](/contact?start=call#form).
+Knowing what counts as personal data is the first step to deciding what goes into which tool. Human Horizon helps with AI governance and an AI toolkit: clear, written rules your team can follow. To talk it through, [book a 15-minute discovery call](https://calendar.google.com/calendar/appointments/schedules/AcZssZ1ZUPqKPNd98vcH7-1UO1zDhDv8N7qDfmYCGfMJWVED29B_5TkBH5G1aKIzgDUf3e1a2Dg6GkiC).
 
 \*This page is general information and not legal advice.

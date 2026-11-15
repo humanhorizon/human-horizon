@@ -75,4 +75,4 @@ Choose one repetitive task that takes your team real time each week. Train on it
 
 ## What to do next
 
-Once you have the three questions for a provider, the next step is seeing how the answers look on your own team's work. Human Horizon runs hands-on training built on your people's real tasks, with AI adoption tracking and the ROI Transformation Report to show whether it held. To talk through which tasks to start with, [book a 15-minute discovery call](/contact?start=call#form).
+Once you have the three questions for a provider, the next step is seeing how the answers look on your own team's work. Human Horizon runs hands-on training built on your people's real tasks, with AI adoption tracking and the ROI Transformation Report to show whether it held. To talk through which tasks to start with, [book a 15-minute discovery call](https://calendar.google.com/calendar/appointments/schedules/AcZssZ1ZUPqKPNd98vcH7-1UO1zDhDv8N7qDfmYCGfMJWVED29B_5TkBH5G1aKIzgDUf3e1a2Dg6GkiC).

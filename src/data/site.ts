@@ -3,8 +3,10 @@
 // Two buttons only. "Find your first AI win" is the generic one: it is what both ways to start lead to,
 // and it closes every page. "Book a 15-minute discovery" leads where a visitor is close to deciding
 // (header, service pages, case studies, About). Learning and exploring pages lead with the win.
+// Google Calendar appointment page for the 15-minute discovery call. Links to it open in a new tab (Base.astro).
+export const bookingUrl = 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ1ZUPqKPNd98vcH7-1UO1zDhDv8N7qDfmYCGfMJWVED29B_5TkBH5G1aKIzgDUf3e1a2Dg6GkiC';
 export const ctas = {
-  call: { label: 'Book a 15-minute discovery', href: '/contact?start=call#form' },
+  call: { label: 'Book a 15-minute discovery', href: bookingUrl },
   win: { label: 'Find your first AI win', href: '/contact#form' },
 };
 export type Stage = 'learn' | 'explore' | 'decide';

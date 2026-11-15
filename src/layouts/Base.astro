@@ -67,5 +67,9 @@ const org = {
     <Header />
     <main><slot /></main>
     <Footer />
+    <script is:inline>
+      // The discovery call books on Google Calendar: open it in a new tab so the site stays open.
+      document.querySelectorAll('a[href^="https://calendar.google.com/"]').forEach((a) => { a.target = '_blank'; a.rel = 'noopener'; });
+    </script>
   </body>
 </html>

@@ -44,4 +44,4 @@ Shadow IT is any technology used without approval, such as a personal file-shari
 
 ## Where this fits
 
-Banning shadow AI only pushes it out of sight, so the fix is approved tools and simple rules. Human Horizon offers AI governance and an AI toolkit: clear, written rules your team can follow. To talk it through, [book a 15-minute discovery call](/contact?start=call#form).
+Banning shadow AI only pushes it out of sight, so the fix is approved tools and simple rules. Human Horizon offers AI governance and an AI toolkit: clear, written rules your team can follow. To talk it through, [book a 15-minute discovery call](https://calendar.google.com/calendar/appointments/schedules/AcZssZ1ZUPqKPNd98vcH7-1UO1zDhDv8N7qDfmYCGfMJWVED29B_5TkBH5G1aKIzgDUf3e1a2Dg6GkiC).

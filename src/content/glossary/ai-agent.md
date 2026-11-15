@@ -32,4 +32,4 @@ An AI assistant answers you one request at a time, and you decide what happens n
 
 ## Where this fits
 
-An agent works best on one well-understood process with a person approving the result. Human Horizon's First Win is one custom workflow, built around a task your team already does, with your team involved from day one. To talk it through, [book a 15-minute discovery call](/contact?start=call#form).
+An agent works best on one well-understood process with a person approving the result. Human Horizon's First Win is one custom workflow, built around a task your team already does, with your team involved from day one. To talk it through, [book a 15-minute discovery call](https://calendar.google.com/calendar/appointments/schedules/AcZssZ1ZUPqKPNd98vcH7-1UO1zDhDv8N7qDfmYCGfMJWVED29B_5TkBH5G1aKIzgDUf3e1a2Dg6GkiC).
