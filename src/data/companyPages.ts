@@ -36,10 +36,10 @@ export const about = {
 
 export const contact = {
   seoTitle: 'Contact Human Horizon | AI consultancy in Singapore',
-  description: 'Find your first AI win with Human Horizon. Book a 30-minute discovery call or send us one workflow you would like to improve.',
+  description: 'Take AI beyond the prompt with Human Horizon. Book a 30-minute discovery call or send us one workflow you would like to improve.',
   kicker: 'Contact Human Horizon',
   title: 'Tell us what slows your team down.',
-  lead: 'Two ways to start: book a 30-minute discovery call, or send us one workflow you would like to improve. Either way, we help you find your first AI win. No sales pitch.',
+  lead: 'Two ways to start: book a 30-minute discovery call, or send us one workflow you would like to improve. Either way, we help your team take AI beyond the prompt. No sales pitch.',
   emailTitle: 'Email us',
   emailNote: 'Prefer email? Write to us directly.',
   form: {

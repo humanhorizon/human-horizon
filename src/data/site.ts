@@ -1,6 +1,6 @@
 // Site-wide structure. Workflow copy is illustrative, outcome only: never the method.
 
-// Two buttons only. "Find your first AI win" is the generic one: it is what both ways to start lead to,
+// Two buttons only. "Take AI beyond the prompt" is the generic one (most visitors have prompted ChatGPT but not yet got the most from it); it is what both ways to start lead to,
 // and it closes every page. "Book a 30-minute discovery" leads where a visitor is close to deciding
 // (header, service pages, case studies, About). Learning and exploring pages lead with the win.
 // Google Calendar appointment page for the 30-minute discovery call. It is embedded only in the contact form,
@@ -8,7 +8,7 @@
 export const bookingUrl = 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ1ZUPqKPNd98vcH7-1UO1zDhDv8N7qDfmYCGfMJWVED29B_5TkBH5G1aKIzgDUf3e1a2Dg6GkiC';
 export const ctas = {
   call: { label: 'Book a 30-minute discovery', href: '/contact?start=call#form' },
-  win: { label: 'Find your first AI win', href: '/contact#form' },
+  win: { label: 'Take AI beyond the prompt', href: '/contact#form' },
 };
 export type Stage = 'learn' | 'explore' | 'decide';
 export const stages: Record<Stage, { label: string; href: string }> = {

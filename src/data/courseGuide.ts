@@ -59,6 +59,6 @@ export const courseGuide = {
   close: {
     title: 'Share this page with your manager, and we can take it forward together.',
     sub: 'Whoever signs off on training can then book a 30-minute discovery call. We start with the work that slows your team down.',
-    secondary: { label: 'Find your first AI win', href: '/contact#form' },
+    secondary: { label: 'Take AI beyond the prompt', href: '/contact#form' },
   },
 };
