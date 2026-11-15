@@ -32,4 +32,4 @@ Generative AI is the wider family of tools that create text, images, audio or vi
 
 ## Where this fits
 
-An LLM helps most when it is pointed at a task your team already does. First Win is one custom workflow built around that task, with your team involved from day one. To talk it through, [book a 15-minute call](/contact?start=call#form).
+An LLM helps most when it is pointed at a task your team already does. First Win is one custom workflow built around that task, with your team involved from day one. To talk it through, [book a 15-minute discovery call](/contact?start=call#form).

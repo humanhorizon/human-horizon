@@ -33,7 +33,7 @@ const schema = [
   <nav class="wrap crumbs" aria-label="Breadcrumb"><a href="/">Home</a> / <a href="/insights">Insights</a> / <span aria-current="page">{name}</span></nav>
   <header class="wrap th"><h1 class="d th-h">{name}</h1><p class="lead muted">{intro}</p></header>
   <section class="section"><div class="wrap"><ul class="grid">{items.map((c) => <li><InsightCard item={c} headingLevel="h2" /></li>)}</ul></div></section>
-  <CloseCta title={close.title} sub={close.sub} stage="learn" />
+  <CloseCta title={close.title} sub={close.sub} />
 </Base>
 
 <style>

@@ -5,7 +5,7 @@ import { stages, type Stage } from '../data/site';
 
 interface Props { kicker: string; title: string; lead: string; secondary?: { label: string; href: string }; note?: string; stage?: Stage; noCta?: boolean }
 const { kicker, title, lead, secondary, note, stage = 'decide', noCta = false } = Astro.props;
-const cta = stages[stage].cta;
+const cta = stages[stage];
 ---
 <section class="phero">
   <div class="wrap"><h1 class="d h1 phero-h clear"><span class="kicker">{kicker}</span>{title}</h1></div>

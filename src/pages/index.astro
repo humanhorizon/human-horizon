@@ -31,7 +31,7 @@ const faqSchema = {
       <p class="lead muted clear">{hero.sub}</p>
       <div class="btn-row">
         <a class="btn btn-ink" href={ctas.win.href}>{ctas.win.label}</a>
-        <a class="btn btn-ghost" href={ctas.call.href}>{ctas.call.label}</a>
+        <a class="btn btn-ghost" href="/what-we-do">See what we do</a>
       </div>
       <p class="cap">{hero.credibility}</p>
     </div>
@@ -131,7 +131,7 @@ const faqSchema = {
 
   <Faq title="Common questions" items={faq} />
 
-  <CloseCta title={close.title} sub={close.sub} stage="explore" />
+  <CloseCta title={close.title} sub={close.sub} />
 </Base>
 
 <script>
@@ -162,8 +162,6 @@ const faqSchema = {
   .kicker { display: block; margin-bottom: var(--s3); font: 600 16px/1.4 var(--body); letter-spacing: 0; color: var(--sunrise-text); }
   .hero-low { padding-top: 28px; display: flex; flex-direction: column; gap: 28px; align-items: flex-start; }
 
-  /* Homepage breathing room: taller sections and wider gaps than inner pages. */
-  :global(main:has(> .home-hero)) { --section: clamp(96px, 12vw, 184px); }
   .grid4.shift > li { border-top: 1px solid var(--line); gap: var(--s2); }
   .shift-t { font: 300 clamp(22px, 2vw, 28px)/1.3 var(--display); color: var(--ink); text-wrap: balance; }
   .shift-lead { font-size: clamp(18px, 1.5vw, 21px); }

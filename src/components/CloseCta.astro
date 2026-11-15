@@ -1,10 +1,11 @@
 ---
 // Closing call to action on ink, with the white horizon supergraphic.
 import Supergraphic from './Supergraphic.astro';
-import { stages, type Stage } from '../data/site';
+import { ctas } from '../data/site';
 
-interface Props { title: string; sub: string; cta?: { label: string; href: string }; secondary?: { label: string; href: string }; stage?: Stage }
-const { title, sub, stage = 'decide', cta = stages[stage].cta, secondary = stages[stage].secondary } = Astro.props;
+// Every page closes on the one generic call to action.
+interface Props { title: string; sub: string; cta?: { label: string; href: string }; secondary?: { label: string; href: string } }
+const { title, sub, cta = ctas.win, secondary } = Astro.props;
 ---
 <section class="close bg-ink">
   <div class="wrap"><h2 class="d close-h clear">{title}</h2></div>
@@ -19,12 +20,13 @@ const { title, sub, stage = 'decide', cta = stages[stage].cta, secondary = stage
 </section>
 
 <style>
-  /* Text beside the ring stops short of its footprint: about 0.58 of the ring size in from the right edge. */
-  .close { --S: clamp(180px, 46vw, 760px); --mw: 720px; position: relative; overflow: hidden; padding: clamp(80px, 10vw, 150px) 0 clamp(80px, 10vw, 140px); }
-  .clear { max-width: min(var(--mw), calc(100vw - var(--S) * 0.58 - var(--gutter) - 32px)); }
+  /* Text keeps clear of the ring's widest point (about 0.71 of the ring size in from the right edge),
+     and the section is tall enough to show the whole ring below the horizon line. */
+  .close { --S: clamp(180px, 46vw, 760px); --mw: 720px; position: relative; overflow: hidden; padding: clamp(80px, 10vw, 150px) 0 max(clamp(80px, 10vw, 140px), calc(var(--S) / 2 - 40px)); }
+  .clear { max-width: min(var(--mw), calc(100vw - var(--S) * 0.76 - var(--gutter) - 32px)); }
   .close-low .clear { --mw: 520px; }
   .close-h { font-size: clamp(35px, 3.8vw, 50px); margin-bottom: 36px; position: relative; z-index: 1; }
-  .close-low { padding-top: 40px; display: flex; gap: var(--s4); align-items: center; flex-wrap: wrap; position: relative; z-index: 1; }
+  .close-low { padding-top: 40px; display: flex; flex-direction: column; gap: var(--s3); align-items: flex-start; position: relative; z-index: 1; }
   .close-low a:not(.btn) { color: #fff; }
   @media (max-width: 760px) {
     .clear, .close-low .clear { max-width: 100%; }

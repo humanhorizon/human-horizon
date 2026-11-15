@@ -81,4 +81,4 @@ Write down one task your team repeats, how long it takes and who does it. If a c
 
 ## What to do next
 
-Once you have written down the task your team repeats, you can see whether it needs a course or a changed way of working. First Win is one custom workflow, built around a task your team already does, with your team involved from day one. The call covers your task and which route suits it. To start, [book a 15-minute call](/contact?start=call#form).
+Once you have written down the task your team repeats, you can see whether it needs a course or a changed way of working. First Win is one custom workflow, built around a task your team already does, with your team involved from day one. The call covers your task and which route suits it. To start, [book a 15-minute discovery call](/contact?start=call#form).

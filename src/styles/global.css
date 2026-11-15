@@ -19,7 +19,7 @@
   --text: 'Figtree', system-ui, sans-serif;
   --s1: 8px; --s2: 16px; --s3: 24px; --s4: 40px; --s5: 56px; --s6: 88px; --s7: 136px;
   --gutter: clamp(16px, 5vw, 72px);
-  --section: clamp(56px, 7vw, 112px);
+  --section: clamp(96px, 12vw, 184px);
   --max: 1296px;
   --photo-grade: sepia(0.16) saturate(1.06) brightness(1.03) contrast(0.98);
 }

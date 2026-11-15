@@ -35,4 +35,4 @@ Upskilling helps someone do their current job better as it changes. Reskilling p
 
 ## Where this fits
 
-Upskilling only pays off if it lasts, so read [why AI courses fade, and how to make them stick](/insights/why-ai-courses-fade). Our hands-on training uses your team's own tasks, with the ROI Transformation Report to show the result. To talk it through, [book a 15-minute call](/contact?start=call#form).
+Upskilling only pays off if it lasts, so read [why AI courses fade, and how to make them stick](/insights/why-ai-courses-fade). Our hands-on training uses your team's own tasks, with the ROI Transformation Report to show the result. To talk it through, [book a 15-minute discovery call](/contact?start=call#form).

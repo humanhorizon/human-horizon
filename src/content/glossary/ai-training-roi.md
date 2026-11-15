@@ -43,4 +43,4 @@ A wholesale company trains five sales coordinators to draft quotes with AI. Befo
 
 ## Where this fits
 
-Measuring well starts before the training does. That is what the [ROI Transformation Report](/what-we-do/adopt) is for: it records a baseline on your team's own tasks before hands-on training, then measures the same tasks again to show the result. To talk it through, [book a 15-minute call](/contact?start=call#form).
+Measuring well starts before the training does. That is what the [ROI Transformation Report](/what-we-do/adopt) is for: it records a baseline on your team's own tasks before hands-on training, then measures the same tasks again to show the result. To talk it through, [book a 15-minute discovery call](/contact?start=call#form).

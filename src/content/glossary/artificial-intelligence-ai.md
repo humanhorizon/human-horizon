@@ -30,4 +30,4 @@ Many AI tools, including those that write text, predict what is likely to fit. T
 
 ## Where this fits
 
-AI predicts what is likely to fit, so the next useful step is understanding how it works. Read [How does AI work?](/insights/how-does-ai-work). Human Horizon builds custom workflows and trains teams hands-on, around the work they already do. To talk it through, [book a 15-minute call](/contact?start=call#form).
+AI predicts what is likely to fit, so the next useful step is understanding how it works. Read [How does AI work?](/insights/how-does-ai-work). Human Horizon builds custom workflows and trains teams hands-on, around the work they already do. To talk it through, [book a 15-minute discovery call](/contact?start=call#form).

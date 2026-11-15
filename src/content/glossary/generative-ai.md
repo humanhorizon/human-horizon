@@ -34,4 +34,4 @@ Traditional AI usually gives you a label, a score or a forecast from structured 
 
 ## Where this fits
 
-If your team already uses generative AI, the next step is applying it to one real task. Human Horizon's First Win is one custom workflow around a task your team already does, with your team involved from day one. To talk it through, [book a 15-minute call](/contact?start=call#form).
+If your team already uses generative AI, the next step is applying it to one real task. Human Horizon's First Win is one custom workflow around a task your team already does, with your team involved from day one. To talk it through, [book a 15-minute discovery call](/contact?start=call#form).

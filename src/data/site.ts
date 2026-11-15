@@ -1,19 +1,17 @@
 // Site-wide structure. Workflow copy is illustrative, outcome only: never the method.
 
-// The three ways to start. Which one leads depends on how far into the site a visitor is:
-// learn (articles, glossary, course guide: often HR, L&D or ops doing groundwork) leads with the async workflow;
-// explore (home, industries, teams, What we do hub) leads with the first AI win;
-// decide (service pages, case studies, about) leads with the call. The header always offers the call.
+// Two buttons only. "Find your first AI win" is the generic one: it is what both ways to start lead to,
+// and it closes every page. "Book a 15-minute discovery" leads where a visitor is close to deciding
+// (header, service pages, case studies, About). Learning and exploring pages lead with the win.
 export const ctas = {
-  call: { label: 'Book a 15-minute call', href: '/contact?start=call#form' },
-  win: { label: 'Find your first AI win', href: '/contact?start=win#form' },
-  workflow: { label: 'Send us one workflow you’d like to improve', href: '/contact?start=workflow#form' },
+  call: { label: 'Book a 15-minute discovery', href: '/contact?start=call#form' },
+  win: { label: 'Find your first AI win', href: '/contact#form' },
 };
 export type Stage = 'learn' | 'explore' | 'decide';
-export const stages: Record<Stage, { cta: { label: string; href: string }; secondary: { label: string; href: string } }> = {
-  learn: { cta: ctas.workflow, secondary: ctas.call },
-  explore: { cta: ctas.win, secondary: ctas.call },
-  decide: { cta: ctas.call, secondary: ctas.workflow },
+export const stages: Record<Stage, { label: string; href: string }> = {
+  learn: ctas.win,
+  explore: ctas.win,
+  decide: ctas.call,
 };
 
 export const site = {

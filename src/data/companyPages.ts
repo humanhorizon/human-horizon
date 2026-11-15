@@ -36,10 +36,10 @@ export const about = {
 
 export const contact = {
   seoTitle: 'Contact Human Horizon | AI consultancy in Singapore',
-  description: 'Talk to Human Horizon about AI for your business. Book a 15-minute call, find your first AI win or send us one workflow to improve.',
+  description: 'Find your first AI win with Human Horizon. Book a 15-minute discovery call or send us one workflow you would like to improve.',
   kicker: 'Contact Human Horizon',
   title: 'Tell us what slows your team down.',
-  lead: 'Three ways to start. Book a 15-minute call, find your first AI win or send us one workflow to improve. No sales pitch.',
+  lead: 'Two ways to start: book a 15-minute discovery call, or send us one workflow you would like to improve. Either way, we help you find your first AI win. No sales pitch.',
   emailTitle: 'Email us',
   emailNote: 'Prefer email? Write to us directly.',
   form: {
@@ -53,8 +53,7 @@ export const contact = {
     startLabel: 'How would you like to start?',
     // Each way to start sets its own question and hint; ?start= on the link picks one.
     starts: [
-      { value: 'call', label: 'Book a 15-minute call', message: 'What slows your team down?', hint: 'A few lines on the work you would most like to change. We will reply to find a time.' },
-      { value: 'win', label: 'Find your first AI win', message: 'What does your team spend too much time on?', hint: 'A few lines on your business and team. We will reply with where AI could help first.' },
+      { value: 'call', label: 'Book a 15-minute discovery call', message: 'What slows your team down?', hint: 'A few lines on the work you would most like to change. We will reply to find a time.' },
       { value: 'workflow', label: 'Send us one workflow you’d like to improve', message: 'Which workflow would you like to improve?', hint: 'The task, who does it and what slows it down. We will reply with first thoughts and a time to talk it through.' },
     ],
     consent: 'We use your details only for this enquiry.',
@@ -70,7 +69,7 @@ export const contact = {
   stepsTitle: 'What happens next',
   steps: [
     { title: 'You send a message', body: 'Tell us a little about your business and the work that slows your team down.' },
-    { title: 'A 15-minute conversation', body: 'We look at that work together and where AI could help first. You do not need to prepare anything or know which tools you want.' },
+    { title: 'A 15-minute discovery call', body: 'We look at that work together, and at where AI could help first. You do not need to prepare anything or know which tools you want.' },
     { title: 'A proposal for your team', body: 'You see the full scope and the way to start before you commit to anything.' },
   ],
 };
