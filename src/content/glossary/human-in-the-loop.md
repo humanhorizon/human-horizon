@@ -36,4 +36,4 @@ Singapore's [primer on the Model AI Governance Framework](https://www.pdpc.gov.s
 
 ## Where this fits
 
-Deciding where a person checks the output is the first design choice in any workflow. First Win is one custom workflow built around a task your team already does, with your team involved from day one. To talk it through, [book a 30-minute discovery call](/contact?start=call#form).
+Deciding where a person checks the output is the first design choice in any workflow. First Win is one custom AI workflow built around a task your team already does, with your team involved from day one. To talk it through, [book a 30-minute discovery call](/contact?start=call#form).

@@ -28,4 +28,4 @@ Not with the whole process. Choose one process step that repeats and costs hours
 
 ## Where this fits
 
-Start with one repeating step and measure the time before and after. Human Horizon's First Win is one custom workflow, built around a task your team already does, with your team involved from day one. To learn more, [book a 30-minute discovery call](/contact?start=call#form).
+Start with one repeating step and measure the time before and after. Human Horizon's First Win is one custom AI workflow, built around a task your team already does, with your team involved from day one. To learn more, [book a 30-minute discovery call](/contact?start=call#form).

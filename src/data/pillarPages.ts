@@ -20,7 +20,7 @@ export const whatWeDoHub = {
   },
   faqTitle: 'Questions about what we do',
   faq: [
-    { q: 'Do we need all three?', a: 'Not to begin. You can start with one custom workflow and the training around it, then add more as the change takes hold. Your proposal sets out the right mix for your business.' },
+    { q: 'Do we need all three?', a: 'Not to begin. You can start with one custom AI workflow and the training around it, then add more as the change takes hold. Your proposal sets out the right mix for your business.' },
     { q: 'Is this an AI course?', a: 'No. We build AI into your team’s real work, train your people on it and help the change last. Training runs on your own tasks, not on generic examples.' },
     { q: 'Which AI tools do you use?', a: 'We start from the tools your team already has and recommend new ones only where they fit the work. We are not tied to any one vendor.' },
     pricingFaq,

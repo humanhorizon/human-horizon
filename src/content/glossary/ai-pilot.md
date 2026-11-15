@@ -38,4 +38,4 @@ A proof of concept tests whether something can work at all, often on sample data
 
 ## Where this fits
 
-A trial only helps if someone owns the decision to scale, change or stop it. Human Horizon's First Win is one custom workflow, built around a task your team already does, with your team involved from day one. To talk it through, [book a 30-minute discovery call](/contact?start=call#form).
+A trial only helps if someone owns the decision to scale, change or stop it. Human Horizon's First Win is one custom AI workflow, built around a task your team already does, with your team involved from day one. To talk it through, [book a 30-minute discovery call](/contact?start=call#form).

@@ -28,4 +28,4 @@ With a task that repeats and that you can describe step by step. Our guide on [A
 
 ## Where this fits
 
-A task that repeats and can be described step by step is a good start. Human Horizon's First Win is one custom workflow, built around a task your team already does, with your team involved from day one. To pick one, [book a 30-minute discovery call](/contact?start=call#form).
+A task that repeats and can be described step by step is a good start. Human Horizon's First Win is one custom AI workflow, built around a task your team already does, with your team involved from day one. To pick one, [book a 30-minute discovery call](/contact?start=call#form).

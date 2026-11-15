@@ -63,8 +63,8 @@ export const start = {
   title: 'Start with one workflow, or the whole firm.',
   link: { label: 'Book a 30-minute discovery call', href: '/contact?start=call#form' },
   options: [
-    { name: 'First Win', fit: 'For a team of 5 to 10 people', change: 'One workflow running the new way in the team.', includes: ['One custom workflow', 'Hands-on training for the team', 'A Lite ROI Transformation Report on that workflow'] },
-    { name: 'Accelerator', fit: 'For a small team or department of 5 to 50 people', change: 'A small team or department working the new way, with the numbers to show it.', includes: ['Three custom workflows', 'Hands-on training for the team or department', 'An ROI Transformation Report for the team or department'] },
+    { name: 'First Win', fit: 'For a team of 5 to 10 people', change: 'One AI workflow running the new way in the team.', includes: ['One custom AI workflow with up to 3 AI agents', 'Hands-on training for the team', 'A Lite ROI Transformation Report on that workflow'] },
+    { name: 'Accelerator', fit: 'For a small team or department of 5 to 50 people', change: 'A small team or department working the new way, with the numbers to show it.', includes: ['Three custom AI workflows, each with up to 3 AI agents', 'Hands-on training for the team or department', 'An ROI Transformation Report for the team or department'] },
     { name: 'Enterprise', fit: 'For a whole company of 20 or more', change: 'The whole company using AI with confidence, under clear rules.', includes: ['Hands-on training for everyone, with role-specific sessions', 'An AI toolkit and AI governance for the company', 'An ROI Transformation Report for each department'] },
   ],
 };

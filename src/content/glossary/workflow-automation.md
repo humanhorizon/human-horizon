@@ -38,4 +38,4 @@ Workflow automation follows a set path that someone designed. An AI agent decide
 
 ## Where this fits
 
-Start by mapping one recurring task as it really runs, then decide where a person checks. Human Horizon's First Win is one custom workflow, built around a task your team already does, with your team involved from day one. To talk it through, [book a 30-minute discovery call](/contact?start=call#form).
+Start by mapping one recurring task as it really runs, then decide where a person checks. Human Horizon's First Win is one custom AI workflow, built around a task your team already does, with your team involved from day one. To talk it through, [book a 30-minute discovery call](/contact?start=call#form).
