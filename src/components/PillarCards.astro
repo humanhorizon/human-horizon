@@ -4,13 +4,15 @@
 import Symbol from './Symbol.astro';
 import { pillars } from '../data/site';
 import { whatWeDo } from '../data/home';
+// compact: outcome only, no deliverable list (homepage).
+const { compact = false } = Astro.props as { compact?: boolean };
 ---
 <div class="pcards">
   {pillars.map((p) => (
     <a class="pcard" href={`/what-we-do/${p.slug}`}>
       <h3 class="d h3d">{p.name}</h3>
       <p class="prow-out">{p.outcome}</p>
-      <ul class="dlv">{p.items.map((it) => <li><b>{it.name}</b><span>{it.line}</span></li>)}</ul>
+      {!compact && <ul class="dlv">{p.items.map((it) => <li><b>{it.name}</b><span>{it.line}</span></li>)}</ul>}
     </a>
   ))}
 </div>

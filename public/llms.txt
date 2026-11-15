@@ -29,4 +29,4 @@ Human Horizon does not run public AI courses. It trains teams inside their own c
 ## Contact
 
 - Website: https://humanhorizon.io
-- Email: contact.humanhorizon@gmail.com
+- Email: team@humanhorizon.io

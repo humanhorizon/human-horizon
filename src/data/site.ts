@@ -3,7 +3,7 @@
 export const site = {
   name: 'Human Horizon',
   url: 'https://humanhorizon.io',
-  email: 'contact.humanhorizon@gmail.com',
+  email: 'team@humanhorizon.io',
   description:
     'AI consultancy in Singapore that builds AI into real work, trains your people and helps every team keep using it, so AI becomes part of the company culture.',
   // Footer boilerplate: the USP in two sentences (Implement, Train, Adopt, people first, results that last).
@@ -23,6 +23,7 @@ export const pillars = [
   {
     slug: 'implement',
     name: 'Implement',
+    navLabel: 'AI Implementation',
     outcome: 'Custom AI workflows and agents built around how your business already runs.',
     items: [
       { name: 'Discovery and priorities', line: 'We map where your team’s time goes and pick the work worth changing first.' },
@@ -34,6 +35,7 @@ export const pillars = [
   {
     slug: 'train',
     name: 'Train',
+    navLabel: 'AI Training',
     outcome: 'Your people learn AI alongside the tasks they already know.',
     items: [
       { name: 'Hands-on training', line: 'Starts with the basics, then moves straight onto the tasks your team already knows.' },
@@ -45,6 +47,7 @@ export const pillars = [
   {
     slug: 'adopt',
     name: 'Adopt',
+    navLabel: 'AI Adoption',
     outcome: 'Habits that hold, tracked and refreshed for your team.',
     items: [
       { name: 'AI adoption tracking', line: 'Usage and time saved across the team, so you can see what is sticking.' },
@@ -84,7 +87,7 @@ export const teams: Segment[] = [
 ];
 
 export const nav = [
-  { label: 'What we do', href: '/what-we-do', children: pillars.map((p) => ({ label: p.name, href: `/what-we-do/${p.slug}` })) },
+  { label: 'What we do', href: '/what-we-do', children: pillars.map((p) => ({ label: p.navLabel, href: `/what-we-do/${p.slug}` })) },
   { label: 'Industries', href: '/industries', children: industries.map((s) => ({ label: s.name, href: `/industries/${s.slug}` })) },
   { label: 'Teams', href: '/teams', children: teams.map((s) => ({ label: s.name, href: `/teams/${s.slug}` })) },
   { label: 'About', href: '/about' },
