@@ -46,4 +46,4 @@ Use AI for the routine part of a task, and keep the decision for yourself. Give 
 
 ## What to do next
 
-AI predicts what fits rather than what is true, so the next question is which routine work to hand it. Read [where to start with AI automation](/insights/ai-automation). For your team, we run hands-on training built on their real tasks, with change and behavioural management so the new way of working sticks. To talk it through, [book a 30-minute discovery call](/contact?start=call#form).
+AI predicts what fits rather than what is true, so the next question is which routine work to hand it. Read [where to start with AI automation](/insights/ai-automation). For your team, we run hands-on training built on their real tasks, with change and behavioural management so the new way of working sticks. To talk it through, [book a 30-minute discovery call](/contact#form).

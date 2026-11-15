@@ -38,4 +38,4 @@ AI literacy is the shared foundation everyone needs. AI skills are the role-spec
 
 ## Where this fits
 
-Literacy is the start, and employers are looking for more. Read about the [AI skills Singapore employers want](/insights/ai-skills-singapore-employers-want). Human Horizon offers hands-on training on your team's own tasks, with the ROI Transformation Report to show the result. To talk it through, [book a 30-minute discovery call](/contact?start=call#form).
+Literacy is the start, and employers are looking for more. Read about the [AI skills Singapore employers want](/insights/ai-skills-singapore-employers-want). Human Horizon offers hands-on training on your team's own tasks, with the ROI Transformation Report to show the result. To talk it through, [book a 30-minute discovery call](/contact#form).

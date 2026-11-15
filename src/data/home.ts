@@ -61,7 +61,7 @@ export const people = {
 
 export const start = {
   title: 'Start with one workflow, or the whole firm.',
-  link: { label: 'Book a 30-minute discovery call', href: '/contact?start=call#form' },
+  link: { label: 'Book a 30-minute discovery call', href: '/contact#form' },
   options: [
     { name: 'First Win', fit: 'For a team of 5 to 10 people', change: 'One AI workflow running the new way in the team.', includes: ['One custom AI workflow', 'Hands-on training for the team', 'A Lite ROI Transformation Report on that workflow'] },
     { name: 'Accelerator', fit: 'For a small team or department of 5 to 50 people', change: 'A small team or department working the new way, with the numbers to show it.', includes: ['Three custom AI workflows', 'Hands-on training for the team or department', 'An ROI Transformation Report for the team or department'] },

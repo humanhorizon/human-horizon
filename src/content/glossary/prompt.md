@@ -36,4 +36,4 @@ An associate at a small accounting firm needs to chase clients for missing docum
 
 ## Where this fits
 
-The prompts worth saving are the ones tied to a task your team already repeats. Human Horizon's First Win is one custom AI workflow, built around a task your team already does, with your team involved from day one. To talk it through, [book a 30-minute discovery call](/contact?start=call#form).
+The prompts worth saving are the ones tied to a task your team already repeats. Human Horizon's First Win is one custom AI workflow, built around a task your team already does, with your team involved from day one. To talk it through, [book a 30-minute discovery call](/contact#form).

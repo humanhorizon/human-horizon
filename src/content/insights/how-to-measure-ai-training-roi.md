@@ -76,4 +76,4 @@ Choose one task before your next course and time it. Then check at 30 days and a
 
 ## What to do next
 
-Once you have timed one task and set your 30-day and one-quarter checks, the next step is making sure the training uses that same task. Our hands-on training is built on your people's real tasks, with AI adoption tracking to show whether the new way is still in use and the ROI Transformation Report to set the number against the cost. To talk it through for your team, [book a 30-minute discovery call](/contact?start=call#form).
+Once you have timed one task and set your 30-day and one-quarter checks, the next step is making sure the training uses that same task. Our hands-on training is built on your people's real tasks, with AI adoption tracking to show whether the new way is still in use and the ROI Transformation Report to set the number against the cost. To talk it through for your team, [book a 30-minute discovery call](/contact#form).

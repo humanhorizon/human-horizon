@@ -36,4 +36,4 @@ Implementation is building and setting up: the tools, the workflows, the access.
 
 ## Where this fits
 
-Adoption follows the work, so it starts with the tasks your people do every day. Our hands-on training uses your team's own tasks, with the ROI Transformation Report to show the result. To talk it through, [book a 30-minute discovery call](/contact?start=call#form).
+Adoption follows the work, so it starts with the tasks your people do every day. Our hands-on training uses your team's own tasks, with the ROI Transformation Report to show the result. To talk it through, [book a 30-minute discovery call](/contact#form).

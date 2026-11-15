@@ -4,7 +4,7 @@
 // and it closes every page. "Book a 30-minute discovery" leads where a visitor is close to deciding
 // (header, service pages, case studies, About). Learning and exploring pages lead with the win.
 export const ctas = {
-  call: { label: 'Book a 30-minute discovery', href: '/contact?start=call#form' },
+  call: { label: 'Book a 30-minute discovery', href: '/contact#form' },
   win: { label: 'Take AI beyond the prompt', href: '/contact#form' },
 };
 export type Stage = 'learn' | 'explore' | 'decide';

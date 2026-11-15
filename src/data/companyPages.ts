@@ -36,15 +36,15 @@ export const about = {
 
 export const contact = {
   seoTitle: 'Contact Human Horizon | AI consultancy in Singapore',
-  description: 'Take AI beyond the prompt with Human Horizon. Book a 30-minute discovery call or share a workflow you would like AI to take on.',
+  description: 'Take AI beyond the prompt with Human Horizon. Tell us what slows your team down and book a 30-minute discovery call.',
   kicker: 'Contact Human Horizon',
   title: 'Tell us what slows your team down.',
-  lead: 'Two ways to start: book a 30-minute discovery call, or share a workflow you would like AI to take on. Either way, we help your team take AI beyond the prompt. No sales pitch.',
+  lead: 'Share a task or workflow you would like AI to take on, and we will set up a 30-minute discovery call. No sales pitch.',
   emailTitle: 'Email us',
   emailNote: 'Prefer email? Write to us directly.',
   form: {
-    title: 'Choose how to start',
-    note: 'Ask for a 30-minute discovery call, or share one workflow you would like AI to take on. A few lines are enough.',
+    title: 'Send us a message',
+    note: 'A few lines are enough: what your business does and the work you would most like AI to take on.',
     availLabel: 'Times that suit you for a call',
     availHint: 'For example, Tuesday or Thursday afternoon',
     optional: '(optional)',
@@ -52,13 +52,7 @@ export const contact = {
     departments: ['General management', 'Sales and business development', 'Marketing', 'Operations', 'Finance and admin', 'HR and L&D', 'Customer service', 'IT, data and AI', 'Other'],
     sizes: ['1 to 10', '11 to 50', '51 to 200', 'More than 200'],
     messageLabel: 'What slows your team down?',
-    messageHint: 'A few lines on the work you would most like to change.',
-    startLabel: 'How would you like to start?',
-    // Each way to start sets its own question and hint; ?start= on the link picks one.
-    starts: [
-      { value: 'call', label: 'Book a 30-minute discovery call', message: 'What slows your team down?', hint: 'A few lines on the work you would most like to change. We will reply to find a time.' },
-      { value: 'workflow', label: 'Share a workflow you’d like AI to take on', message: 'Which workflow would you like AI to take on?', hint: 'The task, who does it and what slows it down. We will reply with first thoughts and a time to talk it through.' },
-    ],
+    messageHint: 'The task or workflow, who does it and what slows it down.',
     consent: 'We use your details only for this enquiry.',
     submit: 'Send message',
     linkError: 'Please keep links to two or fewer, so the message reaches us.',
