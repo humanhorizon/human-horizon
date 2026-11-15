@@ -22,11 +22,11 @@ export const pact = {
 
 export const shift = {
   title: 'The AI revolution is coming, whether we like it or not.',
-  lead: 'The question is not whether the business uses AI, but whether the whole team adopts it or only a few individuals.',
+  lead: 'The question is not whether the business uses AI, but whether the whole team adopts it or only a few individuals. When AI becomes part of the culture:',
   items: [
-    { title: 'Every team on board, not just the early adopters' },
-    { title: 'Habits that hold after the training' },
-    { title: 'A return the business can measure' },
+    { title: 'Every team works with AI, not just the early adopters.' },
+    { title: 'New habits hold long after the training ends.' },
+    { title: 'The return shows up in hours saved and valued.' },
   ],
 };
 
