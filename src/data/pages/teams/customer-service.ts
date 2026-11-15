@@ -32,11 +32,11 @@ const page: SegmentPage = {
     { q: 'Will AI replace our customer service team?', a: 'No. We build AI into the repetitive parts of the work, such as routine answers, sorting messages and writing case notes, so your people spend more time on complaints, complex cases and the customers who need a person. Your team decides how AI answers and when a person steps in.' },
     { q: 'What about customer data?', a: 'We agree clear rules with you on which tools to use, what customer data can go into them and what a person checks before anything is sent. If a customer asks how you use AI, you will have a clear answer.' },
     { q: 'Do you work with the channels and tools we already use?', a: 'Yes. We start from the messaging channels, inbox and AI tools your team already has, and suggest new ones only where they fit the work.' },
-    { q: 'How do we start?', a: 'With a 30-minute conversation about the work that slows your team down. Send us a short message through the contact form.', links: [{ label: 'Go to the contact form', href: '/contact#form' }] },
+    { q: 'How do we start?', a: 'With a 15-minute conversation about the work that slows your team down. Send us a short message through the contact form.', links: [{ label: 'Go to the contact form', href: '/contact#form' }] },
   ],
   close: {
     title: 'Fewer repeat questions, more real conversations.',
-    sub: 'Less typing the same answers and chasing lost threads, more care for the customers who need it. It starts with a 30-minute conversation about the work that slows your team down.',
+    sub: 'Less typing the same answers and chasing lost threads, more care for the customers who need it. It starts with a 15-minute conversation about the work that slows your team down.',
   },
 };
 

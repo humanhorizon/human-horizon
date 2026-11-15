@@ -58,7 +58,7 @@ export const courseGuide = {
   ],
   close: {
     title: 'Share this page with your manager, and we can take it forward together.',
-    sub: 'Whoever signs off on training can then ask for a 30-minute call. We start with the work that slows your team down.',
-    secondary: { label: 'Ask for a 30-minute call', href: '/contact#form' },
+    sub: 'Whoever signs off on training can then book a 15-minute call. We start with the work that slows your team down.',
+    secondary: { label: 'Book a 15-minute call', href: '/contact?start=call#form' },
   },
 };

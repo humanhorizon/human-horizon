@@ -36,10 +36,10 @@ export const about = {
 
 export const contact = {
   seoTitle: 'Contact Human Horizon | AI consultancy in Singapore',
-  description: 'Talk to Human Horizon about AI for your business. Send a short message about the work that slows your team down and ask for a 30-minute call.',
+  description: 'Talk to Human Horizon about AI for your business. Book a 15-minute call, find your first AI win or send us one workflow to improve.',
   kicker: 'Contact Human Horizon',
   title: 'Tell us what slows your team down.',
-  lead: 'Every engagement starts with a 30-minute call. It is a conversation about your business, not a sales pitch. Send a short message below.',
+  lead: 'Three ways to start. Book a 15-minute call, find your first AI win or send us one workflow to improve. No sales pitch.',
   emailTitle: 'Email us',
   emailNote: 'Prefer email? Write to us directly.',
   form: {
@@ -50,6 +50,13 @@ export const contact = {
     sizes: ['1 to 10', '11 to 50', '51 to 200', 'More than 200'],
     messageLabel: 'What slows your team down?',
     messageHint: 'A few lines on the work you would most like to change.',
+    startLabel: 'How would you like to start?',
+    // Each way to start sets its own question and hint; ?start= on the link picks one.
+    starts: [
+      { value: 'call', label: 'Book a 15-minute call', message: 'What slows your team down?', hint: 'A few lines on the work you would most like to change. We will reply to find a time.' },
+      { value: 'win', label: 'Find your first AI win', message: 'What does your team spend too much time on?', hint: 'A few lines on your business and team. We will reply with where AI could help first.' },
+      { value: 'workflow', label: 'Send us one workflow you’d like to improve', message: 'Which workflow would you like to improve?', hint: 'The task, who does it and what slows it down. We will reply with first thoughts and a time to talk it through.' },
+    ],
     consent: 'We use your details only for this enquiry.',
     submit: 'Send message',
     linkError: 'Please keep links to two or fewer, so the message reaches us.',
@@ -63,7 +70,7 @@ export const contact = {
   stepsTitle: 'What happens next',
   steps: [
     { title: 'You send a message', body: 'Tell us a little about your business and the work that slows your team down.' },
-    { title: 'A 30-minute conversation', body: 'We talk through the work that slows your team down and where AI could help. You do not need to prepare anything or know which tools you want.' },
+    { title: 'A 15-minute conversation', body: 'We look at that work together and where AI could help first. You do not need to prepare anything or know which tools you want.' },
     { title: 'A proposal for your team', body: 'You see the full scope and the way to start before you commit to anything.' },
   ],
 };
@@ -104,7 +111,7 @@ export const caseStudiesHub = {
   filterTitle: 'Filter by industry and team',
   empty: {
     title: 'No case study for this yet.',
-    body: 'We can still show what would change for this kind of team. A 30-minute conversation is enough to find out.',
+    body: 'We can still show what would change for this kind of team. A 15-minute conversation is enough to find out.',
   },
   featuredTitle: 'Teams we have worked with',
 };

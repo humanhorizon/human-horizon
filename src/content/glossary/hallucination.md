@@ -35,4 +35,4 @@ A sales coordinator at a trading company asks AI to draft a reply to a customer 
 
 ## Where this fits
 
-A person checking the output is the dependable safeguard against a hallucination. Human Horizon's First Win is one custom workflow, built around a task your team already does, with your team involved from day one. To see where a check would sit in yours, [ask for a 30-minute call](/contact).
+A person checking the output is the dependable safeguard against a hallucination. Human Horizon's First Win is one custom workflow, built around a task your team already does, with your team involved from day one. To see where a check would sit in yours, [book a 15-minute call](/contact?start=call#form).

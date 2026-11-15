@@ -1,5 +1,21 @@
 // Site-wide structure. Workflow copy is illustrative, outcome only: never the method.
 
+// The three ways to start. Which one leads depends on how far into the site a visitor is:
+// learn (articles, glossary, course guide: often HR, L&D or ops doing groundwork) leads with the async workflow;
+// explore (home, industries, teams, What we do hub) leads with the first AI win;
+// decide (service pages, case studies, about) leads with the call. The header always offers the call.
+export const ctas = {
+  call: { label: 'Book a 15-minute call', href: '/contact?start=call#form' },
+  win: { label: 'Find your first AI win', href: '/contact?start=win#form' },
+  workflow: { label: 'Send us one workflow you’d like to improve', href: '/contact?start=workflow#form' },
+};
+export type Stage = 'learn' | 'explore' | 'decide';
+export const stages: Record<Stage, { cta: { label: string; href: string }; secondary: { label: string; href: string } }> = {
+  learn: { cta: ctas.workflow, secondary: ctas.call },
+  explore: { cta: ctas.win, secondary: ctas.call },
+  decide: { cta: ctas.call, secondary: ctas.workflow },
+};
+
 export const site = {
   name: 'Human Horizon',
   url: 'https://humanhorizon.io',
@@ -8,7 +24,7 @@ export const site = {
     'AI consultancy in Singapore that builds AI into real work, trains staff and helps every team keep using it, so AI becomes part of the company culture.',
   // Footer boilerplate: the USP in two sentences (Implement, Train, Adopt, people first, results that last).
   boilerplate: 'People-first AI consultancy based in Singapore. We implement AI in each team’s work, train people and help them adopt it, so results stick and AI becomes part of the company culture, not an individual pursuit.',
-  cta: { label: 'Ask for a 30-minute call', href: '/contact#form' },
+  cta: ctas.call,
   pilot: {
     title: 'Be one of our first five founding clients, with both founders on your team.',
     text: 'Work directly with both founders, help shape how we work, and start at a founding rate well below our usual fee. In return, we ask for honest feedback, a testimonial and before-and-after data we can share.',

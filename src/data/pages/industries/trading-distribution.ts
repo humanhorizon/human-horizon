@@ -32,11 +32,11 @@ const page: SegmentPage = {
     { q: 'Will AI replace our sales coordinators?', a: 'No. We build AI into the repetitive parts of trading work, such as retyping orders, building quotes and preparing documents, so your coordinators spend more time with customers and suppliers. Your people keep the judgement on pricing, exceptions and every order that goes out.' },
     { q: 'What about our pricing and customer data?', a: 'We agree clear rules with you on which tools to use, what pricing, supplier and customer information can go into them and what a person checks before anything is confirmed. Your price lists and margins stay under your control.' },
     { q: 'Do you work with our accounting or inventory system?', a: 'Yes. We start from the systems, spreadsheets and messaging apps your team already uses, and suggest new tools only where they fit the work.' },
-    { q: 'How do we start?', a: 'With a 30-minute conversation about the work that slows your team down. Send us a short message through the contact form.', links: [{ label: 'Go to the contact form', href: '/contact#form' }] },
+    { q: 'How do we start?', a: 'With a 15-minute conversation about the work that slows your team down. Send us a short message through the contact form.', links: [{ label: 'Go to the contact form', href: '/contact#form' }] },
   ],
   close: {
     title: 'Less retyping, more selling.',
-    sub: 'Fewer orders keyed in by hand and fewer documents that do not match. It starts with a 30-minute conversation about the work that slows your firm down.',
+    sub: 'Fewer orders keyed in by hand and fewer documents that do not match. It starts with a 15-minute conversation about the work that slows your firm down.',
   },
 };
 

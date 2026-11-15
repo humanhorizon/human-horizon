@@ -35,7 +35,7 @@ const schema = [
 <Base title={hub.seoTitle} description={hub.description} schema={schema}>
   <nav class="wrap crumbs" aria-label="Breadcrumb"><a href="/">Home</a> / <span aria-current="page">What we do</span></nav>
 
-  <PageHero kicker={hub.kicker} title={hub.title} lead={hub.lead} secondary={{ label: 'See the three parts', href: '#pillars' }} note={hero.credibility} />
+  <PageHero kicker={hub.kicker} title={hub.title} lead={hub.lead} secondary={{ label: 'See the three parts', href: '#pillars' }} note={hero.credibility} stage="explore" />
 
   <section class="section bg-morning" id="pillars">
     <div class="wrap">
@@ -50,7 +50,7 @@ const schema = [
 
   <section class="pilot-sec"><div class="wrap"><PilotPanel /></div></section>
 
-  <CloseCta title={close.title} sub={close.sub} />
+  <CloseCta title={close.title} sub={close.sub} stage="explore" />
 </Base>
 
 <style>

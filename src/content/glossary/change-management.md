@@ -32,4 +32,4 @@ The finance team at a distribution company was worried AI would replace them. Th
 
 ## Where this fits
 
-Change sticks when people see the new way working on their own tasks. That is the idea behind our hands-on training on your team's own tasks, with the ROI Transformation Report to show the result. To talk it through, [ask for a 30-minute call](/contact).
+Change sticks when people see the new way working on their own tasks. That is the idea behind our hands-on training on your team's own tasks, with the ROI Transformation Report to show the result. To talk it through, [book a 15-minute call](/contact?start=call#form).

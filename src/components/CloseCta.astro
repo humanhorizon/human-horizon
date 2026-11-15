@@ -1,10 +1,10 @@
 ---
 // Closing call to action on ink, with the white horizon supergraphic.
 import Supergraphic from './Supergraphic.astro';
-import { site } from '../data/site';
+import { stages, type Stage } from '../data/site';
 
-interface Props { title: string; sub: string; cta?: { label: string; href: string }; secondary?: { label: string; href: string } }
-const { title, sub, cta = site.cta, secondary } = Astro.props;
+interface Props { title: string; sub: string; cta?: { label: string; href: string }; secondary?: { label: string; href: string }; stage?: Stage }
+const { title, sub, stage = 'decide', cta = stages[stage].cta, secondary = stages[stage].secondary } = Astro.props;
 ---
 <section class="close bg-ink">
   <div class="wrap"><h2 class="d close-h clear">{title}</h2></div>

@@ -52,7 +52,7 @@ const schema = [
 <Base title={page.seoTitle} description={page.description} schema={schema}>
   <nav class="wrap crumbs" aria-label="Breadcrumb"><a href="/">Home</a> / <a href={`/${kind}`}>{hub.label}</a> / <span aria-current="page">{seg.name}</span></nav>
 
-  <PageHero kicker={page.kicker} title={page.title} lead={page.lead} secondary={{ label: 'See what changes', href: '#change' }} />
+  <PageHero kicker={page.kicker} title={page.title} lead={page.lead} secondary={{ label: 'See what changes', href: '#change' }} stage="explore" />
 
   <Pains title={page.painsTitle} items={page.pains} />
 
@@ -92,7 +92,7 @@ const schema = [
     </div>
   </nav>
 
-  <CloseCta title={page.close.title} sub={page.close.sub} />
+  <CloseCta title={page.close.title} sub={page.close.sub} stage="explore" />
 </Base>
 
 <style>

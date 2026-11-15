@@ -38,7 +38,7 @@ const schema = [
       <ul class="grid">{cards.map((c, i) => <li class:list={{ wide: i === 0 && cards.length > 2 }}><InsightCard item={c} layout={i === 0 && cards.length > 2 ? 'feature' : 'card'} headingLevel="h2" /></li>)}</ul>
     </div>
   </section>
-  <CloseCta title={close.title} sub={close.sub} />
+  <CloseCta title={close.title} sub={close.sub} stage="learn" />
 </Base>
 
 <style>

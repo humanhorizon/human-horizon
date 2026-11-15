@@ -4,7 +4,6 @@ export const hero = {
   kicker: 'People-first AI consultancy based in Singapore',
   title: 'Make AI part of the company culture, with teams open to it and results that stick.',
   sub: 'AI rarely lasts when it is left to a few enthusiasts. We implement it in each team’s real work, train people on the tasks they already know and help everyone adopt it.',
-  secondary: { label: 'See how we work', href: '#pact' },
   credibility: 'Founded by people-first leaders who have built at Gojek, Alibaba and Meta.',
 };
 
@@ -60,7 +59,7 @@ export const people = {
 
 export const start = {
   title: 'Start with one workflow, or the whole firm.',
-  link: { label: 'Schedule a 30-minute chat', href: '/contact#form' },
+  link: { label: 'Book a 15-minute call', href: '/contact?start=call#form' },
   options: [
     { name: 'First Win', fit: 'For a team of 5 to 10 people', change: 'One workflow running the new way in the team.', includes: ['One custom workflow', 'Hands-on training for the team', 'A Lite ROI Transformation Report on that workflow'] },
     { name: 'Accelerator', fit: 'For a small team or department of 5 to 50 people', change: 'A small team or department working the new way, with the numbers to show it.', includes: ['Three custom workflows', 'Hands-on training for the team or department', 'An ROI Transformation Report for the team or department'] },
@@ -83,5 +82,5 @@ export const faq = [
 
 export const close = {
   title: 'Nobody gets left behind in the age of AI.',
-  sub: 'A 30-minute conversation about the work that slows your team down, and where AI could help first.',
+  sub: 'A 15-minute conversation about the work that slows your team down, and where AI could help first.',
 };

@@ -8,7 +8,7 @@ import Faq from '../components/Faq.astro';
 import PillarCards from '../components/PillarCards.astro';
 import Founders from '../components/Founders.astro';
 import PilotPanel from '../components/PilotPanel.astro';
-import { site, pillars, industries, teams } from '../data/site';
+import { pillars, industries, teams, ctas } from '../data/site';
 import { industryPages, teamPages } from '../data/segmentPages';
 import { hero, pact, shift, whatWeDo, work, start, faq, close } from '../data/home';
 
@@ -30,8 +30,8 @@ const faqSchema = {
     <div class="wrap hero-low">
       <p class="lead muted clear">{hero.sub}</p>
       <div class="btn-row">
-        <a class="btn btn-ink" href={site.cta.href}>{site.cta.label}</a>
-        <a class="btn btn-ghost" href={hero.secondary.href}>{hero.secondary.label}</a>
+        <a class="btn btn-ink" href={ctas.win.href}>{ctas.win.label}</a>
+        <a class="btn btn-ghost" href={ctas.call.href}>{ctas.call.label}</a>
       </div>
       <p class="cap">{hero.credibility}</p>
     </div>
@@ -131,7 +131,7 @@ const faqSchema = {
 
   <Faq title="Common questions" items={faq} />
 
-  <CloseCta title={close.title} sub={close.sub} />
+  <CloseCta title={close.title} sub={close.sub} stage="explore" />
 </Base>
 
 <script>

@@ -1,20 +1,21 @@
 ---
 // Inner-page hero: keyword kicker inside the H1, an emotional headline, then the horizon and the lead.
 import Supergraphic from './Supergraphic.astro';
-import { site } from '../data/site';
+import { stages, type Stage } from '../data/site';
 
-interface Props { kicker: string; title: string; lead: string; secondary?: { label: string; href: string }; note?: string }
-const { kicker, title, lead, secondary, note } = Astro.props;
+interface Props { kicker: string; title: string; lead: string; secondary?: { label: string; href: string }; note?: string; stage?: Stage; noCta?: boolean }
+const { kicker, title, lead, secondary, note, stage = 'decide', noCta = false } = Astro.props;
+const cta = stages[stage].cta;
 ---
 <section class="phero">
   <div class="wrap"><h1 class="d h1 phero-h clear"><span class="kicker">{kicker}</span>{title}</h1></div>
   <Supergraphic />
   <div class="wrap phero-low">
     <p class="lead muted clear">{lead}</p>
-    <div class="btn-row">
-      <a class="btn btn-ink" href={site.cta.href}>{site.cta.label}</a>
+    {!noCta && <div class="btn-row">
+      <a class="btn btn-ink" href={cta.href}>{cta.label}</a>
       {secondary && <a class="btn btn-ghost" href={secondary.href}>{secondary.label}</a>}
-    </div>
+    </div>}
     {note && <p class="cap">{note}</p>}
   </div>
 </section>
