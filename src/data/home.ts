@@ -21,13 +21,13 @@ export const pact = {
 
 export const shift = {
   title: 'The AI revolution is coming, whether we like it or not.',
-  lead: 'The question is not whether the business uses AI, but whether the whole team adopts it or only a few individuals. When AI becomes part of the culture, everyone gets what they need from it:',
-  // One line per buyer motive (YJ, 15 Nov 2026): owners buy time, beginners direction, experts an edge, overwhelmed people simplicity.
+  lead: 'Left to a few individuals, AI barely moves the business, and the cost of standing still adds up: hours lost to work AI could take on, client data in tools nobody approved, and competitors who move first. When AI becomes part of the culture:',
+  // Copy aims at each buyer's motive without naming it (YJ, 15 Nov 2026): time, direction, an edge, simplicity.
   items: [
-    { title: 'Founders get time back for the work only they can do.' },
-    { title: 'Beginners get clear direction and guidance on where to start.' },
-    { title: 'Experienced users turn their skill into a lasting edge.' },
-    { title: 'Stretched teams get one simple way of working, not another tool.' },
+    { title: 'Hours go back to the work that grows the business.' },
+    { title: 'Every person knows where to start and what good looks like.' },
+    { title: 'The team pulls ahead of competitors still experimenting.' },
+    { title: 'One clear way of working replaces a pile of tools no one has time to learn.' },
   ],
 };
 
