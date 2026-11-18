@@ -38,7 +38,7 @@ export const pillars = [
     slug: 'implement',
     name: 'Implement',
     title: 'AI Implementation',
-    outcome: 'Custom AI workflows, AI agents and AI governance, built around how the business already runs.',
+    outcome: 'Custom AI workflows, AI agents and AI governance, automating how the business already runs.',
     items: [
       { name: 'Custom workflows', line: 'Built around the recurring work that fills your team’s week.' },
       { name: 'AI agents', line: 'Take on the repeat steps, with a person checking the result.' },

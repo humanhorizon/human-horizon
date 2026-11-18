@@ -1,9 +1,9 @@
 // Homepage copy. Goes through the hh-growth-editor EDIT pass before it is shown to YJ.
 
 export const hero = {
-  kicker: 'People-first AI consultancy based in Singapore',
+  kicker: 'AI workflows and automation consultancy',
   title: 'Make AI part of the company culture for results that stick.',
-  sub: 'AI rarely lasts when it is left to a few enthusiasts. We implement it in each team’s real work, train people on the tasks they already know and help everyone adopt it, so the business buys back time for the work that matters.',
+  sub: 'Many teams stop at the prompt while busywork eats the week. We automate it with AI workflows, so people check the results and put the week into growth.',
   credibility: 'Founded by people-first leaders who have built at Gojek, Alibaba and Meta.',
 };
 
