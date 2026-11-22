@@ -116,7 +116,7 @@ export const caseStudiesHub = {
 export const howWeWork = {
   seoTitle: 'Our AI training methodology: the PACT | Human Horizon',
   description: 'The PACT: Human Horizon’s people-first AI adoption method. Four commitments behind every AI implementation, training and adoption engagement in Singapore.',
-  kicker: 'Our AI training methodology'
+  kicker: 'Our AI training methodology',
   title: 'People first, so the workflows stay in use',
   lead: 'A workflow saves time only when the team trusts it and keeps using it. Every Human Horizon engagement runs on the PACT: four commitments to the people who do the work, from the first conversation to the last measurement.',
   pactTitle: 'Four commitments, in this order',
