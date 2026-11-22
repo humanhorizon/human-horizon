@@ -14,7 +14,7 @@ const { compact = false } = Astro.props as { compact?: boolean };
   <h3 class="d h3d">{whatWeDo.discovery.name}</h3>
   <p class="prow-out">{whatWeDo.discovery.line}</p>
 </div>
-<div class="pcards">
+<div class:list={['pcards', { compact }]}>
   {pillars.map((p) => (
     <a class="pcard" href={`/what-we-do/${p.slug}`}>
       {photo(`${p.slug}.jpg`) && <img class="pimg" src={photo(`${p.slug}.jpg`)} alt={alts[p.slug]} loading="lazy" decoding="async" width="900" height="600" />}
@@ -25,29 +25,32 @@ const { compact = false } = Astro.props as { compact?: boolean };
   ))}
 </div>
 <div class="report">
-  <Symbol size={56} />
+  <Symbol size={44} />
   <h3 class="d h3d">{whatWeDo.report.name}</h3>
   <p>{whatWeDo.report.line}</p>
 </div>
 
 <style>
-  .disc { margin-bottom: var(--s2); padding: var(--s4); border-radius: 20px; background: #fff; color: var(--ink); display: grid; grid-template-columns: minmax(0, 340px) 1fr; column-gap: var(--s4); row-gap: 8px; align-items: center; }
+  .disc { margin-bottom: var(--s2); padding: var(--s3) var(--s4); border-radius: 20px; background: #fff; color: var(--ink); display: grid; grid-template-columns: minmax(0, 340px) 1fr; column-gap: var(--s4); row-gap: 8px; align-items: center; }
   .disc .step { grid-column: 1 / -1; font-size: 14px; font-weight: 600; color: var(--sunrise-text); }
   .disc .prow-out { max-width: 640px; }
   .pcards { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--s2); }
-  .pcard { display: grid; grid-template-rows: auto auto 1fr; gap: var(--s2); padding: var(--s4); background: #fff; border-radius: 20px; color: var(--ink); text-decoration: none; transition: box-shadow .15s; }
+  .pcard { display: grid; grid-template-rows: auto auto 1fr; gap: 10px; padding: var(--s3); background: #fff; border-radius: 20px; color: var(--ink); text-decoration: none; transition: box-shadow .15s; }
   .pcard:hover { box-shadow: inset 0 0 0 2px var(--sunrise); }
   .pcard { grid-template-rows: auto auto auto 1fr; overflow: hidden; }
-  .pimg { width: calc(100% + 2 * var(--s4)); max-width: none; margin: calc(var(--s4) * -1) calc(var(--s4) * -1) 0; aspect-ratio: 3 / 2; object-fit: cover; filter: var(--photo-grade); transition: transform .5s ease; }
+  .pimg { width: calc(100% + 2 * var(--s3)); max-width: none; height: auto; margin: calc(var(--s3) * -1) calc(var(--s3) * -1) 6px; aspect-ratio: 16 / 9; object-fit: cover; filter: var(--photo-grade); transition: transform .5s ease; }
   @media (prefers-reduced-motion: no-preference) { .pcard:hover .pimg { transform: scale(1.03); } }
-  .prow-out { font: 300 22px/1.3 var(--display); color: var(--slate); }
+  .prow-out { font: 300 19px/1.35 var(--display); color: var(--slate); }
+  /* Homepage: a short photo band, so the three services read at a glance. */
+  .compact .pimg { aspect-ratio: 5 / 2; }
+  .compact .h3d { font-size: clamp(22px, 1.8vw, 26px); }
   .dlv { list-style: none; margin: var(--s2) 0 0; padding: var(--s3) 0 0; border-top: 1px solid var(--line); display: grid; gap: var(--s3); align-content: start; }
   .dlv li { display: grid; gap: 4px; padding-left: 20px; position: relative; }
   .dlv li::before { content: ''; position: absolute; left: 0; top: .55em; width: 8px; height: 8px; border-radius: 50%; background: var(--sunrise); }
   .dlv b { font-size: 16px; font-weight: 600; }
   .dlv span { font-size: 15px; line-height: 1.5; color: var(--slate); }
-  .report { margin-top: var(--s2); border-radius: 20px; padding: var(--s4); display: grid; grid-template-columns: auto minmax(0, 340px) 1fr; gap: var(--s3); align-items: center; background: var(--first-light); color: var(--ink); }
-  .report p { font-size: 18px; max-width: 560px; }
+  .report { margin-top: var(--s2); border-radius: 20px; padding: var(--s3) var(--s4); display: grid; grid-template-columns: auto minmax(0, 340px) 1fr; gap: var(--s3); align-items: center; background: var(--first-light); color: var(--ink); }
+  .report p { font-size: 17px; max-width: 560px; }
   @media (max-width: 1000px) {
     .pcards { grid-template-columns: 1fr; }
     .disc { grid-template-columns: 1fr; }

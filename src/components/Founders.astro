@@ -32,10 +32,12 @@ const hasPhoto = (src: string) => existsSync(new URL(`../../public${src}`, impor
 
 <style>
   .people { padding: var(--section) 0; }
-  .people-head { margin-bottom: var(--s5); }
-  .founders { display: grid; grid-template-columns: 1fr 1fr; gap: var(--s4); max-width: 980px; }
-  .founders figure { margin: 0; display: grid; gap: var(--s3); align-content: start; }
+  .people-head { margin-bottom: var(--s4); }
+  .founders { display: grid; grid-template-columns: 1fr 1fr; gap: var(--s4); }
+  /* Portrait beside the bio, so both founders sit in one row without a full-screen photo each. */
+  .founders figure { margin: 0; display: grid; grid-template-columns: clamp(140px, 14vw, 200px) 1fr; gap: var(--s3); align-items: center; }
   .founders img, .photo { width: 100%; height: auto; aspect-ratio: 1; object-fit: cover; object-position: center; border-radius: 12px; background: var(--dusk); }
   .founders figcaption { display: grid; gap: 8px; }
-  @media (max-width: 760px) { .founders { grid-template-columns: 1fr; } }
+  @media (max-width: 900px) { .founders { grid-template-columns: 1fr; } }
+  @media (max-width: 480px) { .founders figure { grid-template-columns: 110px 1fr; gap: var(--s2); } }
 </style>
