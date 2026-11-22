@@ -20,7 +20,6 @@ const rows = d.highlights.length
     <span class="body">
       <span class="meta"><span class="eyebrow">Case study</span>{industry && <span class="ind">{industry.name}</span>}</span>
       <h3 class="cname">{d.client}</h3>
-      <span class="d h">{d.title}</span>
       <span class="sub">{d.subtitle}</span>
     </span>
   </span>
@@ -43,10 +42,10 @@ const rows = d.highlights.length
   .eyebrow { font-size: 14px; font-weight: 600; color: var(--sunrise-text); }
   .ind { font-size: 14px; font-weight: 600; padding: 4px 12px; border-radius: 99px; background: var(--first-light); color: var(--ink); }
   .cname { font-size: clamp(20px, 1.6vw, 24px); font-weight: 600; line-height: 1.2; margin: 0; }
-  .h { font-size: clamp(24px, 2.2vw, 32px); line-height: 1.12; text-wrap: balance; }
   .sub { font-size: 17px; line-height: 1.5; color: var(--slate); }
   /* Each figure is its own call-out: big number, short label, on white. */
-  .stats { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: var(--s2); }
+  .stats { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--s2); }
+  @media (max-width: 640px) { .stats { grid-template-columns: 1fr; } }
   .stats li { display: grid; gap: 10px; align-content: start; padding: var(--s3); border-radius: 20px; background: #fff; }
   .fig { font-size: clamp(40px, 3.6vw, 56px); line-height: 1; letter-spacing: -0.01em; }
   .lab { font-size: 15px; line-height: 1.45; color: var(--slate); }

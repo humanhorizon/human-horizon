@@ -8,7 +8,7 @@ title: New products listed in 8 minutes, and half the sales day back, with the s
 seoTitle: "AI case study: Anri Gifts, Singapore gifting | Human Horizon"
 description: "AI case study: two staff at Singapore gifting business Anri Gifts get a product listed in 8 minutes and spend 5 minutes a day on quotations, reviewing every output."
 summary: Each member of staff now reviews what AI prepares across sourcing, catalogue work, product images and quotations, and spends the time gained on suppliers and new clients.
-subtitle: "AI across sourcing, product images and quotations, with staff checking each result."
+subtitle: "AI automation across sourcing, product images and quotations."
 tools: [Claude]
 services: [implement, train, adopt]
 industry: trading-distribution
