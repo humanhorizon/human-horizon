@@ -9,8 +9,8 @@ const Tag = heading ? 'h2' : 'p';
 ---
 <article class="ba" id={id} data-group={group} hidden={hidden} aria-live={id ? 'polite' : undefined}>
   <Tag class="d ba-out">{w.outcome}.</Tag>
-  <div class="ba-panel"><p class="ba-tag">⏳ Before</p><p>{w.before}</p></div>
-  <div class="ba-panel after"><p class="ba-tag">☀️ After</p><p>{w.after}</p></div>
+  <div class="ba-panel"><p class="ba-tag">Before</p><p>{w.before}</p></div>
+  <div class="ba-panel after"><p class="ba-tag">After</p><p>{w.after}</p></div>
   {hub && s && <a class="lnk ba-link" href={`${hub}/${s.slug}`}>More for {s.name[0].toLowerCase() + s.name.slice(1)}</a>}
 </article>
 
