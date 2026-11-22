@@ -6,7 +6,6 @@ import UseCaseSlides from '../../components/UseCaseSlides.astro';
 import PactStrip from '../../components/PactStrip.astro';
 import Faq from '../../components/Faq.astro';
 import CloseCta from '../../components/CloseCta.astro';
-import PilotPanel from '../../components/PilotPanel.astro';
 import { site, pillars, industries, teams } from '../../data/site';
 import { pillarPages } from '../../data/pillarPages';
 import { hero } from '../../data/home';
@@ -87,7 +86,6 @@ const schema = [
       <ul class="others">
         {others.map((p) => <li><a href={`/what-we-do/${p.slug}`}><span class="d h3d">{p.name}</span><span class="muted">{p.outcome}</span></a></li>)}
       </ul>
-      <PilotPanel />
     </div>
   </section>
 

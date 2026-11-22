@@ -26,3 +26,4 @@ Resized to 2000 px on the long side and compressed for the web.
 | teams/operations.jpg | Team panel | https://unsplash.com/photos/Mq4wJuX1-OQ | Edi Kurniawan | 2026-11-22 |
 | teams/customer-service.jpg | Team panel | https://unsplash.com/photos/N3Bf0ArT5J0 | Fiqih Alfarish | 2026-11-22 |
 | teams/finance-admin.jpg | Team panel | https://unsplash.com/photos/XWvqhWCAAoo | Mimi Thian | 2026-11-22 |
+| method.jpg | Method strip (Why the results last) | https://unsplash.com/photos/ZlJmOUFRBfQ | Surface | 2026-11-22 |

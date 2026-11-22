@@ -23,14 +23,6 @@ export const site = {
   // Footer boilerplate: what we build first (Implement, Train, Adopt), then why it lasts. The method lives on /how-we-work.
   boilerplate: 'AI consultancy based in Singapore. We build AI workflows and agents into each team’s work, train the people who run them and support adoption, so the results last.',
   cta: ctas.call,
-  pilot: {
-    title: 'Be one of our first five founding clients, with both founders on your team.',
-    text: 'Work directly with both founders, help shape how we work, and start at a founding rate well below our usual fee. In return, we ask for honest feedback, a testimonial and before-and-after data we can share.',
-    bar: 'Taking on five founding clients, each working directly with both founders. 3 spots left.',
-    short: '5 founding clients, 3 spots left.',
-    link: 'Register interest',
-    href: '/contact#form',
-  },
 };
 
 export const pillars = [

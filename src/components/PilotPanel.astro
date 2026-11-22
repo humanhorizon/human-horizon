@@ -1,24 +1,22 @@
 ---
-// A call-to-action panel over an architecture photograph (public/pilot.jpg). By default it carries the
-// founding clients offer; industry and team pages pass their own first step and the usual call CTA.
+// A call-to-action panel over a photograph: the first step on industry and team pages, with the usual call CTA.
 // Until the photo exists, a deep ink gradient holds the space.
 import { existsSync } from 'node:fs';
-import { site } from '../data/site';
 interface Props {
   level?: 'h2' | 'h3';
   eyebrow?: string;
-  title?: string;
-  text?: string;
-  cta?: { label: string; href: string };
+  title: string;
+  text: string;
+  cta: { label: string; href: string };
   secondary?: { label: string; href: string };
   photo?: string | null;
 }
 const {
   level = 'h2',
-  eyebrow = 'Founding clients',
-  title = site.pilot.title,
-  text = site.pilot.text,
-  cta = { label: site.pilot.link, href: site.pilot.href },
+  eyebrow,
+  title,
+  text,
+  cta,
   secondary,
   photo: own,
 } = Astro.props;

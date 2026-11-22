@@ -7,7 +7,7 @@ const img = photo('method.jpg');
 ---
 <section class="pstrip bg-ink">
   <div class:list={['wrap pgrid', { 'has-img': img }]}>
-    {img && <img class="pimg" src={img} alt="A team working through a task together" loading="lazy" decoding="async" width="1200" height="900" />}
+    {img && <img class="pimg" src={img} alt="A colleague talking another through a task on her laptop" loading="lazy" decoding="async" width="1200" height="900" />}
     <div class="ptext">
       <h2 class="d ph">{pact.title}</h2>
       <p class="muted">{pact.lead}</p>
@@ -22,7 +22,7 @@ const img = photo('method.jpg');
 </section>
 
 <style>
-  .pstrip { padding: clamp(56px, 7vw, 96px) 0; }
+  .pstrip { padding: clamp(72px, 8vw, 128px) 0; }
   .pgrid { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: var(--s5); align-items: center; }
   .ptext { display: grid; gap: var(--s2); justify-items: start; max-width: 560px; }
   .ph { font-size: clamp(28px, 2.6vw, 38px); }

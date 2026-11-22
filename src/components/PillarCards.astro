@@ -40,7 +40,7 @@ const { compact = false } = Astro.props as { compact?: boolean };
   .pcard { grid-template-rows: auto auto auto 1fr; overflow: hidden; }
   .pimg { width: calc(100% + 2 * var(--s3)); max-width: none; height: auto; margin: calc(var(--s3) * -1) calc(var(--s3) * -1) 6px; aspect-ratio: 16 / 9; object-fit: cover; filter: var(--photo-grade); transition: transform .5s ease; }
   @media (prefers-reduced-motion: no-preference) { .pcard:hover .pimg { transform: scale(1.03); } }
-  .prow-out { font: 300 19px/1.35 var(--display); color: var(--slate); }
+  .prow-out { font-size: 17px; line-height: 1.55; color: var(--slate); }
   /* Homepage: a short photo band, so the three services read at a glance. */
   .compact .pimg { aspect-ratio: 5 / 2; }
   .compact .h3d { font-size: clamp(22px, 1.8vw, 26px); }
@@ -51,10 +51,23 @@ const { compact = false } = Astro.props as { compact?: boolean };
   .dlv span { font-size: 15px; line-height: 1.5; color: var(--slate); }
   .report { margin-top: var(--s2); border-radius: 20px; padding: var(--s3) var(--s4); display: grid; grid-template-columns: auto minmax(0, 340px) 1fr; gap: var(--s3); align-items: center; background: var(--first-light); color: var(--ink); }
   .report p { font-size: 17px; max-width: 560px; }
+  /* Three across down to tablet width; on phones each card turns sideways (photo left, words right) so the three stay short. */
   @media (max-width: 1000px) {
-    .pcards { grid-template-columns: 1fr; }
     .disc { grid-template-columns: 1fr; }
     .report { grid-template-columns: auto 1fr; }
     .report p { grid-column: 1 / -1; }
+  }
+  @media (max-width: 1000px) and (min-width: 721px) {
+    .pcard { padding: var(--s2); }
+    .pimg { width: calc(100% + 2 * var(--s2)); margin: calc(var(--s2) * -1) calc(var(--s2) * -1) 6px; }
+    .prow-out { font-size: 15px; }
+  }
+  @media (max-width: 720px) {
+    .pcards { grid-template-columns: 1fr; gap: var(--s1); }
+    .pcard { grid-template-columns: 34% 1fr; grid-template-rows: auto 1fr; column-gap: var(--s2); row-gap: 6px; padding: var(--s2); }
+    .pimg, .compact .pimg { grid-row: 1 / span 2; width: calc(100% + var(--s2)); height: calc(100% + 2 * var(--s2)); min-height: 120px; margin: calc(var(--s2) * -1) 0 calc(var(--s2) * -1) calc(var(--s2) * -1); aspect-ratio: auto; }
+    .pcard .h3d { grid-column: 2; align-self: end; font-size: 20px; }
+    .pcard .prow-out { grid-column: 2; font-size: 15px; line-height: 1.4; }
+    .pcard .dlv { grid-column: 1 / -1; }
   }
 </style>

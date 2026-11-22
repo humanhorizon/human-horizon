@@ -3,7 +3,6 @@ import Base from '../layouts/Base.astro';
 import PageHero from '../components/PageHero.astro';
 import Faq from '../components/Faq.astro';
 import CloseCta from '../components/CloseCta.astro';
-import PilotPanel from '../components/PilotPanel.astro';
 import { site } from '../data/site';
 import { hero } from '../data/home';
 import { courseGuide as page } from '../data/courseGuide';
@@ -104,10 +103,6 @@ const schema = [
   </section>
 
   <Faq title={page.faqTitle} items={page.faq} tone="morning" />
-
-  <section class="section">
-    <div class="wrap"><PilotPanel /></div>
-  </section>
 
   <CloseCta title={page.close.title} sub={page.close.sub} cta={{ label: page.bridge.link, href: page.bridge.href }} secondary={page.close.secondary} />
 </Base>

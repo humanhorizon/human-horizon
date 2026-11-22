@@ -5,7 +5,6 @@ import PillarCards from '../../components/PillarCards.astro';
 import PactStrip from '../../components/PactStrip.astro';
 import Faq from '../../components/Faq.astro';
 import CloseCta from '../../components/CloseCta.astro';
-import PilotPanel from '../../components/PilotPanel.astro';
 import { site, pillars } from '../../data/site';
 import { close, hero } from '../../data/home';
 import { whatWeDoHub as hub } from '../../data/pillarPages';
@@ -48,7 +47,6 @@ const schema = [
 
   <Faq title={hub.faqTitle} items={hub.faq} tone="morning" />
 
-  <section class="pilot-sec"><div class="wrap"><PilotPanel /></div></section>
 
   <CloseCta title={close.title} sub={close.sub} />
 </Base>
@@ -56,6 +54,5 @@ const schema = [
 <style>
   .crumbs { padding-top: var(--s3); font-size: 14px; color: var(--slate); }
   .crumbs a { color: var(--slate); }
-  .pilot-sec { padding: 0 0 var(--section); }
   .head { max-width: 720px; gap: var(--s2); margin-bottom: var(--s5); }
 </style>

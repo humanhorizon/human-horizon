@@ -3,7 +3,6 @@ import Base from '../layouts/Base.astro';
 import PageHero from '../components/PageHero.astro';
 import Founders from '../components/Founders.astro';
 import PactStrip from '../components/PactStrip.astro';
-import PilotPanel from '../components/PilotPanel.astro';
 import CloseCta from '../components/CloseCta.astro';
 import { site } from '../data/site';
 import { close, hero, people } from '../data/home';
@@ -76,7 +75,6 @@ const schema = [
 
   <PactStrip />
 
-  <section class="pilot-sec"><div class="wrap"><PilotPanel /></div></section>
 
   <CloseCta title={close.title} sub={close.sub} />
 </Base>
@@ -91,6 +89,5 @@ const schema = [
   .beliefs li { display: grid; gap: 12px; align-content: start; padding: var(--s4) var(--s3); background: var(--morning); border-radius: 20px; }
   .feat { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 520px), 1fr)); gap: var(--s3); }
   .feat :global(.csc) { background: #fff; }
-  .pilot-sec { padding: 0 0 var(--section); }
   @media (max-width: 1000px) { .beliefs { grid-template-columns: 1fr; } }
 </style>
