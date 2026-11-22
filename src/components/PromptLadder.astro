@@ -47,7 +47,6 @@ const count = (key: string) => ladder.steps.filter((s) => whoAt(s, key) === 'per
       </div>
     </div>
 
-    <p class="cost">{ladder.cost}</p>
   </div>
 </section>
 
@@ -111,7 +110,6 @@ const count = (key: string) => ladder.steps.filter((s) => whoAt(s, key) === 'per
   .tally { font-size: 15px; color: var(--slate); }
   .tally b { color: var(--ink); }
   .body { font-size: 17px; line-height: 1.6; max-width: 64ch; }
-  .cost { margin-top: var(--s3); max-width: 64ch; font-size: 17px; line-height: 1.6; color: var(--slate); }
 
   /* Motion answers the reader's choice: the colour change runs left to right along the map. */
   @media (prefers-reduced-motion: no-preference) {

@@ -57,7 +57,7 @@ export const courseGuide = {
     { q: 'Are there free AI courses in Singapore?', a: 'Yes, many free introductory courses are available online. They are a good first step for individuals. Our training is for companies that want AI built into their team’s work.' },
   ],
   close: {
-    title: 'Share this page with your manager, and we can take it forward together.',
+    title: 'Share this page with your manager, and we can take it forward together',
     sub: 'Whoever signs off on training can then book a 30-minute discovery call. We start with the work that slows your team down.',
     secondary: { label: 'Take AI beyond the prompt', href: '/contact#form' },
   },

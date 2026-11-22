@@ -8,10 +8,10 @@ export const about = {
   seoTitle: 'About Human Horizon | AI workflows, agents and training',
   description: 'Human Horizon is a Singapore AI consultancy founded by Jaye Wang and Wei Lin. We build AI workflows and agents into everyday work and train staff to run them.',
   kicker: 'About Human Horizon',
-  title: 'AI should lift people, not leave them behind.',
+  title: 'AI should lift people, not leave them behind',
   lead: 'Human Horizon is a Singapore AI consultancy founded by Jaye Wang and Wei Lin. We work alongside your team on the work they already do, train them on it and help it stick, so your people come through the change more capable and still in charge.',
   story: {
-    title: 'Why we started Human Horizon.',
+    title: 'Why we started Human Horizon',
     paras: [
       'Between us, we have spent 18 years building teams and measuring results at companies such as Gojek, Alibaba and Meta. Working at the frontier of technology, we have watched AI move from experiment to everyday work, and the pace keeps rising. We expect it to reach every role.',
       'We have also seen how that change usually lands. New tools arrive, a few early adopters run with them and everyone else waits, unsure what it means for their job. The gap widens, and the people on the wrong side of it lose ground. We do not think that is acceptable, for the people or for the businesses that rely on them.',
@@ -25,7 +25,7 @@ export const about = {
     { title: 'Show the change', body: 'Founders deserve to see what changed. The ROI Transformation Report shows the hours saved, valued at your own rates.' },
   ],
   founders: {
-    title: 'The people behind Human Horizon.',
+    title: 'The people behind Human Horizon',
     sub: 'One has built and led teams, the other has measured what they deliver. AI that lasts needs both.',
   },
   people: {
@@ -38,7 +38,7 @@ export const contact = {
   seoTitle: 'Contact Human Horizon | AI consultancy in Singapore',
   description: 'Take AI beyond the prompt with Human Horizon. Tell us what slows your team down and book a 30-minute discovery call.',
   kicker: 'Contact Human Horizon',
-  title: 'Tell us what slows your team down.',
+  title: 'Tell us what slows your team down',
   lead: 'Share a task or workflow you would like AI to take on, and we will set up a 30-minute discovery call. No sales pitch.',
   emailTitle: 'Email us',
   emailNote: 'Prefer email? Write to us directly.',
@@ -102,7 +102,7 @@ export const caseStudiesHub = {
   seoTitle: 'AI case studies: real work before and after | Human Horizon',
   description: 'AI case studies from Human Horizon: the workflows before and after, how each team was trained, and the results that stuck once AI became part of daily work.',
   kicker: 'AI implementation and training case studies',
-  title: 'What changes when a whole team works with AI.',
+  title: 'What changes when a whole team works with AI',
   lead: 'Each case study shows the work before and after, how the team learned it and what has stuck since. People review every output and make the calls that matter.',
   filterTitle: 'Filter by industry and team',
   empty: {
@@ -117,9 +117,9 @@ export const howWeWork = {
   seoTitle: 'How we work: our AI adoption methodology | Human Horizon',
   description: 'The PACT: Human Horizon’s people-first AI adoption method. Four commitments behind every AI implementation, training and adoption engagement in Singapore.',
   kicker: 'How we work: our AI adoption methodology',
-  title: 'People first, so the workflows stay in use.',
+  title: 'People first, so the workflows stay in use',
   lead: 'A workflow saves time only when the team trusts it and keeps using it. Every Human Horizon engagement runs on the PACT: four commitments to the people who do the work, from the first conversation to the last measurement.',
-  pactTitle: 'Four commitments, in this order.',
+  pactTitle: 'Four commitments, in this order',
   pactLead: 'AI changes how people work, so we treat it as a people change as well as a technology change. Without that, new tools go unused.',
   pact: [
     { letter: 'P', title: 'Promise', body: 'Before anything is built, every role hears in plain words what AI will and will not change for them, so nobody is left guessing.' },
@@ -127,7 +127,7 @@ export const howWeWork = {
     { letter: 'C', title: 'Coach', body: 'Training runs on the team’s own tasks, with support while confidence builds, until each person can run, check and adjust their workflow.' },
     { letter: 'T', title: 'Track and reinforce', body: 'The time each workflow takes is measured before and after, and what is not being used is adjusted, so the new way holds on a busy day.' },
   ],
-  stepsTitle: 'How an engagement runs.',
+  stepsTitle: 'How an engagement runs',
   stepsLead: 'The PACT runs inside every step, not as a separate phase.',
   steps: [
     { name: 'Discovery and Customisation Mapping', body: 'How each team works today, which workflows to build first and what success should look like.' },

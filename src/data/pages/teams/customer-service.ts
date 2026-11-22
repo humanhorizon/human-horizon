@@ -4,7 +4,7 @@ const page: SegmentPage = {
   seoTitle: 'AI for customer service teams in Singapore | Human Horizon',
   description: 'AI workflows and agents for Singapore customer service teams. Customer enquiries, complaints and case handovers built into your team’s real work.',
   kicker: 'AI for customer service teams in Singapore',
-  title: 'Your team, free for the customers who need a person.',
+  title: 'Your team, free for the customers who need a person',
   lead: 'Customer service hours disappear into answering the same questions across WhatsApp, email and phone, writing up complaints and handing cases between colleagues. We build AI into that work with your team, so your people spend their time on the customers and cases that need real care.',
   painsTitle: 'Where customer service weeks go',
   pains: [
@@ -35,7 +35,7 @@ const page: SegmentPage = {
     { q: 'How do we start?', a: 'With a 30-minute conversation about the work that slows your team down. Send us a short message through the contact form.', links: [{ label: 'Go to the contact form', href: '/contact#form' }] },
   ],
   close: {
-    title: 'Fewer repeat questions, more real conversations.',
+    title: 'Fewer repeat questions, more real conversations',
     sub: 'Less typing the same answers and chasing lost threads, more care for the customers who need it. It starts with a 30-minute conversation about the work that slows your team down.',
   },
 };

@@ -4,7 +4,7 @@ const page: SegmentPage = {
   seoTitle: 'AI for marketing teams in Singapore | Human Horizon',
   description: 'AI workflows and agents for Singapore marketing teams. Content, case studies and campaign reports built into your team’s real work.',
   kicker: 'AI for marketing teams in Singapore',
-  title: 'Your marketers, back to the ideas only they can have.',
+  title: 'Your marketers, back to the ideas only they can have',
   lead: 'Marketing weeks disappear into social posts, case studies, newsletters, campaign reports and requests from every side of the business. We build AI into that work with your team, so your people spend their time on ideas, stories and the customers they want to reach.',
   painsTitle: 'Where marketing weeks go',
   pains: [
@@ -35,7 +35,7 @@ const page: SegmentPage = {
     { q: 'How do we start?', a: 'With a 30-minute conversation about the work that slows your team down. Send us a short message through the contact form.', links: [{ label: 'Go to the contact form', href: '/contact#form' }] },
   ],
   close: {
-    title: 'Your story, told as often as it deserves.',
+    title: 'Your story, told as often as it deserves',
     sub: 'Fewer gaps in the calendar, fewer wins left untold, more room for the ideas. It starts with a 30-minute conversation about the work that slows your team down.',
   },
 };

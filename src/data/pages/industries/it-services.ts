@@ -4,7 +4,7 @@ const page: SegmentPage = {
   seoTitle: 'AI for IT services and MSPs in Singapore | Human Horizon',
   description: 'AI workflows and agents for Singapore IT services firms and MSPs. Ticket triage, client reviews and documentation built into your team’s real work.',
   kicker: 'AI for IT services and MSPs in Singapore',
-  title: 'Your engineers solving problems, not sorting the queue.',
+  title: 'Your engineers solving problems, not sorting the queue',
   lead: 'Engineer hours disappear into sorting tickets, chasing users for details, preparing client reviews and keeping documentation up to date. We build AI into that work with your team, so your people spend their time on projects, problem solving and clients.',
   painsTitle: 'Where IT services weeks go',
   pains: [
@@ -35,7 +35,7 @@ const page: SegmentPage = {
     { q: 'How do we start?', a: 'With a 30-minute conversation about the work that slows your team down. Send us a short message through the contact form.', links: [{ label: 'Go to the contact form', href: '/contact#form' }] },
   ],
   close: {
-    title: 'Fewer interruptions, more time to fix things properly.',
+    title: 'Fewer interruptions, more time to fix things properly',
     sub: 'Less sorting and chasing, fewer evenings writing reports and notes, more room for the projects and clients that grow your business. It starts with a 30-minute conversation about the work that slows your firm down.',
   },
 };

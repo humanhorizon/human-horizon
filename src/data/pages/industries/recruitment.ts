@@ -4,7 +4,7 @@ const page: SegmentPage = {
   seoTitle: 'AI for recruitment agencies in Singapore | Human Horizon',
   description: 'AI workflows and agents for Singapore recruitment and staffing. Shortlists, job descriptions and client updates built into your team’s real work.',
   kicker: 'AI for recruitment and staffing in Singapore',
-  title: 'Your consultants, back with the people they place.',
+  title: 'Your consultants, back with the people they place',
   lead: 'Recruiter hours disappear into reading CVs, writing job descriptions, outreach messages and client updates. We build AI into that work with your team, so your people spend their time on the conversations that place candidates.',
   painsTitle: 'Where recruitment weeks go',
   pains: [
@@ -35,7 +35,7 @@ const page: SegmentPage = {
     { q: 'How do we start?', a: 'With a 30-minute conversation about the work that slows your team down. Send us a short message through the contact form.', links: [{ label: 'Go to the contact form', href: '/contact#form' }] },
   ],
   close: {
-    title: 'Back to the calls that make the placement.',
+    title: 'Back to the calls that make the placement',
     sub: 'Less reading, reformatting and chasing, more time with the people you place. It starts with a 30-minute conversation about the work that slows your firm down.',
   },
 };

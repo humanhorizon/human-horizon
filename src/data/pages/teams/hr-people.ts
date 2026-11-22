@@ -4,7 +4,7 @@ const page: SegmentPage = {
   seoTitle: 'AI for HR teams in Singapore | Human Horizon',
   description: 'AI workflows and agents for Singapore HR and people teams. Payroll inputs, onboarding and staff questions built into your team’s real work.',
   kicker: 'AI for HR and people teams in Singapore',
-  title: 'Time for the people side of HR again.',
+  title: 'Time for the people side of HR again',
   lead: 'HR hours disappear into gathering leave, overtime and claims for payroll, preparing onboarding letters and answering the same policy questions. We build AI into that work with your team, so your people spend their time on the conversations and decisions that need a person.',
   painsTitle: 'Where HR weeks go',
   pains: [
@@ -35,7 +35,7 @@ const page: SegmentPage = {
     { q: 'How do we start?', a: 'With a 30-minute conversation about the work that slows your team down. Send us a short message through the contact form.', links: [{ label: 'Go to the contact form', href: '/contact#form' }] },
   ],
   close: {
-    title: 'Back to the human side of HR.',
+    title: 'Back to the human side of HR',
     sub: 'Less cross-checking spreadsheets and answering the same questions, more time for your people. It starts with a 30-minute conversation about the work that slows your team down.',
   },
 };

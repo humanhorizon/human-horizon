@@ -4,7 +4,7 @@ const page: SegmentPage = {
   seoTitle: 'AI for healthcare clinics in Singapore | Human Horizon',
   description: 'AI workflows and agents for Singapore clinics. Patient messages, referral letters and insurance claims built into your team’s real work.',
   kicker: 'AI for healthcare clinics in Singapore',
-  title: 'Give your clinic team back to its patients.',
+  title: 'Give your clinic team back to its patients',
   lead: 'Clinic hours disappear into phone calls, appointment changes, referral letters and insurance claims. We build AI into that work with your team, so your people spend their time on patients and care.',
   painsTitle: 'Where clinic weeks go',
   pains: [
@@ -35,7 +35,7 @@ const page: SegmentPage = {
     { q: 'How do we start?', a: 'With a 30-minute conversation about the work that slows your team down. Send us a short message through the contact form.', links: [{ label: 'Go to the contact form', href: '/contact#form' }] },
   ],
   close: {
-    title: 'More of the day for the patient in the room.',
+    title: 'More of the day for the patient in the room',
     sub: 'Fewer calls on hold, fewer forms after hours, more time with patients. It starts with a 30-minute conversation about the work that slows your clinic down.',
   },
 };

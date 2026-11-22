@@ -4,7 +4,7 @@ const page: SegmentPage = {
   seoTitle: 'AI for property agencies in Singapore | Human Horizon',
   description: 'AI workflows and agents for Singapore property agencies. Enquiry follow-up, listings and owner updates built into your agents’ real work.',
   kicker: 'AI for property agencies and agents in Singapore',
-  title: 'Your agents with clients, not catching up on messages.',
+  title: 'Your agents with clients, not catching up on messages',
   lead: 'Agency hours disappear into answering enquiries, writing listings, preparing for viewings and keeping sellers and landlords updated. We build AI into that work with your team, so your people spend their time with clients, at viewings and on closing deals.',
   painsTitle: 'Where property agency weeks go',
   pains: [
@@ -35,7 +35,7 @@ const page: SegmentPage = {
     { q: 'How do we start?', a: 'With a 30-minute conversation about the work that slows your team down. Send us a short message through the contact form.', links: [{ label: 'Go to the contact form', href: '/contact#form' }] },
   ],
   close: {
-    title: 'Time back for the clients your agents worked to win.',
+    title: 'Time back for the clients your agents worked to win',
     sub: 'Fewer enquiries lost between viewings, fewer evenings writing listings and updates. It starts with a 30-minute conversation about the work that slows your agency down.',
   },
 };

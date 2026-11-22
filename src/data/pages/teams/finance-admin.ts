@@ -4,7 +4,7 @@ const page: SegmentPage = {
   seoTitle: 'AI for finance and admin teams in Singapore | Human Horizon',
   description: 'AI workflows and agents for Singapore finance and admin teams. Supplier bills, month-end reconciliations and management reports built into your team’s work.',
   kicker: 'AI for finance and admin teams in Singapore',
-  title: 'Your finance team, free to think about the numbers.',
+  title: 'Your finance team, free to think about the numbers',
   lead: 'Finance and admin hours disappear into keying supplier bills, chasing approvals, reconciling bank lines and building the monthly reports. We build AI into that work with your team, so your people spend their time on checking, judgement and the questions the numbers raise.',
   painsTitle: 'Where finance and admin weeks go',
   pains: [
@@ -35,7 +35,7 @@ const page: SegmentPage = {
     { q: 'How do we start?', a: 'With a 30-minute conversation about the work that slows your team down. Send us a short message through the contact form.', links: [{ label: 'Go to the contact form', href: '/contact#form' }] },
   ],
   close: {
-    title: 'Month-end without the late nights.',
+    title: 'Month-end without the late nights',
     sub: 'Fewer evenings matching invoices and chasing receipts, more room for the questions that move the business. It starts with a 30-minute conversation about the work that slows your team down.',
   },
 };

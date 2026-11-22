@@ -4,7 +4,7 @@ const page: SegmentPage = {
   seoTitle: 'AI for tuition centres in Singapore | Human Horizon',
   description: 'AI workflows and agents for Singapore education and tuition providers. Parent updates, enrolment and timetables built into your team’s real work.',
   kicker: 'AI for tuition and enrichment centres in Singapore',
-  title: 'Give your teachers back to their students.',
+  title: 'Give your teachers back to their students',
   lead: 'Centre hours disappear into parent messages, enrolment enquiries, replacement classes and timetable changes. We build AI into that work with your team, so your people spend their time on teaching, students and families.',
   painsTitle: 'Where education centre weeks go',
   pains: [
@@ -35,7 +35,7 @@ const page: SegmentPage = {
     { q: 'How do we start?', a: 'With a 30-minute conversation about the work that slows your team down. Send us a short message through the contact form.', links: [{ label: 'Go to the contact form', href: '/contact#form' }] },
   ],
   close: {
-    title: 'Back to the teaching you started this for.',
+    title: 'Back to the teaching you started this for',
     sub: 'Fewer evenings answering chats, less timetable juggling, more time with students and families. It starts with a 30-minute conversation about the work that slows your centre down.',
   },
 };

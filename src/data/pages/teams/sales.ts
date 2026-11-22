@@ -4,7 +4,7 @@ const page: SegmentPage = {
   seoTitle: 'AI for sales teams in Singapore | Human Horizon',
   description: 'AI workflows and agents for Singapore sales teams. Proposals, tenders, follow-ups and meeting prep built into your team’s real work.',
   kicker: 'AI for sales teams in Singapore',
-  title: 'Your salespeople back in front of buyers.',
+  title: 'Your salespeople back in front of buyers',
   lead: 'Sales weeks disappear into proposals, tenders, follow-up emails, pipeline updates and meeting prep. We build AI into that work with your team, so your people spend their time with buyers and on the deals that matter.',
   painsTitle: 'Where sales weeks go',
   pains: [
@@ -35,7 +35,7 @@ const page: SegmentPage = {
     { q: 'How do we start?', a: 'With a 30-minute conversation about the work that slows your team down. Send us a short message through the contact form.', links: [{ label: 'Go to the contact form', href: '/contact#form' }] },
   ],
   close: {
-    title: 'Warm leads followed up while they are still warm.',
+    title: 'Warm leads followed up while they are still warm',
     sub: 'Fewer evenings rebuilding proposals, fewer warm leads gone quiet. It starts with a 30-minute conversation about the work that slows your team down.',
   },
 };

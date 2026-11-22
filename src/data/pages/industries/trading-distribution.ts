@@ -4,7 +4,7 @@ const page: SegmentPage = {
   seoTitle: 'AI for trading companies in Singapore | Human Horizon',
   description: 'AI workflows and agents for Singapore trading and distribution. Order entry, quotations and invoices built into your team’s real work.',
   kicker: 'AI for trading companies and distributors in Singapore',
-  title: 'Let your sales team sell, not retype orders.',
+  title: 'Let your sales team sell, not retype orders',
   lead: 'Trading hours disappear into retyping orders, building quotations, checking price lists and raising invoices and delivery documents. We build AI into that work with your team, so your people spend their time on customers, suppliers and the deals that grow the business.',
   painsTitle: 'Where trading weeks go',
   pains: [
@@ -35,7 +35,7 @@ const page: SegmentPage = {
     { q: 'How do we start?', a: 'With a 30-minute conversation about the work that slows your team down. Send us a short message through the contact form.', links: [{ label: 'Go to the contact form', href: '/contact#form' }] },
   ],
   close: {
-    title: 'Less retyping, more selling.',
+    title: 'Less retyping, more selling',
     sub: 'Fewer orders keyed in by hand and fewer documents that do not match. It starts with a 30-minute conversation about the work that slows your firm down.',
   },
 };

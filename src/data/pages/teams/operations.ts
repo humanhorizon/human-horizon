@@ -4,7 +4,7 @@ const page: SegmentPage = {
   seoTitle: 'AI for operations teams in Singapore | Human Horizon',
   description: 'AI workflows and agents for Singapore operations teams. Job status updates, scheduling and site reports built into your team’s real work.',
   kicker: 'AI for operations teams in Singapore',
-  title: 'Fewer fires for the team that puts them out.',
+  title: 'Fewer fires for the team that puts them out',
   lead: 'Operations weeks disappear into chasing job updates, reworking schedules, writing reports and answering where-is-it questions. We build AI into that work with your team, so your people spend their time solving problems and looking after customers.',
   painsTitle: 'Where operations weeks go',
   pains: [
@@ -35,7 +35,7 @@ const page: SegmentPage = {
     { q: 'How do we start?', a: 'With a 30-minute conversation about the work that slows your team down. Send us a short message through the contact form.', links: [{ label: 'Go to the contact form', href: '/contact#form' }] },
   ],
   close: {
-    title: 'Fewer fires, more time to plan ahead.',
+    title: 'Fewer fires, more time to plan ahead',
     sub: 'Less chasing across chats, fewer schedules rebuilt by hand. It starts with a 30-minute conversation about the work that slows your team down.',
   },
 };

@@ -4,7 +4,7 @@ const page: SegmentPage = {
   seoTitle: 'AI for interior design firms in Singapore | Human Horizon',
   description: 'AI workflows and agents for Singapore interior design and renovation firms. Quotations, specifications and client updates built into your team’s real work.',
   kicker: 'AI for interior design and renovation in Singapore',
-  title: 'Let your designers get back to designing.',
+  title: 'Let your designers get back to designing',
   lead: 'Design hours disappear into itemised quotations, revised quotes after every client change, specifications and client letters. We build AI into that work with your team, so your people spend their time on design, site and clients.',
   painsTitle: 'Where design firm weeks go',
   pains: [
@@ -35,7 +35,7 @@ const page: SegmentPage = {
     { q: 'How do we start?', a: 'With a 30-minute conversation about the work that slows your team down. Send us a short message through the contact form.', links: [{ label: 'Go to the contact form', href: '/contact#form' }] },
   ],
   close: {
-    title: 'Back to designing the spaces you love.',
+    title: 'Back to designing the spaces you love',
     sub: 'Fewer late nights rebuilding quotes, less copying out specifications, more time with clients and on site. It starts with a 30-minute conversation about the work that slows your firm down.',
   },
 };

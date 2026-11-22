@@ -4,7 +4,7 @@ const page: SegmentPage = {
   seoTitle: 'AI for freight forwarders in Singapore | Human Horizon',
   description: 'AI workflows and agents for Singapore logistics and freight forwarding. Quotations, shipping documents and status updates built into your team’s real work.',
   kicker: 'AI for logistics and freight forwarding in Singapore',
-  title: 'Your ops team, back on the shipments that need them.',
+  title: 'Your ops team, back on the shipments that need them',
   lead: 'Forwarding hours disappear into freight quotations, shipping and customs documents, invoices and status updates. We build AI into that work with your team, so your people spend their time on customers, carriers and the shipments that need real attention.',
   painsTitle: 'Where forwarding weeks go',
   pains: [
@@ -35,7 +35,7 @@ const page: SegmentPage = {
     { q: 'How do we start?', a: 'With a 30-minute conversation about the work that slows your team down. Send us a short message through the contact form.', links: [{ label: 'Go to the contact form', href: '/contact#form' }] },
   ],
   close: {
-    title: 'Less paperwork between your team and the cargo.',
+    title: 'Less paperwork between your team and the cargo',
     sub: 'Fewer rate sheets, fewer retyped documents and fewer status calls. It starts with a 30-minute conversation about the work that slows your firm down.',
   },
 };

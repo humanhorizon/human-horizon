@@ -5,7 +5,7 @@
 client: Thrive Property Advisory
 logo: /case-studies/thrive-property-advisory-logo.png
 about: "A Singapore property advisory team at PropNex Realty that uses AI and data to help clients make better property decisions."
-title: "Market reports in 20 minutes, not a working day, so every client hears about their market."
+title: "Market reports in 20 minutes, not a working day, so every client hears about their market"
 seoTitle: "AI case study: Thrive Property Advisory | Human Horizon"
 description: "AI case study: how Singapore property advisory Thrive turns HDB resale prices and URA transactions into a branded property market report for each client."
 summary: "AI now turns the latest HDB and URA transaction data into branded market reports, so agents spend their time advising clients."

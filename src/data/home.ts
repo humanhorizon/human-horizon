@@ -4,7 +4,7 @@
 
 export const hero = {
   kicker: 'AI consultancy in Singapore for workflows, agents and training',
-  title: 'Go beyond the prompt.',
+  title: 'Go beyond the prompt',
   sub: 'Most teams use ChatGPT or Claude one prompt at a time. We build AI workflows and agents that run the repeat work from start to finish, and train the team to use them.',
   credibility: 'Founded by leaders who have built at Gojek, Alibaba and Meta.',
 };
@@ -12,7 +12,7 @@ export const hero = {
 // The PACT: used by /how-we-work and the short method strip. Bullets always run P, A, C, T.
 export const pact = {
   eyebrow: 'How we work: the PACT',
-  title: 'Why the results last.',
+  title: 'Why the results last',
   lead: 'Workflows only pay off when the team uses them. So every engagement runs on four commitments to the people who do the work.',
   steps: [
     { letter: 'P', title: 'Promise', body: 'Clear words on what AI means for every role, so nobody is left guessing.' },
@@ -25,21 +25,21 @@ export const pact = {
 // From prompt to agent: one everyday task, before and after. The steps stay the same; what changes is who does
 // each one, so the map changes colour rather than redrawing. Illustrative, no numbers.
 export const ladder = {
-  title: 'From prompt to agent.',
-  lead: 'A ChatGPT or Claude subscription can do far more than answer one prompt at a time. Here is the same everyday task, before and after.',
+  title: 'From prompt to agent',
+  lead: 'A ChatGPT or Claude subscription can do far more than answer one prompt at a time.',
   task: 'A customer emails to ask for a quotation.',
   levels: [
     {
       key: 'prompt',
       name: 'Prompt',
       line: 'A person asks, AI answers.',
-      body: 'Someone copies the request into ChatGPT, pastes in the prices, fixes the draft and sends it. Every quotation starts from zero, and only the people who are good at prompting get much out of it.',
+      body: 'Someone copies the request into ChatGPT, pastes in prices, fixes the draft and sends it. Every quotation starts from zero, and the repeat work stays on people’s desks.',
     },
     {
       key: 'agent',
       name: 'AI workflow and agent',
       line: 'AI runs the steps, a person approves.',
-      body: 'A new request starts the work on its own. AI reads it, drafts questions for any missing details, checks stock and prices, and prepares the quotation and the reply in the business’s own format. A person approves before anything goes to the customer.',
+      body: 'The request starts the work on its own. AI asks about missing details, checks stock and prices and drafts the quotation and reply. A person approves before anything goes out.',
     },
   ],
   // Who does each step at each level: person, ai, or trigger (starts on its own).
@@ -51,19 +51,17 @@ export const ladder = {
     { label: 'Draft the quotation and reply', prompt: 'ai', agent: 'ai' },
     { label: 'Check and send', prompt: 'person', agent: 'person' },
   ] as { label: string; prompt: string; agent: string }[],
-  // Cost of inaction, said once.
-  cost: 'Stopping at the prompt keeps the repeat work on people’s desks: the same copying, pasting and checking, every day.',
 };
 
 export const whatWeDo = {
-  title: 'What we do.',
+  title: 'What we do',
   lead: 'We build the AI workflows and agents, train the team to run them and support the team until the workflows are part of the routine. Every engagement starts from how the work runs today.',
   discovery: { name: 'Discovery and Customisation Mapping', line: 'A review of how each team works today, which workflows to build first and what success should look like.' },
   report: { name: 'ROI Transformation Report', line: 'The hours the team saves, valued at the firm’s own rates.' },
 };
 
 export const work = {
-  title: 'Built around the work teams already do.',
+  title: 'Built around the work teams already do',
   sub: 'Pick an industry or a team to see what changes.',
   featured: 'logistics-freight',
   icons: {
@@ -75,7 +73,7 @@ export const work = {
 };
 
 export const people = {
-  title: 'Founded by people who have built from zero.',
+  title: 'Founded by people who have built from zero',
   sub: '18 years’ combined experience at the frontier of technology. We started Human Horizon so whole teams move with AI, not just the keen few.',
   founders: [
     { name: 'Jaye Wang', photo: '/founders/jaye.jpg', bio: 'Built and led marketing teams across APAC, from first hire to head of the team.', past: 'Gojek, Alibaba, moomoo' },
@@ -84,7 +82,7 @@ export const people = {
 };
 
 export const start = {
-  title: 'Start with one workflow, or the whole firm.',
+  title: 'Start with one workflow, or the whole firm',
   link: { label: 'Book a 30-minute discovery', href: '/contact#form' },
   options: [
     { name: 'First Win', fit: 'For a team of 5 to 10 people', change: 'One AI workflow running the new way in the team.', includes: ['One custom AI workflow', 'Hands-on training for the team', 'A Lite ROI Transformation Report on that workflow'] },
@@ -108,6 +106,6 @@ export const faq = [
 ];
 
 export const close = {
-  title: 'Start with one workflow the team repeats every week.',
+  title: 'Start with one workflow the team repeats every week',
   sub: 'A 30-minute conversation about the work that slows your team down, and where AI could help first.',
 };

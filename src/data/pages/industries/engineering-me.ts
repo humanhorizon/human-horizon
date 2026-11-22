@@ -4,7 +4,7 @@ const page: SegmentPage = {
   seoTitle: 'AI for M&E contractors in Singapore | Human Horizon',
   description: 'AI workflows and agents for Singapore engineering and M&E contractors. Progress claims, tenders and site reports built into your team’s real work.',
   kicker: 'AI for engineering and M&E contractors in Singapore',
-  title: 'Your people back on the build, not the paperwork.',
+  title: 'Your people back on the build, not the paperwork',
   lead: 'Project hours disappear into progress claims, variation records, tender submissions and daily site reports. We build AI into that work with your team, so your people spend their time on site, solving problems and delivering the job.',
   painsTitle: 'Where contractor weeks go',
   pains: [
@@ -35,7 +35,7 @@ const page: SegmentPage = {
     { q: 'How do we start?', a: 'With a 30-minute conversation about the work that slows your team down. Send us a short message through the contact form.', links: [{ label: 'Go to the contact form', href: '/contact#form' }] },
   ],
   close: {
-    title: 'Back on site, with the paperwork in hand.',
+    title: 'Back on site, with the paperwork in hand',
     sub: 'Less chasing photos and delivery orders for claims, fewer evenings typing up reports, more time on the job. It starts with a 30-minute conversation about the work that slows your firm down.',
   },
 };

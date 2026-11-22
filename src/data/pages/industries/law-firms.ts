@@ -4,7 +4,7 @@ const page: SegmentPage = {
   seoTitle: 'AI for law firms in Singapore | Human Horizon',
   description: 'AI workflows and agents for Singapore law firms. File review, routine letters and client updates built into your team’s real work.',
   kicker: 'AI for law firms in Singapore',
-  title: 'Less time in the bundle, more time with the client.',
+  title: 'Less time in the bundle, more time with the client',
   lead: 'Lawyer and paralegal hours disappear into reading bundles, drafting routine letters, building checklists and writing client updates. We build AI into that work with your team, so your people spend their time on legal thinking, advice and clients.',
   painsTitle: 'Where law firm weeks go',
   pains: [
@@ -35,7 +35,7 @@ const page: SegmentPage = {
     { q: 'How do we start?', a: 'With a 30-minute conversation about the work that slows your team down. Send us a short message through the contact form.', links: [{ label: 'Go to the contact form', href: '/contact#form' }] },
   ],
   close: {
-    title: 'Back to the legal work you trained for.',
+    title: 'Back to the legal work you trained for',
     sub: 'Fewer hours reading bundles and drafting the same letters, more time thinking and advising. It starts with a 30-minute conversation about the work that slows your firm down.',
   },
 };
