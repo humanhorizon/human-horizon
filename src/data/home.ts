@@ -102,7 +102,6 @@ export const faq = [
   { q: 'Who do you work with?', a: 'Singapore businesses with recurring work to get through, in any industry. Founders come to us when staff use AI tools with no rules on client data, a workshop changed nothing back at the desk, or licences were bought but barely used.' },
   { q: 'I have been asked to look into AI for our company. Can we talk first?', a: 'Yes. If you are in HR, training or operations and doing the groundwork for your boss, we are happy to talk with you first. We will help you find a sensible place to start and the case to put to them.' },
   { q: 'How do you measure AI training ROI?', a: 'The ROI Transformation Report shows the hours the team saves on each workflow, valued at the firm’s own rates.', links: [{ label: 'How to measure AI training ROI', href: '/insights/how-to-measure-ai-training-roi' }] },
-  { q: 'Is this covered by course funding?', a: 'Human Horizon is not an accredited course provider, so course funding does not apply. From YA 2027, the Enterprise Innovation Scheme also covers AI adoption, such as subscriptions or licences for AI systems and qualifying AI business services. Please ask your accountant whether you may be able to get a tax deduction. We do not promise any tax outcome.', links: [{ label: 'Enterprise Innovation Scheme (IRAS)', href: 'https://www.iras.gov.sg/schemes/disbursement-schemes/enterprise-innovation-scheme-(eis)' }] },
 ];
 
 export const close = {
