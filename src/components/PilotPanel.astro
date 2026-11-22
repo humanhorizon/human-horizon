@@ -11,6 +11,7 @@ interface Props {
   text?: string;
   cta?: { label: string; href: string };
   secondary?: { label: string; href: string };
+  photo?: string | null;
 }
 const {
   level = 'h2',
@@ -19,9 +20,10 @@ const {
   text = site.pilot.text,
   cta = { label: site.pilot.link, href: site.pilot.href },
   secondary,
+  photo: own,
 } = Astro.props;
 const H = level;
-const photo = existsSync(new URL('../../public/pilot.jpg', import.meta.url)) ? 'url(/pilot.jpg)' : 'none';
+const photo = own ? `url(${own})` : existsSync(new URL('../../public/pilot.jpg', import.meta.url)) ? 'url(/pilot.jpg)' : 'none';
 ---
 <div class="pilot" style={`--photo: ${photo}`}>
   <div class="copy">

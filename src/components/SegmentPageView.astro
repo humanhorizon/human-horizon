@@ -8,6 +8,7 @@ import PactStrip from './PactStrip.astro';
 import Faq from './Faq.astro';
 import CloseCta from './CloseCta.astro';
 import PilotPanel from './PilotPanel.astro';
+import { photo } from '../lib/photo';
 import CaseStudyStrip from './CaseStudyStrip.astro';
 import { site, industries, teams, type Segment } from '../data/site';
 import type { SegmentPage } from '../data/segmentPages';
@@ -72,6 +73,7 @@ const schema = [
   <section class="section start" id="start">
     <div class="wrap">
       <PilotPanel
+        photo={photo(`${kind}/${seg.slug}.jpg`)}
         eyebrow="First Win"
         title={page.start.title}
         text={page.start.body}
