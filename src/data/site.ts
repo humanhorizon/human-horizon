@@ -98,6 +98,6 @@ export const nav = [
   { label: 'What we do', href: '/what-we-do', children: pillars.map((p) => ({ label: p.title, href: `/what-we-do/${p.slug}` })) },
   { label: 'Industries', href: '/industries', children: industries.map((s) => ({ label: s.name, href: `/industries/${s.slug}` })) },
   { label: 'Teams', href: '/teams', children: teams.map((s) => ({ label: s.name, href: `/teams/${s.slug}` })) },
-  { label: 'About', href: '/about', children: [{ label: 'About us', href: '/about' }, { label: 'How we work', href: '/how-we-work' }] },
+  { label: 'About', href: '/about', children: [{ label: 'About us', href: '/about' }, { label: 'Training methodology', href: '/how-we-work' }] },
   { label: 'Insights', href: '/insights' },
 ];

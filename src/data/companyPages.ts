@@ -114,15 +114,15 @@ export const caseStudiesHub = {
 
 // How we work: the people-first method. The offer leads everywhere else; this page explains why the results last.
 export const howWeWork = {
-  seoTitle: 'How we work: our AI adoption methodology | Human Horizon',
+  seoTitle: 'Our AI training methodology: the PACT | Human Horizon',
   description: 'The PACT: Human Horizon’s people-first AI adoption method. Four commitments behind every AI implementation, training and adoption engagement in Singapore.',
-  kicker: 'How we work: our AI adoption methodology',
+  kicker: 'Our AI training methodology'
   title: 'People first, so the workflows stay in use',
   lead: 'A workflow saves time only when the team trusts it and keeps using it. Every Human Horizon engagement runs on the PACT: four commitments to the people who do the work, from the first conversation to the last measurement.',
   pactTitle: 'Four commitments, in this order',
   pactLead: 'AI changes how people work, so we treat it as a people change as well as a technology change. Without that, new tools go unused.',
   pact: [
-    { letter: 'P', title: 'Promise', body: 'Before anything is built, every role hears in plain words what AI will and will not change for them, so nobody is left guessing.' },
+    { letter: 'P', title: 'Promise', body: 'Before anything is built, every role hears in plain words what AI will and will not change for them.' },
     { letter: 'A', title: 'Ask and involve', body: 'The people who do the work shape the workflows they will use: what goes in, what good looks like and where a person checks.' },
     { letter: 'C', title: 'Coach', body: 'Training runs on the team’s own tasks, with support while confidence builds, until each person can run, check and adjust their workflow.' },
     { letter: 'T', title: 'Track and reinforce', body: 'The time each workflow takes is measured before and after, and what is not being used is adjusted, so the new way holds on a busy day.' },

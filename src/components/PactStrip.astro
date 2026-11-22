@@ -4,16 +4,16 @@
 // Each letter shows its one-line meaning on hover or keyboard focus. Bullets always run P, A, C, T.
 import { pact } from '../data/home';
 import { photo } from '../lib/photo';
-const img = photo('teams/operations.jpg');
+const img = photo('teams/marketing.jpg');
 ---
 <section class="pstrip bg-ink">
   <div class:list={['wrap pgrid', { 'has-img': img }]}>
-    {img && <img class="pimg" src={img} alt="Colleagues talking round a meeting table" loading="lazy" decoding="async" width="1200" height="900" />}
+    {img && <img class="pimg" src={img} alt="A team smiling as they work through charts together" loading="lazy" decoding="async" width="1200" height="900" />}
     <div class="pmain">
       <div class="ptext">
         <h2 class="d ph">{pact.title}</h2>
         <p class="muted">{pact.lead}</p>
-        <a class="lnk" href="/how-we-work">How we work</a>
+        <a class="lnk" href="/how-we-work">Our training methodology</a>
       </div>
       <ol class="letters" aria-label="The PACT">
         {pact.steps.map((st, i) => (

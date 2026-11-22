@@ -11,14 +11,14 @@ export const hero = {
 
 // The PACT: used by /how-we-work and the short method strip. Bullets always run P, A, C, T.
 export const pact = {
-  eyebrow: 'How we work: the PACT',
+  eyebrow: 'Our training methodology: the PACT',
   title: 'Why the results last',
-  lead: 'Workflows only pay off when the team uses them. So every engagement runs on four commitments to the people who do the work.',
+  lead: 'Tools alone rarely change how a team works. Every engagement runs on a change management method built for AI, so the new workflows become how the team works.',
   steps: [
-    { letter: 'P', title: 'Promise', body: 'Clear words on what AI means for every role, so nobody is left guessing.' },
-    { letter: 'A', title: 'Ask and involve', body: 'The team shapes the workflows it will use.' },
-    { letter: 'C', title: 'Coach', body: 'Learning on real tasks, with support along the way.' },
-    { letter: 'T', title: 'Track and reinforce', body: 'We measure what changes and adjust, so it holds.' },
+    { letter: 'P', title: 'Promise', body: 'A clear commitment on what AI means for every role, made before anything changes.' },
+    { letter: 'A', title: 'Ask and involve', body: 'The people who do the work shape the workflows, so they own them.' },
+    { letter: 'C', title: 'Coach', body: 'Hands-on coaching on real tasks until the new way is second nature.' },
+    { letter: 'T', title: 'Track and reinforce', body: 'We measure what changes and reinforce it until it holds.' },
   ],
 };
 
@@ -85,9 +85,9 @@ export const start = {
   title: 'Start with one workflow, or the whole firm',
   link: { label: 'Book a 30-minute discovery', href: '/contact#form' },
   options: [
-    { name: 'First Win', fit: 'For a team of 5 to 10 people', change: 'One AI workflow running the new way in the team.', includes: ['One custom AI workflow', 'Hands-on training for the team', 'A Lite ROI Transformation Report on that workflow'] },
-    { name: 'Accelerator', fit: 'For a small team or department of 5 to 50 people', change: 'A small team or department working the new way, with the numbers to show it.', includes: ['Three custom AI workflows', 'Hands-on training for the team or department', 'An ROI Transformation Report for the team or department'] },
-    { name: 'Enterprise', fit: 'For a whole company of 20 or more', change: 'The whole company using AI with confidence, under clear rules.', includes: ['Custom AI workflows, scoped to the company’s needs', 'Hands-on training for everyone, with role-specific sessions', 'An AI toolkit and AI governance for the company', 'An ROI Transformation Report for each department'] },
+    { name: 'First Win', fit: 'Teams of 5 to 10', change: 'One AI workflow running in the team.', includes: ['One custom AI workflow', 'Hands-on team training', 'Lite ROI Transformation Report'] },
+    { name: 'Accelerator', fit: 'Teams of 5 to 50', change: 'A team or department working the new way, with the numbers to prove it.', includes: ['Three custom AI workflows', 'Hands-on team training', 'ROI Transformation Report'] },
+    { name: 'Enterprise', fit: 'Companies of 20 or more', change: 'The whole company using AI with confidence, under clear rules.', includes: ['Custom AI workflows', 'Role-based training for everyone', 'AI toolkit and governance', 'ROI Transformation Report per department'] },
   ],
 };
 
@@ -96,7 +96,7 @@ export const faq = [
   { q: 'What does an AI consultancy do?', a: 'An AI consultancy helps a business decide where AI fits, then puts it to work. We start with Discovery and Customisation Mapping, build custom AI workflows and agents, train staff hands-on and support adoption until the new ways of working become routine.', links: [{ label: 'What we do', href: '/what-we-do' }] },
   { q: 'Is this an AI course?', a: 'No. We build custom workflows into your team’s real work, train your people on them and measure the change. Training runs on your own tasks, in a few focused sessions, with no homework.', links: [{ label: 'Compare an AI course with our training', href: '/ai-course-singapore' }] },
   { q: 'We already pay for ChatGPT or Copilot. Why is nobody using it?', a: 'Licences alone rarely change how work gets done, and many teams stop at the prompt. We build workflows and agents around the real tasks, train people on them and support them while the habit forms, using the AI tools the business has approved.' },
-  { q: 'Will AI replace our staff?', a: 'That is a decision for the business, not for AI. We start with clear words on what AI means for every role, so nobody is left guessing, and staff help shape the workflows they will use.', links: [{ label: 'How we work', href: '/how-we-work' }] },
+  { q: 'Will AI replace our staff?', a: 'That is a decision for the business, not for AI. We start with a clear commitment on what AI means for every role, and staff help shape the workflows they will use.', links: [{ label: 'Our training methodology', href: '/how-we-work' }] },
   { q: 'Do we need technical staff or an IT team?', a: 'No. We design and set up the workflows, and train the people who use them in plain language. Where there is an IT team or system admin, we involve them on access, data and AI governance.' },
   { q: 'What happens to our client data?', a: 'We agree clear AI governance rules with you: what can go into AI tools, which accounts to use, and what a person checks before anything leaves the business.' },
   { q: 'Who do you work with?', a: 'Singapore businesses with recurring work to get through, in any industry. Founders come to us when staff use AI tools with no rules on client data, a workshop changed nothing back at the desk, or licences were bought but barely used.' },

@@ -31,8 +31,8 @@ const hasPhoto = (src: string) => existsSync(new URL(`../../public${src}`, impor
 </section>
 
 <style>
-  .people { padding: var(--section) 0; }
-  .people-head { margin-bottom: var(--s4); }
+  .people { padding: calc(var(--section) * 1.3) 0; }
+  .people-head { margin-bottom: var(--s5); }
   .founders { display: grid; grid-template-columns: 1fr 1fr; gap: var(--s4); }
   /* Portrait beside the bio, so both founders sit in one row without a full-screen photo each. */
   .founders figure { margin: 0; display: grid; grid-template-columns: clamp(140px, 14vw, 200px) 1fr; gap: var(--s3); align-items: center; }
