@@ -14,8 +14,8 @@ services: [implement, train, adopt]
 industry: trading-distribution
 # Homepage figures from YJ, 22 Nov 2026 (the S$ figure is YJ's own valuation of sales time back a year).
 highlights:
-  - { figure: "99.7%", label: "less time sourcing: 5 working days to 8 minutes" }
-  - { figure: "97.9%", label: "less time on quotations: 4 hours to 5 minutes" }
+  - { figure: "99.7%", label: "less time sourcing: 5 working days to 8 minutes per product" }
+  - { figure: "97.9%", label: "less time on quotations: 4 hours to 5 minutes a day" }
   - { figure: "S$37.6K", label: "of sales time back a year" }
 teams: [operations, marketing, sales]
 workflows:

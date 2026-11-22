@@ -115,10 +115,10 @@ export const caseStudiesHub = {
 // How we work: the people-first method. The offer leads everywhere else; this page explains why the results last.
 export const howWeWork = {
   seoTitle: 'Our AI training methodology: the PACT | Human Horizon',
-  description: 'The PACT: Human Horizon’s people-first AI adoption method. Four commitments behind every AI implementation, training and adoption engagement in Singapore.',
+  description: 'The PACT: Human Horizon’s people-first AI training methodology. Four commitments to the people who do the work, behind every engagement in Singapore.',
   kicker: 'Our AI training methodology',
   title: 'People first, so the workflows stay in use',
-  lead: 'A workflow saves time only when the team trusts it and keeps using it. Every Human Horizon engagement runs on the PACT: four commitments to the people who do the work, from the first conversation to the last measurement.',
+  lead: 'A workflow saves time only when the team trusts it and keeps using it. Every Human Horizon engagement, from implementation to AI training and adoption, runs on the PACT: four commitments to the people who do the work.',
   pactTitle: 'Four commitments, in this order',
   pactLead: 'AI changes how people work, so we treat it as a people change as well as a technology change. Without that, new tools go unused.',
   pact: [
@@ -138,8 +138,8 @@ export const howWeWork = {
   ],
   proof: { label: 'See the PACT at work in the Anri Gifts case study', href: '/case-studies/anri-gifts' },
   faq: [
-    { q: 'What is the PACT?', a: 'The PACT is Human Horizon’s method for AI adoption: four commitments to the people who do the work. Promise, so every role knows what AI means for it. Ask and involve, so the team shapes its own workflows. Coach, so people learn on real tasks. Track and reinforce, so the change holds.' },
-    { q: 'Why does a people-first method matter for AI adoption?', a: 'AI tools often go unused when people are unsure what is allowed, worried about their role or never shown how AI fits their own work. A workflow the team helped build, and was trained on, is one it keeps using.' },
+    { q: 'What is the PACT?', a: 'The PACT is Human Horizon’s people-first AI training methodology: four commitments to the people who do the work. Promise, so every role knows what AI means for it. Ask and involve, so the team shapes its own workflows. Coach, so people learn on real tasks. Track and reinforce, so the change holds.' },
+    { q: 'Why does a people-first method matter for AI adoption?', a: 'In our experience, AI tools go unused when people are unsure what is allowed, worried about their role or never shown how AI fits their own work. A workflow the team helped build, and was trained on, is one it keeps using.' },
     { q: 'Is the PACT a separate project?', a: 'No. The four commitments run inside the work itself: the briefing, the build, the training and the measurement.' },
   ],
 };
