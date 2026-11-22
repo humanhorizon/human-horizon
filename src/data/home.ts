@@ -100,7 +100,7 @@ export const faq = [
   { q: 'Do we need technical staff or an IT team?', a: 'No. We design and set up the workflows, and train the people who use them in plain language. Where there is an IT team or system admin, we involve them on access, data and AI governance.' },
   { q: 'What happens to our client data?', a: 'We agree clear AI governance rules with the business: what can go into AI tools, which accounts to use, and what a person checks before anything leaves the business.' },
   { q: 'Who does Human Horizon work with?', a: 'Singapore businesses with recurring work to get through, in any industry. It fits best when staff use AI tools with no rules on client data, a workshop changed nothing back at the desk, or licences were bought but barely used.' },
-  { q: 'I have been asked to look into AI for our company. Can we talk first?', a: 'Yes. Yes. HR, training and operations staff doing the groundwork for their boss are welcome to talk with us first. We help find a sensible place to start and shape the case to take back to the boss.' },
+  { q: 'I have been asked to look into AI for our company. Can we talk first?', a: 'Yes. HR, training and operations staff doing the groundwork for their boss are welcome to talk with us first. We help find a sensible place to start and shape the case to put forward.' },
   { q: 'How is AI training ROI measured?', a: 'The ROI Transformation Report shows the hours the team saves on each workflow, valued at the firm’s own rates.', links: [{ label: 'How to measure AI training ROI', href: '/insights/how-to-measure-ai-training-roi' }] },
 ];
 

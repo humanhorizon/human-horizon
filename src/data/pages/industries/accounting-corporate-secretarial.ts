@@ -18,7 +18,7 @@ const page: SegmentPage = {
     body: 'Start with one workflow for a team of 5 to 10 people. The team tries it on its own work, so the firm can judge the change before going further.',
   },
   people: {
-    title: 'Professional judgement stays with the accountants.',
+    title: 'Professional judgement stays with the firm’s team.',
     body: 'Accountants and secretarial staff worry that AI will make errors they are accountable for, or make their roles redundant. We start there. The team shapes how AI is used, reviews everything before it reaches a client or a filing, and keeps the judgement and sign-off that clients trust.',
   },
   changesTitle: 'What changes for the firm',

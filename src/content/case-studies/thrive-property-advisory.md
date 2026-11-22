@@ -1,5 +1,5 @@
 ---
-# DRAFT (publish: false, shows on the dev server only). Times and team size are ESTIMATES drafted by Human Horizon
+# DRAFT (publish: false, shows on the dev server only). Times are YJ's figures (22 Nov 2026) for the client to confirm, incl. that one estate = one HDB town; team size drafted by Human Horizon
 # on 22 Nov 2026; the market report workflow follows the client's own brief and sample report. The client confirms
 # or corrects everything before Client approved is ticked.
 client: Thrive Property Advisory
@@ -7,9 +7,9 @@ logo: /case-studies/thrive-property-advisory-logo.png
 about: "A Singapore property advisory team at PropNex Realty that uses AI and data to help clients make better property decisions."
 title: "26 branded market reports in 20 minutes, where one estate used to take a working day"
 seoTitle: "AI case study: Thrive Property Advisory | Human Horizon"
-description: "AI case study: how Singapore property advisory Thrive turns HDB resale prices and URA transactions into a branded property market report for each client."
-summary: "AI now turns the latest HDB and URA transaction data into customised, branded market reports for all 26 HDB towns in 20 minutes, so agents spend their time advising clients."
-subtitle: "Customised, branded market reports for all 26 HDB towns, checked and sent by agents."
+description: "AI case study: property advisory Thrive builds branded market reports for all 26 HDB towns in 20 minutes, where one estate took a working day."
+summary: "AI now turns the latest HDB resale data into customised, branded market reports for all 26 HDB towns in 20 minutes, so agents spend their time advising clients."
+subtitle: "Market reports built from official HDB and URA data, checked and sent by agents."
 tools: [Claude]
 services: [implement, train, adopt]
 industry: property-agencies
@@ -27,7 +27,7 @@ workflows:
     people: "Explaining what the numbers mean for each homeowner and starting the conversations that lead to a sale."
     # Before: about 1 working day for one estate's report. Now: 20 minutes for one report per HDB town, 26 in all
     # (26 towns in the data.gov.sg HDB resale dataset). Like for like, 26 working days (12,480 minutes) to 20 minutes.
-    time: { before: "1 working day per estate", after: "20 minutes for all 26 towns", beforeMinutes: 12480, afterMinutes: 20, unit: "for a full set of 26 town reports" }
+    time: { before: "26 working days, 1 per estate", after: "20 minutes for all 26 towns", beforeMinutes: 12480, afterMinutes: 20, unit: "for a full set of 26 town reports" }
     humans: 3
     agents: 2
 team:
@@ -46,7 +46,7 @@ notionPage: https://app.notion.com/p/420d0a6f047e815eb252f8f84ca205f4
 
 ## Where did the time go before AI?
 
-At Thrive Property Advisory, the most valuable thing an agent can send an existing client is a clear view of their own market: what homes like theirs have sold for, which way prices are moving and what that means for them. Putting that together took most of a working day for each estate or project.
+At Thrive Property Advisory, the most valuable thing an agent can send an existing client is a clear view of their own market: what homes like theirs have sold for, which way prices are moving and what that means for them. Putting that together took about a working day for each estate or project.
 
 Every report meant pulling HDB resale prices from data.gov.sg or URA transaction records, working out the numbers, picking benchmark sales and laying out a branded report by hand, then exporting images for WhatsApp. Doing that for every client, every time, was out of reach.
 
@@ -77,7 +77,7 @@ Every Human Horizon engagement runs on the [PACT](/how-we-work). At Thrive, nobo
 
 ## What did the team adopt?
 
-[AI adoption](/what-we-do/adopt) at Thrive means two [AI assistants](/insights/glossary/ai-assistant) now prepare the groundwork, and agents review and send. Customised, branded reports for all 26 HDB towns are ready in 20 minutes, so existing clients hear about their market regularly rather than only when they ask.
+[AI adoption](/what-we-do/adopt) at Thrive means two [AI assistants](/insights/glossary/ai-assistant) now prepare the groundwork, and agents review and send. With a report ready for every HDB town, existing clients hear about their market regularly rather than only when they ask.
 
 ## How was the return measured?
 
