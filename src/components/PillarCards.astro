@@ -65,7 +65,8 @@ const { compact = false } = Astro.props as { compact?: boolean };
   @media (max-width: 720px) {
     .pcards { grid-template-columns: 1fr; gap: var(--s1); }
     .pcard { grid-template-columns: 34% 1fr; grid-template-rows: auto 1fr; column-gap: var(--s2); row-gap: 6px; padding: var(--s2); }
-    .pimg, .compact .pimg { grid-row: 1 / span 2; width: calc(100% + var(--s2)); height: calc(100% + 2 * var(--s2)); min-height: 120px; margin: calc(var(--s2) * -1) 0 calc(var(--s2) * -1) calc(var(--s2) * -1); aspect-ratio: auto; }
+    /* height 0 + min-height: the photo fills the card's height but never sets it, so every card is as tall as its words. */
+    .pimg, .compact .pimg { grid-row: 1 / span 2; align-self: stretch; width: calc(100% + var(--s2)); height: 0; min-height: calc(100% + 2 * var(--s2)); margin: calc(var(--s2) * -1) 0 calc(var(--s2) * -1) calc(var(--s2) * -1); aspect-ratio: auto; }
     .pcard .h3d { grid-column: 2; align-self: end; font-size: 20px; }
     .pcard .prow-out { grid-column: 2; font-size: 15px; line-height: 1.4; }
     .pcard .dlv { grid-column: 1 / -1; }

@@ -13,6 +13,11 @@ subtitle: "Market reports built from official HDB and URA data, checked and sent
 tools: [Claude]
 services: [implement, train, adopt]
 industry: property-agencies
+# Homepage figures (YJ's numbers, 22 Nov 2026, for the client to confirm).
+highlights:
+  - { figure: "99.8%", label: "less time on market reports: 26 working days to 20 minutes" }
+  - { figure: "26", label: "branded reports, one for every HDB town" }
+  - { figure: "2", label: "AI assistants, with agents checking every figure" }
 teams: [sales]
 workflows:
   - team: sales
@@ -40,7 +45,7 @@ team:
     - { name: "AI market report assistant", does: "Builds the branded two-page market report as a PDF and WhatsApp-ready pages.", reportsTo: "Property agents" }
 date: 2026-11-22
 publish: false
-featured: false
+featured: true
 notionPage: https://app.notion.com/p/420d0a6f047e815eb252f8f84ca205f4
 ---
 
