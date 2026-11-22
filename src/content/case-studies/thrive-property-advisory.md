@@ -68,10 +68,10 @@ The founder and the three agents learned to work with Claude in hands-on session
 
 Every Human Horizon engagement runs on the [PACT](/#pact). At Thrive, nobody worried that AI would take their job, so Coach became the commitment that mattered most.
 
-- **Coach.** Coaching continued until every agent was confident using the workflow without support, so the time saved is theirs to keep.
-- **Ask and involve.** Agents shaped what goes into a good report, from the benchmarks they trust to the factors they look at when pricing a home, so the output reads like their own analysis.
-- **Track and reinforce.** The time each report took was measured before and after, and the reports were refined until agents were happy to send them.
 - **Promise.** One clear promise held throughout: AI handles the admin, and the client relationship, the advice and the decision to send stay with the agent.
+- **Ask and involve.** Agents shaped what goes into a good report, from the benchmarks they trust to the factors they look at when pricing a home, so the output reads like their own analysis.
+- **Coach.** Coaching continued until every agent was confident using the workflow without support, so the time saved is theirs to keep.
+- **Track and reinforce.** The time each report took was measured before and after, and the reports were refined until agents were happy to send them.
 
 ## What did the team adopt?
 
