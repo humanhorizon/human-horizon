@@ -79,16 +79,18 @@ Nothing is sent automatically. The agent checks every figure, adds their own vie
 
 ## How was the team trained?
 
-The founder and the three agents learned to work with Claude in hands-on sessions. The [AI training](/what-we-do/train) ran alongside the build, on the agents' own estates and clients, so each agent learned to check a report against what they know about the market before it goes out.
+Every agent at Thrive runs their own business. They want more time with clients and less admin, and they want to hand off as much of the routine work as they can. So the [AI training](/what-we-do/train) was built to make each agent self-sufficient, not dependent on anyone else.
+
+The founder and the three agents learned to work with Claude in hands-on sessions, on their own estates and clients. Each agent learned to run a market report for any estate, check the figures against what they know about the market, adjust the seller view in their own words and send it, then do the same for listing updates. By the end, each of them could produce a report whenever a client needed one.
 
 ## How did the PACT keep people first?
 
-Every Human Horizon engagement runs on the [PACT](/#pact). At Thrive, each commitment shaped the work.
+Every Human Horizon engagement runs on the [PACT](/#pact). At Thrive, nobody worried that AI would take their job, so Coach became the commitment that mattered most.
 
-- **Promise.** Agents knew from the start that AI would prepare the reports and updates, and they would keep every client relationship and every piece of advice.
+- **Coach.** Coaching continued until every agent was confident using both workflows without support, so the time saved is theirs to keep.
 - **Ask and involve.** Agents shaped what goes into a good report, from the benchmarks they trust to the factors they look at when pricing a home, so the output reads like their own analysis.
-- **Coach.** Support continued while agents built confidence in checking and adjusting AI output.
 - **Track and reinforce.** The time each workflow took was measured before and after, and the reports were refined until agents were happy to send them.
+- **Promise.** One clear promise held throughout: AI handles the admin, and the client relationship, the advice and the decision to send stay with the agent.
 
 ## What did the team adopt?
 
