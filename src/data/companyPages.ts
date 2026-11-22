@@ -9,7 +9,7 @@ export const about = {
   description: 'Human Horizon is a Singapore AI consultancy founded by Jaye Wang and Wei Lin. We build AI workflows and agents into everyday work and train staff to run them.',
   kicker: 'About Human Horizon',
   title: 'AI should lift people, not leave them behind',
-  lead: 'Human Horizon is a Singapore AI consultancy founded by Jaye Wang and Wei Lin. We work alongside your team on the work they already do, train them on it and help it stick, so your people come through the change more capable and still in charge.',
+  lead: 'Human Horizon is a Singapore AI consultancy founded by Jaye Wang and Wei Lin. We work alongside each team on the work they already do, train them on it and help it stick, so people come through the change more capable and still in charge.',
   story: {
     title: 'Why we started Human Horizon',
     paras: [
@@ -21,8 +21,8 @@ export const about = {
   beliefsTitle: 'What we believe',
   beliefs: [
     { title: 'AI is a people change', body: 'Tools are the easy part. Whether AI sticks depends on whether people trust it, shape it and see it make their work better.' },
-    { title: 'Customised to your work', body: 'Courses teach AI in general terms, so the impact is never felt in the work itself. We shape AI around the tasks your team does every week, which is where the real return shows.' },
-    { title: 'Show the change', body: 'Founders deserve to see what changed. The ROI Transformation Report shows the hours saved, valued at your own rates.' },
+    { title: 'Customised to the work', body: 'Courses teach AI in general terms, so the impact is never felt in the work itself. We shape AI around the tasks each team does every week, which is where the real return shows.' },
+    { title: 'Show the change', body: 'Founders deserve to see what changed. The ROI Transformation Report shows the hours saved, valued at the firm’s own rates.' },
   ],
   founders: {
     title: 'The people behind Human Horizon',
@@ -30,44 +30,44 @@ export const about = {
   },
   people: {
     title: 'We hold ourselves to the PACT.',
-    body: 'Four commitments shape every engagement, so your people know where they stand and help shape the change instead of waiting to see what happens to them.',
+    body: 'Four commitments shape every engagement, so people know where they stand and help shape the change instead of waiting to see what happens to them.',
   },
 };
 
 export const contact = {
   seoTitle: 'Contact Human Horizon | AI consultancy in Singapore',
-  description: 'Take AI beyond the prompt with Human Horizon. Tell us what slows your team down and book a 30-minute discovery call.',
+  description: 'Take AI beyond the prompt with Human Horizon. Tell us what slows the team down and book a 30-minute discovery call.',
   kicker: 'Contact Human Horizon',
-  title: 'Tell us what slows your team down',
-  lead: 'Share a task or workflow you would like AI to take on, and we will set up a 30-minute discovery call. No sales pitch.',
+  title: 'Tell us what slows the team down',
+  lead: 'Share a task or workflow for AI to take on, and we will set up a 30-minute discovery call. No sales pitch.',
   emailTitle: 'Email us',
   emailNote: 'Prefer email? Write to us directly.',
   form: {
     title: 'Send us a message',
-    note: 'A few lines are enough: what your business does and the work you would most like AI to take on.',
-    availLabel: 'Times that suit you for a call',
+    note: 'A few lines are enough: what the business does and the work it would most like AI to take on.',
+    availLabel: 'Best times for a call',
     availHint: 'For example, Tuesday or Thursday afternoon',
     optional: '(optional)',
     roles: ['Founder or owner', 'C-suite or director', 'Head of department', 'Manager', 'Team lead', 'Team member', 'Other'],
     departments: ['General management', 'Sales and business development', 'Marketing', 'Operations', 'Finance and admin', 'HR and L&D', 'Customer service', 'IT, data and AI', 'Other'],
     sizes: ['1 to 10', '11 to 50', '51 to 200', 'More than 200'],
-    messageLabel: 'What slows your team down?',
+    messageLabel: 'What slows the team down?',
     messageHint: 'The task or workflow, who does it and what slows it down.',
-    consent: 'We use your details only for this enquiry.',
+    consent: 'Details are used only for this enquiry.',
     submit: 'Send message',
     linkError: 'Please keep links to two or fewer, so the message reaches us.',
   },
   thanks: {
     seoTitle: 'Message sent | Human Horizon',
-    description: 'Your message has reached Human Horizon. Thank you for telling us about your team.',
-    title: 'Thanks, your message is with us.',
-    body: 'We appreciate you telling us about your team. If you would rather, you can also write to us directly.',
+    description: 'The message has reached Human Horizon. Thanks for telling us about the team.',
+    title: 'Thanks, the message is with us.',
+    body: 'We appreciate hearing about the team. Writing to us directly works too.',
   },
   stepsTitle: 'What happens next',
   steps: [
-    { title: 'You send a message', body: 'Tell us a little about your business and the work that slows your team down.' },
-    { title: 'A 30-minute discovery call', body: 'We look at that work together, and at where AI could help first. You do not need to prepare anything or know which tools you want.' },
-    { title: 'A proposal for your team', body: 'You see the full scope and the way to start before you commit to anything.' },
+    { title: 'A short message', body: 'Tell us a little about the business and the work that slows the team down.' },
+    { title: 'A 30-minute discovery call', body: 'We look at that work together, and at where AI could help first. There is nothing to prepare, and no need to know which tools to use.' },
+    { title: 'A proposal for the team', body: 'The full scope and the way to start are clear before any commitment.' },
   ],
 };
 
@@ -76,7 +76,7 @@ export const insights = {
   description: 'Blog posts, guides and a plain-English AI glossary for Singapore founders, HR and operations teams bringing AI into everyday work.',
   title: 'Insights',
   lead: 'Practical writing for Singapore founders, HR and operations leads on AI adoption, training and the people side of change.',
-  leadEmpty: 'Practical writing for Singapore founders on AI adoption, training and the people side of change. The first articles are on their way. If a question is on your mind now, ask us on a call.',
+  leadEmpty: 'Practical writing for Singapore founders on AI adoption, training and the people side of change. The first articles are on their way. Questions that cannot wait are welcome on a call.',
   browseTitle: 'Browse by topic',
   glossaryTitle: 'AI glossary',
   glossaryLead: 'The words that come up when a team starts using AI, explained in plain English with an example from work.',
@@ -92,7 +92,7 @@ export const privacy = {
 
 export const terms = {
   seoTitle: 'Terms of use | Human Horizon',
-  description: 'The terms that apply when you use the Human Horizon website, under the laws of Singapore.',
+  description: 'The terms that apply to use of the Human Horizon website, under the laws of Singapore.',
   title: 'Terms of use',
   updated: '15 November 2026',
   sections: termsSections,

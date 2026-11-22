@@ -78,13 +78,13 @@ const schema = [
         <div class="cmp-row cmp-head" role="row">
           <span role="columnheader"><span class="sr">Compared on</span></span>
           <span role="columnheader">A public AI course</span>
-          <span role="columnheader">Training built on your work</span>
+          <span role="columnheader">Training built on the team’s work</span>
         </div>
         {page.compare.map((c) => (
           <div class="cmp-row" role="row">
             <span class="h3 cmp-k" role="rowheader">{c.row}</span>
             <span class="muted" role="cell"><b class="cmp-m">A public AI course: </b>{c.course}</span>
-            <span class="cmp-ours" role="cell"><b class="cmp-m">Training built on your work: </b>{c.ours}</span>
+            <span class="cmp-ours" role="cell"><b class="cmp-m">Training built on the team’s work: </b>{c.ours}</span>
           </div>
         ))}
       </div>
