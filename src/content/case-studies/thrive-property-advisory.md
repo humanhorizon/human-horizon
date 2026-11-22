@@ -5,11 +5,11 @@
 client: Thrive Property Advisory
 logo: /case-studies/thrive-property-advisory-logo.png
 about: "A Singapore property advisory team at PropNex Realty that uses AI and data to help clients make better property decisions."
-title: "Market reports in 20 minutes, not a working day, so every client hears about their market"
+title: "26 branded market reports in 20 minutes, where one estate used to take a working day"
 seoTitle: "AI case study: Thrive Property Advisory | Human Horizon"
 description: "AI case study: how Singapore property advisory Thrive turns HDB resale prices and URA transactions into a branded property market report for each client."
-summary: "AI now turns the latest HDB and URA transaction data into branded market reports, so agents spend their time advising clients."
-subtitle: "AI-built property market reports for existing clients, checked and sent by agents."
+summary: "AI now turns the latest HDB and URA transaction data into customised, branded market reports for all 26 HDB towns in 20 minutes, so agents spend their time advising clients."
+subtitle: "Customised, branded market reports for all 26 HDB towns, checked and sent by agents."
 tools: [Claude]
 services: [implement, train, adopt]
 industry: property-agencies
@@ -17,15 +17,17 @@ teams: [sales]
 workflows:
   - team: sales
     name: Property market reports
-    result: less time to prepare a market report
+    result: less time to prepare market reports for every HDB town
     summary:
       before: "Data pulled, charted and designed by hand for each report."
-      now: "A branded two-page market report built from the latest official data."
+      now: "Customised, branded two-page reports for all 26 HDB towns, built from the latest official data."
     before: "For each estate or project, an agent pulled HDB resale records from data.gov.sg or URA transactions, filtered them by flat type, model and size, worked out the median, price range and price per square foot, picked the benchmark sales, built the charts and laid out the report by hand, then exported images for WhatsApp."
     after: "An AI market data assistant pulls the latest official HDB and URA records for the estate and home type, keeps confirmed sales apart from asking prices and estimates, and labels each model. An AI market report assistant builds the branded two-page report, with the price trend, typical price band, benchmark sales, any new record and a note on data limits, as a PDF and WhatsApp-ready pages. The agent checks every figure, adds their seller advice and sends it."
     staff: Property agents
     people: "Explaining what the numbers mean for each homeowner and starting the conversations that lead to a sale."
-    time: { before: "1 working day", after: "20 minutes", beforeMinutes: 480, afterMinutes: 20, unit: "per report" }
+    # Before: about 1 working day for one estate's report. Now: 20 minutes for one report per HDB town, 26 in all
+    # (26 towns in the data.gov.sg HDB resale dataset). Like for like, 26 working days (12,480 minutes) to 20 minutes.
+    time: { before: "1 working day per estate", after: "20 minutes for all 26 towns", beforeMinutes: 12480, afterMinutes: 20, unit: "for a full set of 26 town reports" }
     humans: 3
     agents: 2
 team:
@@ -75,11 +77,11 @@ Every Human Horizon engagement runs on the [PACT](/how-we-work). At Thrive, nobo
 
 ## What did the team adopt?
 
-[AI adoption](/what-we-do/adopt) at Thrive means two [AI assistants](/insights/glossary/ai-assistant) now prepare the groundwork, and agents review and send. A market report for any estate is ready in minutes, so existing clients hear about their market regularly rather than only when they ask.
+[AI adoption](/what-we-do/adopt) at Thrive means two [AI assistants](/insights/glossary/ai-assistant) now prepare the groundwork, and agents review and send. Customised, branded reports for all 26 HDB towns are ready in 20 minutes, so existing clients hear about their market regularly rather than only when they ask.
 
 ## How was the return measured?
 
-The results were reported to Thrive's management in an ROI Transformation Report, which sets out the time the workflow took before and after AI: a property market report went from about 1 working day to 20 minutes.
+The results were reported to Thrive's management in an ROI Transformation Report, which sets out the time the workflow took before and after AI: one estate's market report took about 1 working day; now reports for all 26 HDB towns, each customised and branded, take 20 minutes in total.
 
 With the time measured before and after, the founder can see where the return comes from and where AI should go next.
 
