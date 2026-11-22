@@ -19,7 +19,8 @@ const rows = d.highlights.length
     </span>
     <span class="body">
       <span class="meta"><span class="eyebrow">Case study</span>{industry && <span class="ind">{industry.name}</span>}</span>
-      <h3 class="d h">{d.title}</h3>
+      <h3 class="cname">{d.client}</h3>
+      <span class="d h">{d.title}</span>
       <span class="sub">{d.subtitle}</span>
     </span>
   </span>
@@ -41,7 +42,8 @@ const rows = d.highlights.length
   .meta { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
   .eyebrow { font-size: 14px; font-weight: 600; color: var(--sunrise-text); }
   .ind { font-size: 14px; font-weight: 600; padding: 4px 12px; border-radius: 99px; background: var(--first-light); color: var(--ink); }
-  .h { font-size: clamp(26px, 2.4vw, 36px); line-height: 1.12; text-wrap: balance; margin: 0; }
+  .cname { font-size: clamp(20px, 1.6vw, 24px); font-weight: 600; line-height: 1.2; margin: 0; }
+  .h { font-size: clamp(24px, 2.2vw, 32px); line-height: 1.12; text-wrap: balance; }
   .sub { font-size: 17px; line-height: 1.5; color: var(--slate); }
   /* Each figure is its own call-out: big number, short label, on white. */
   .stats { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: var(--s2); }

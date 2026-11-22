@@ -1,5 +1,5 @@
 ---
-// One case study as a card: a tall logo tile on the left; industry, headline and one line on the right.
+// One case study as a card: a tall logo tile on the left; industry, client name as the heading, then the result line and one line on the right.
 import type { CaseStudy } from '../lib/caseStudies';
 import { industries } from '../data/site';
 interface Props { cs: CaseStudy; heading?: 'h2' | 'h3' }
@@ -17,7 +17,8 @@ const H = heading;
       {industry && <span class="csc-ind">{industry.name}</span>}
       {!d.publish && <span class="csc-draft">Draft</span>}
     </span>
-    <H class="d csc-h">{d.title}</H>
+    <H class="csc-h">{d.client}</H>
+    <span class="d csc-title">{d.title}</span>
     <span class="csc-sub">{d.subtitle}</span>
   </span>
 </a>
@@ -32,6 +33,7 @@ const H = heading;
   .csc-meta { display: flex; gap: 8px; flex-wrap: wrap; }
   .csc-ind { font-size: 14px; font-weight: 600; padding: 4px 12px; border-radius: 99px; background: var(--first-light); color: var(--ink); }
   .csc-draft { font-size: 12px; font-weight: 600; padding: 4px 10px; border-radius: 99px; background: var(--ink); color: #fff; }
-  .csc-h { font-size: clamp(24px, 2vw, 30px); line-height: 1.12; text-wrap: balance; margin: 0; }
+  .csc-h { font-size: clamp(20px, 1.6vw, 24px); font-weight: 600; line-height: 1.2; margin: 0; }
+  .csc-title { font-size: clamp(22px, 1.8vw, 28px); line-height: 1.15; text-wrap: balance; }
   .csc-sub { font-size: 16px; line-height: 1.5; color: var(--slate); }
 </style>
