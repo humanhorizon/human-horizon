@@ -17,3 +17,13 @@ Resized to 2000 px on the long side and compressed for the web.
 | industries/logistics-freight.jpg | Industry panel | https://unsplash.com/photos/yx20mpDyr2I | Timelab | 2026-11-22 |
 | industries/property-agencies.jpg | Industry panel | https://unsplash.com/photos/4453DIQWtsQ | Tobias Wilden | 2026-11-22 |
 | industries/trading-distribution.jpg | Industry panel | https://unsplash.com/photos/rN6zOBGSZjM | Adrien Olichon | 2026-11-22 |
+| method.jpg | Method strip (How we work) | https://unsplash.com/photos/6hvnSzBSNyI | Alexander Nariswari | 2026-11-22 |
+| adopt.jpg | Service card: Adoption support | https://unsplash.com/photos/tk7bmlH-c-8 | Ryunosuke Kikuno | 2026-11-22 |
+| industries/education.jpg | Industry panel | https://unsplash.com/photos/GsonNDSTGE0 | Vadim Morozov | 2026-11-22 |
+| industries/marketing-agencies.jpg | Industry panel | https://unsplash.com/photos/qaoOTEsslKo | Dmytro Yarish | 2026-11-22 |
+| industries/recruitment.jpg | Industry panel | https://unsplash.com/photos/QU6B63EDfD0 | Pascal Meier | 2026-11-22 |
+| teams/sales.jpg | Team panel | https://unsplash.com/photos/fpGNSxvx1g8 | phyo min | 2026-11-22 |
+| teams/marketing.jpg | Team panel | https://unsplash.com/photos/9buwiennNqg | Van Tay Media | 2026-11-22 |
+| teams/operations.jpg | Team panel | https://unsplash.com/photos/Mq4wJuX1-OQ | Edi Kurniawan | 2026-11-22 |
+| teams/customer-service.jpg | Team panel | https://unsplash.com/photos/N3Bf0ArT5J0 | Fiqih Alfarish | 2026-11-22 |
+| teams/finance-admin.jpg | Team panel | https://unsplash.com/photos/XWvqhWCAAoo | Mimi Thian | 2026-11-22 |
