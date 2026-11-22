@@ -30,7 +30,7 @@ const faqSchema = {
 <Base title="AI consultancy in Singapore for AI workflows | Human Horizon" schema={[faqSchema]}>
 
   <section class="hero home-hero">
-    <div class="wrap"><h1 class="d h1 hero-h clear"><span class="kicker">{hero.kicker}</span>{hero.title}</h1></div>
+    <div class="wrap"><h1 class="d hero-h clear"><span class="kicker">{hero.kicker}</span>{hero.title}</h1></div>
     <Supergraphic rise />
     <div class="wrap hero-low">
       <p class="lead muted clear">{hero.sub}</p>
@@ -38,8 +38,10 @@ const faqSchema = {
         <a class="btn btn-ink" href={ctas.call.href}>{ctas.call.label}</a>
         <a class="btn btn-ghost" href="#what-we-do">See what we build</a>
       </div>
-      <p class="proof clear"><span>{hero.proof.text}</span> <a class="lnk" href={hero.proof.href}>{hero.proof.label}</a></p>
-      <p class="cap">{hero.credibility}</p>
+      <div class="trust clear">
+        <p class="proof">{hero.proof.text} <a class="lnk" href={hero.proof.href}>{hero.proof.label}</a></p>
+        <p class="cap">{hero.credibility}</p>
+      </div>
     </div>
   </section>
 
@@ -141,16 +143,20 @@ const faqSchema = {
 
 <style>
   /* Text beside the ring stops short of its footprint: about 0.58 of the ring size in from the right edge. */
-  .hero { --S: clamp(200px, 56vw, 820px); --mw: 760px; }
+  .hero { --S: clamp(200px, 56vw, 820px); --mw: 900px; }
   .clear { max-width: min(var(--mw), calc(100vw - var(--S) * 0.58 - var(--gutter) - 32px)); }
   .hero-low .clear { --mw: 560px; }
   .hero { position: relative; overflow: hidden; padding-top: clamp(40px, 6vw, 96px); padding-bottom: clamp(56px, 7vw, 96px); }
   .hero-h { margin-bottom: 28px; position: relative; z-index: 1; text-wrap: balance; }
-  .kicker { display: block; margin-bottom: var(--s3); font: 600 16px/1.4 var(--body); letter-spacing: 0; color: var(--sunrise-text); }
-  .proof { font-size: 17px; line-height: 1.55; padding: 14px 18px; border-radius: 14px; background: var(--first-light); }
+  .kicker { display: block; margin-bottom: var(--s3); font: 600 15px/1.4 var(--body); letter-spacing: 0; color: var(--sunrise-text); }
+  /* Hierarchy: the four-word headline carries the hero; kicker, lead, buttons and proof step down from it. */
+  .hero-h { font-size: clamp(54px, 8.2vw, 128px); line-height: .94; letter-spacing: -0.03em; }
+  .hero-low .lead { font-size: clamp(18px, 1.4vw, 21px); color: var(--ink); opacity: .78; }
+  .trust { display: grid; gap: 6px; padding-top: var(--s2); border-top: 1px solid var(--line); }
+  .proof { font-size: 15px; line-height: 1.55; color: var(--ink); }
   .proof .lnk { white-space: nowrap; }
   .cs-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 420px), 1fr)); gap: var(--s3); }
-  .hero-low { padding-top: 28px; display: flex; flex-direction: column; gap: 28px; align-items: flex-start; }
+  .hero-low { padding-top: 36px; display: flex; flex-direction: column; gap: 32px; align-items: flex-start; }
 
 
   .pt0 { padding-top: 0; }
