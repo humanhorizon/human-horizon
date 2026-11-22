@@ -21,7 +21,7 @@ const url = `${site.url}/case-studies/${cs.id}`;
 const industry = industries.find((s) => s.slug === d.industry);
 const teamOf = (slug: string) => teams.find((t) => t.slug === slug);
 const caseTeams = d.teams.map(teamOf).filter((t) => t !== undefined);
-const lower = (s: string) => s[0].toLowerCase() + s.slice(1);
+const lower = (s: string) => (/^[A-Z]{2}/.test(s) ? s : s[0].toLowerCase() + s.slice(1));
 const iso = (x: Date) => `${x.toISOString().slice(0, 10)}T00:00:00+08:00`;
 // The after bar is drawn to scale, with a floor so a few minutes against days is still visible.
 const share = (w: CaseWorkflow) => Math.max((w.time.afterMinutes / w.time.beforeMinutes) * 100, 0.8);
