@@ -8,14 +8,14 @@ title: New products listed in 8 minutes, and half the sales day back, with the s
 seoTitle: "AI case study: Anri Gifts, Singapore gifting | Human Horizon"
 description: "AI case study: two staff at Singapore gifting business Anri Gifts get a product listed in 8 minutes and spend 5 minutes a day on quotations, reviewing every output."
 summary: Each member of staff now reviews what AI prepares across sourcing, catalogue work, product images and quotations, and spends the time gained on suppliers and new clients.
-subtitle: "AI automation across sourcing, product images and quotations."
+subtitle: "Sourcing, product images and quotations automated, ready for staff to approve and send."
 tools: [Claude]
 services: [implement, train, adopt]
 industry: trading-distribution
 # Homepage figures from YJ, 22 Nov 2026 (the S$ figure is YJ's own valuation of sales time back a year).
 highlights:
-  - { figure: "99.7%", label: "less time sourcing: 5 working days to 8 minutes per product" }
-  - { figure: "97.9%", label: "less time on quotations: 4 hours to 5 minutes a day" }
+  - { figure: "99.7%", label: "less time sourcing: a new product listed in 8 minutes, down from 5 working days" }
+  - { figure: "97.9%", label: "less time on quotations: 5 minutes a day, down from 4 hours" }
   - { figure: "S$37.6K", label: "of sales time back a year" }
 teams: [operations, marketing, sales]
 workflows:
@@ -37,7 +37,7 @@ workflows:
     result: less time preparing product images
     summary:
       before: "Product and pack images redone by hand, one product at a time."
-      now: "AI-prepared images and product pages, approved by procurement."
+      now: "Product images and pages automated, ready for procurement to approve."
     before: "Product and pack images were redone by hand for each new product before it could appear on the website or in collateral."
     after: "An AI design assistant prepares the product and pack images for the catalogue and product pages. Procurement staff review and approve them."
     staff: Procurement staff
@@ -50,7 +50,7 @@ workflows:
     result: less time on quotations each day
     summary:
       before: "Every quotation and reply put together by hand."
-      now: "AI-drafted quotations and replies, checked and sent by sales."
+      now: "Quotations and replies automated, ready for sales to check and send."
     before: "Each quotation meant looking up customer information, products and prices across custom CRM database software that worked poorly with other tools, then drafting every email and WhatsApp reply by hand."
     after: "An AI sales assistant reads each customer request, drafts replies and builds a PDF-ready quotation in minutes. The sales team reviews every draft before it is sent."
     staff: Sales staff

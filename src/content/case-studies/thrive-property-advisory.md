@@ -9,15 +9,18 @@ title: "26 branded market reports in 20 minutes, where one estate used to take a
 seoTitle: "AI case study: Thrive Property Advisory | Human Horizon"
 description: "AI case study: property advisory Thrive builds branded market reports for all 26 HDB towns in 20 minutes, where one estate took a working day."
 summary: "AI now turns the latest HDB resale data into customised, branded market reports for all 26 HDB towns in 20 minutes, so agents spend their time advising clients."
-subtitle: "Market reports built from official HDB and URA data, checked and sent by agents."
+subtitle: "Automated market reports built from official HDB and URA data, ready for agents to check and send to clients."
 tools: [Claude]
 services: [implement, train, adopt]
 industry: property-agencies
-# Homepage figures (YJ's numbers, 22 Nov 2026, for the client to confirm).
+# Homepage figures (YJ's numbers, 22 Nov 2026, for the client to confirm). S$ figure from the value calculator
+# (Sales 101 Playbook page 21): 207.7 hours saved per full set x 4 sets a year (ASSUMED quarterly refresh, in line
+# with URA's quarterly releases) = 830.7 hours x SGD 42.10 (sales and business development, executive proxy rate)
+# x 85% realisation fallback = SGD 29,725. Confirm the refresh frequency and agents' rate with the client.
 highlights:
-  - { figure: "99.8%", label: "less time on market reports: 26 working days to 20 minutes" }
-  - { figure: "26", label: "branded reports, one for every HDB town" }
-  - { figure: "2", label: "AI assistants, with agents checking every figure" }
+  - { figure: "99.8%", label: "less time on market reports: 20 minutes, down from 26 working days" }
+  - { figure: "26", label: "branded reports automated, one for every HDB town" }
+  - { figure: "S$29.7K", label: "of agent time back a year" }
 teams: [sales]
 workflows:
   - team: sales
@@ -25,7 +28,7 @@ workflows:
     result: less time to prepare market reports for every HDB town
     summary:
       before: "Data pulled, charted and designed by hand for each report."
-      now: "Customised, branded two-page reports for all 26 HDB towns, built from the latest official data."
+      now: "Branded two-page reports for all 26 HDB towns, automated from the latest official data, ready for agents to check and send."
     before: "For each estate or project, an agent pulled HDB resale records from data.gov.sg or URA transactions, filtered them by flat type, model and size, worked out the median, price range and price per square foot, picked the benchmark sales, built the charts and laid out the report by hand, then exported images for WhatsApp."
     after: "An AI market data assistant pulls the latest official HDB and URA records for the estate and home type, keeps confirmed sales apart from asking prices and estimates, and labels each model. An AI market report assistant builds the branded two-page report, with the price trend, typical price band, benchmark sales, any new record and a note on data limits, as a PDF and WhatsApp-ready pages. The agent checks every figure, adds their seller advice and sends it."
     staff: Property agents
@@ -86,7 +89,7 @@ Every Human Horizon engagement runs on the [PACT](/how-we-work). At Thrive, nobo
 
 ## How was the return measured?
 
-The results were reported to Thrive's management in an ROI Transformation Report, which sets out the time the workflow took before and after AI: one estate's market report took about 1 working day; now reports for all 26 HDB towns, each customised and branded, take 20 minutes in total.
+The results were reported to Thrive's management in an ROI Transformation Report, which sets out the time the workflow took before and after AI: one estate's market report took about 1 working day; now reports for all 26 HDB towns, each customised and branded, take 20 minutes in total. At four full sets of town reports a year, that is about 830 hours of agent time back, valued at S$29.7K a year.
 
 With the time measured before and after, the founder can see where the return comes from and where AI should go next.
 
