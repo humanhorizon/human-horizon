@@ -1,7 +1,5 @@
 ---
-# DRAFT (publish: false, shows on the dev server only). Times are YJ's figures (22 Nov 2026) for the client to confirm, incl. that one estate = one HDB town; team size drafted by Human Horizon
-# on 22 Nov 2026; the market report workflow follows the client's own brief and sample report. The client confirms
-# or corrects everything before Client approved is ticked.
+# Published 23 Nov 2026 on YJ's instruction (Client approved and Approve to publish ticked in Notion).
 client: Thrive Property Advisory
 logo: /case-studies/thrive-property-advisory-logo.png
 about: "A Singapore property advisory team at PropNex Realty that uses AI and data to help clients make better property decisions."
@@ -48,7 +46,7 @@ team:
     - { name: "AI market data assistant", does: "Pulls the latest HDB and URA transaction records and separates confirmed sales from estimates.", reportsTo: "Property agents" }
     - { name: "AI market report assistant", does: "Builds the branded two-page market report as a PDF and WhatsApp-ready pages.", reportsTo: "Property agents" }
 date: 2026-11-22
-publish: false
+publish: true
 featured: true
 notionPage: https://app.notion.com/p/420d0a6f047e815eb252f8f84ca205f4
 ---
