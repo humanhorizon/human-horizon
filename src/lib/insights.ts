@@ -32,8 +32,12 @@ export async function getArticles() {
     .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 }
 
+// Glossary terms are paced the same way as articles.
 export async function getTerms() {
-  return (await getCollection('glossary')).sort((a, b) => a.data.term.localeCompare(b.data.term, 'en'));
+  const today = todaySgt();
+  return (await getCollection('glossary'))
+    .filter((t) => t.data.date.toISOString().slice(0, 10) <= today)
+    .sort((a, b) => a.data.term.localeCompare(b.data.term, 'en'));
 }
 
 export const articleCard = (a: Article, i = 0): Card => ({
