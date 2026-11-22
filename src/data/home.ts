@@ -6,12 +6,6 @@ export const hero = {
   kicker: 'AI consultancy in Singapore for workflows, agents and training',
   title: 'Go beyond the prompt.',
   sub: 'Most teams use ChatGPT or Claude one prompt at a time. We build AI workflows and agents that run the repeat work from start to finish, and train the team to use them.',
-  // Client numbers from the published Anri Gifts case study: 5 working days (2,400 minutes) to 8 minutes per product.
-  proof: {
-    text: 'Anri Gifts now lists a new product in 8 minutes, not 5 working days: about 40 working hours back on every product.',
-    label: 'Read the Anri Gifts case study',
-    href: '/case-studies/anri-gifts',
-  },
   credibility: 'Founded by leaders who have built at Gojek, Alibaba and Meta.',
 };
 
@@ -28,10 +22,11 @@ export const pact = {
   ],
 };
 
-// From prompt to agent: one everyday task shown at three levels. Illustrative, no numbers.
+// From prompt to agent: one everyday task, before and after. The steps stay the same; what changes is who does
+// each one, so the map changes colour rather than redrawing. Illustrative, no numbers.
 export const ladder = {
   title: 'From prompt to agent.',
-  lead: 'A ChatGPT or Claude subscription can do far more than answer one prompt at a time. Here is the same everyday task at each level.',
+  lead: 'A ChatGPT or Claude subscription can do far more than answer one prompt at a time. Here is the same everyday task, before and after.',
   task: 'A customer emails to ask for a quotation.',
   levels: [
     {
@@ -39,42 +34,23 @@ export const ladder = {
       name: 'Prompt',
       line: 'A person asks, AI answers.',
       body: 'Someone copies the request into ChatGPT, pastes in the prices, fixes the draft and sends it. Every quotation starts from zero, and only the people who are good at prompting get much out of it.',
-      steps: [
-        { who: 'person', label: 'Copy the request in' },
-        { who: 'person', label: 'Write a prompt' },
-        { who: 'person', label: 'Paste in prices' },
-        { who: 'ai', label: 'Draft a reply' },
-        { who: 'person', label: 'Fix and send' },
-      ],
-    },
-    {
-      key: 'workflow',
-      name: 'AI workflow',
-      line: 'The steps run in order, every time.',
-      body: 'A new request starts the workflow. AI reads it, pulls the right products and prices, and drafts the quotation in the business’s own format. A person checks it and sends.',
-      steps: [
-        { who: 'trigger', label: 'Request arrives' },
-        { who: 'ai', label: 'Read the request' },
-        { who: 'ai', label: 'Pull products and prices' },
-        { who: 'ai', label: 'Draft the quotation' },
-        { who: 'person', label: 'Check and send' },
-      ],
     },
     {
       key: 'agent',
-      name: 'AI agent',
-      line: 'AI works out the next step.',
-      body: 'An AI agent handles the request from start to finish: it drafts questions for any missing details, checks stock, suggests alternatives and prepares the quotation and the reply. A person approves before anything goes to the customer.',
-      steps: [
-        { who: 'trigger', label: 'Request arrives' },
-        { who: 'ai', label: 'Draft questions on gaps' },
-        { who: 'ai', label: 'Check stock and prices' },
-        { who: 'ai', label: 'Suggest alternatives' },
-        { who: 'ai', label: 'Prepare quote and reply' },
-        { who: 'person', label: 'Approve' },
-      ],
+      name: 'AI workflow and agent',
+      line: 'AI runs the steps, a person approves.',
+      body: 'A new request starts the work on its own. AI reads it, drafts questions for any missing details, checks stock and prices, and prepares the quotation and the reply in the business’s own format. A person approves before anything goes to the customer.',
     },
   ],
+  // Who does each step at each level: person, ai, or trigger (starts on its own).
+  steps: [
+    { label: 'Spot the request', prompt: 'person', agent: 'trigger' },
+    { label: 'Read the request', prompt: 'person', agent: 'ai' },
+    { label: 'Ask about missing details', prompt: 'person', agent: 'ai' },
+    { label: 'Look up stock and prices', prompt: 'person', agent: 'ai' },
+    { label: 'Draft the quotation and reply', prompt: 'ai', agent: 'ai' },
+    { label: 'Check and send', prompt: 'person', agent: 'person' },
+  ] as { label: string; prompt: string; agent: string }[],
   // Cost of inaction, said once.
   cost: 'Stopping at the prompt keeps the repeat work on people’s desks: the same copying, pasting and checking, every day.',
 };

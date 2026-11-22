@@ -9,7 +9,7 @@ import Founders from '../components/Founders.astro';
 import PilotPanel from '../components/PilotPanel.astro';
 import PromptLadder from '../components/PromptLadder.astro';
 import PactStrip from '../components/PactStrip.astro';
-import CaseStudyCard from '../components/CaseStudyCard.astro';
+import CaseStudyStats from '../components/CaseStudyStats.astro';
 import { getFeatured } from '../lib/caseStudies';
 import { pillars, industries, teams, ctas } from '../data/site';
 import { industryPages, teamPages } from '../data/segmentPages';
@@ -39,7 +39,6 @@ const faqSchema = {
         <a class="btn btn-ghost" href="#what-we-do">See what we build</a>
       </div>
       <div class="trust clear">
-        <p class="proof">{hero.proof.text} <a class="lnk" href={hero.proof.href}>{hero.proof.label}</a></p>
         <p class="cap">{hero.credibility}</p>
       </div>
     </div>
@@ -64,7 +63,7 @@ const faqSchema = {
           <h2 class="d h2" id="proof-h">What it looks like in practice.</h2>
           <a class="lnk" href="/case-studies">All case studies</a>
         </div>
-        <div class="cs-grid">{featured.map((cs) => <CaseStudyCard cs={cs} />)}</div>
+        <div class="cs-grid">{featured.map((cs) => <CaseStudyStats cs={cs} />)}</div>
       </div>
     </section>
   )}
@@ -153,8 +152,6 @@ const faqSchema = {
   .hero-h { font-size: clamp(54px, 8.2vw, 128px); line-height: .94; letter-spacing: -0.03em; }
   .hero-low .lead { font-size: clamp(18px, 1.4vw, 21px); color: var(--ink); opacity: .78; }
   .trust { display: grid; gap: 6px; padding-top: var(--s2); border-top: 1px solid var(--line); }
-  .proof { font-size: 15px; line-height: 1.55; color: var(--ink); }
-  .proof .lnk { white-space: nowrap; }
   .cs-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 420px), 1fr)); gap: var(--s3); }
   .hero-low { padding-top: 36px; display: flex; flex-direction: column; gap: 32px; align-items: flex-start; }
 

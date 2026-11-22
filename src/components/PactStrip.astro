@@ -7,7 +7,7 @@ const img = photo('method.jpg');
 ---
 <section class="pstrip bg-ink">
   <div class:list={['wrap pgrid', { 'has-img': img }]}>
-    {img && <img class="pimg" src={img} alt="A curved timber lattice canopy against the sky" loading="lazy" decoding="async" width="1200" height="900" />}
+    {img && <img class="pimg" src={img} alt="A team working through a task together" loading="lazy" decoding="async" width="1200" height="900" />}
     <div class="ptext">
       <h2 class="d ph">{pact.title}</h2>
       <p class="muted">{pact.lead}</p>
@@ -31,11 +31,10 @@ const img = photo('method.jpg');
   .letters li { display: grid; gap: 6px; padding: var(--s2); border-radius: 16px; background: var(--dusk); }
   .letter { font-size: clamp(36px, 3vw, 48px); line-height: .85; color: var(--sunrise); }
   .lt { font-size: 14px; font-weight: 600; line-height: 1.3; color: #fff; }
-  /* With a photo: picture left, text and the four letters stacked on the right. */
-  .has-img { grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr); align-items: stretch; }
-  .has-img .ptext { align-content: center; }
-  .has-img .letters { grid-column: 2; }
-  .pimg { grid-row: span 2; width: 100%; height: 0; min-height: 100%; object-fit: cover; border-radius: 20px; filter: var(--photo-grade); }
-  @media (max-width: 1000px) { .pgrid, .has-img { grid-template-columns: 1fr; } .has-img .letters { grid-column: auto; } .pimg { grid-row: auto; height: auto; aspect-ratio: 16 / 9; min-height: 0; } }
+  /* With a photo: a small portrait beside the text, the four letters as a 2 by 2 block. People, not buildings, since the PACT is about people. */
+  .has-img { grid-template-columns: clamp(180px, 18vw, 260px) minmax(0, 1fr) minmax(0, 340px); }
+  .has-img .letters { grid-template-columns: 1fr 1fr; }
+  .pimg { width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 20px; filter: var(--photo-grade); }
+  @media (max-width: 1000px) { .pgrid, .has-img { grid-template-columns: 1fr; } .pimg { aspect-ratio: 16 / 9; } }
   @media (max-width: 520px) { .letters { grid-template-columns: 1fr 1fr; } }
 </style>

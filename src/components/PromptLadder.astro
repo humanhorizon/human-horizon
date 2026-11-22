@@ -1,11 +1,14 @@
 ---
-// From prompt to agent: one everyday task at three levels. The reader picks a level; the steps redraw in order,
-// coloured by who does each one, so the shift of work from person to AI is the thing that moves.
-// Without JavaScript all three levels show one after another.
+// From prompt to agent: one everyday task, before and after. The map of steps stays put; switching level
+// recolours each step by who does it, so the shift of work from person to AI is the only thing that moves.
+// Without JavaScript the prompt map shows, with both descriptions underneath.
 import { ladder } from '../data/home';
 const who = { person: 'A person', ai: 'AI', trigger: 'Starts on its own' } as Record<string, string>;
+const first = ladder.levels[0].key;
+const whoAt = (s: { prompt: string; agent: string }, key: string) => (key === 'agent' ? s.agent : s.prompt);
+const count = (key: string) => ladder.steps.filter((s) => whoAt(s, key) === 'person').length;
 ---
-<section class="section ladder" id="prompt-to-agent" data-ladder>
+<section class="section ladder" id="prompt-to-agent" data-ladder data-level={first}>
   <div class="wrap">
     <div class="two lhead">
       <h2 class="d h2">{ladder.title}</h2>
@@ -15,33 +18,33 @@ const who = { person: 'A person', ai: 'AI', trigger: 'Starts on its own' } as Re
     <div class="lgrid">
       <div class="levels" role="tablist" aria-label="Level of AI use">
         {ladder.levels.map((l, i) => (
-          <button type="button" role="tab" class="lvl" id={`lvl-${l.key}`} aria-controls={`pan-${l.key}`} aria-selected={i === 0 ? 'true' : 'false'} tabindex={i === 0 ? 0 : -1}>
+          <button type="button" role="tab" class="lvl" id={`lvl-${l.key}`} aria-controls={`pan-${l.key}`} data-key={l.key} aria-selected={i === 0 ? 'true' : 'false'} tabindex={i === 0 ? 0 : -1}>
             <span class="lvl-n">{l.name}</span>
             <span class="lvl-l">{l.line}</span>
           </button>
         ))}
       </div>
 
-      <div class="panels">
+      <div class="board">
         <p class="task"><span class="cap">The task</span>{ladder.task}</p>
-        {ladder.levels.map((l) => {
-          const mine = l.steps.filter((s) => s.who === 'person').length;
-          return (
-            <div class="panel" role="tabpanel" id={`pan-${l.key}`} aria-labelledby={`lvl-${l.key}`} data-key={l.key}>
-              <h3 class="sr-only">{l.name}</h3>
-              <ol class="flow">
-                {l.steps.map((s, i) => (
-                  <li class={`node ${s.who}`} style={`--i:${i}`}>
-                    <span class="who">{who[s.who]}</span>
-                    <span class="what">{s.label}</span>
-                  </li>
-                ))}
-              </ol>
-              <p class="tally"><b>{mine} of {l.steps.length}</b> steps done by a person</p>
-              <p class="body">{l.body}</p>
-            </div>
-          );
-        })}
+        <ol class="flow" aria-hidden="true">
+          {ladder.steps.map((s, i) => (
+            <li class="node" data-prompt={s.prompt} data-agent={s.agent} style={`--i:${i}`}>
+              <span class="who"><span class="w-prompt">{who[s.prompt]}</span><span class="w-agent">{who[s.agent]}</span></span>
+              <span class="what">{s.label}</span>
+            </li>
+          ))}
+        </ol>
+        <ul class="key" aria-hidden="true">
+          <li><i class="sw person"></i>A person</li><li><i class="sw ai"></i>AI</li><li><i class="sw trigger"></i>Starts on its own</li>
+        </ul>
+        {ladder.levels.map((l) => (
+          <div class="panel" role="tabpanel" id={`pan-${l.key}`} aria-labelledby={`lvl-${l.key}`}>
+            <p class="tally"><b>{count(l.key)} of {ladder.steps.length}</b> steps done by a person</p>
+            <p class="body">{l.body}</p>
+            <ol class="sr-only">{ladder.steps.map((s) => <li>{s.label}: {who[whoAt(s, l.key)]}</li>)}</ol>
+          </div>
+        ))}
       </div>
     </div>
 
@@ -50,7 +53,7 @@ const who = { person: 'A person', ai: 'AI', trigger: 'Starts on its own' } as Re
 </section>
 
 <script>
-  const root = document.querySelector('[data-ladder]');
+  const root = document.querySelector<HTMLElement>('[data-ladder]');
   if (root) {
     root.classList.add('js');
     const tabs = [...root.querySelectorAll<HTMLButtonElement>('.lvl')];
@@ -58,6 +61,7 @@ const who = { person: 'A person', ai: 'AI', trigger: 'Starts on its own' } as Re
     const select = (tab: HTMLButtonElement, focus = false) => {
       tabs.forEach((t) => { const on = t === tab; t.setAttribute('aria-selected', String(on)); t.tabIndex = on ? 0 : -1; });
       panels.forEach((p) => { p.hidden = p.id !== tab.getAttribute('aria-controls'); });
+      root.dataset.level = tab.dataset.key;
       if (focus) tab.focus();
     };
     tabs.forEach((t, i) => {
@@ -72,61 +76,63 @@ const who = { person: 'A person', ai: 'AI', trigger: 'Starts on its own' } as Re
 </script>
 
 <style>
-  .lhead { margin-bottom: var(--s5); }
-  .lgrid { display: grid; grid-template-columns: minmax(240px, 320px) 1fr; gap: var(--s4); align-items: start; }
+  .lhead { margin-bottom: var(--s4); }
+  .lgrid { display: grid; grid-template-columns: minmax(220px, 300px) 1fr; gap: var(--s4); align-items: start; }
 
-  /* The three levels read as rungs: each one up hands more of the task to AI. */
-  .levels { display: grid; gap: var(--s1); position: relative; }
+  .levels { display: grid; gap: var(--s1); }
   .lvl { display: grid; gap: 4px; text-align: left; padding: var(--s3); border-radius: 16px; border: 1.5px solid var(--line); background: #fff; color: var(--ink); cursor: pointer; font: inherit; transition: border-color .2s, background .2s; }
   .lvl:hover { border-color: var(--ink); }
   .lvl[aria-selected='true'] { background: var(--ink); border-color: var(--ink); color: #fff; }
-  .lvl-n { font: 300 clamp(24px, 2vw, 30px)/1.1 var(--display); }
+  .lvl-n { font: 300 clamp(22px, 1.9vw, 28px)/1.1 var(--display); }
   .lvl-l { font-size: 15px; color: var(--slate); }
   .lvl[aria-selected='true'] .lvl-l { color: var(--on-ink); }
 
-  .panels { background: var(--morning); border-radius: 24px; padding: clamp(24px, 3vw, 40px); display: grid; gap: var(--s3); }
+  .board { background: var(--morning); border-radius: 24px; padding: clamp(24px, 3vw, 36px); display: grid; gap: var(--s3); }
   .task { display: grid; gap: 4px; font: 300 clamp(20px, 1.7vw, 24px)/1.3 var(--display); }
   .task .cap { font-family: var(--body); }
-  .panel { display: grid; gap: var(--s3); }
-  .panel[hidden] { display: none; }
-  .ladder:not(.js) .panel + .panel { padding-top: var(--s3); border-top: 1px solid var(--line); }
 
-  /* Steps run left to right with a connector; colour says who does each one. */
-  .flow { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 28px 32px; }
-  .node { position: relative; display: grid; gap: 4px; min-width: 128px; max-width: 168px; padding: 14px 16px; border-radius: 14px; background: #fff; box-shadow: inset 0 0 0 1.5px var(--ink); }
-  .node:not(:last-child)::after { content: ''; position: absolute; top: 50%; right: -26px; width: 20px; height: 2px; background: var(--slate); opacity: .5; }
-  .node.ai { background: var(--sunrise); box-shadow: none; }
-  .node.trigger { background: transparent; box-shadow: inset 0 0 0 1.5px var(--slate); }
-  .node.trigger .what { color: var(--slate); }
-  .who { font-size: 12px; font-weight: 600; color: var(--slate); }
-  .node.ai .who { color: var(--ink); }
+  /* One fixed map. Each step takes its colour from who does it at the chosen level. */
+  .flow { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 14px; }
+  .node { --bg: #fff; --ring: var(--ink); --who: var(--slate); position: relative; display: grid; gap: 4px; align-content: start; padding: 14px; border-radius: 14px; background: var(--bg); box-shadow: inset 0 0 0 1.5px var(--ring); }
+  .node:not(:last-child)::after { content: ''; position: absolute; top: 50%; right: -12px; width: 10px; height: 2px; background: var(--slate); opacity: .5; }
+  .who { font-size: 12px; font-weight: 600; color: var(--who); }
   .what { font-size: 15px; font-weight: 600; line-height: 1.3; }
+  .w-agent { display: none; }
+  [data-level='agent'] .w-prompt { display: none; }
+  [data-level='agent'] .w-agent { display: inline; }
+  [data-level='prompt'] .node[data-prompt='ai'], [data-level='agent'] .node[data-agent='ai'] { --bg: var(--sunrise); --ring: transparent; --who: var(--ink); }
+  [data-level='prompt'] .node[data-prompt='trigger'], [data-level='agent'] .node[data-agent='trigger'] { --bg: transparent; --ring: var(--slate); }
+
+  .key { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 6px 20px; font-size: 13px; color: var(--slate); }
+  .key li { display: flex; align-items: center; gap: 8px; }
+  .sw { width: 14px; height: 14px; border-radius: 4px; background: #fff; box-shadow: inset 0 0 0 1.5px var(--ink); }
+  .sw.ai { background: var(--sunrise); box-shadow: none; }
+  .sw.trigger { background: transparent; box-shadow: inset 0 0 0 1.5px var(--slate); }
+
+  .panel { display: grid; gap: 10px; border-top: 1px solid var(--line); padding-top: var(--s3); }
+  .panel[hidden] { display: none; }
   .tally { font-size: 15px; color: var(--slate); }
   .tally b { color: var(--ink); }
-  .body { font-size: 17px; line-height: 1.65; max-width: 62ch; }
+  .body { font-size: 17px; line-height: 1.6; max-width: 64ch; }
   .cost { margin-top: var(--s4); max-width: 720px; font: 300 clamp(20px, 1.7vw, 24px)/1.35 var(--display); }
 
-  /* Motion answers the reader's choice: the new level's steps land in order. */
+  /* Motion answers the reader's choice: the colour change runs left to right along the map. */
   @media (prefers-reduced-motion: no-preference) {
-    .js .panel:not([hidden]) .node { animation: hh-step .42s cubic-bezier(.2,.7,.2,1) both; animation-delay: calc(var(--i) * 90ms); }
-    .js .panel:not([hidden]) .node::after { animation: hh-link .3s ease-out both; animation-delay: calc(var(--i) * 90ms + 220ms); transform-origin: left; }
-    .js .panel:not([hidden]) .tally, .js .panel:not([hidden]) .body { animation: hh-fade .4s ease-out both .25s; }
+    .js .node { transition: background-color .35s ease, box-shadow .35s ease; transition-delay: calc(var(--i) * 70ms); }
+    .js .panel:not([hidden]) { animation: hh-fade .4s ease-out both; }
   }
-  @keyframes hh-step { from { opacity: 0; transform: translateY(10px) scale(.96); } }
-  @keyframes hh-link { from { transform: scaleX(0); } }
   @keyframes hh-fade { from { opacity: 0; } }
 
+  @media (max-width: 1100px) { .flow { grid-template-columns: repeat(3, minmax(0, 1fr)); } .node:nth-child(3n)::after { display: none; } }
   @media (max-width: 900px) {
     .lgrid { grid-template-columns: 1fr; }
-    .levels { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .levels { grid-template-columns: 1fr 1fr; }
     .lvl { padding: var(--s2); }
     .lvl-l { display: none; }
     .lvl-n { font-size: 20px; }
   }
   @media (max-width: 560px) {
-    /* Phones: the steps stack, joined top to bottom. */
-    .flow { flex-direction: column; gap: 18px; }
-    .node { max-width: none; }
-    .node:not(:last-child)::after { top: auto; bottom: -14px; right: auto; left: 24px; width: 2px; height: 10px; }
+    .flow { grid-template-columns: 1fr 1fr; gap: 10px; }
+    .node::after { display: none; }
   }
 </style>

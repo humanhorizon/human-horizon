@@ -1,0 +1,48 @@
+---
+// One case study as its headline figures: logo, client and industry, then figure and label in rows.
+// Used on the homepage, where the numbers should be the first thing read.
+import type { CaseStudy, CaseWorkflow } from '../lib/caseStudies';
+import { industries } from '../data/site';
+interface Props { cs: CaseStudy }
+const { cs } = Astro.props;
+const d = cs.data;
+const industry = industries.find((s) => s.slug === d.industry);
+const pct = (w: CaseWorkflow) => `${(Math.min(Math.round((1 - w.time.afterMinutes / w.time.beforeMinutes) * 1000), 999) * 0.1).toFixed(1)}%`;
+const rows = d.highlights.length
+  ? d.highlights
+  : d.workflows.slice(0, 3).map((w) => ({ figure: pct(w), label: `${w.result}: ${w.time.before} to ${w.time.after}` }));
+---
+<a class="css" href={`/case-studies/${cs.id}`}>
+  <span class="top">
+    {d.logo ? <img class="logo" src={d.logo} alt="" loading="lazy" /> : null}
+    <span class="who">
+      <span class="name">{d.client}</span>
+      {industry && <span class="ind">{industry.name}</span>}
+    </span>
+  </span>
+  <dl class="rows">
+    {rows.map((r) => (
+      <div class="row"><dt class="d fig">{r.figure}</dt><dd class="lab">{r.label}</dd></div>
+    ))}
+  </dl>
+  <span class="more">Read the case study</span>
+</a>
+
+<style>
+  .css { display: grid; gap: var(--s3); padding: clamp(24px, 3vw, 40px); border-radius: 28px; background: var(--morning); color: var(--ink); text-decoration: none; border: 1.5px solid transparent; transition: border-color .15s; }
+  .css:hover { border-color: var(--ink); }
+  .top { display: grid; grid-template-columns: minmax(0, 200px) 1fr; gap: var(--s3); align-items: center; padding-bottom: var(--s3); border-bottom: 1px solid var(--line); }
+  .logo { width: 100%; max-height: 72px; object-fit: contain; object-position: left center; }
+  .who { display: grid; gap: 2px; }
+  .name { font-size: clamp(20px, 1.6vw, 24px); font-weight: 600; line-height: 1.2; }
+  .ind { font-size: 17px; color: var(--slate); }
+  .rows { margin: 0; display: grid; gap: var(--s2); }
+  .row { display: grid; grid-template-columns: minmax(0, 200px) 1fr; gap: var(--s3); align-items: center; }
+  .fig { font-size: clamp(40px, 4vw, 60px); line-height: 1; letter-spacing: -0.01em; margin: 0; }
+  .lab { margin: 0; font-size: 17px; line-height: 1.4; max-width: 30ch; }
+  .more { font-size: 15px; font-weight: 600; text-decoration: underline; text-decoration-thickness: 1.5px; text-underline-offset: 4px; justify-self: start; }
+  @media (max-width: 560px) {
+    .top, .row { grid-template-columns: 1fr; gap: 6px; }
+    .logo { max-width: 180px; }
+  }
+</style>

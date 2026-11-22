@@ -61,6 +61,8 @@ const caseStudies = defineCollection({
     services: z.array(z.enum(['implement', 'train', 'adopt'])).default([]),
     industry: z.string(),
     teams: z.array(z.string()).default([]),
+    // Headline figures for the homepage card, in the order shown. Empty: the card falls back to each workflow's %.
+    highlights: z.array(z.object({ figure: z.string(), label: z.string() })).default([]),
     workflows: z.array(z.object({
       team: z.string(),
       name: z.string(),
