@@ -2,7 +2,7 @@ import type { SegmentPage } from '../../segmentPages';
 
 const page: SegmentPage = {
   seoTitle: 'AI for IT services and MSPs in Singapore | Human Horizon',
-  description: 'People-first AI for Singapore IT services firms and MSPs. Ticket triage, client reviews and documentation built into your team’s real work.',
+  description: 'AI workflows and agents for Singapore IT services firms and MSPs. Ticket triage, client reviews and documentation built into your team’s real work.',
   kicker: 'AI for IT services and MSPs in Singapore',
   title: 'Your engineers solving problems, not sorting the queue.',
   lead: 'Engineer hours disappear into sorting tickets, chasing users for details, preparing client reviews and keeping documentation up to date. We build AI into that work with your team, so your people spend their time on projects, problem solving and clients.',

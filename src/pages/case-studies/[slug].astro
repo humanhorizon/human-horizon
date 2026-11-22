@@ -193,6 +193,24 @@ const schema = [
 </Base>
 
 <script>
+  // When a workflow opens, its Now bar starts at the Before length and shrinks to scale: the time saved, shown.
+  if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    document.querySelectorAll<HTMLDetailsElement>('details').forEach((d) => {
+      const bar = d.querySelector<HTMLElement>('.bar-after');
+      if (!bar) return;
+      const target = bar.style.width;
+      d.addEventListener('toggle', () => {
+        if (!d.open) return;
+        bar.style.transition = 'none'; bar.style.width = '100%';
+        requestAnimationFrame(() => requestAnimationFrame(() => {
+          bar.style.transition = 'width 1.1s cubic-bezier(.65,0,.35,1) .15s'; bar.style.width = target;
+        }));
+      });
+    });
+  }
+</script>
+
+<script>
   // Before/Now switches. Each [data-toggle] block starts in the state it names (workflows open on Before,
   // the team on Now); the switch changes the text and the highlighted bar together. Without JavaScript
   // both states stay visible.

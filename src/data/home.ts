@@ -1,16 +1,25 @@
-// Homepage copy. Goes through the hh-growth-editor EDIT pass before it is shown to YJ.
+// Homepage copy. Goes through the hh-marketing-content-editor gate before it is shown to YJ.
+// Since 22 Nov 2026 the page leads with "Go beyond the prompt" and what gets built (AI workflows, agents,
+// training). People first (the PACT) is the method: one short block plus a link to /how-we-work.
 
 export const hero = {
-  kicker: 'AI workflows and automation consultancy',
-  title: 'Make AI part of the company culture for results that stick.',
-  sub: 'Many teams stop at the prompt while busywork eats the week. We automate it with AI workflows, so people check the results and put the week into growth.',
-  credibility: 'Founded by people-first leaders who have built at Gojek, Alibaba and Meta.',
+  kicker: 'AI consultancy in Singapore for workflows, agents and training',
+  title: 'Go beyond the prompt.',
+  sub: 'Most teams use ChatGPT or Claude one prompt at a time. We build AI workflows and agents that run the repeat work from start to finish, and train the team to use them.',
+  // Client numbers from the published Anri Gifts case study: 5 working days (2,400 minutes) to 8 minutes per product.
+  proof: {
+    text: 'Anri Gifts now lists a new product in 8 minutes, not 5 working days: about 40 working hours back on every product.',
+    label: 'Read the Anri Gifts case study',
+    href: '/case-studies/anri-gifts',
+  },
+  credibility: 'Founded by leaders who have built at Gojek, Alibaba and Meta.',
 };
 
+// The PACT: used by /how-we-work and the short method strip. Bullets always run P, A, C, T.
 export const pact = {
-  eyebrow: 'People first. We call it the PACT.',
-  title: 'Teams that feel empowered, not afraid.',
-  lead: 'AI adoption is a people change before it is a technology change. Without it, tools go unused. So every engagement runs on four commitments.',
+  eyebrow: 'How we work: the PACT',
+  title: 'Why the results last.',
+  lead: 'Workflows only pay off when the team uses them. So every engagement runs on four commitments to the people who do the work.',
   steps: [
     { letter: 'P', title: 'Promise', body: 'Clear words on what AI means for every role, so nobody is left guessing.' },
     { letter: 'A', title: 'Ask and involve', body: 'The team shapes the workflows it will use.' },
@@ -19,22 +28,61 @@ export const pact = {
   ],
 };
 
-export const shift = {
-  title: 'The AI revolution is coming, whether we like it or not.',
-  lead: 'Left to a few individuals, AI barely moves the business, and the cost of standing still adds up: hours lost to work AI could take on, client data in tools nobody approved, and competitors who move first. When AI becomes part of the culture:',
-  // Copy aims at each buyer's motive without naming it (YJ, 15 Nov 2026): time, direction, an edge, simplicity.
-  items: [
-    { title: 'Hours go back to the work that grows the business.' },
-    { title: 'Every person knows where to start and what good looks like.' },
-    { title: 'The team pulls ahead of competitors still experimenting.' },
-    { title: 'One clear way of working replaces a pile of tools no one has time to learn.' },
+// From prompt to agent: one everyday task shown at three levels. Illustrative, no numbers.
+export const ladder = {
+  title: 'From prompt to agent.',
+  lead: 'A ChatGPT or Claude subscription can do far more than answer one prompt at a time. Here is the same everyday task at each level.',
+  task: 'A customer emails to ask for a quotation.',
+  levels: [
+    {
+      key: 'prompt',
+      name: 'Prompt',
+      line: 'A person asks, AI answers.',
+      body: 'Someone copies the request into ChatGPT, pastes in the prices, fixes the draft and sends it. Every quotation starts from zero, and only the people who are good at prompting get much out of it.',
+      steps: [
+        { who: 'person', label: 'Copy the request in' },
+        { who: 'person', label: 'Write a prompt' },
+        { who: 'person', label: 'Paste in prices' },
+        { who: 'ai', label: 'Draft a reply' },
+        { who: 'person', label: 'Fix and send' },
+      ],
+    },
+    {
+      key: 'workflow',
+      name: 'AI workflow',
+      line: 'The steps run in order, every time.',
+      body: 'A new request starts the workflow. AI reads it, pulls the right products and prices, and drafts the quotation in the business’s own format. A person checks it and sends.',
+      steps: [
+        { who: 'trigger', label: 'Request arrives' },
+        { who: 'ai', label: 'Read the request' },
+        { who: 'ai', label: 'Pull products and prices' },
+        { who: 'ai', label: 'Draft the quotation' },
+        { who: 'person', label: 'Check and send' },
+      ],
+    },
+    {
+      key: 'agent',
+      name: 'AI agent',
+      line: 'AI works out the next step.',
+      body: 'An AI agent handles the request from start to finish: it drafts questions for any missing details, checks stock, suggests alternatives and prepares the quotation and the reply. A person approves before anything goes to the customer.',
+      steps: [
+        { who: 'trigger', label: 'Request arrives' },
+        { who: 'ai', label: 'Draft questions on gaps' },
+        { who: 'ai', label: 'Check stock and prices' },
+        { who: 'ai', label: 'Suggest alternatives' },
+        { who: 'ai', label: 'Prepare quote and reply' },
+        { who: 'person', label: 'Approve' },
+      ],
+    },
   ],
+  // Cost of inaction, said once.
+  cost: 'Stopping at the prompt keeps the repeat work on people’s desks: the same copying, pasting and checking, every day.',
 };
 
 export const whatWeDo = {
-  title: 'Made to measure.',
-  lead: 'No two firms work the same way, so there is no template. Every engagement starts from how the work runs today.',
-  discovery: { name: 'Discovery and Customisation Mapping', line: 'A review of how each team works today, which workflows to customise first and what success should look like.' },
+  title: 'What we do.',
+  lead: 'We build the AI workflows and agents, train the team to run them and support the team until the workflows are part of the routine. Every engagement starts from how the work runs today.',
+  discovery: { name: 'Discovery and Customisation Mapping', line: 'A review of how each team works today, which workflows to build first and what success should look like.' },
   report: { name: 'ROI Transformation Report', line: 'The hours the team saves, valued at the firm’s own rates.' },
 };
 
@@ -61,7 +109,7 @@ export const people = {
 
 export const start = {
   title: 'Start with one workflow, or the whole firm.',
-  link: { label: 'Book a 30-minute discovery call', href: '/contact#form' },
+  link: { label: 'Book a 30-minute discovery', href: '/contact#form' },
   options: [
     { name: 'First Win', fit: 'For a team of 5 to 10 people', change: 'One AI workflow running the new way in the team.', includes: ['One custom AI workflow', 'Hands-on training for the team', 'A Lite ROI Transformation Report on that workflow'] },
     { name: 'Accelerator', fit: 'For a small team or department of 5 to 50 people', change: 'A small team or department working the new way, with the numbers to show it.', includes: ['Three custom AI workflows', 'Hands-on training for the team or department', 'An ROI Transformation Report for the team or department'] },
@@ -70,10 +118,11 @@ export const start = {
 };
 
 export const faq = [
-  { q: 'What does an AI consultancy do?', a: 'An AI consultancy helps a business decide where AI fits, then puts it to work. We start with Discovery and Customisation Mapping, implement custom AI workflows and agents, train staff hands-on through the PACT and support adoption until the new ways of working become routine.', links: [{ label: 'What we do', href: '/what-we-do' }] },
+  { q: 'What is the difference between a prompt, an AI workflow and an AI agent?', a: 'A prompt is one question to an AI tool, and a person does every step around it. An AI workflow runs a set sequence of steps on its own each time, such as reading a request and drafting the reply. An AI agent works out the next step itself, using the business’s tools. In both, a person checks the result before anything goes out.', links: [{ label: 'What is an AI agent?', href: '/insights/glossary/ai-agent' }] },
+  { q: 'What does an AI consultancy do?', a: 'An AI consultancy helps a business decide where AI fits, then puts it to work. We start with Discovery and Customisation Mapping, build custom AI workflows and agents, train staff hands-on and support adoption until the new ways of working become routine.', links: [{ label: 'What we do', href: '/what-we-do' }] },
   { q: 'Is this an AI course?', a: 'No. We build custom workflows into your team’s real work, train your people on them and measure the change. Training runs on your own tasks, in a few focused sessions, with no homework.', links: [{ label: 'Compare an AI course with our training', href: '/ai-course-singapore' }] },
-  { q: 'We already pay for ChatGPT or Copilot. Why is nobody using it?', a: 'Licences alone rarely change how work gets done. People need workflows built around their real tasks, training on those tasks and support while the habit forms. We work with the AI tools the business has approved and build the habits around them.' },
-  { q: 'Will AI replace our staff?', a: 'That is a decision for the business, not for AI. The first PACT commitment is clear words on what AI means for every role, so nobody is left guessing, and staff help shape the workflows they will use.' },
+  { q: 'We already pay for ChatGPT or Copilot. Why is nobody using it?', a: 'Licences alone rarely change how work gets done, and many teams stop at the prompt. We build workflows and agents around the real tasks, train people on them and support them while the habit forms, using the AI tools the business has approved.' },
+  { q: 'Will AI replace our staff?', a: 'That is a decision for the business, not for AI. We start with clear words on what AI means for every role, so nobody is left guessing, and staff help shape the workflows they will use.', links: [{ label: 'How we work', href: '/how-we-work' }] },
   { q: 'Do we need technical staff or an IT team?', a: 'No. We design and set up the workflows, and train the people who use them in plain language. Where there is an IT team or system admin, we involve them on access, data and AI governance.' },
   { q: 'What happens to our client data?', a: 'We agree clear AI governance rules with you: what can go into AI tools, which accounts to use, and what a person checks before anything leaves the business.' },
   { q: 'Who do you work with?', a: 'Singapore businesses with recurring work to get through, in any industry. Founders come to us when staff use AI tools with no rules on client data, a workshop changed nothing back at the desk, or licences were bought but barely used.' },
@@ -83,6 +132,6 @@ export const faq = [
 ];
 
 export const close = {
-  title: 'Nobody gets left behind in the age of AI.',
+  title: 'Start with one workflow the team repeats every week.',
   sub: 'A 30-minute conversation about the work that slows your team down, and where AI could help first.',
 };

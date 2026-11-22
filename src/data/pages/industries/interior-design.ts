@@ -2,7 +2,7 @@ import type { SegmentPage } from '../../segmentPages';
 
 const page: SegmentPage = {
   seoTitle: 'AI for interior design firms in Singapore | Human Horizon',
-  description: 'People-first AI for Singapore interior design and renovation firms. Quotations, specifications and client updates built into your team’s real work.',
+  description: 'AI workflows and agents for Singapore interior design and renovation firms. Quotations, specifications and client updates built into your team’s real work.',
   kicker: 'AI for interior design and renovation in Singapore',
   title: 'Let your designers get back to designing.',
   lead: 'Design hours disappear into itemised quotations, revised quotes after every client change, specifications and client letters. We build AI into that work with your team, so your people spend their time on design, site and clients.',

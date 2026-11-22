@@ -2,7 +2,7 @@ import type { SegmentPage } from '../../segmentPages';
 
 const page: SegmentPage = {
   seoTitle: 'AI for law firms in Singapore | Human Horizon',
-  description: 'People-first AI for Singapore law firms. File review, routine letters and client updates built into your team’s real work.',
+  description: 'AI workflows and agents for Singapore law firms. File review, routine letters and client updates built into your team’s real work.',
   kicker: 'AI for law firms in Singapore',
   title: 'Less time in the bundle, more time with the client.',
   lead: 'Lawyer and paralegal hours disappear into reading bundles, drafting routine letters, building checklists and writing client updates. We build AI into that work with your team, so your people spend their time on legal thinking, advice and clients.',

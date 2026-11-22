@@ -2,7 +2,7 @@ import type { SegmentPage } from '../../segmentPages';
 
 const page: SegmentPage = {
   seoTitle: 'AI for marketing agencies in Singapore | Human Horizon',
-  description: 'People-first AI for Singapore marketing and creative agencies. Client reports, proposals and content drafts built into your team’s real work.',
+  description: 'AI workflows and agents for Singapore marketing and creative agencies. Client reports, proposals and content drafts built into your team’s real work.',
   kicker: 'AI for marketing and creative agencies in Singapore',
   title: 'More of your week on the ideas clients pay for.',
   lead: 'Agency hours disappear into client reports, proposals, content drafts and campaign briefs. We build AI into that work with your team, so your people spend their time on ideas, strategy and clients.',

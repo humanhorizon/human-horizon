@@ -2,7 +2,7 @@ import type { SegmentPage } from '../../segmentPages';
 
 const page: SegmentPage = {
   seoTitle: 'AI for freight forwarders in Singapore | Human Horizon',
-  description: 'People-first AI for Singapore logistics and freight forwarding. Quotations, shipping documents and status updates built into your team’s real work.',
+  description: 'AI workflows and agents for Singapore logistics and freight forwarding. Quotations, shipping documents and status updates built into your team’s real work.',
   kicker: 'AI for logistics and freight forwarding in Singapore',
   title: 'Your ops team, back on the shipments that need them.',
   lead: 'Forwarding hours disappear into freight quotations, shipping and customs documents, invoices and status updates. We build AI into that work with your team, so your people spend their time on customers, carriers and the shipments that need real attention.',

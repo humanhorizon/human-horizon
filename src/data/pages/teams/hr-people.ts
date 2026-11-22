@@ -2,7 +2,7 @@ import type { SegmentPage } from '../../segmentPages';
 
 const page: SegmentPage = {
   seoTitle: 'AI for HR teams in Singapore | Human Horizon',
-  description: 'People-first AI for Singapore HR and people teams. Payroll inputs, onboarding and staff questions built into your team’s real work.',
+  description: 'AI workflows and agents for Singapore HR and people teams. Payroll inputs, onboarding and staff questions built into your team’s real work.',
   kicker: 'AI for HR and people teams in Singapore',
   title: 'Time for the people side of HR again.',
   lead: 'HR hours disappear into gathering leave, overtime and claims for payroll, preparing onboarding letters and answering the same policy questions. We build AI into that work with your team, so your people spend their time on the conversations and decisions that need a person.',

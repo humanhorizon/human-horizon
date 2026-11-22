@@ -19,9 +19,9 @@ export const site = {
   url: 'https://humanhorizon.io',
   email: 'team@humanhorizon.io',
   description:
-    'AI consultancy in Singapore that builds AI into real work, trains staff and helps every team keep using it, so AI becomes part of the company culture.',
-  // Footer boilerplate: the USP in two sentences (Implement, Train, Adopt, people first, results that last).
-  boilerplate: 'People-first AI consultancy based in Singapore. We implement AI in each team’s work, train people and help them adopt it, so results stick and AI becomes part of the company culture, not an individual pursuit.',
+    'Singapore AI consultancy that goes beyond the prompt: we build AI workflows and agents into the work teams already do, and train staff to run them.',
+  // Footer boilerplate: what we build first (Implement, Train, Adopt), then why it lasts. The method lives on /how-we-work.
+  boilerplate: 'AI consultancy based in Singapore. We build AI workflows and agents into each team’s work, train the people who run them and support adoption, so the results last.',
   cta: ctas.call,
   pilot: {
     title: 'Be one of our first five founding clients, with both founders on your team.',
@@ -38,7 +38,8 @@ export const pillars = [
     slug: 'implement',
     name: 'Implement',
     title: 'AI Implementation',
-    outcome: 'Custom AI workflows, AI agents and AI governance, automating how the business already runs.',
+    front: 'AI workflows and agents',
+    outcome: 'Custom AI workflows and AI agents that run the repeat work in the tools the business already uses, with clear rules on client data.',
     items: [
       { name: 'Custom workflows', line: 'Built around the recurring work that fills your team’s week.' },
       { name: 'AI agents', line: 'Take on the repeat steps, with a person checking the result.' },
@@ -49,7 +50,8 @@ export const pillars = [
     slug: 'train',
     name: 'Train',
     title: 'AI Training',
-    outcome: 'Hands-on AI training on the tasks staff already know, run on the PACT so AI becomes part of the team culture.',
+    front: 'AI training',
+    outcome: 'Hands-on training on the team’s own tasks, so everyone can run, check and adjust the workflows, not just the keen few.',
     items: [
       { name: 'Hands-on training', line: 'Starts with the basics, then moves straight onto the tasks your team already knows.' },
       { name: 'Role-specific sessions', line: 'Shaped to the work your sales, operations or finance staff do.' },
@@ -61,6 +63,7 @@ export const pillars = [
     slug: 'adopt',
     name: 'Adopt',
     title: 'AI Adoption',
+    front: 'Adoption support',
     outcome: 'AI change management with ongoing support, clear ownership and adoption tracking, so new ways of working become routine.',
     items: [
       { name: 'AI adoption tracking', line: 'Usage and time saved across the team, so you can see what is sticking.' },
@@ -103,6 +106,6 @@ export const nav = [
   { label: 'What we do', href: '/what-we-do', children: pillars.map((p) => ({ label: p.title, href: `/what-we-do/${p.slug}` })) },
   { label: 'Industries', href: '/industries', children: industries.map((s) => ({ label: s.name, href: `/industries/${s.slug}` })) },
   { label: 'Teams', href: '/teams', children: teams.map((s) => ({ label: s.name, href: `/teams/${s.slug}` })) },
-  { label: 'About', href: '/about' },
+  { label: 'About', href: '/about', children: [{ label: 'About us', href: '/about' }, { label: 'How we work', href: '/how-we-work' }] },
   { label: 'Insights', href: '/insights' },
 ];

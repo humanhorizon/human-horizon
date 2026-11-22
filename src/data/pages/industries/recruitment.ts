@@ -2,7 +2,7 @@ import type { SegmentPage } from '../../segmentPages';
 
 const page: SegmentPage = {
   seoTitle: 'AI for recruitment agencies in Singapore | Human Horizon',
-  description: 'People-first AI for Singapore recruitment and staffing. Shortlists, job descriptions and client updates built into your team’s real work.',
+  description: 'AI workflows and agents for Singapore recruitment and staffing. Shortlists, job descriptions and client updates built into your team’s real work.',
   kicker: 'AI for recruitment and staffing in Singapore',
   title: 'Your consultants, back with the people they place.',
   lead: 'Recruiter hours disappear into reading CVs, writing job descriptions, outreach messages and client updates. We build AI into that work with your team, so your people spend their time on the conversations that place candidates.',

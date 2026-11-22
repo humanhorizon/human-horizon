@@ -2,8 +2,8 @@ import type { SegmentPage } from '../../segmentPages';
 
 const page: SegmentPage = {
   seoTitle: 'AI for property agencies in Singapore | Human Horizon',
-  description: 'People-first AI for Singapore property agencies. Enquiry follow-up, listings and owner updates built into your agents’ real work.',
-  kicker: 'AI for property agencies in Singapore',
+  description: 'AI workflows and agents for Singapore property agencies. Enquiry follow-up, listings and owner updates built into your agents’ real work.',
+  kicker: 'AI for property agencies and agents in Singapore',
   title: 'Your agents with clients, not catching up on messages.',
   lead: 'Agency hours disappear into answering enquiries, writing listings, preparing for viewings and keeping sellers and landlords updated. We build AI into that work with your team, so your people spend their time with clients, at viewings and on closing deals.',
   painsTitle: 'Where property agency weeks go',

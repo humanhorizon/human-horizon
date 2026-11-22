@@ -2,7 +2,7 @@ import type { SegmentPage } from '../../segmentPages';
 
 const page: SegmentPage = {
   seoTitle: 'AI for customer service teams in Singapore | Human Horizon',
-  description: 'People-first AI for Singapore customer service teams. Customer enquiries, complaints and case handovers built into your team’s real work.',
+  description: 'AI workflows and agents for Singapore customer service teams. Customer enquiries, complaints and case handovers built into your team’s real work.',
   kicker: 'AI for customer service teams in Singapore',
   title: 'Your team, free for the customers who need a person.',
   lead: 'Customer service hours disappear into answering the same questions across WhatsApp, email and phone, writing up complaints and handing cases between colleagues. We build AI into that work with your team, so your people spend their time on the customers and cases that need real care.',

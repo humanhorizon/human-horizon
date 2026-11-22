@@ -1,9 +1,9 @@
 import type { SegmentPage } from '../../segmentPages';
 
 const page: SegmentPage = {
-  seoTitle: 'AI for trading firms in Singapore | Human Horizon',
-  description: 'People-first AI for Singapore trading and distribution. Order entry, quotations and invoices built into your team’s real work.',
-  kicker: 'AI for trading and distribution in Singapore',
+  seoTitle: 'AI for trading companies in Singapore | Human Horizon',
+  description: 'AI workflows and agents for Singapore trading and distribution. Order entry, quotations and invoices built into your team’s real work.',
+  kicker: 'AI for trading companies and distributors in Singapore',
   title: 'Let your sales team sell, not retype orders.',
   lead: 'Trading hours disappear into retyping orders, building quotations, checking price lists and raising invoices and delivery documents. We build AI into that work with your team, so your people spend their time on customers, suppliers and the deals that grow the business.',
   painsTitle: 'Where trading weeks go',

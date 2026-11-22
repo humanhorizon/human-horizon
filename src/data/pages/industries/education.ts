@@ -1,9 +1,9 @@
 import type { SegmentPage } from '../../segmentPages';
 
 const page: SegmentPage = {
-  seoTitle: 'AI for education providers in Singapore | Human Horizon',
-  description: 'People-first AI for Singapore education and tuition providers. Parent updates, enrolment and timetables built into your team’s real work.',
-  kicker: 'AI for education and tuition providers in Singapore',
+  seoTitle: 'AI for tuition centres in Singapore | Human Horizon',
+  description: 'AI workflows and agents for Singapore education and tuition providers. Parent updates, enrolment and timetables built into your team’s real work.',
+  kicker: 'AI for tuition and enrichment centres in Singapore',
   title: 'Give your teachers back to their students.',
   lead: 'Centre hours disappear into parent messages, enrolment enquiries, replacement classes and timetable changes. We build AI into that work with your team, so your people spend their time on teaching, students and families.',
   painsTitle: 'Where education centre weeks go',

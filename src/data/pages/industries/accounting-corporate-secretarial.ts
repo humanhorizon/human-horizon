@@ -2,8 +2,8 @@ import type { SegmentPage } from '../../segmentPages';
 
 const page: SegmentPage = {
   seoTitle: 'AI for accounting firms in Singapore | Human Horizon',
-  description: 'People-first AI for Singapore accounting and corporate secretarial firms. Bookkeeping, client letters and filings built into your team’s real work.',
-  kicker: 'AI for accounting and corporate secretarial in Singapore',
+  description: 'AI workflows and agents for Singapore accounting and corporate secretarial firms. Bookkeeping, client letters and filings built into your team’s real work.',
+  kicker: 'AI for accounting and corporate secretarial firms in Singapore',
   title: 'Give your accountants room to advise again.',
   lead: 'Firm hours disappear into chasing client documents, keying receipts, reconciling bank lines, writing client letters and preparing filings. We build AI into that work with your team, so your people spend their time on review, advice and clients.',
   painsTitle: 'Where firm weeks go',

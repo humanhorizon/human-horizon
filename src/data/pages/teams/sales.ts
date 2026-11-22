@@ -2,7 +2,7 @@ import type { SegmentPage } from '../../segmentPages';
 
 const page: SegmentPage = {
   seoTitle: 'AI for sales teams in Singapore | Human Horizon',
-  description: 'People-first AI for Singapore sales teams. Proposals, tenders, follow-ups and meeting prep built into your team’s real work.',
+  description: 'AI workflows and agents for Singapore sales teams. Proposals, tenders, follow-ups and meeting prep built into your team’s real work.',
   kicker: 'AI for sales teams in Singapore',
   title: 'Your salespeople back in front of buyers.',
   lead: 'Sales weeks disappear into proposals, tenders, follow-up emails, pipeline updates and meeting prep. We build AI into that work with your team, so your people spend their time with buyers and on the deals that matter.',

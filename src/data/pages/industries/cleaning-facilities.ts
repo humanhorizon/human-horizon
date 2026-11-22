@@ -1,9 +1,9 @@
 import type { SegmentPage } from '../../segmentPages';
 
 const page: SegmentPage = {
-  seoTitle: 'AI for cleaning firms in Singapore | Human Horizon',
-  description: 'People-first AI for Singapore cleaning and facilities firms. Rosters, job scheduling and quotes built into your team’s real work.',
-  kicker: 'AI for cleaning and facilities in Singapore',
+  seoTitle: 'AI for cleaning companies in Singapore | Human Horizon',
+  description: 'AI workflows and agents for Singapore cleaning companies and facilities firms. Rosters, job scheduling and quotes built into your team’s real work.',
+  kicker: 'AI for cleaning companies and facilities management in Singapore',
   title: 'Supervisors running sites, not chasing cover.',
   lead: 'Supervisor and office hours disappear into rosters, filling last-minute gaps, scheduling jobs, attendance records and quotes. We build AI into that work with your team, so your people spend their time on their crews, their sites and their clients.',
   painsTitle: 'Where facilities firm weeks go',

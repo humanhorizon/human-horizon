@@ -97,7 +97,7 @@ That meant procurement learned to direct and check the sourcing, product and des
 
 ## How did the PACT keep people first?
 
-Every Human Horizon engagement runs on the [PACT](/#pact), four commitments that make AI a people change, not just a technology change. At Anri Gifts, each one shaped the work.
+Every Human Horizon engagement runs on the [PACT](/how-we-work), four commitments that make AI a people change, not just a technology change. At Anri Gifts, each one shaped the work.
 
 - **Promise.** From the start, every role knew what AI would mean for it: the AI assistants would take on the groundwork, and staff would keep the judgement, the decisions and the relationships.
 - **Ask and involve.** The people who do the work built the workflows. Procurement and sales each shaped how their AI assistants work, which is why the workflows fit the way the business actually runs.

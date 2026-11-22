@@ -66,7 +66,7 @@ The founder and the three agents learned to work with Claude in hands-on session
 
 ## How did the PACT keep people first?
 
-Every Human Horizon engagement runs on the [PACT](/#pact). At Thrive, nobody worried that AI would take their job, so Coach became the commitment that mattered most.
+Every Human Horizon engagement runs on the [PACT](/how-we-work). At Thrive, nobody worried that AI would take their job, so Coach became the commitment that mattered most.
 
 - **Promise.** One clear promise held throughout: AI handles the admin, and the client relationship, the advice and the decision to send stay with the agent.
 - **Ask and involve.** Agents shaped what goes into a good report, from the benchmarks they trust to the factors they look at when pricing a home, so the output reads like their own analysis.

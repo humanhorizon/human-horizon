@@ -2,7 +2,7 @@ import type { SegmentPage } from '../../segmentPages';
 
 const page: SegmentPage = {
   seoTitle: 'AI for finance and admin teams in Singapore | Human Horizon',
-  description: 'People-first AI for Singapore finance and admin teams. Supplier bills, month-end reconciliations and management reports built into your team’s work.',
+  description: 'AI workflows and agents for Singapore finance and admin teams. Supplier bills, month-end reconciliations and management reports built into your team’s work.',
   kicker: 'AI for finance and admin teams in Singapore',
   title: 'Your finance team, free to think about the numbers.',
   lead: 'Finance and admin hours disappear into keying supplier bills, chasing approvals, reconciling bank lines and building the monthly reports. We build AI into that work with your team, so your people spend their time on checking, judgement and the questions the numbers raise.',

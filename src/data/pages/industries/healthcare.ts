@@ -2,7 +2,7 @@ import type { SegmentPage } from '../../segmentPages';
 
 const page: SegmentPage = {
   seoTitle: 'AI for healthcare clinics in Singapore | Human Horizon',
-  description: 'People-first AI for Singapore clinics. Patient messages, referral letters and insurance claims built into your team’s real work.',
+  description: 'AI workflows and agents for Singapore clinics. Patient messages, referral letters and insurance claims built into your team’s real work.',
   kicker: 'AI for healthcare clinics in Singapore',
   title: 'Give your clinic team back to its patients.',
   lead: 'Clinic hours disappear into phone calls, appointment changes, referral letters and insurance claims. We build AI into that work with your team, so your people spend their time on patients and care.',

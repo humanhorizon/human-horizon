@@ -10,7 +10,7 @@ const dots = [
 ];
 ---
 <svg viewBox="0 0 120 120" width={size} height={size} aria-hidden="true" class={cls}>
-  {dots.map(([cx, cy, r]) => <circle cx={cx} cy={cy} r={r} fill={fill} />)}
-  <path d="M60,20 A40,40 0 0 1 60,100" fill="none" stroke="#FF7A3D" stroke-width="9" stroke-linecap="round" />
+  {dots.map(([cx, cy, r], i) => <circle cx={cx} cy={cy} r={r} fill={fill} style={`--i:${i}`} />)}
+  <path class="arc" pathLength="1" d="M60,20 A40,40 0 0 1 60,100" fill="none" stroke="#FF7A3D" stroke-width="9" stroke-linecap="round" />
   {horizon && <rect x="6" y="58" width="108" height="4" fill={fill} />}
 </svg>

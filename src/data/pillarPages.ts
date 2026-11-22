@@ -8,10 +8,10 @@ const startFaq: FaqItem = { q: 'How do we start?', a: 'With a 30-minute conversa
 
 export const whatWeDoHub = {
   seoTitle: 'AI implementation, training and adoption | Human Horizon',
-  description: 'People-first AI for Singapore businesses: we implement AI in your team’s real work, train your people on it and help them adopt it for good.',
+  description: 'AI workflows, agents and training for Singapore businesses: we build AI into your team’s real work, train your people to run it and support adoption.',
   kicker: 'AI implementation, training and adoption in Singapore',
-  title: 'The AI change your team leads.',
-  lead: 'Tools are only the start. We follow the change all the way through: we build AI into the work your team already does, train your people on it and stay with them until it is simply how your team works.',
+  title: 'AI workflows, agents and the training to run them.',
+  lead: 'Most teams stop at the prompt. We build AI workflows and agents into the work the team already does, train the people to run them and stay with them until it is simply how the team works.',
   pillarsTitle: 'Implement, train, adopt',
   pillarsLead: 'Three parts of one change, each shaped around your business. Your ROI Transformation Report shows the hours it gives back.',
   people: {
@@ -49,7 +49,7 @@ export type PillarPage = {
 export const pillarPages: Record<string, PillarPage> = {
   implement: {
     seoTitle: 'AI implementation in Singapore | Human Horizon',
-    description: 'People-first AI implementation for Singapore businesses. Custom workflows and AI agents built into your team’s real work, with clear rules.',
+    description: 'AI implementation for Singapore businesses. Custom AI workflows and AI agents built into your team’s real work, with clear rules.',
     kicker: 'AI implementation for Singapore businesses',
     title: 'AI built into the work, not bolted on.',
     lead: 'Buying licences is easy. Getting AI to do real work inside your business is not. We find the work worth changing, build custom workflows and AI agents around it with your team, and set clear rules so everyone knows what is allowed.',
@@ -93,7 +93,7 @@ export const pillarPages: Record<string, PillarPage> = {
   },
   train: {
     seoTitle: 'AI training for teams in Singapore | Human Horizon',
-    description: 'People-first, hands-on AI training for Singapore teams. Your people learn alongside the tasks they already know, so it sticks.',
+    description: 'Hands-on AI training for Singapore teams, on the workflows they run. Your people learn alongside the tasks they already know, so it sticks.',
     kicker: 'Hands-on AI training for teams in Singapore',
     title: 'Watch your team go from wary to confident.',
     lead: 'AI courses teach in general terms, so the impact is never felt in day-to-day work. We customise the training to the tasks your team already knows, so what they learn changes how the work gets done.',
@@ -137,7 +137,7 @@ export const pillarPages: Record<string, PillarPage> = {
   },
   adopt: {
     seoTitle: 'AI adoption for Singapore businesses | Human Horizon',
-    description: 'People-first AI adoption for Singapore businesses. Adoption tracking, playbooks, a handover pack and refreshers, so the change lasts.',
+    description: 'AI adoption support for Singapore businesses. Adoption tracking, playbooks, a handover pack and refreshers, so the change lasts.',
     kicker: 'AI adoption for Singapore businesses',
     title: 'Make the change last.',
     lead: 'AI only pays off when it becomes part of your culture: how your team works on a busy day, not only in a training room. We help your team adopt it until it is habit, and show you what is sticking.',

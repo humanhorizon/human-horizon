@@ -24,7 +24,14 @@ const { title, items, tone = 'white' } = Astro.props;
   .faq details:last-child { border-bottom: 1px solid var(--line); }
   .faq summary { cursor: pointer; list-style: none; display: flex; justify-content: space-between; gap: var(--s2); font-size: 19px; }
   .faq summary::-webkit-details-marker { display: none; }
-  .faq summary::after { content: '+'; font-weight: 400; }
+  .faq summary::after { content: '+'; font-weight: 400; transition: transform .25s; }
+  .faq details[open] summary::after { transform: rotate(45deg); }
+  /* Answers slide open where the browser supports animating details; elsewhere they simply appear. */
+  @media (prefers-reduced-motion: no-preference) {
+    .faq details { interpolate-size: allow-keywords; }
+    .faq details::details-content { block-size: 0; overflow: hidden; transition: block-size .3s ease, content-visibility .3s allow-discrete; }
+    .faq details[open]::details-content { block-size: auto; }
+  }
   .faq details[open] summary::after { content: '–'; }
   .faq details p { margin-top: 12px; max-width: 620px; }
   .faq-links { display: flex; gap: var(--s3); }
