@@ -13,7 +13,7 @@ export const hero = {
 export const pact = {
   eyebrow: 'Our training methodology: the PACT',
   title: 'Why the results last',
-  lead: 'Tools alone rarely change how a team works. Every engagement runs on a change management method built for AI, so the new workflows become how the team works.',
+  lead: 'Tools alone rarely change how a team works. Every engagement runs on a change management method built for AI, so the new workflows stay in daily use.',
   steps: [
     { letter: 'P', title: 'Promise', body: 'A clear commitment on what AI means for every role, made before anything changes.' },
     { letter: 'A', title: 'Ask and involve', body: 'The people who do the work shape the workflows, so they own them.' },
@@ -99,7 +99,7 @@ export const faq = [
   { q: 'Will AI replace our staff?', a: 'That is a decision for the business, not for AI. We start with a clear commitment on what AI means for every role, and staff help shape the workflows they will use.', links: [{ label: 'Our training methodology', href: '/how-we-work' }] },
   { q: 'Do we need technical staff or an IT team?', a: 'No. We design and set up the workflows, and train the people who use them in plain language. Where there is an IT team or system admin, we involve them on access, data and AI governance.' },
   { q: 'What happens to our client data?', a: 'We agree clear AI governance rules with you: what can go into AI tools, which accounts to use, and what a person checks before anything leaves the business.' },
-  { q: 'Who do you work with?', a: 'Singapore businesses with recurring work to get through, in any industry. Founders come to us when staff use AI tools with no rules on client data, a workshop changed nothing back at the desk, or licences were bought but barely used.' },
+  { q: 'Who do you work with?', a: 'Singapore businesses with recurring work to get through, in any industry. It fits best when staff use AI tools with no rules on client data, a workshop changed nothing back at the desk, or licences were bought but barely used.' },
   { q: 'I have been asked to look into AI for our company. Can we talk first?', a: 'Yes. If you are in HR, training or operations and doing the groundwork for your boss, we are happy to talk with you first. We will help you find a sensible place to start and the case to put to them.' },
   { q: 'How do you measure AI training ROI?', a: 'The ROI Transformation Report shows the hours the team saves on each workflow, valued at the firm’s own rates.', links: [{ label: 'How to measure AI training ROI', href: '/insights/how-to-measure-ai-training-roi' }] },
 ];

@@ -115,12 +115,12 @@ export const caseStudiesHub = {
 // How we work: the people-first method. The offer leads everywhere else; this page explains why the results last.
 export const howWeWork = {
   seoTitle: 'Our AI training methodology: the PACT | Human Horizon',
-  description: 'The PACT: Human Horizon’s AI training methodology for founders and leaders. Change management built into every engagement, so teams keep using AI.',
+  description: 'The PACT is Human Horizon’s AI training methodology: change management built into every engagement, so teams keep using the AI workflows we build.',
   kicker: 'Our AI training methodology',
   title: 'Change management that makes AI stick',
   lead: 'A workflow only pays back when the team trusts it and keeps using it. Every Human Horizon engagement, from implementation to AI training and adoption, runs on the PACT: a change management method built for AI, with results a leader can track.',
   pactTitle: 'Four commitments, in this order',
-  pactLead: 'AI changes how people work, so we treat it as a people change as well as a technology change. Without that, new tools go unused.',
+  pactLead: 'AI changes how people work, so we treat it as a people change as well as a technology change. In our experience, without that, new tools go unused.',
   pact: [
     { letter: 'P', title: 'Promise', body: 'Before anything is built, every role hears in plain words what AI will and will not change for them.' },
     { letter: 'A', title: 'Ask and involve', body: 'The people who do the work shape the workflows they will use: what goes in, what good looks like and where a person checks.' },
