@@ -72,8 +72,8 @@ const schema = [
       <p class="lead muted">{d.summary}</p>
       <ul class="results" aria-label="Results">
         {d.workflows.map((w) => <li><p class="d r-n">{pct(w)}</p><p class="r-l">{w.result}</p></li>)}
-        <li><p class="d r-n">{d.workflows.length}</p><p class="r-l">AI workflows implemented</p></li>
-        <li><p class="d r-n">{totalAgents}</p><p class="r-l">AI agents designed</p></li>
+        <li><p class="d r-n">{d.workflows.length}</p><p class="r-l">{d.workflows.length === 1 ? 'AI workflow implemented' : 'AI workflows implemented'}</p></li>
+        <li><p class="d r-n">{totalAgents}</p><p class="r-l">{totalAgents === 1 ? 'AI agent designed' : 'AI agents designed'}</p></li>
       </ul>
     </div>
     <aside class="client" aria-label="About the client">
@@ -91,7 +91,7 @@ const schema = [
 
   <section class="section flows" aria-labelledby="flows-h" id="workflows">
     <div class="wrap">
-      <h2 class="d h2 sec-h" id="flows-h">How each workflow changed</h2>
+      <h2 class="d h2 sec-h" id="flows-h">{d.workflows.length === 1 ? 'How the workflow changed' : 'How each workflow changed'}</h2>
       <div class="wfl">
         {d.workflows.map((w, i) => {
           const t = teamOf(w.team);

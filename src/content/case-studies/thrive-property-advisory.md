@@ -5,11 +5,11 @@
 client: Thrive Property Advisory
 logo: /case-studies/thrive-property-advisory-logo.png
 about: "A Singapore property advisory team at PropNex Realty that uses AI and data to help clients make better property decisions."
-title: "Market reports in 20 minutes, not a working day, and every client followed up by their own agent."
+title: "Market reports in 20 minutes, not a working day, so every client hears about their market."
 seoTitle: "AI case study: Thrive Property Advisory | Human Horizon"
 description: "AI case study: how Singapore property advisory Thrive turns HDB resale prices and URA transactions into a branded property market report for each client."
-summary: "AI now turns the latest HDB and URA transaction data into branded market reports and matches new listings to each client, so agents spend their time advising clients."
-subtitle: "AI-built market reports and listing updates for existing clients, checked and sent by agents."
+summary: "AI now turns the latest HDB and URA transaction data into branded market reports, so agents spend their time advising clients."
+subtitle: "AI-built property market reports for existing clients, checked and sent by agents."
 tools: [Claude]
 services: [implement, train, adopt]
 industry: property-agencies
@@ -28,29 +28,14 @@ workflows:
     time: { before: "1 working day", after: "20 minutes", beforeMinutes: 480, afterMinutes: 20, unit: "per report" }
     humans: 3
     agents: 2
-  - team: sales
-    name: Client property updates
-    result: less time on client property updates each week
-    summary:
-      before: "Listings matched to clients and updates written by hand."
-      now: "New listings matched to each client, updates drafted for the agent."
-    before: "Agents kept each client's budget, areas and home type in notes and chats, checked property portals and new launches by hand, decided which listings suited which client, then typed each WhatsApp or email update one at a time."
-    after: "An AI listing watch assistant gathers new listings and launches every day and checks each one against every client's saved brief. An AI client update assistant drafts a personal update in the agent's own voice. The agent reviews, edits and sends it, so every message still comes from them."
-    staff: Property agents
-    people: "Advising clients, arranging viewings and following up while interest is high."
-    time: { before: "3 hours", after: "15 minutes", beforeMinutes: 180, afterMinutes: 15, unit: "a week" }
-    humans: 3
-    agents: 2
 team:
   then:
-    - { role: "Property agents", did: "Pulled HDB and URA data by hand, built every market report and chart themselves, and wrote each client update one at a time." }
+    - { role: "Property agents", did: "Pulled HDB and URA data by hand and built every market report and chart themselves." }
   now:
-    - { role: "Property agents", does: "Check the market reports and updates the AI assistants prepare, add their advice, send them to clients and spend the time gained advising." }
+    - { role: "Property agents", does: "Check the market reports the AI assistants prepare, add their advice, send them to clients and spend the time gained advising." }
   assistants:
     - { name: "AI market data assistant", does: "Pulls the latest HDB and URA transaction records and separates confirmed sales from estimates.", reportsTo: "Property agents" }
     - { name: "AI market report assistant", does: "Builds the branded two-page market report as a PDF and WhatsApp-ready pages.", reportsTo: "Property agents" }
-    - { name: "AI listing watch assistant", does: "Gathers new listings and launches and matches them to each client's brief.", reportsTo: "Property agents" }
-    - { name: "AI client update assistant", does: "Drafts personal listing updates in the agent's voice.", reportsTo: "Property agents" }
 date: 2026-11-22
 publish: false
 featured: false
@@ -63,47 +48,40 @@ At Thrive Property Advisory, the most valuable thing an agent can send an existi
 
 Every report meant pulling HDB resale prices from data.gov.sg or URA transaction records, working out the numbers, picking benchmark sales and laying out a branded report by hand, then exporting images for WhatsApp. Doing that for every client, every time, was out of reach.
 
-Listing updates took time too. Agents tracked what each client wanted in notes and chats, checked the portals for new listings and launches, and typed every update themselves, about three hours a week.
-
-The founder's brief was clear: if AI could prepare ready-made market reports and property updates, agents could follow up with every client directly, every time.
+The founder's brief was clear: if AI could prepare ready-made market reports, agents could follow up with every client directly, every time.
 
 ## What did Human Horizon implement?
 
-Human Horizon co-founder Jaye Wang led the [AI implementation](/what-we-do/implement) with the founder and team. Together they built two [AI workflows](/insights/glossary/workflow-automation) around Claude.
+Human Horizon co-founder Jaye Wang led the [AI implementation](/what-we-do/implement) with the founder and team. Together they built an [AI workflow](/insights/glossary/workflow-automation) around Claude.
 
-The first turns the latest HDB, data.gov.sg and URA records into a two-page property market report for any estate, project or home type, built to keep confirmed sales apart from estimates so one exceptional sale is never read as the trend. It comes out in Thrive's own design as a PDF and as pages ready to share on WhatsApp.
+It turns the latest HDB, data.gov.sg and URA records into a two-page property market report for any estate, project or home type, built to keep confirmed sales apart from estimates so one exceptional sale is never read as the trend. It comes out in Thrive's own design as a PDF and as pages ready to share on WhatsApp.
 
-The second watches for new listings and launches and matches each one to every client's saved brief, then drafts a personal update.
-
-Nothing is sent automatically. The agent checks every figure, adds their own view on pricing and sends the report or update to their existing clients, so clients always hear from the person they trust.
+Nothing is sent automatically. The agent checks every figure, adds their own view on pricing and sends the report to their existing clients, so clients always hear from the person they trust.
 
 ## How was the team trained?
 
 Every agent at Thrive runs their own business. They want more time with clients and less admin, and they want to hand off as much of the routine work as they can. So the [AI training](/what-we-do/train) was built to make each agent self-sufficient, not dependent on anyone else.
 
-The founder and the three agents learned to work with Claude in hands-on sessions, on their own estates and clients. Each agent learned to run a market report for any estate, check the figures against what they know about the market, adjust the seller view in their own words and send it, then do the same for listing updates. By the end, each of them could produce a report whenever a client needed one.
+The founder and the three agents learned to work with Claude in hands-on sessions, on their own estates and clients. Each agent learned to run a market report for any estate, check the figures against what they know about the market, adjust the seller view in their own words and send it. By the end, each of them could produce a report whenever a client needed one.
 
 ## How did the PACT keep people first?
 
 Every Human Horizon engagement runs on the [PACT](/#pact). At Thrive, nobody worried that AI would take their job, so Coach became the commitment that mattered most.
 
-- **Coach.** Coaching continued until every agent was confident using both workflows without support, so the time saved is theirs to keep.
+- **Coach.** Coaching continued until every agent was confident using the workflow without support, so the time saved is theirs to keep.
 - **Ask and involve.** Agents shaped what goes into a good report, from the benchmarks they trust to the factors they look at when pricing a home, so the output reads like their own analysis.
-- **Track and reinforce.** The time each workflow took was measured before and after, and the reports were refined until agents were happy to send them.
+- **Track and reinforce.** The time each report took was measured before and after, and the reports were refined until agents were happy to send them.
 - **Promise.** One clear promise held throughout: AI handles the admin, and the client relationship, the advice and the decision to send stay with the agent.
 
 ## What did the team adopt?
 
-[AI adoption](/what-we-do/adopt) at Thrive means four [AI assistants](/insights/glossary/ai-assistant) now prepare the groundwork, and agents review and send. A market report for any estate is ready in minutes, so existing clients hear about their market regularly rather than only when they ask.
+[AI adoption](/what-we-do/adopt) at Thrive means two [AI assistants](/insights/glossary/ai-assistant) now prepare the groundwork, and agents review and send. A market report for any estate is ready in minutes, so existing clients hear about their market regularly rather than only when they ask.
 
 ## How was the return measured?
 
-The results were reported to Thrive's management in an ROI Transformation Report, which sets out the time each workflow took before and after AI:
+The results were reported to Thrive's management in an ROI Transformation Report, which sets out the time the workflow took before and after AI: a property market report went from about 1 working day to 20 minutes.
 
-- **Property market reports:** from about 1 working day to 20 minutes per report.
-- **Client property updates:** from about 3 hours to 15 minutes a week.
-
-With the time measured workflow by workflow, the founder can see where the return comes from and where AI should go next.
+With the time measured before and after, the founder can see where the return comes from and where AI should go next.
 
 ## Why did the results stick?
 
