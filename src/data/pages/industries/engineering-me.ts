@@ -2,7 +2,7 @@ import type { SegmentPage } from '../../segmentPages';
 
 const page: SegmentPage = {
   seoTitle: 'AI for M&E contractors in Singapore | Human Horizon',
-  description: 'AI workflows and agents for Singapore engineering and M&E contractors. Progress claims, tenders and site reports built into contractors’ real work.',
+  description: 'AI workflows and agents for Singapore engineering and M&E contractors. Progress claims, tenders and site reports built into the firm’s real work.',
   kicker: 'AI for engineering and M&E contractors in Singapore',
   title: 'People back on the build, not the paperwork',
   lead: 'Project hours disappear into progress claims, variation records, tender submissions and daily site reports. We build AI into that work with the team, so site teams spend their time on site, solving problems and delivering the job.',

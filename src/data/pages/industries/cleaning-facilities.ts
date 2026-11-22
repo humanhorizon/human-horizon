@@ -31,7 +31,7 @@ const page: SegmentPage = {
   faq: [
     { q: 'Will AI replace our supervisors?', a: 'No. We build AI into the repetitive parts of the work, such as rosters, attendance records, scheduling and quotes, so supervisors spend more time with their crews and clients. The team keeps the judgement on every decision about people and sites.' },
     { q: 'What about staff and client site data?', a: 'We agree clear rules with the firm on which tools to use, what staff details, attendance records and client site information can go into them, and what a person checks before anything is sent or paid.' },
-    { q: 'Our crews use chat apps, not software. Does that work?', a: 'Yes. We start from the way crews and supervisors already work, including the chat apps, spreadsheets and systems already in place, and suggest new tools only where they fit the work.' },
+    { q: 'Our crews use chat apps, not software. Does that work?', a: 'Yes. We start from the way crews and supervisors already work, including the chat apps, spreadsheets and systems in use today, and suggest new tools only where they fit the work.' },
     { q: 'How do we start?', a: 'With a 30-minute conversation about the work that slows the team down. Send us a short message through the contact form.', links: [{ label: 'Go to the contact form', href: '/contact#form' }] },
   ],
   close: {

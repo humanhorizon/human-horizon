@@ -5,14 +5,14 @@ import { faq as homeFaq } from './home';
 
 export const courseGuide = {
   seoTitle: 'Choosing an AI course in Singapore | Human Horizon',
-  description: 'Choosing an AI course in Singapore? What to look for when learning AI alone, and what changes when a whole team needs to use AI at work.',
+  description: 'Choosing an AI course in Singapore? What to look for when learning AI as one person, and what changes when a whole team needs to use AI at work.',
   kicker: 'Choosing an AI course in Singapore',
-  title: 'Learning AI alone, or for a whole team?',
-  lead: 'For someone learning alone, a public AI course is a good place to start, and the checklist below helps pick one. For anyone choosing for a team or company, training built on the team’s own tasks makes a bigger difference to their work.',
+  title: 'Learning AI as one person, or as a whole team?',
+  lead: 'For one person learning AI, a public course is a good place to start, and the checklist below helps with the choice. For a team or a company, training built on the team’s own tasks makes a bigger difference to their work.',
   checklistTitle: 'What to look for in an AI course',
   checklist: [
     { name: 'Hands-on practice', body: 'Most of the time spent using AI, not watching slides about it.' },
-    { name: 'Tasks close to the job', body: 'Examples close to the learner’s own job, easy to picture using on Monday.' },
+    { name: 'Tasks close to the job', body: 'Examples close to the learner’s own job, so it is easy to picture using them on Monday.' },
     { name: 'Current tools', body: 'AI tools change fast, so check the course has been updated recently.' },
     { name: 'Safe use of data', body: 'What should and should not go into an AI tool at work.' },
     { name: 'Something to take away', body: 'A piece of work, prompts or templates that stay in use after the course.' },
@@ -31,7 +31,7 @@ export const courseGuide = {
     { row: 'Starting point', course: 'One level for the whole class.', ours: 'Starts with the basics, then splits by role.' },
     { row: 'The Monday after', course: 'Back to a full inbox and the old way of working.', ours: 'The workflows built in training are ready to use on real tasks.' },
     { row: 'Client data', course: 'Rarely covered for a specific business.', ours: 'Clear rules on what can go into which AI tools.' },
-    { row: 'What there is to show for it', course: 'A certificate for each person, not a change in the work.', ours: 'A report on the hours the team gets back, valued at the firm’s own rates.' },
+    { row: 'What it leaves behind', course: 'A certificate for each person, not a change in the work.', ours: 'A report on the hours the team gets back, valued at the firm’s own rates.' },
   ],
   fitTitle: 'Which one fits',
   fit: [
@@ -49,9 +49,9 @@ export const courseGuide = {
   faqTitle: 'Questions about AI courses',
   faq: [
     { q: 'Does Human Horizon run public AI courses in Singapore?', a: 'No. We train teams inside their own company, on their own work. For someone learning AI alone, a public course is the better fit.' },
-    { q: 'I have been asked to find AI training for our staff. Where do I start?', a: 'Start with the work, not a list of courses. Note the tasks that take the most time, who does them and what data they touch. That gives any provider, including us, enough to suggest a real first step. We are happy to talk first, before it goes to the boss.' },
+    { q: 'I have been asked to find AI training for our staff. Where do I start?', a: 'Start with the work, not a list of courses. Note the tasks that take the most time, who does them and what data they touch. That gives any provider, including us, enough to suggest a real first step. We are happy to talk first, before the request goes to the boss.' },
     { q: 'Is this suitable for beginners?', a: 'Yes. Training starts with the basics: what AI can and cannot do, how to use it safely and how to ask well. Then it moves onto the team’s real tasks.' },
-    { q: 'Do people get a certificate?', a: 'Human Horizon is not an accredited course provider, so we do not issue accredited certificates. What the team gets instead is a report on the hours it gets back, valued at the firm’s own rates.' },
+    { q: 'Do people get a certificate?', a: 'Human Horizon is not an accredited course provider, so we do not issue accredited certificates. Instead, the team gets a report on the hours it saves, valued at the firm’s own rates.' },
     ...homeFaq.filter((f) => f.q === 'Is this covered by course funding?'),
     { q: 'Is Human Horizon part of AI Singapore or its apprenticeship programme?', a: 'No. Human Horizon is an independent consultancy and is not connected to AI Singapore or the AI Apprenticeship Programme.' },
     { q: 'Are there free AI courses in Singapore?', a: 'Yes, many free introductory courses are available online. They are a good first step for individuals. Our training is for companies that want AI built into their team’s work.' },

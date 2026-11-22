@@ -2,13 +2,13 @@
 // Outcomes only: never the method. Goes through the hh-growth-editor EDIT pass before it is shown to YJ.
 import type { FaqItem } from '../components/Faq.astro';
 
-const pricingFaq: FaqItem = { q: 'How is it priced?', a: 'Every proposal is shaped to the team’s size and the work to be changed, and the full scope is clear before any commitment.' };
+const pricingFaq: FaqItem = { q: 'How is it priced?', a: 'Every proposal is shaped to the size of the team and the work it wants to change, with the full scope set out before anything is agreed.' };
 
 const startFaq: FaqItem = { q: 'How do we start?', a: 'With a 30-minute conversation about the work that slows the team down. Send us a short message through the contact form.', links: [{ label: 'Go to the contact form', href: '/contact#form' }] };
 
 export const whatWeDoHub = {
   seoTitle: 'AI implementation, training and adoption | Human Horizon',
-  description: 'AI workflows, agents and training for Singapore businesses: we build AI into the team’s real work, train the people to run it and support adoption.',
+  description: 'AI workflows, agents and training for Singapore businesses: we build AI into the team’s real work, train staff to run it and support adoption.',
   kicker: 'AI implementation, training and adoption in Singapore',
   title: 'AI workflows, agents and the training to run them',
   lead: 'Most teams stop at the prompt. We build AI workflows and agents into the work the team already does, train the people to run them and stay with them until it is simply how the team works.',
@@ -95,7 +95,7 @@ export const pillarPages: Record<string, PillarPage> = {
     seoTitle: 'AI training for teams in Singapore | Human Horizon',
     description: 'Hands-on AI training for Singapore teams, on the workflows they run. People learn alongside the tasks they already know, so it sticks.',
     kicker: 'Hands-on AI training for teams in Singapore',
-    title: 'Watch a team go from wary to confident',
+    title: 'Teams that go from wary to confident with AI',
     lead: 'AI courses teach in general terms, so the impact is never felt in day-to-day work. We customise the training to the tasks the team already knows, so what they learn changes how the work gets done.',
     painsTitle: 'Why existing AI courses do not stick',
     pains: [

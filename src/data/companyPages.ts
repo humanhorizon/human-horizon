@@ -59,15 +59,15 @@ export const contact = {
   },
   thanks: {
     seoTitle: 'Message sent | Human Horizon',
-    description: 'The message has reached Human Horizon. Thanks for telling us about the team.',
-    title: 'Thanks, the message is with us.',
-    body: 'We appreciate hearing about the team. Writing to us directly works too.',
+    description: 'Message received by Human Horizon. Thank you for the note about the team and its work.',
+    title: 'Message received, thank you',
+    body: 'Thank you for the details about the team. Email works too, if that is easier.',
   },
   stepsTitle: 'What happens next',
   steps: [
     { title: 'A short message', body: 'Tell us a little about the business and the work that slows the team down.' },
     { title: 'A 30-minute discovery call', body: 'We look at that work together, and at where AI could help first. There is nothing to prepare, and no need to know which tools to use.' },
-    { title: 'A proposal for the team', body: 'The full scope and the way to start are clear before any commitment.' },
+    { title: 'A proposal for the team', body: 'The full scope and the first step, set out before anything is agreed.' },
   ],
 };
 

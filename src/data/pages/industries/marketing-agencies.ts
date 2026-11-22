@@ -35,7 +35,7 @@ const page: SegmentPage = {
     { q: 'How do we start?', a: 'With a 30-minute conversation about the work that slows the team down. Send us a short message through the contact form.', links: [{ label: 'Go to the contact form', href: '/contact#form' }] },
   ],
   close: {
-    title: 'Back to the work the team got into this for',
+    title: 'Back to the work the team signed up for',
     sub: 'Fewer late nights on reports and decks, less churning out, more room for the ideas. It starts with a 30-minute conversation about the work that slows the agency down.',
   },
 };

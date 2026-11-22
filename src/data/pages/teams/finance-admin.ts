@@ -30,7 +30,7 @@ const page: SegmentPage = {
   faqTitle: 'Questions finance and admin leaders ask',
   faq: [
     { q: 'Will AI replace our finance and admin staff?', a: 'No. We build AI into the repetitive parts of the work, such as keying, matching and first drafts of reports, so staff spend more time checking, following up and advising. The finance team reviews and approves everything that goes into the books.' },
-    { q: 'What about our financial data?', a: 'We agree clear rules with the business on which tools to use, what financial and supplier data can go into them, who can see what and what a person checks before anything is posted or paid. The data stays under the business’s control.' },
+    { q: 'What about our financial data?', a: 'We agree clear rules with the business on which tools to use, what financial and supplier data can go into them, who can see what and what a person checks before anything is posted or paid. Financial data stays under the company’s control.' },
     { q: 'Does AI make the accounting calls?', a: 'No. AI prepares and organises the work, and the finance team reviews and approves it, with the company’s accountants advising as they do today. We start from the accounting software and systems the team already uses, and suggest new tools only where they fit the work.' },
     { q: 'How do we start?', a: 'With a 30-minute conversation about the work that slows the team down. Send us a short message through the contact form.', links: [{ label: 'Go to the contact form', href: '/contact#form' }] },
   ],

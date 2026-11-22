@@ -9,7 +9,7 @@ const page: SegmentPage = {
   painsTitle: 'Where recruitment weeks go',
   pains: [
     { title: 'CV screening', body: 'Consultants read every CV that comes in, most of them for roles they will never fit.' },
-    { title: 'Candidate profiles', body: 'The best few CVs get rebuilt by hand into the agency’s template before a client ever sees them.' },
+    { title: 'Candidate profiles', body: 'The best few CVs get rebuilt by hand into the firm’s template before a client ever sees them.' },
     { title: 'Job ads and outreach', body: 'Every new role means writing a job description and a round of outreach messages from scratch.' },
     { title: 'Client updates', body: 'Consultants chase hiring managers for interview feedback, then write the same role update again and again.' },
   ],
@@ -23,7 +23,7 @@ const page: SegmentPage = {
   },
   changesTitle: 'What changes for the firm',
   useCases: [
-    { name: 'Candidate shortlists', before: 'Consultants read every CV that comes in, then rebuild the best few into the agency’s profile template before writing a cover note to the client.', after: 'Shortlists arrive ready to review. Each applicant is read against the brief, the closest matches are brought forward with the reasons why, and their profiles are already in the agency’s template with a draft cover note for the client. The consultant checks the picks, adds what they know from the call, and decides who to put forward.', outcome: 'Shortlists with reasons and client-ready profiles' },
+    { name: 'Candidate shortlists', before: 'Consultants read every CV that comes in, then rebuild the best few into the firm’s profile template before writing a cover note to the client.', after: 'Shortlists arrive ready to review. Each applicant is read against the brief, the closest matches are brought forward with the reasons why, and their profiles are already in the firm’s template with a draft cover note for the client. The consultant checks the picks, adds what they know from the call, and decides who to put forward.', outcome: 'Shortlists with reasons and client-ready profiles' },
     { name: 'Job descriptions and candidate outreach', before: 'Every new role starts with a blank page for the job ad, then a long evening of writing personal messages to possible candidates.', after: 'The intake call becomes a clear job description in the firm’s house style, with the must-haves, the nice-to-haves and the selling points of the role. Outreach drafts follow for each candidate, written to their background and why the role suits them. The consultant sharpens the pitch and sends the ones worth sending.', outcome: 'From intake call to job ad and outreach, ready to send' },
     { name: 'Client updates', before: 'Consultants piece together pipeline notes from emails, chats and the database whenever a hiring manager asks how a role is going.', after: 'Updates come together from the firm’s own records: who has been screened, who is interviewing, who has dropped out and what is needed from the client next, with a nudge drafted for any interview still waiting on feedback. The consultant reads it, adds the context only they have, and sends it in their own voice.', outcome: 'Clients kept informed without the rewriting' },
   ],
